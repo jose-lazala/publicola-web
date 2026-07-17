@@ -22,9 +22,8 @@
 // CONFIGURACION
 // ============================================================
 
-// *** MARCADOR PROVISIONAL ***
-// Reemplazar por el numero real de WhatsApp de Publicola, en formato
-// internacional SIN signos "+" ni espacios (ejemplo real: "18095551234").
+// Numero real de WhatsApp de Publicola, en formato internacional sin
+// signos "+" ni espacios.
 const NUMERO_WHATSAPP_PUBLICOLA = "18297856028";
 
 const RUTA_JSON_PROCESOS = "procesos_semana.json";
