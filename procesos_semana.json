@@ -1,0 +1,186 @@
+{
+  "generado": "2026-07-16T20:35:20",
+  "fuente": "Datos: DGCP / Portal Transaccional (comprasdominicana.gob.do), bajo licencia ODbL con atribucion.",
+  "rubros": [
+    {
+      "rubro": "Organizacion de reuniones y eventos",
+      "total_abiertos": 20,
+      "muestra": [
+        {
+          "institucion": "Ministerio de Educación",
+          "objeto": "Contratación de servicios de alojamiento, salón y catering para la 1ra. fase de jornadas de socialización sobre guías de ambientación del inicio del año escolar 2026-2027, Grupo 2, dirigido a MIPYMES.",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-17",
+          "dirigido_a": "MIPYME"
+        },
+        {
+          "institucion": "Ayuntamiento del Municipio de San Cristóbal",
+          "objeto": "CONTRATACION DE SERVICIOS PARA LA PRODUCCION TECNICA Y LOGISTICA PARA LAS FIESTAS PATRONALES DE",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-17",
+          "dirigido_a": "abierto a todos"
+        }
+      ]
+    },
+    {
+      "rubro": "Reactivos para analisis de laboratorio/quimica",
+      "total_abiertos": 15,
+      "muestra": [
+        {
+          "institucion": "Hospital General Regional Dr. Macelino Velez Santana",
+          "objeto": "COMPRA DE REACTIVOS DE LABORATORIO HIPRO Y SMART",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-17",
+          "dirigido_a": "abierto a todos"
+        },
+        {
+          "institucion": "Hospital Dr. Federico Armando Aybar",
+          "objeto": "LABORATORIO",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-17",
+          "dirigido_a": "abierto a todos"
+        }
+      ]
+    },
+    {
+      "rubro": "Construccion de aceras o bordillos",
+      "total_abiertos": 10,
+      "muestra": [
+        {
+          "institucion": "Ayuntamiento Municipal de Altamira",
+          "objeto": "Construccion de Aceras y Contenes en el Municipio de Altamira",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-17",
+          "dirigido_a": "abierto a todos"
+        },
+        {
+          "institucion": "Junta de Distrito Municipal Las Clavellinas",
+          "objeto": "CONSTRUCCION DE ACERAS Y CONTENES",
+          "modalidad": "CP",
+          "fecha_limite_ofertas": "2026-07-20",
+          "dirigido_a": "MIPYME"
+        }
+      ]
+    },
+    {
+      "rubro": "Servicios de formacion/capacitacion",
+      "total_abiertos": 7,
+      "muestra": [
+        {
+          "institucion": "Ministerio de Agricultura",
+          "objeto": "Contratación de los servicios de confección, instalación, decoración y adecuación de Stands e instalación Módulos para estaciones Liquidas (Café, agua, chocolate).",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-20",
+          "dirigido_a": "MIPYME"
+        },
+        {
+          "institucion": "Sistema Unico de Beneficiarios (SIUBEN)",
+          "objeto": "Contratación de servicios de capacitación para el fortalecimiento de competencias del personal del SIUBEN durante el tercer trimestre de 2026",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-21",
+          "dirigido_a": "abierto a todos"
+        }
+      ]
+    },
+    {
+      "rubro": "Toner para impresoras/fax",
+      "total_abiertos": 6,
+      "muestra": [
+        {
+          "institucion": "Ministerio de Trabajo",
+          "objeto": "ADQUISICION DE TONER PARA USO DE LOS DIFERENTES DPTO. DE ESTE MINISTERIO DE TRABAJO. PROCESO DIRIGIDO A MYPIMES",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-17",
+          "dirigido_a": "MIPYME"
+        },
+        {
+          "institucion": "ECO5RD",
+          "objeto": "\"Adquisición de tóner y tinta para ser utilizado por esta Unidad Ejecutora ECO5RD\"",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-17",
+          "dirigido_a": "abierto a todos"
+        }
+      ]
+    },
+    {
+      "rubro": "Licencias de programas informaticos (software)",
+      "total_abiertos": 6,
+      "muestra": [
+        {
+          "institucion": "Superintendencia de Electricidad",
+          "objeto": "Contratación del Servicio de Renovación de Licencias de Seguridad FortiGate NGFW para la Superintendencia de Electricidad",
+          "modalidad": "CP",
+          "fecha_limite_ofertas": "2026-07-20",
+          "dirigido_a": "abierto a todos"
+        },
+        {
+          "institucion": "Organismo Dominicano de Acreditación",
+          "objeto": "Renovación y adquisición de Licencias de Microsoft Office 365 Apps for Business por período de un (1) año para ser utilizadas por este Organismo Dominicano de Acreditación (ODAC).",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-21",
+          "dirigido_a": "abierto a todos"
+        }
+      ]
+    },
+    {
+      "rubro": "Servicios de catering",
+      "total_abiertos": 5,
+      "muestra": [
+        {
+          "institucion": "Oficina Nacional de Derecho de Autor",
+          "objeto": "SOLICITUD SERVICIO DE ALMUERZOS Y CENA PREEMPACADA  A DOMICILIO PARA PERSONAL DE LA ONDA",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-17",
+          "dirigido_a": "abierto a todos"
+        },
+        {
+          "institucion": "Tesorería de la Seguridad Social",
+          "objeto": "Contratación de Instalación para Encuentro de Colaboradores de la Tesorería de la Seguridad Social",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-20",
+          "dirigido_a": "abierto a todos"
+        }
+      ]
+    },
+    {
+      "rubro": "Conectores de cables electricos",
+      "total_abiertos": 5,
+      "muestra": [
+        {
+          "institucion": "Colegio Nuestra Sr. del Perpetuo Socorro",
+          "objeto": "Adquisición de equipos de videovigilancia para el proyecto de monitoreo y seguimiento de los niveles primario y secundario del centro educativo Nuestra Señora del Perpetuo Socorro.",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-17",
+          "dirigido_a": "abierto a todos"
+        },
+        {
+          "institucion": "Ministerio de Defensa",
+          "objeto": "Adquisiciones materiales electricos",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-17",
+          "dirigido_a": "MIPYME"
+        }
+      ]
+    },
+    {
+      "rubro": "Parques",
+      "total_abiertos": 2,
+      "muestra": [
+        {
+          "institucion": "Ayuntamiento de San Pedro de Macoris",
+          "objeto": "Proceso de Contratación Menor de Obra para la Construcción y Reparaciones de Parques, Centro comunal y Canchas Deportivas, con Fondos Provenientes del Presupuesto Participativo del año 2026.",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-17",
+          "dirigido_a": "abierto a todos"
+        },
+        {
+          "institucion": "Ayuntamiento del Distrito Nacional (ADN)",
+          "objeto": "CONSTRUCCIÓN ETAPA FINAL PROYECTO MALECÓN CULTURAL Y DEPORTIVO, DISTRITO NACIONAL",
+          "modalidad": "LPN",
+          "fecha_limite_ofertas": "2026-08-24",
+          "dirigido_a": "abierto a todos"
+        }
+      ]
+    }
+  ]
+}

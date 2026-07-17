@@ -1,0 +1,286 @@
+/*
+  Hoja de estilos de PUBLICOLA (nombre provisional).
+  Paleta de marca: azul marino, blanco y gris/plata.
+  Estetica sobria, de despacho legal. Sin librerias externas.
+  Diseño "mobile-first": las reglas base son para celular (el trafico
+  vendra de Instagram); las @media de arriba amplian para tablet/desktop.
+*/
+
+:root {
+  --azul-marino: #0b1f3a;
+  --azul-marino-claro: #14294f;
+  --blanco: #ffffff;
+  --gris-plata: #b7bec9;
+  --gris-plata-claro: #e4e7ec;
+  --gris-fondo: #f4f5f7;
+  --gris-texto: #333333;
+  --gris-texto-suave: #5b6472;
+  --radio-borde: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--gris-fondo);
+  color: var(--gris-texto);
+  font-family: -apple-system, "Segoe UI", Arial, Helvetica, sans-serif;
+  line-height: 1.55;
+}
+
+.contenedor {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Encabezado ---------- */
+
+.cabecera {
+  background-color: var(--azul-marino);
+  color: var(--blanco);
+  padding: 40px 0 32px 0;
+  text-align: center;
+}
+
+.cabecera .marca {
+  margin: 0 0 6px 0;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gris-plata);
+  font-weight: 600;
+}
+
+.cabecera .eslogan {
+  margin: 0 0 14px 0;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.cabecera .descripcion {
+  margin: 0 auto;
+  max-width: 520px;
+  font-size: 15px;
+  color: var(--gris-plata-claro);
+}
+
+/* ---------- Secciones generales ---------- */
+
+.seccion {
+  padding: 36px 0;
+}
+
+.seccion-alterna {
+  background-color: var(--blanco);
+}
+
+.seccion h2 {
+  margin: 0 0 6px 0;
+  font-size: 20px;
+  color: var(--azul-marino);
+}
+
+.seccion .subtitulo {
+  margin: 0 0 20px 0;
+  color: var(--gris-texto-suave);
+  font-size: 14px;
+}
+
+.mensaje-estado {
+  color: var(--gris-texto-suave);
+  font-style: italic;
+}
+
+/* ---------- Tarjetas de licitaciones (probadita) ---------- */
+
+.lista-licitaciones {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.tarjeta-licitacion {
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-plata-claro);
+  border-left: 4px solid var(--azul-marino);
+  border-radius: var(--radio-borde);
+  padding: 16px 18px;
+}
+
+.tarjeta-licitacion .rubro-etiqueta {
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--azul-marino);
+  background-color: var(--gris-plata-claro);
+  border-radius: 3px;
+  padding: 2px 8px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.tarjeta-licitacion .institucion {
+  font-weight: 700;
+  margin: 0 0 4px 0;
+}
+
+.tarjeta-licitacion .objeto {
+  margin: 0 0 8px 0;
+  color: var(--gris-texto);
+  font-size: 14px;
+}
+
+.tarjeta-licitacion .detalle {
+  font-size: 13px;
+  color: var(--gris-texto-suave);
+}
+
+/* ---------- Chatbot Licita ---------- */
+
+.chat-contenedor {
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-plata-claro);
+  border-radius: var(--radio-borde);
+  padding: 16px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.chat-transcurso {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.burbuja {
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 14px;
+  max-width: 85%;
+  line-height: 1.45;
+}
+
+.burbuja-bot {
+  background-color: var(--gris-fondo);
+  color: var(--gris-texto);
+  align-self: flex-start;
+  border-bottom-left-radius: 3px;
+}
+
+.burbuja-usuario {
+  background-color: var(--azul-marino);
+  color: var(--blanco);
+  align-self: flex-end;
+  border-bottom-right-radius: 3px;
+}
+
+.chat-controles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.boton {
+  display: inline-block;
+  background-color: var(--azul-marino);
+  color: var(--blanco);
+  border: none;
+  border-radius: var(--radio-borde);
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.boton:hover,
+.boton:focus {
+  background-color: var(--azul-marino-claro);
+}
+
+.boton-secundario {
+  background-color: var(--blanco);
+  color: var(--azul-marino);
+  border: 1px solid var(--azul-marino);
+}
+
+.boton-secundario:hover,
+.boton-secundario:focus {
+  background-color: var(--gris-fondo);
+}
+
+.boton-whatsapp {
+  background-color: #1f7a4d;
+}
+
+.boton-whatsapp:hover,
+.boton-whatsapp:focus {
+  background-color: #185f3c;
+}
+
+/* ---------- Suscripcion ---------- */
+
+#suscripcion .boton {
+  margin-top: 10px;
+}
+
+/* ---------- Privacidad ---------- */
+
+#privacidad p {
+  font-size: 14px;
+  color: var(--gris-texto-suave);
+}
+
+/* ---------- Pie de pagina ---------- */
+
+.pie {
+  background-color: var(--azul-marino);
+  color: var(--gris-plata);
+  padding: 18px 0;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* ---------- Ajustes para pantallas mas grandes (tablet / escritorio) ---------- */
+
+@media (min-width: 768px) {
+  .contenedor {
+    max-width: 860px;
+    padding: 0 32px;
+  }
+
+  .cabecera {
+    padding: 56px 0 44px 0;
+  }
+
+  .cabecera .eslogan {
+    font-size: 28px;
+  }
+
+  .cabecera .descripcion {
+    font-size: 16px;
+  }
+
+  .seccion {
+    padding: 48px 0;
+  }
+
+  .lista-licitaciones {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .tarjeta-licitacion {
+    flex: 1 1 260px;
+  }
+}

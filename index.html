@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PUBLICOLA — Inteligencia de compras públicas</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <header class="cabecera">
+    <div class="contenedor">
+      <!-- "PUBLICOLA" es un nombre PROVISIONAL, todavia no definitivo -->
+      <p class="marca">PUBLICOLA</p>
+      <h1 class="eslogan">Inteligencia de compras públicas para tu empresa</h1>
+      <p class="descripcion">
+        Somos el equipo que revisa todos los días las licitaciones públicas dominicanas
+        y te avisa, en lenguaje simple, cuáles son para tu rubro.
+      </p>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="licitaciones-semana" class="seccion">
+      <div class="contenedor">
+        <h2>Licitaciones de la semana</h2>
+        <p class="subtitulo">Una probadita de lo que salió esta semana. Solo datos públicos.</p>
+        <div id="lista-licitaciones" class="lista-licitaciones">
+          <p class="mensaje-estado">Cargando licitaciones…</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="chatbot-licita" class="seccion seccion-alterna">
+      <div class="contenedor">
+        <h2>Conversa con Licita</h2>
+        <p class="subtitulo">Nuestro asistente te dice en segundos si hay licitaciones para tu rubro.</p>
+        <div id="licita-chat" class="chat-contenedor" aria-live="polite">
+          <p class="mensaje-estado">Cargando a Licita…</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="suscripcion" class="seccion">
+      <div class="contenedor">
+        <h2>Recibe el boletín completo</h2>
+        <p>
+          Cada semana, nuestros suscriptores reciben todas las licitaciones de su rubro,
+          con plazos contados en días hábiles, vigilancia de adendas y cambios de fecha,
+          y precios de referencia de procesos anteriores.
+        </p>
+        <a href="#chatbot-licita" class="boton boton-primario">Conversar con Licita</a>
+      </div>
+    </section>
+
+    <section id="privacidad" class="seccion seccion-alterna">
+      <div class="contenedor">
+        <h2>Aviso de privacidad</h2>
+        <p>
+          En Publicola trabajamos únicamente con datos públicos de procesos de compras
+          e instituciones del Estado dominicano. No recopilamos datos personales de quienes
+          visitan esta página, y no hacemos ningún tipo de identificación oculta de visitantes.
+          Cuando usamos analíticas, son agregadas y anónimas. Este sitio cumple con la
+          Ley 172-13 de Protección de Datos de la República Dominicana.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <p>Datos: DGCP / Portal Transaccional (comprasdominicana.gob.do), bajo licencia ODbL con atribución.</p>
+    </div>
+  </footer>
+
+  <script src="licita.js"></script>
+</body>
+</html>
