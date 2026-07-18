@@ -4,66 +4,425 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PUBLICOLA — Inteligencia de compras públicas</title>
+<link rel="icon" href="favicon.png" type="image/png">
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
-  <header class="cabecera">
-    <div class="contenedor">
-      <!-- "PUBLICOLA" es un nombre PROVISIONAL, todavia no definitivo -->
-      <p class="marca">PUBLICOLA</p>
-      <h1 class="eslogan">Inteligencia de compras públicas para tu empresa</h1>
-      <p class="descripcion">
-        Somos el equipo que revisa todos los días las licitaciones públicas dominicanas
-        y te avisa, en lenguaje simple, cuáles son para tu rubro.
-      </p>
+  <header class="nav-cabecera">
+    <div class="nav-contenedor">
+      <a href="#inicio" class="nav-marca">
+        <img src="logo-nav.png" alt="PUBLICOLA" class="nav-logo">
+      </a>
+      <button id="boton-menu" class="nav-boton-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-enlaces">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav-enlaces" class="nav-enlaces">
+        <a href="#inicio">Inicio</a>
+        <a href="#quienes-somos">Quiénes somos</a>
+        <a href="#licitaciones">Licitaciones</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#radar-publicola">Radar Publicola</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
     </div>
   </header>
 
   <main>
 
-    <section id="licitaciones-semana" class="seccion">
+    <section id="inicio" class="seccion-portada">
+      <div class="contenedor portada-grid">
+        <!--
+          El logo ya trae integrado el nombre "PUBLICOLA" y el eslogan
+          "Inteligencia de compras públicas", por eso ya no se repiten
+          como texto aparte aqui. Sigue siendo un <h1> (con el nombre en
+          el atributo alt) para que la pagina conserve un titulo principal
+          para accesibilidad y buscadores.
+        -->
+        <h1 class="portada-logo">
+          <img src="logo-recortado.png" alt="PUBLICOLA — Inteligencia de compras públicas">
+        </h1>
+        <p class="descripcion">
+          En Publicola convertimos las compras públicas dominicanas en oportunidades
+          claras para tu empresa: vigilamos, te explicamos y te acompañamos en cada paso.
+        </p>
+      </div>
+    </section>
+
+    <!--
+      Licita ya no tiene boton propio aqui (se elimino: solo queda la Licita
+      flotante de abajo a la derecha). En su lugar, justo debajo del texto
+      del hero, va este bloque promocional del Radar con el mensaje en
+      overlay (texto blanco sobre capa oscura semitransparente) DENTRO de
+      la imagen, no como texto aparte encima.
+    -->
+    <section id="radar-promo" class="seccion radar-promo">
+      <div class="contenedor radar-promo-grid">
+        <div class="radar-promo-foto">
+          <img src="radar.png" alt="Radar Publicola" loading="lazy" onerror="this.style.display='none'">
+          <div class="radar-promo-overlay">
+            <p class="radar-promo-titulo">Inscríbete en Radar Publicola</p>
+            <p class="radar-promo-subtitulo">
+              Por solo RD$2,500 al mes y mantente al día con todas las licitaciones que
+              están saliendo en tu rubro.
+            </p>
+          </div>
+        </div>
+        <a
+          href="mailto:info@publicola.com.do?subject=Quiero%20inscribirme%20en%20Radar%20Publicola&body=Hola%2C%20me%20quiero%20inscribir%20en%20Radar%20Publicola."
+          class="boton boton-primario"
+        >Inscríbete</a>
+      </div>
+    </section>
+
+    <section id="licitaciones" class="seccion">
+      <div class="contenedor licitaciones-encabezado">
+        <img src="radar.png" alt="" class="licitaciones-icono" loading="lazy">
+        <div>
+          <h2>Licitaciones de la semana</h2>
+          <p class="subtitulo">Una probadita de lo que salió esta semana. Solo datos públicos.</p>
+        </div>
+      </div>
       <div class="contenedor">
-        <h2>Licitaciones de la semana</h2>
-        <p class="subtitulo">Una probadita de lo que salió esta semana. Solo datos públicos.</p>
         <div id="lista-licitaciones" class="lista-licitaciones">
           <p class="mensaje-estado">Cargando licitaciones…</p>
         </div>
       </div>
     </section>
 
-    <section id="chatbot-licita" class="seccion seccion-alterna">
+    <section id="servicios" class="seccion encabezado-servicios">
       <div class="contenedor">
-        <h2>Conversa con Licita</h2>
-        <p class="subtitulo">Nuestro asistente te dice en segundos si hay licitaciones para tu rubro.</p>
-        <div id="licita-chat" class="chat-contenedor" aria-live="polite">
-          <p class="mensaje-estado">Cargando a Licita…</p>
+        <h2>Servicios</h2>
+      </div>
+    </section>
+
+    <section id="servicio-constitucion" class="seccion-servicio-completa servicio-orden-invertido">
+      <div class="servicio-completa-grid">
+        <div class="servicio-completa-foto">
+          <img src="serv-1-constitucion.jpg" alt="Constitución y estructuración de empresas" loading="lazy"
+            onerror="this.style.display='none'">
+        </div>
+        <div class="servicio-completa-texto">
+          <h2>Constitución y estructuración de empresas</h2>
+          <p>
+            Constituimos y estructuramos tu empresa para que puedas venderle al Estado
+            con todo en regla. Desde la sociedad hasta el Registro de Proveedores del
+            Estado, nuestro equipo te acompaña en cada paso.
+          </p>
+          <div class="servicio-completa-botones">
+            <a href="formulario-publicola.docx" download class="boton boton-secundario">Descargar el formulario</a>
+            <a
+              href="https://wa.me/18297856028?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20constituir%20mi%20empresa."
+              class="boton boton-whatsapp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Escríbenos</a>
+          </div>
+          <p class="nota-privacidad-formulario">
+            Esta página solo ofrece la descarga: no recibe ni almacena ningún dato que
+            escribas en el formulario.
+          </p>
         </div>
       </div>
     </section>
 
-    <section id="suscripcion" class="seccion">
+    <section id="empresas-disponibles" class="seccion seccion-alterna">
       <div class="contenedor">
-        <h2>Recibe el boletín completo</h2>
-        <p>
-          Cada semana, nuestros suscriptores reciben todas las licitaciones de su rubro,
-          con plazos contados en días hábiles, vigilancia de adendas y cambios de fecha,
-          y precios de referencia de procesos anteriores.
+        <h2>Empresas semi-constituidas disponibles</h2>
+        <p class="subtitulo">
+          Tú escoges el nombre, nosotros completamos el registro ante la Cámara de
+          Comercio y te entregamos la empresa lista para operar en 5 a 6 días laborables,
+          preparada para abrir su cuenta bancaria.
         </p>
-        <a href="#chatbot-licita" class="boton boton-primario">Conversar con Licita</a>
+        <ul class="lista-empresas-disponibles">
+          <li>
+            <span class="empresa-nombre">Alessa SRL</span>
+            <a class="boton boton-whatsapp boton-chico" target="_blank" rel="noopener noreferrer"
+              href="https://wa.me/18297856028?text=Hola%2C%20me%20interesa%20la%20empresa%20Alessa%20SRL.">WhatsApp</a>
+          </li>
+          <li>
+            <span class="empresa-nombre">Vicari SRL</span>
+            <a class="boton boton-whatsapp boton-chico" target="_blank" rel="noopener noreferrer"
+              href="https://wa.me/18297856028?text=Hola%2C%20me%20interesa%20la%20empresa%20Vicari%20SRL.">WhatsApp</a>
+          </li>
+          <li>
+            <span class="empresa-nombre">Ultramax Group SRL</span>
+            <a class="boton boton-whatsapp boton-chico" target="_blank" rel="noopener noreferrer"
+              href="https://wa.me/18297856028?text=Hola%2C%20me%20interesa%20la%20empresa%20Ultramax%20Group%20SRL.">WhatsApp</a>
+          </li>
+          <li>
+            <span class="empresa-nombre">Inversiones Bravaterra SRL</span>
+            <a class="boton boton-whatsapp boton-chico" target="_blank" rel="noopener noreferrer"
+              href="https://wa.me/18297856028?text=Hola%2C%20me%20interesa%20la%20empresa%20Inversiones%20Bravaterra%20SRL.">WhatsApp</a>
+          </li>
+          <li>
+            <span class="empresa-nombre">Aravind SRL</span>
+            <a class="boton boton-whatsapp boton-chico" target="_blank" rel="noopener noreferrer"
+              href="https://wa.me/18297856028?text=Hola%2C%20me%20interesa%20la%20empresa%20Aravind%20SRL.">WhatsApp</a>
+          </li>
+          <li>
+            <span class="empresa-nombre">Teramind SRL</span>
+            <a class="boton boton-whatsapp boton-chico" target="_blank" rel="noopener noreferrer"
+              href="https://wa.me/18297856028?text=Hola%2C%20me%20interesa%20la%20empresa%20Teramind%20SRL.">WhatsApp</a>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <section id="privacidad" class="seccion seccion-alterna">
+    <section id="servicio-revision" class="seccion-servicio-completa">
+      <div class="servicio-completa-grid">
+        <div class="servicio-completa-foto">
+          <img src="serv-2-revision.png" alt="Revisión de expediente de oferta" loading="lazy"
+            onerror="this.style.display='none'">
+        </div>
+        <div class="servicio-completa-texto">
+          <h2>Revisión de expediente de oferta</h2>
+          <p>
+            Antes de presentar tu oferta, la revisamos completa: identificamos errores de
+            forma, documentos faltantes y requisitos que podrían descalificarte. Recibes
+            un informe claro de hallazgos y recomendaciones.
+          </p>
+          <div class="servicio-completa-botones">
+            <a
+              href="https://wa.me/18297856028?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20revisi%C3%B3n%20de%20mi%20expediente%20de%20oferta."
+              class="boton boton-whatsapp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Escríbenos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicio-preparacion" class="seccion-servicio-completa servicio-orden-invertido">
+      <div class="servicio-completa-grid">
+        <div class="servicio-completa-foto">
+          <img src="serv-3-preparacion.jpg" alt="Preparación y sometimiento de licitaciones" loading="lazy"
+            onerror="this.style.display='none'">
+        </div>
+        <div class="servicio-completa-texto">
+          <h2>Preparación y sometimiento de licitaciones</h2>
+          <p>
+            Nos encargamos de tu expediente completo, desde el análisis del pliego de
+            condiciones hasta la presentación de la oferta, en la modalidad que
+            corresponda a tu proceso: compras menores, comparaciones de precios,
+            licitaciones públicas, licitaciones abreviadas y subastas inversas.
+          </p>
+          <div class="servicio-completa-botones">
+            <a
+              href="https://wa.me/18297856028?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20preparar%20y%20someter%20mi%20oferta."
+              class="boton boton-whatsapp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Escríbenos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicio-plan" class="seccion-servicio-completa">
+      <div class="servicio-completa-grid">
+        <div class="servicio-completa-foto">
+          <img src="serv-4-plan.jpg" alt="Plan mensual para proveedores recurrentes" loading="lazy"
+            onerror="this.style.display='none'">
+        </div>
+        <div class="servicio-completa-texto">
+          <h2>Plan mensual para proveedores recurrentes</h2>
+          <p>
+            Monitoreo continuo de tu rubro y preparación de tus ofertas cada mes. Ideal
+            para empresas que le venden al Estado de forma regular.
+          </p>
+          <div class="servicio-completa-botones">
+            <a
+              href="https://wa.me/18297856028?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20plan%20mensual%20para%20proveedores%20recurrentes."
+              class="boton boton-whatsapp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Escríbenos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="radar-publicola" class="seccion-servicio-completa servicio-orden-invertido">
+      <div class="servicio-completa-grid">
+        <div class="servicio-completa-foto">
+          <img src="serv-5-radar.jpg" alt="Radar Publicola" loading="lazy"
+            onerror="this.style.display='none'">
+        </div>
+        <div class="servicio-completa-texto">
+          <h2>Radar Publicola</h2>
+          <p>
+            Tu radar semanal de licitaciones. Cada semana te enviamos todas las
+            oportunidades de tu rubro, con los plazos en días hábiles y las referencias
+            que necesitas para decidir a cuáles entrar.
+          </p>
+          <div class="servicio-completa-botones">
+            <a
+              href="mailto:info@publicola.com.do?subject=Quiero%20inscribirme%20en%20Radar%20Publicola&body=Hola%2C%20me%20quiero%20inscribir%20en%20Radar%20Publicola."
+              class="boton boton-primario"
+            >Quiero el radar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quienes-somos" class="seccion seccion-alterna">
+      <div class="contenedor quienes-grid">
+        <div class="quienes-imagen">
+          <img src="faro.png" alt="Faro, símbolo que guía a las empresas en las compras públicas" loading="lazy">
+        </div>
+        <div class="quienes-texto">
+          <h2>Quiénes somos</h2>
+          <p>
+            Somos un equipo dominicano de inteligencia de compras públicas. Revisamos
+            todos los días las fuentes oficiales de la Dirección General de
+            Contrataciones Públicas (DGCP) y buscamos las licitaciones que corresponden
+            a la actividad social de la empresa de cada uno de nuestros clientes, para
+            que puedan ofertar de la manera más rápida y oportuna posible.
+          </p>
+          <p>
+            Y no nos quedamos en la búsqueda. También te acompañamos en todo lo que tu
+            empresa necesita para venderle al Estado:
+          </p>
+          <p>
+            Si tu empresa aún no está constituida, nosotros la constituimos y le sacamos
+            su Registro de Proveedores del Estado (RPE), requisito indispensable para
+            ofertar. Y si necesitas empezar cuanto antes, tenemos empresas
+            semi-constituidas disponibles: tú escoges el nombre, nosotros completamos el
+            registro y te entregamos la empresa lista para operar en 5 a 6 días laborables.
+          </p>
+          <p>
+            Y cuando llega el momento de ofertar, nuestro equipo domina el ciclo completo
+            de la contratación pública bajo la Ley 47-25 y su Reglamento 52-26, y te
+            ofrece el nivel de apoyo que tu empresa necesite: desde la auditoría de la
+            oferta que preparaste por tu cuenta hasta la preparación y el sometimiento
+            completo de tu expediente.
+          </p>
+          <p>
+            En resumen: nosotros vigilamos las oportunidades, tú decides a cuáles entrar,
+            y nuestro equipo te acompaña en todo el camino, desde constituir tu empresa
+            hasta presentar tu oferta.
+          </p>
+        </div>
+      </div>
+
       <div class="contenedor">
-        <h2>Aviso de privacidad</h2>
+        <h3 class="titulo-presidente">Nuestro presidente</h3>
+        <div class="tarjeta-ceo">
+          <img src="ceo.jpeg" alt="José Lazala" class="ceo-foto">
+          <div class="ceo-datos">
+            <p class="ceo-nombre">José Lazala</p>
+            <p>
+              Abogado corporativo con 11 años de experiencia y experto en contrataciones
+              públicas, graduado de Derecho de la Universidad Nacional Pedro Henríquez
+              Ureña (UNPHU).
+            </p>
+            <p>
+              A lo largo de su carrera se ha dedicado al derecho corporativo en todas sus
+              dimensiones: constitución y estructuración de sociedades, registro de
+              empresas y acompañamiento legal a negocios en crecimiento, posicionándolos
+              en el mercado dominicano.
+            </p>
+            <p>
+              Su especialidad es clara: ayudar a sus clientes a convertirse en
+              proveedores activos y competitivos del Estado dominicano. Acompaña a cada
+              empresa en todo el camino de la contratación pública bajo la Ley 47-25 y su
+              Reglamento 52-26: desde su constitución y la obtención del Registro de
+              Proveedores del Estado (RPE), hasta el análisis de los pliegos de
+              condiciones y la presentación de ofertas ganadoras.
+            </p>
+            <p>
+              Al frente de Publicola, lidera el equipo que vigila a diario las
+              oportunidades del mercado público dominicano para que las empresas lleguen
+              a tiempo y con su documentación en regla.
+            </p>
+            <div class="ceo-contacto">
+              <a
+                href="https://wa.me/18297856028?text=Hola%2C%20me%20gustar%C3%ADa%20conversar%20con%20Jos%C3%A9%20Lazala."
+                class="boton boton-whatsapp boton-chico"
+                target="_blank"
+                rel="noopener noreferrer"
+              >WhatsApp</a>
+              <a
+                href="https://www.linkedin.com/in/joselazala"
+                class="boton boton-secundario boton-chico"
+                target="_blank"
+                rel="noopener noreferrer"
+              >LinkedIn</a>
+              <!-- Instagram provisional — se cambiará al perfil propio de Publicola -->
+              <a
+                href="https://instagram.com/lic.lazala"
+                class="boton boton-secundario boton-chico"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Instagram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="legal" class="seccion">
+      <div class="contenedor">
+        <h2>Marco legal de las compras públicas</h2>
         <p>
-          En Publicola trabajamos únicamente con datos públicos de procesos de compras
-          e instituciones del Estado dominicano. No recopilamos datos personales de quienes
-          visitan esta página, y no hacemos ningún tipo de identificación oculta de visitantes.
-          Cuando usamos analíticas, son agregadas y anónimas. Este sitio cumple con la
-          Ley 172-13 de Protección de Datos de la República Dominicana.
+          Las compras y contrataciones del Estado dominicano se rigen por la Ley 47-25 y
+          su Reglamento 52-26.
         </p>
+        <div class="botones-legales">
+          <!--
+            Pendiente: cuando Jose suba el archivo web/ley-47-25.pdf, cambiar el href de
+            abajo por la descarga local ("ley-47-25.pdf") en vez del enlace externo a la DGCP.
+          -->
+          <a
+            href="https://www.dgcp.gob.do/new_dgcp/documentos/politicas_normas_y_procedimientos/leyes_y_decretos/Ley%2047-25.pdf"
+            class="boton boton-secundario"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Ver texto oficial de la Ley 47-25</a>
+          <!--
+            Pendiente: cuando Jose suba el archivo web/reglamento-52-26.pdf, cambiar el
+            href de abajo por la descarga local ("reglamento-52-26.pdf") en vez del
+            enlace externo a la DGCP.
+          -->
+          <a
+            href="https://www.dgcp.gob.do/new_dgcp/documentos/politicas_normas_y_procedimientos/leyes_y_decretos/Decreto%2052-26.pdf"
+            class="boton boton-secundario"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Ver Reglamento de Aplicación 52-26</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="seccion seccion-alterna">
+      <div class="contenedor">
+        <h2>Contacto</h2>
+        <p class="direccion">
+          Av. Abraham Lincoln No. 1003, Torre Profesional Biltmore I, Suite 301, Piantini,
+          Santo Domingo de Guzmán, Distrito Nacional, República Dominicana.
+        </p>
+        <p class="correo-contacto">
+          <a href="mailto:info@publicola.com.do">info@publicola.com.do</a>
+        </p>
+        <a
+          href="https://wa.me/18297856028?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Publicola."
+          class="boton boton-whatsapp"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Escribirnos por WhatsApp</a>
+
+        <div id="privacidad" class="aviso-privacidad">
+          <h3>Aviso de privacidad</h3>
+          <p>
+            En Publicola trabajamos únicamente con datos públicos de procesos de compras
+            e instituciones del Estado dominicano. No recopilamos datos personales de
+            quienes visitan esta página, y no hacemos ningún tipo de identificación oculta
+            de visitantes. Cuando usamos analíticas, son agregadas y anónimas. Este sitio
+            cumple con la Ley 172-13 de Protección de Datos de la República Dominicana.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -74,6 +433,32 @@
       <p>Datos: DGCP / Portal Transaccional (comprasdominicana.gob.do), bajo licencia ODbL con atribución.</p>
     </div>
   </footer>
+
+  <!--
+    Licita flotante: unica instancia del chatbot en toda la pagina. El
+    "#licita-chat" de aqui adentro es el mismo id que usaba la version
+    inline de antes, asi que TODA la logica de licita.js (que busca ese
+    id) sigue funcionando exactamente igual, sin cambios.
+  -->
+  <div id="licita-flotante" class="licita-flotante">
+    <div id="licita-panel" class="licita-panel" hidden>
+      <div class="licita-panel-cabecera">
+        <span>Conversa con Licita</span>
+        <button type="button" id="licita-boton-cerrar" class="licita-panel-cerrar" aria-label="Cerrar chat">&times;</button>
+      </div>
+      <div class="licita-panel-cuerpo">
+        <div id="licita-chat" class="chat-contenedor" aria-live="polite">
+          <p class="mensaje-estado">Cargando a Licita…</p>
+        </div>
+      </div>
+    </div>
+    <div id="licita-burbuja" class="licita-burbuja">
+      <span class="licita-etiqueta">Conversa con Licita</span>
+      <button type="button" id="licita-boton-abrir" class="licita-circulo" aria-label="Conversar con Licita">
+        <img src="imagen-licita.jpg" alt="Licita" onerror="this.style.display='none'">
+      </button>
+    </div>
+  </div>
 
   <script src="licita.js"></script>
 </body>
