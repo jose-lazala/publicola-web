@@ -1036,3 +1036,178 @@ body {
     max-height: min(620px, calc(100vh - 56px));
   }
 }
+
+/* ============================================================
+   Ajustes SOLO para escritorio grande, a partir de 900px.
+   Todo lo de arriba (celular Y tablet/escritorio angosto hasta
+   899px) queda exactamente igual que antes. Este bloque nuevo se
+   agrega al final a proposito: en CSS, entre dos reglas con el
+   mismo "peso", gana la que esta mas abajo en el archivo, asi que
+   estas reglas amplian/reemplazan las de arriba solo a partir de
+   900px, sin tocar nada por debajo de ese ancho.
+
+   Decision de diseño (confirmada con Jose): el bloque azul
+   "Inscribete en Radar Publicola" YA NO comparte columna con el
+   logo del hero. Pasa a ser su propia franja de ancho completo,
+   justo debajo del hero (ver seccion "Franja del radar" mas abajo).
+   Por eso el hero de aqui en adelante es de una sola columna, mas
+   grande y centrada.
+   ============================================================ */
+
+@media (min-width: 900px) {
+
+  /* Contenido general: hasta 1280px de ancho en pantallas grandes,
+     en vez de los 900px del punto de quiebre de tablet. */
+  .contenedor,
+  .nav-contenedor {
+    max-width: 1280px;
+  }
+
+  /* ---------- Hero: una sola columna, mas grande ---------- */
+
+  .seccion-portada {
+    padding: 96px 0;
+  }
+
+  .portada-logo img {
+    max-width: 620px;
+  }
+
+  .descripcion {
+    max-width: 620px;
+    font-size: 19px;
+  }
+
+  /* ---------- Titulos y aire de las secciones en general ---------- */
+
+  .seccion {
+    padding: 80px 0;
+  }
+
+  .seccion h2 {
+    font-size: 34px;
+  }
+
+  .seccion .subtitulo {
+    font-size: 17px;
+  }
+
+  /* ---------- Licitaciones de la semana: tarjetas a lo ancho ---------- */
+
+  /* auto-fit + minmax reparte las tarjetas que haya (hoy 3, mañana
+     las que sean) a lo ancho del contenido, sin dejarlas angostas. */
+  .lista-licitaciones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+  }
+
+  .tarjeta-licitacion {
+    padding: 28px 26px;
+  }
+
+  .tarjeta-licitacion .institucion {
+    font-size: 17px;
+  }
+
+  .tarjeta-licitacion .objeto {
+    font-size: 15px;
+  }
+
+  .tarjeta-licitacion .detalle {
+    font-size: 14px;
+  }
+
+  /* ---------- Servicios: texto mas grande (la imagen ya llena su
+     mitad completa desde el punto de quiebre de tablet) ---------- */
+
+  .servicio-completa-texto {
+    padding: 0 90px;
+  }
+
+  .servicio-completa-texto h2 {
+    font-size: 40px;
+  }
+
+  .servicio-completa-texto p {
+    font-size: 18px;
+  }
+
+  /* ---------- Quienes somos: imagen generosa, mismo tratamiento
+     visual que las secciones de servicios (object-fit cover) ---------- */
+
+  .quienes-grid {
+    gap: 64px;
+  }
+
+  .quienes-imagen {
+    flex: 0 0 46%;
+  }
+
+  .quienes-imagen img {
+    max-width: none;
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+  }
+
+  .quienes-texto p {
+    font-size: 16px;
+  }
+
+  /* ---------- Franja del radar: banda azul de ancho completo ---------- */
+
+  .seccion.radar-promo {
+    padding: 0;
+    background-color: var(--azul-marino);
+  }
+
+  /* En vez de una columna, la franja se vuelve una sola celda de
+     grid donde la foto (con su overlay) y el boton "Inscribete" se
+     superponen en el mismo espacio -- asi el boton queda integrado
+     dentro de la franja en vez de flotar suelto debajo. */
+  .radar-promo-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: none;
+    width: 100%;
+    padding: 0;
+  }
+
+  .radar-promo-foto {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    max-width: none;
+    aspect-ratio: unset;
+    height: 520px;
+  }
+
+  .radar-promo-overlay {
+    padding: 40px;
+  }
+
+  .radar-promo-titulo {
+    font-size: 34px;
+  }
+
+  .radar-promo-subtitulo {
+    font-size: 17px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Selector especifico al boton DENTRO de esta franja (el "Quiero
+     el radar" de la seccion de servicios, mas abajo en la pagina,
+     no se toca porque no es hijo directo de .radar-promo-grid). */
+  .radar-promo-grid > .boton-primario {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: end;
+    justify-self: center;
+    margin-bottom: 56px;
+    z-index: 2;
+    font-size: 17px;
+    padding: 16px 36px;
+  }
+}
