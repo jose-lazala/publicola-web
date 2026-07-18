@@ -1063,19 +1063,26 @@ body {
     max-width: 1280px;
   }
 
-  /* ---------- Hero: una sola columna, mas grande ---------- */
+  /* ---------- Hero: una sola columna, protagonista ---------- */
 
+  /* Poco padding arriba a proposito: la barra de navegacion (56px,
+     fija) ya separa el hero del borde de la pantalla, asi que aqui
+     solo hace falta un margen comodo, no otro salto grande encima. */
   .seccion-portada {
-    padding: 96px 0;
+    padding: 40px 0;
   }
 
+  /* logo-recortado.png mide 1494px de ancho real, asi que ampliarlo
+     hasta 1100px lo deja como protagonista de la portada sin que se
+     vea pixelado (sigue habiendo margen de sobra hasta su tamaño
+     nativo). */
   .portada-logo img {
-    max-width: 620px;
+    max-width: 1100px;
   }
 
   .descripcion {
-    max-width: 620px;
-    font-size: 19px;
+    max-width: 760px;
+    font-size: 23px;
   }
 
   /* ---------- Titulos y aire de las secciones en general ---------- */
@@ -1085,11 +1092,11 @@ body {
   }
 
   .seccion h2 {
-    font-size: 34px;
+    font-size: 38px;
   }
 
   .seccion .subtitulo {
-    font-size: 17px;
+    font-size: 19px;
   }
 
   /* ---------- Licitaciones de la semana: tarjetas a lo ancho ---------- */
@@ -1107,15 +1114,15 @@ body {
   }
 
   .tarjeta-licitacion .institucion {
-    font-size: 17px;
+    font-size: 18px;
   }
 
   .tarjeta-licitacion .objeto {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .tarjeta-licitacion .detalle {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   /* ---------- Servicios: texto mas grande (la imagen ya llena su
@@ -1126,11 +1133,11 @@ body {
   }
 
   .servicio-completa-texto h2 {
-    font-size: 40px;
+    font-size: 44px;
   }
 
   .servicio-completa-texto p {
-    font-size: 18px;
+    font-size: 19px;
   }
 
   /* ---------- Quienes somos: imagen generosa, mismo tratamiento
@@ -1152,7 +1159,7 @@ body {
   }
 
   .quienes-texto p {
-    font-size: 16px;
+    font-size: 17px;
   }
 
   /* ---------- Franja del radar: banda azul de ancho completo ---------- */
@@ -1180,20 +1187,24 @@ body {
     width: 100%;
     max-width: none;
     aspect-ratio: unset;
-    height: 520px;
+    height: 600px;
   }
 
   .radar-promo-overlay {
-    padding: 40px;
+    padding: 56px;
+    gap: 18px;
   }
 
+  /* El titular de la franja es, a proposito, el texto mas grande de
+     toda la pagina: es el llamado a suscribirse, el punto que mas
+     debe destacar en escritorio. */
   .radar-promo-titulo {
-    font-size: 34px;
+    font-size: 52px;
   }
 
   .radar-promo-subtitulo {
-    font-size: 17px;
-    max-width: 600px;
+    font-size: 24px;
+    max-width: 680px;
     margin: 0 auto;
   }
 
@@ -1205,9 +1216,9 @@ body {
     grid-row: 1;
     align-self: end;
     justify-self: center;
-    margin-bottom: 56px;
+    margin-bottom: 64px;
     z-index: 2;
-    font-size: 17px;
-    padding: 16px 36px;
+    font-size: 20px;
+    padding: 20px 52px;
   }
 }
