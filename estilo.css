@@ -600,6 +600,25 @@ body {
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
 }
 
+/* Boton "Inscribete" de la franja del radar: fondo blanco + texto y
+   borde azul marino a proposito (NO el navy de .boton por defecto, que
+   se perdia de vista tanto sobre la foto oscura del radar como sobre el
+   fondo claro de esta seccion en pantallas chicas). Selector scoped a
+   .radar-promo-grid para no tocar el boton "Quiero el radar" de la
+   seccion de servicios de mas abajo, que sigue con el navy normal. */
+.radar-promo-grid > .boton-primario {
+  background-color: var(--blanco);
+  color: var(--azul-marino);
+  border: 2px solid var(--azul-marino);
+  font-size: 16px;
+  padding: 15px 26px;
+}
+
+.radar-promo-grid > .boton-primario:hover,
+.radar-promo-grid > .boton-primario:focus {
+  background-color: var(--gris-plata-claro);
+}
+
 /* ---------- Licita flotante ---------- */
 
 .licita-flotante {
@@ -1006,7 +1025,14 @@ body {
 
   .servicio-completa-texto {
     flex: 1 1 50%;
-    padding: 0 64px;
+    /* La regla base (movil) centra el texto verticalmente
+       (justify-content:center), pensada para el apilado en columna. En
+       fila (tablet/escritorio) eso dejaba un hueco vacio arriba: el
+       texto quedaba a media altura de los 100vh mientras la foto los
+       llena de punta a punta. Aqui arranca desde arriba, a la misma
+       altura que el borde superior de la foto. */
+    justify-content: flex-start;
+    padding: 72px 64px 40px;
   }
 
   .servicio-completa-texto h2 {
@@ -1142,6 +1168,15 @@ body {
     font-size: 19px;
   }
 
+  /* Encabezado general "Servicios" (aparece una sola vez, arriba de las
+     5 secciones de servicio): mas grande y centrado, a diferencia de
+     los titulos de cada servicio individual (esos usan
+     .servicio-completa-texto h2, selector distinto, y no se tocan). */
+  .encabezado-servicios h2 {
+    text-align: center;
+    font-size: 54px;
+  }
+
   /* ---------- Licitaciones de la semana: tarjetas a lo ancho ---------- */
 
   /* auto-fit + minmax reparte las tarjetas que haya (hoy 3, mañana
@@ -1172,7 +1207,7 @@ body {
      mitad completa desde el punto de quiebre de tablet) ---------- */
 
   .servicio-completa-texto {
-    padding: 0 90px;
+    padding: 96px 90px 48px;
   }
 
   .servicio-completa-texto h2 {
@@ -1191,13 +1226,13 @@ body {
   }
 
   .quienes-imagen {
-    flex: 0 0 46%;
+    flex: 0 0 50%;
   }
 
   .quienes-imagen img {
     max-width: none;
     width: 100%;
-    height: 460px;
+    height: 520px;
     object-fit: cover;
   }
 
