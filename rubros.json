@@ -1,0 +1,1308 @@
+{
+  "generado": "2026-07-17T19:48:05",
+  "fuente": "Catálogo de Bienes y Servicios (UNSPSC) — DGCP, https://datosabiertos.dgcp.gob.do/api-dgcp/v1/catalogo",
+  "areas": [
+    {
+      "codigo_segmento": "50",
+      "area": "Alimentos, bebidas y tabaco",
+      "rubros": [
+        {
+          "codigo_familia": "5015",
+          "rubro": "Aceites y grasas comestibles"
+        },
+        {
+          "codigo_familia": "5019",
+          "rubro": "Alimentos preparados y conservados"
+        },
+        {
+          "codigo_familia": "5020",
+          "rubro": "Bebidas"
+        },
+        {
+          "codigo_familia": "5016",
+          "rubro": "Chocolates, azúcares, edulcorantes y productos de confitería"
+        },
+        {
+          "codigo_familia": "5017",
+          "rubro": "Condimentos y conservantes"
+        },
+        {
+          "codigo_familia": "5010",
+          "rubro": "Frutos secos"
+        },
+        {
+          "codigo_familia": "5012",
+          "rubro": "Pescados y mariscos"
+        },
+        {
+          "codigo_familia": "5011",
+          "rubro": "Productos de carne y aves de corral"
+        },
+        {
+          "codigo_familia": "5022",
+          "rubro": "Productos de cereales y legumbres"
+        },
+        {
+          "codigo_familia": "5018",
+          "rubro": "Productos de panadería"
+        },
+        {
+          "codigo_familia": "5013",
+          "rubro": "Productos lácteos y huevos"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "52",
+      "area": "Artículos domésticos, suministros y productos electrónicos de consumo",
+      "rubros": [
+        {
+          "codigo_familia": "5214",
+          "rubro": "Aparatos electrodomésticos"
+        },
+        {
+          "codigo_familia": "5216",
+          "rubro": "Electrónica de consumo"
+        },
+        {
+          "codigo_familia": "5210",
+          "rubro": "Revestimientos de suelos"
+        },
+        {
+          "codigo_familia": "5212",
+          "rubro": "Ropa de cama, mantelerías, paños de cocina y toallas"
+        },
+        {
+          "codigo_familia": "5213",
+          "rubro": "Tratamientos de ventanas"
+        },
+        {
+          "codigo_familia": "5215",
+          "rubro": "Utensilios de cocina domésticos"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "40",
+      "area": "Componentes y equipos para distribución y sistemas de acondicionamiento",
+      "rubros": [
+        {
+          "codigo_familia": "4015",
+          "rubro": "Bombas y compresores industriales"
+        },
+        {
+          "codigo_familia": "4010",
+          "rubro": "Calefacción, ventilación y circulación del aire"
+        },
+        {
+          "codigo_familia": "4014",
+          "rubro": "Distribución de fluidos y gas"
+        },
+        {
+          "codigo_familia": "4016",
+          "rubro": "Filtrado y purificación industrial"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "31",
+      "area": "Componentes y suministros de manufactura",
+      "rubros": [
+        {
+          "codigo_familia": "3120",
+          "rubro": "Adhesivos y selladores"
+        },
+        {
+          "codigo_familia": "3126",
+          "rubro": "Cubiertas, cajas y envolturas"
+        },
+        {
+          "codigo_familia": "3115",
+          "rubro": "Cuerda, cadena, cable, alambre y correa"
+        },
+        {
+          "codigo_familia": "3118",
+          "rubro": "Empaques, glándulas, fundas y cubiertas"
+        },
+        {
+          "codigo_familia": "3134",
+          "rubro": "Ensambles de lámina fabricado"
+        },
+        {
+          "codigo_familia": "3131",
+          "rubro": "Ensambles de tubería fabricada"
+        },
+        {
+          "codigo_familia": "3135",
+          "rubro": "Ensambles de tubería fabricada"
+        },
+        {
+          "codigo_familia": "3116",
+          "rubro": "Ferretería"
+        },
+        {
+          "codigo_familia": "3123",
+          "rubro": "Materia prima en placas o barras labradas"
+        },
+        {
+          "codigo_familia": "3119",
+          "rubro": "Materiales de afilado pulido y alisado"
+        },
+        {
+          "codigo_familia": "3121",
+          "rubro": "Pinturas y bases y acabados"
+        },
+        {
+          "codigo_familia": "3117",
+          "rubro": "Rodamientos, cojinetes ruedas y engranajes"
+        },
+        {
+          "codigo_familia": "3124",
+          "rubro": "Óptica industrial"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "32",
+      "area": "Componentes y suministros electrónicos",
+      "rubros": [
+        {
+          "codigo_familia": "3210",
+          "rubro": "Circuitos impresos, circuitos integrados y micro ensamblajes"
+        },
+        {
+          "codigo_familia": "3212",
+          "rubro": "Componentes pasivos discretos"
+        },
+        {
+          "codigo_familia": "3211",
+          "rubro": "Dispositivo semiconductor discreto"
+        },
+        {
+          "codigo_familia": "3214",
+          "rubro": "Dispositivos de tubo electrónico y accesorios"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "30",
+      "area": "Componentes y suministros para estructuras, edificación, construcción y obras civiles",
+      "rubros": [
+        {
+          "codigo_familia": "3014",
+          "rubro": "Aislamiento"
+        },
+        {
+          "codigo_familia": "3012",
+          "rubro": "Carreteras y paisaje"
+        },
+        {
+          "codigo_familia": "3010",
+          "rubro": "Componentes estructurales y formas básicas"
+        },
+        {
+          "codigo_familia": "3019",
+          "rubro": "Equipo de apoyo para construcción y mantenimiento"
+        },
+        {
+          "codigo_familia": "3022",
+          "rubro": "Estructuras permanentes"
+        },
+        {
+          "codigo_familia": "3020",
+          "rubro": "Estructuras prefabricadas"
+        },
+        {
+          "codigo_familia": "3011",
+          "rubro": "Hormigón, cemento y yeso"
+        },
+        {
+          "codigo_familia": "3018",
+          "rubro": "Instalaciones de plomería"
+        },
+        {
+          "codigo_familia": "3016",
+          "rubro": "Materiales de acabado de interiores"
+        },
+        {
+          "codigo_familia": "3015",
+          "rubro": "Materiales para acabado de exteriores"
+        },
+        {
+          "codigo_familia": "3013",
+          "rubro": "Productos de construcción estructurales"
+        },
+        {
+          "codigo_familia": "3017",
+          "rubro": "Puertas y ventanas y vidrio"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "39",
+      "area": "Componentes, accesorios y suministros de sistemas eléctricos e iluminación",
+      "rubros": [
+        {
+          "codigo_familia": "3912",
+          "rubro": "Equipos, suministros y componentes eléctricos"
+        },
+        {
+          "codigo_familia": "3911",
+          "rubro": "Iluminación, artefactos y accesorios"
+        },
+        {
+          "codigo_familia": "3910",
+          "rubro": "Lámparas y bombillas y componentes para lámparas"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "43",
+      "area": "Difusión de tecnologías de información y telecomunicaciones",
+      "rubros": [
+        {
+          "codigo_familia": "4320",
+          "rubro": "Componentes para tecnología de la información, difusión o telecomunicaciones"
+        },
+        {
+          "codigo_familia": "4319",
+          "rubro": "Dispositivos de comunicaciones y accesorios"
+        },
+        {
+          "codigo_familia": "4321",
+          "rubro": "Equipo informático y accesorios"
+        },
+        {
+          "codigo_familia": "4322",
+          "rubro": "Equipos o plataformas y accesorios de redes multimedia o de voz y datos"
+        },
+        {
+          "codigo_familia": "4323",
+          "rubro": "Software"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "42",
+      "area": "Equipo médico, accesorios y suministros",
+      "rubros": [
+        {
+          "codigo_familia": "4221",
+          "rubro": "Ayuda para personas con desafíos físicos para vivir independiente"
+        },
+        {
+          "codigo_familia": "4216",
+          "rubro": "Equipo de diálisis y suministros"
+        },
+        {
+          "codigo_familia": "4226",
+          "rubro": "Equipo y suministros post mortem y funerarios"
+        },
+        {
+          "codigo_familia": "4215",
+          "rubro": "Equipos y suministros dentales"
+        },
+        {
+          "codigo_familia": "4223",
+          "rubro": "Nutrición clínica"
+        },
+        {
+          "codigo_familia": "4219",
+          "rubro": "Productos de centro médico"
+        },
+        {
+          "codigo_familia": "4218",
+          "rubro": "Productos de examen y control del paciente"
+        },
+        {
+          "codigo_familia": "4220",
+          "rubro": "Productos de hacer imágenes diagnósticas médicas y de medicina nuclear"
+        },
+        {
+          "codigo_familia": "4225",
+          "rubro": "Productos de rehabilitación y terapia ocupacional y física"
+        },
+        {
+          "codigo_familia": "4227",
+          "rubro": "Productos de resucitación, anestesia y respiratorio"
+        },
+        {
+          "codigo_familia": "4224",
+          "rubro": "Productos medicinales de deportes y ortopédicos y prótesis"
+        },
+        {
+          "codigo_familia": "4222",
+          "rubro": "Productos para administración intravenosa y arterial"
+        },
+        {
+          "codigo_familia": "4231",
+          "rubro": "Productos para el cuidado de heridas"
+        },
+        {
+          "codigo_familia": "4228",
+          "rubro": "Productos para la esterilización médica"
+        },
+        {
+          "codigo_familia": "4217",
+          "rubro": "Productos para los servicios médicos de urgencias y campo"
+        },
+        {
+          "codigo_familia": "4229",
+          "rubro": "Productos quirúrgicos"
+        },
+        {
+          "codigo_familia": "4230",
+          "rubro": "Suministros para formación y estudios de medicina"
+        },
+        {
+          "codigo_familia": "4214",
+          "rubro": "Suministros, productos de tratamiento y cuidado del enfermo"
+        },
+        {
+          "codigo_familia": "4213",
+          "rubro": "Telas y vestidos médicos"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "47",
+      "area": "Equipos de limpieza y suministros",
+      "rubros": [
+        {
+          "codigo_familia": "4712",
+          "rubro": "Equipo de aseo"
+        },
+        {
+          "codigo_familia": "4711",
+          "rubro": "Equipo industrial de lavandería y lavado en seco"
+        },
+        {
+          "codigo_familia": "4713",
+          "rubro": "Suministros de aseo y limpieza"
+        },
+        {
+          "codigo_familia": "4710",
+          "rubro": "Tratamiento, suministros y eliminación de agua y aguas residuales"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "44",
+      "area": "Equipos de oficina, accesorios y suministros",
+      "rubros": [
+        {
+          "codigo_familia": "4411",
+          "rubro": "Accesorios de oficina y escritorio"
+        },
+        {
+          "codigo_familia": "4410",
+          "rubro": "Maquinaria, suministros y accesorios de oficina"
+        },
+        {
+          "codigo_familia": "4412",
+          "rubro": "Suministros de oficina"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "46",
+      "area": "Equipos y suministros de defensa, orden público, protección, vigilancia y seguridad",
+      "rubros": [
+        {
+          "codigo_familia": "4619",
+          "rubro": "Protección contra incendios"
+        },
+        {
+          "codigo_familia": "4615",
+          "rubro": "Protección del orden público"
+        },
+        {
+          "codigo_familia": "4616",
+          "rubro": "Seguridad y control público"
+        },
+        {
+          "codigo_familia": "4618",
+          "rubro": "Seguridad y protección personal"
+        },
+        {
+          "codigo_familia": "4617",
+          "rubro": "Seguridad, vigilancia y detección"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "41",
+      "area": "Equipos y suministros de laboratorio, de medición, de observación y de pruebas",
+      "rubros": [
+        {
+          "codigo_familia": "4110",
+          "rubro": "Equipo de laboratorio y científico"
+        },
+        {
+          "codigo_familia": "4111",
+          "rubro": "Instrumentos de medida, observación y ensayo"
+        },
+        {
+          "codigo_familia": "4112",
+          "rubro": "Suministros y accesorios de laboratorio"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "45",
+      "area": "Equipos y suministros para impresión, fotografía y audiovisuales",
+      "rubros": [
+        {
+          "codigo_familia": "4510",
+          "rubro": "Equipo de imprenta y publicación"
+        },
+        {
+          "codigo_familia": "4512",
+          "rubro": "Equipo de vídeo, filmación o fotografía"
+        },
+        {
+          "codigo_familia": "4511",
+          "rubro": "Equipos de audio y video para presentación y composición"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "49",
+      "area": "Equipos, suministros y accesorios para deportes y recreación",
+      "rubros": [
+        {
+          "codigo_familia": "4910",
+          "rubro": "Coleccionables y condecoraciones"
+        },
+        {
+          "codigo_familia": "4920",
+          "rubro": "Equipo para entrenamiento físico"
+        },
+        {
+          "codigo_familia": "4922",
+          "rubro": "Equipo y accesorios para deportes"
+        },
+        {
+          "codigo_familia": "4913",
+          "rubro": "Equipos de pesca y caza"
+        },
+        {
+          "codigo_familia": "4916",
+          "rubro": "Equipos deportivos para campos y canchas"
+        },
+        {
+          "codigo_familia": "4912",
+          "rubro": "Equipos y accesorios para acampada y exteriores"
+        },
+        {
+          "codigo_familia": "4921",
+          "rubro": "Otros deportes"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "27",
+      "area": "Herramientas y maquinaria general",
+      "rubros": [
+        {
+          "codigo_familia": "2711",
+          "rubro": "Herramientas de mano"
+        },
+        {
+          "codigo_familia": "2712",
+          "rubro": "Maquinaria y equipo hidráulico"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "60",
+      "area": "Instrumentos musicales, juegos, juguetes, artes, artesanías y equipo educativo, materiales, accesorios y suministros",
+      "rubros": [
+        {
+          "codigo_familia": "6011",
+          "rubro": "Decoraciones y suministros del aula"
+        },
+        {
+          "codigo_familia": "6012",
+          "rubro": "Equipo, accesorios y suministros de arte y manualidades"
+        },
+        {
+          "codigo_familia": "6013",
+          "rubro": "Instrumentos musicales, piezas y accesorios"
+        },
+        {
+          "codigo_familia": "6014",
+          "rubro": "Juguetes y juegos"
+        },
+        {
+          "codigo_familia": "6010",
+          "rubro": "Materiales didácticos profesionales y de desarrollo y accesorios y suministros"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "20",
+      "area": "Maquinaria y accesorios de minería y perforación de pozos",
+      "rubros": [
+        {
+          "codigo_familia": "2011",
+          "rubro": "Equipo de perforación y explotación de pozos"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "21",
+      "area": "Maquinaria y accesorios para agricultura, pesca, silvicultura y fauna",
+      "rubros": [
+        {
+          "codigo_familia": "2110",
+          "rubro": "Maquinaria y equipo para agricultura, silvicultura y paisajismo"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "22",
+      "area": "Maquinaria y accesorios para construcción y edificación",
+      "rubros": [
+        {
+          "codigo_familia": "2210",
+          "rubro": "Maquinaria y equipo pesado de construcción"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "26",
+      "area": "Maquinaria y accesorios para generación y distribución de energía",
+      "rubros": [
+        {
+          "codigo_familia": "2612",
+          "rubro": "Alambres, cables y arneses"
+        },
+        {
+          "codigo_familia": "2611",
+          "rubro": "Baterías y generadores y transmisión de energía cinética"
+        },
+        {
+          "codigo_familia": "2610",
+          "rubro": "Fuentes de energía"
+        },
+        {
+          "codigo_familia": "2613",
+          "rubro": "Generación de energía"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "23",
+      "area": "Maquinaria y accesorios para manufactura y procesamiento industrial",
+      "rubros": [
+        {
+          "codigo_familia": "2323",
+          "rubro": "Equipo y maquinaria de procesamiento de madera y aserrado"
+        },
+        {
+          "codigo_familia": "2310",
+          "rubro": "Maquinaria para el procesamiento de materias primas"
+        },
+        {
+          "codigo_familia": "2313",
+          "rubro": "Maquinaria y equipos lapidarios"
+        },
+        {
+          "codigo_familia": "2315",
+          "rubro": "Maquinaria, equipo y suministros de procesos industriales"
+        },
+        {
+          "codigo_familia": "2317",
+          "rubro": "Maquinaria, equipo y suministros para talleres"
+        },
+        {
+          "codigo_familia": "2316",
+          "rubro": "Máquinas, equipo y suministros para fundición"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "24",
+      "area": "Maquinaria, accesorios y suministros para manejo, acondicionamiento y almacenamiento de materiales",
+      "rubros": [
+        {
+          "codigo_familia": "2410",
+          "rubro": "Maquinaria y equipo para manejo de materiales"
+        },
+        {
+          "codigo_familia": "2412",
+          "rubro": "Materiales de empaque"
+        },
+        {
+          "codigo_familia": "2411",
+          "rubro": "Recipientes y almacenamiento"
+        },
+        {
+          "codigo_familia": "2413",
+          "rubro": "Refrigeración industrial"
+        },
+        {
+          "codigo_familia": "2414",
+          "rubro": "Suministros de embalaje"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "48",
+      "area": "Maquinaria, equipo y suministros para la industria de servicios",
+      "rubros": [
+        {
+          "codigo_familia": "4810",
+          "rubro": "Equipos de servicios de alimentación para instituciones"
+        },
+        {
+          "codigo_familia": "4811",
+          "rubro": "Máquinas expendedoras"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "11",
+      "area": "Material mineral, textil y vegetal y animal no comestible",
+      "rubros": [
+        {
+          "codigo_familia": "1115",
+          "rubro": "Fibra, hilos e hilados"
+        },
+        {
+          "codigo_familia": "1110",
+          "rubro": "Minerales, minerales metálicos y metales"
+        },
+        {
+          "codigo_familia": "1112",
+          "rubro": "Productos no comestibles de planta y silvicultura"
+        },
+        {
+          "codigo_familia": "1116",
+          "rubro": "Tejidos y materiales de cuero"
+        },
+        {
+          "codigo_familia": "1111",
+          "rubro": "Tierra y piedra"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "12",
+      "area": "Material químico incluyendo bioquímicos y materiales de gas",
+      "rubros": [
+        {
+          "codigo_familia": "1216",
+          "rubro": "Aditivos"
+        },
+        {
+          "codigo_familia": "1218",
+          "rubro": "Ceras y aceites"
+        },
+        {
+          "codigo_familia": "1217",
+          "rubro": "Colorantes"
+        },
+        {
+          "codigo_familia": "1235",
+          "rubro": "Compuestos y mezclas"
+        },
+        {
+          "codigo_familia": "1214",
+          "rubro": "Elementos y gases"
+        },
+        {
+          "codigo_familia": "1213",
+          "rubro": "Materiales explosivos"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "10",
+      "area": "Material vivo vegetal y animal, accesorios y suministros",
+      "rubros": [
+        {
+          "codigo_familia": "1010",
+          "rubro": "Animales vivos"
+        },
+        {
+          "codigo_familia": "1012",
+          "rubro": "Comida de animales"
+        },
+        {
+          "codigo_familia": "1017",
+          "rubro": "Fertilizantes y nutrientes para plantas y herbicidas"
+        },
+        {
+          "codigo_familia": "1016",
+          "rubro": "Productos de floricultura y silvicultura"
+        },
+        {
+          "codigo_familia": "1014",
+          "rubro": "Productos de talabartería y arreo"
+        },
+        {
+          "codigo_familia": "1011",
+          "rubro": "Productos para animales domésticos"
+        },
+        {
+          "codigo_familia": "1019",
+          "rubro": "Productos para el control de plagas"
+        },
+        {
+          "codigo_familia": "1013",
+          "rubro": "Recipientes y habitat para animales"
+        },
+        {
+          "codigo_familia": "1015",
+          "rubro": "Semillas, bulbos, plántulas y esquejes"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "15",
+      "area": "Materiales combustibles, aditivos para combustibles, lubricantes y anticorrosivos",
+      "rubros": [
+        {
+          "codigo_familia": "1510",
+          "rubro": "Combustibles"
+        },
+        {
+          "codigo_familia": "1511",
+          "rubro": "Combustibles gaseosos y aditivos"
+        },
+        {
+          "codigo_familia": "1512",
+          "rubro": "Lubricantes, aceites, grasas y anticorrosivos"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "13",
+      "area": "Materiales de resina, colofonia, caucho, espuma, película y elastómericos",
+      "rubros": [
+        {
+          "codigo_familia": "1310",
+          "rubro": "Caucho y elastómeros"
+        },
+        {
+          "codigo_familia": "1311",
+          "rubro": "Resinas y colofonias y otros materiales derivados de resina"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "14",
+      "area": "Materiales y productos de papel",
+      "rubros": [
+        {
+          "codigo_familia": "1410",
+          "rubro": "Materiales de papel"
+        },
+        {
+          "codigo_familia": "1412",
+          "rubro": "Papel para uso industrial"
+        },
+        {
+          "codigo_familia": "1411",
+          "rubro": "Productos de papel"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "51",
+      "area": "Medicamentos y productos farmacéuticos",
+      "rubros": [
+        {
+          "codigo_familia": "5111",
+          "rubro": "Agentes antitumorales"
+        },
+        {
+          "codigo_familia": "5119",
+          "rubro": "Agentes que afectan el agua y los electrolitos"
+        },
+        {
+          "codigo_familia": "5121",
+          "rubro": "Categorías de medicamentos varios"
+        },
+        {
+          "codigo_familia": "5124",
+          "rubro": "Fármacos que afectan a los oídos, los ojos, la nariz y la piel"
+        },
+        {
+          "codigo_familia": "5118",
+          "rubro": "Hormonas y antagonistas hormonales"
+        },
+        {
+          "codigo_familia": "5110",
+          "rubro": "Medicamentos antiinfecciosos"
+        },
+        {
+          "codigo_familia": "5112",
+          "rubro": "Medicamentos cardiovasculares"
+        },
+        {
+          "codigo_familia": "5113",
+          "rubro": "Medicamentos hematólogos"
+        },
+        {
+          "codigo_familia": "5120",
+          "rubro": "Medicamentos inmunomoduladores"
+        },
+        {
+          "codigo_familia": "5115",
+          "rubro": "Medicamentos para el sistema nervioso autónomo"
+        },
+        {
+          "codigo_familia": "5114",
+          "rubro": "Medicamentos para el sistema nervioso central"
+        },
+        {
+          "codigo_familia": "5117",
+          "rubro": "Medicamentos que afectan al sistema gastrointestinal"
+        },
+        {
+          "codigo_familia": "5116",
+          "rubro": "Medicamentos que afectan al sistema respiratorio"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "56",
+      "area": "Muebles, mobiliario y decoración",
+      "rubros": [
+        {
+          "codigo_familia": "5612",
+          "rubro": "Mobiliario institucional, escolar y educativo y accesorios"
+        },
+        {
+          "codigo_familia": "5611",
+          "rubro": "Muebles comerciales e industriales"
+        },
+        {
+          "codigo_familia": "5610",
+          "rubro": "Muebles de alojamiento"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "94",
+      "area": "Organizaciones y clubes",
+      "rubros": [
+        {
+          "codigo_familia": "9413",
+          "rubro": "Organizaciones, asociaciones y movimientos cívicos"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "54",
+      "area": "Productos para relojería, joyería y piedras preciosas",
+      "rubros": [
+        {
+          "codigo_familia": "5411",
+          "rubro": "Relojes"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "55",
+      "area": "Publicaciones impresas, publicaciones electrónicas y accesorios",
+      "rubros": [
+        {
+          "codigo_familia": "5512",
+          "rubro": "Etiquetado y accesorios"
+        },
+        {
+          "codigo_familia": "5510",
+          "rubro": "Medios impresos"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "53",
+      "area": "Ropa, maletas y productos de aseo personal",
+      "rubros": [
+        {
+          "codigo_familia": "5313",
+          "rubro": "Artículos de tocador y cuidado personal"
+        },
+        {
+          "codigo_familia": "5311",
+          "rubro": "Calzado"
+        },
+        {
+          "codigo_familia": "5314",
+          "rubro": "Fuentes y accesorios de costura"
+        },
+        {
+          "codigo_familia": "5312",
+          "rubro": "Maletas, bolsos de mano, mochilas y estuches"
+        },
+        {
+          "codigo_familia": "5310",
+          "rubro": "Ropa"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "81",
+      "area": "Servicios basados en ingeniería, investigación y tecnología",
+      "rubros": [
+        {
+          "codigo_familia": "8112",
+          "rubro": "Economía"
+        },
+        {
+          "codigo_familia": "8111",
+          "rubro": "Servicios informáticos"
+        },
+        {
+          "codigo_familia": "8110",
+          "rubro": "Servicios profesionales de ingeniería"
+        },
+        {
+          "codigo_familia": "8114",
+          "rubro": "Tecnologías de fabricación"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "70",
+      "area": "Servicios de contratación agrícola, pesquera, forestal y de fauna",
+      "rubros": [
+        {
+          "codigo_familia": "7017",
+          "rubro": "Desarrollo y vigilancia de recursos hidráulicos"
+        },
+        {
+          "codigo_familia": "7011",
+          "rubro": "Horticultura"
+        },
+        {
+          "codigo_familia": "7014",
+          "rubro": "Producción, gestión y protección de cultivos"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "92",
+      "area": "Servicios de defensa nacional, orden público, seguridad y vigilancia",
+      "rubros": [
+        {
+          "codigo_familia": "9212",
+          "rubro": "Servicios de seguridad y protección personal"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "72",
+      "area": "Servicios de edificación, construcción de instalaciones y mantenimiento",
+      "rubros": [
+        {
+          "codigo_familia": "7213",
+          "rubro": "Construcción general de edificios"
+        },
+        {
+          "codigo_familia": "7210",
+          "rubro": "Servicios de mantenimiento y reparaciones de construcciones e instalaciones"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "80",
+      "area": "Servicios de gestión, servicios profesionales de empresa y servicios administrativos",
+      "rubros": [
+        {
+          "codigo_familia": "8014",
+          "rubro": "Servicios de Mercadeo y Distribución"
+        },
+        {
+          "codigo_familia": "8016",
+          "rubro": "Servicios de administración de empresas"
+        },
+        {
+          "codigo_familia": "8010",
+          "rubro": "Servicios de asesoría de gestión"
+        },
+        {
+          "codigo_familia": "8011",
+          "rubro": "Servicios de recursos humanos"
+        },
+        {
+          "codigo_familia": "8013",
+          "rubro": "Servicios inmobiliarios"
+        },
+        {
+          "codigo_familia": "8012",
+          "rubro": "Servicios legales"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "76",
+      "area": "Servicios de limpieza, descontaminación y tratamiento de residuos",
+      "rubros": [
+        {
+          "codigo_familia": "7612",
+          "rubro": "Eliminación y tratamiento de desechos"
+        },
+        {
+          "codigo_familia": "7611",
+          "rubro": "Servicios de aseo y limpieza"
+        },
+        {
+          "codigo_familia": "7610",
+          "rubro": "Servicios de descontaminación"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "71",
+      "area": "Servicios de minería, petróleo y gas",
+      "rubros": [
+        {
+          "codigo_familia": "7112",
+          "rubro": "Servicios de construcción y perforación de pozos"
+        },
+        {
+          "codigo_familia": "7110",
+          "rubro": "Servicios de minería"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "73",
+      "area": "Servicios de producción industrial y manufactura",
+      "rubros": [
+        {
+          "codigo_familia": "7313",
+          "rubro": "Industrias de alimentos y bebidas"
+        },
+        {
+          "codigo_familia": "7311",
+          "rubro": "Industrias de la madera y el papel"
+        },
+        {
+          "codigo_familia": "7312",
+          "rubro": "Industrias del metal y de minerales"
+        },
+        {
+          "codigo_familia": "7315",
+          "rubro": "Servicios de apoyo a la fabricación"
+        },
+        {
+          "codigo_familia": "7318",
+          "rubro": "Servicios de maquinado y procesado"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "85",
+      "area": "Servicios de salud",
+      "rubros": [
+        {
+          "codigo_familia": "8512",
+          "rubro": "Práctica médica"
+        },
+        {
+          "codigo_familia": "8516",
+          "rubro": "Servicios de mantenimiento, renovación y reparación de equipo médico quirúrgico."
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "78",
+      "area": "Servicios de transporte, almacenaje y correo",
+      "rubros": [
+        {
+          "codigo_familia": "7812",
+          "rubro": "Manejo y embalaje de material"
+        },
+        {
+          "codigo_familia": "7818",
+          "rubro": "Servicios de mantenimiento o reparaciones de transportes"
+        },
+        {
+          "codigo_familia": "7814",
+          "rubro": "Servicios de transporte"
+        },
+        {
+          "codigo_familia": "7810",
+          "rubro": "Transporte de correo y carga"
+        },
+        {
+          "codigo_familia": "7811",
+          "rubro": "Transporte de pasajeros"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "90",
+      "area": "Servicios de viajes, alimentación, alojamiento y entretenimiento",
+      "rubros": [
+        {
+          "codigo_familia": "9014",
+          "rubro": "Deportes comerciales"
+        },
+        {
+          "codigo_familia": "9012",
+          "rubro": "Facilitación de viajes"
+        },
+        {
+          "codigo_familia": "9011",
+          "rubro": "Instalaciones hoteleras, alojamientos y centros de encuentros"
+        },
+        {
+          "codigo_familia": "9010",
+          "rubro": "Restaurantes y catering (servicios de comidas y bebidas)"
+        },
+        {
+          "codigo_familia": "9015",
+          "rubro": "Servicios de entretenimiento"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "82",
+      "area": "Servicios editoriales, de diseño, de artes gráficas y bellas artes",
+      "rubros": [
+        {
+          "codigo_familia": "8215",
+          "rubro": "Artistas e intérpretes profesionales"
+        },
+        {
+          "codigo_familia": "8214",
+          "rubro": "Diseño gráfico"
+        },
+        {
+          "codigo_familia": "8210",
+          "rubro": "Publicidad"
+        },
+        {
+          "codigo_familia": "8212",
+          "rubro": "Servicios de reproducción"
+        },
+        {
+          "codigo_familia": "8213",
+          "rubro": "Servicios fotográficos"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "86",
+      "area": "Servicios educativos y de formación",
+      "rubros": [
+        {
+          "codigo_familia": "8610",
+          "rubro": "Formación profesional"
+        },
+        {
+          "codigo_familia": "8614",
+          "rubro": "Instalaciones educativas"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "84",
+      "area": "Servicios financieros y de seguros",
+      "rubros": [
+        {
+          "codigo_familia": "8414",
+          "rubro": "Agencias de crédito"
+        },
+        {
+          "codigo_familia": "8413",
+          "rubro": "Servicios de seguros y pensiones"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "77",
+      "area": "Servicios medioambientales",
+      "rubros": [
+        {
+          "codigo_familia": "7710",
+          "rubro": "Gestión medioambiental"
+        },
+        {
+          "codigo_familia": "7711",
+          "rubro": "Protección medioambiental"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "91",
+      "area": "Servicios personales y domésticos",
+      "rubros": [
+        {
+          "codigo_familia": "9111",
+          "rubro": "Asistencia doméstica y personal"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "93",
+      "area": "Servicios políticos y de asuntos cívicos",
+      "rubros": [
+        {
+          "codigo_familia": "9314",
+          "rubro": "Servicios comunitarios y sociales"
+        },
+        {
+          "codigo_familia": "9315",
+          "rubro": "Servicios de administración y financiación pública"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "83",
+      "area": "Servicios públicos y servicios relacionados con el sector público",
+      "rubros": [
+        {
+          "codigo_familia": "8312",
+          "rubro": "Servicios de información"
+        },
+        {
+          "codigo_familia": "8311",
+          "rubro": "Servicios de medios de telecomunicaciones"
+        },
+        {
+          "codigo_familia": "8310",
+          "rubro": "Servicios públicos"
+        }
+      ]
+    },
+    {
+      "codigo_segmento": "25",
+      "area": "Vehículos comerciales, militares y particulares, accesorios y componentes",
+      "rubros": [
+        {
+          "codigo_familia": "2513",
+          "rubro": "Aeronaves"
+        },
+        {
+          "codigo_familia": "2518",
+          "rubro": "Carrocerías y remolques"
+        },
+        {
+          "codigo_familia": "2517",
+          "rubro": "Componentes y sistemas de transporte"
+        },
+        {
+          "codigo_familia": "2520",
+          "rubro": "Sistemas y componentes y equipos aeroespaciales"
+        },
+        {
+          "codigo_familia": "2511",
+          "rubro": "Transporte marítimo"
+        },
+        {
+          "codigo_familia": "2510",
+          "rubro": "Vehículos de motor"
+        }
+      ]
+    }
+  ]
+}
