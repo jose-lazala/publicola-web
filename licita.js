@@ -264,17 +264,35 @@ function inicializarMenuNavegacion() {
     return;
   }
 
-  boton.addEventListener("click", function () {
+  function cerrarMenu() {
+    enlaces.classList.remove("nav-enlaces-abierto");
+    boton.setAttribute("aria-expanded", "false");
+  }
+
+  boton.addEventListener("click", function (evento) {
+    // Evita que este mismo clic llegue al listener de "clic afuera" de
+    // abajo y cierre el menu en el mismo instante en que se abre.
+    evento.stopPropagation();
     const abierto = enlaces.classList.toggle("nav-enlaces-abierto");
     boton.setAttribute("aria-expanded", abierto ? "true" : "false");
   });
 
   // Al tocar un enlace en movil, cerramos el menu para ver la seccion.
   enlaces.querySelectorAll("a").forEach(function (enlace) {
-    enlace.addEventListener("click", function () {
-      enlaces.classList.remove("nav-enlaces-abierto");
-      boton.setAttribute("aria-expanded", "false");
-    });
+    enlace.addEventListener("click", cerrarMenu);
+  });
+
+  // Un clic o toque fuera del menu (y fuera del boton que lo abre) tambien
+  // lo cierra. Se escucha en todo el documento y se filtra por si el clic
+  // cayo dentro del menu o del boton, para no interferir con esos casos.
+  document.addEventListener("click", function (evento) {
+    if (!enlaces.classList.contains("nav-enlaces-abierto")) {
+      return;
+    }
+    if (enlaces.contains(evento.target) || boton.contains(evento.target)) {
+      return;
+    }
+    cerrarMenu();
   });
 }
 
@@ -334,10 +352,17 @@ function renderizarLicitacionesSemana() {
   const contenedor = document.getElementById("lista-licitaciones");
   contenedor.innerHTML = "";
 
-  // Recorre las areas y rubros en el orden de la lista permanente hasta
-  // juntar MAXIMO_TARJETAS_INICIO rubros que si tengan muestra esta
-  // semana, asi se ve variedad en vez de rubros vacios.
+  // La deduplicacion es por codigo_proceso (identificador unico del
+  // proceso), no por rubro: un mismo proceso puede caer en varios rubros
+  // (items de familias UNSPSC distintas) y no debe repetirse como
+  // tarjeta solo porque aparece en la muestra de mas de un rubro.
   const tarjetas = [];
+  const codigosUsados = new Set();
+
+  // Primera pasada: hasta MAXIMO_TARJETAS_INICIO procesos, prefiriendo
+  // rubros distintos entre si (recorre las areas/rubros en el orden de
+  // la lista permanente y toma el primer proceso de cada rubro que aun
+  // no se haya usado).
   for (const entradaArea of datosAreas) {
     if (tarjetas.length >= MAXIMO_TARJETAS_INICIO) {
       break;
@@ -347,8 +372,47 @@ function renderizarLicitacionesSemana() {
         break;
       }
       const datosRubro = mapaProcesosPorFamilia.get(entradaRubro.codigo_familia);
-      if (datosRubro && Array.isArray(datosRubro.muestra) && datosRubro.muestra.length > 0) {
-        tarjetas.push({ rubro: entradaRubro.rubro, proceso: datosRubro.muestra[0] });
+      if (!datosRubro || !Array.isArray(datosRubro.muestra)) {
+        continue;
+      }
+      const proceso = datosRubro.muestra.find(function (candidato) {
+        return !codigosUsados.has(candidato.codigo_proceso);
+      });
+      if (proceso) {
+        tarjetas.push({ rubro: entradaRubro.rubro, proceso: proceso });
+        codigosUsados.add(proceso.codigo_proceso);
+      }
+    }
+  }
+
+  // Segunda pasada: si no hubo suficientes rubros distintos con proceso
+  // propio, completa con cualquier otro proceso diferente de la semana
+  // (aunque su rubro ya se haya usado en la primera pasada) en vez de
+  // repetir. Si en total solo existen 1 o 2 procesos distintos, esta
+  // pasada no encuentra mas y la pagina muestra solo esas tarjetas.
+  if (tarjetas.length < MAXIMO_TARJETAS_INICIO) {
+    for (const entradaArea of datosAreas) {
+      if (tarjetas.length >= MAXIMO_TARJETAS_INICIO) {
+        break;
+      }
+      for (const entradaRubro of entradaArea.rubros) {
+        if (tarjetas.length >= MAXIMO_TARJETAS_INICIO) {
+          break;
+        }
+        const datosRubro = mapaProcesosPorFamilia.get(entradaRubro.codigo_familia);
+        if (!datosRubro || !Array.isArray(datosRubro.muestra)) {
+          continue;
+        }
+        for (const proceso of datosRubro.muestra) {
+          if (tarjetas.length >= MAXIMO_TARJETAS_INICIO) {
+            break;
+          }
+          if (codigosUsados.has(proceso.codigo_proceso)) {
+            continue;
+          }
+          tarjetas.push({ rubro: entradaRubro.rubro, proceso: proceso });
+          codigosUsados.add(proceso.codigo_proceso);
+        }
       }
     }
   }
@@ -852,7 +916,12 @@ function inicializarLicitaFlotante() {
     return;
   }
 
-  function abrirPanel() {
+  function abrirPanel(evento) {
+    // Evita que este mismo clic llegue al listener de "clic afuera" de
+    // abajo y cierre el panel en el mismo instante en que se abre.
+    if (evento) {
+      evento.stopPropagation();
+    }
     panel.hidden = false;
     burbuja.hidden = true;
   }
@@ -868,6 +937,18 @@ function inicializarLicitaFlotante() {
   if (botonCerrar) {
     botonCerrar.addEventListener("click", cerrarPanel);
   }
+
+  // Un clic o toque fuera del panel (mientras esta abierto) tambien lo
+  // cierra. La X (botonCerrar) sigue funcionando igual, esto es ademas.
+  document.addEventListener("click", function (evento) {
+    if (panel.hidden) {
+      return;
+    }
+    if (panel.contains(evento.target)) {
+      return;
+    }
+    cerrarPanel();
+  });
 }
 
 // ============================================================

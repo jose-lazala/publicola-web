@@ -11,9 +11,6 @@
 
   <header class="nav-cabecera">
     <div class="nav-contenedor">
-      <a href="#inicio" class="nav-marca">
-        <img src="logo-nav.png" alt="PUBLICOLA" class="nav-logo">
-      </a>
       <button id="boton-menu" class="nav-boton-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-enlaces">
         <span></span><span></span><span></span>
       </button>
@@ -38,14 +35,32 @@
           como texto aparte aqui. Sigue siendo un <h1> (con el nombre en
           el atributo alt) para que la pagina conserve un titulo principal
           para accesibilidad y buscadores.
+
+          En escritorio (min-width 900px) este bloque de texto es la
+          columna izquierda del hero; "portada-columna-foto" (justo
+          debajo) es la columna derecha, con la foto de la obra en
+          construccion. En movil "portada-columna-foto" se oculta por
+          completo (ver estilo.css) y solo queda esta columna, en una
+          sola columna apilada como antes.
         -->
-        <h1 class="portada-logo">
-          <img src="logo-recortado.png" alt="PUBLICOLA — Inteligencia de compras públicas">
-        </h1>
-        <p class="descripcion">
-          En Publicola convertimos las compras públicas dominicanas en oportunidades
-          claras para tu empresa: vigilamos, te explicamos y te acompañamos en cada paso.
-        </p>
+        <div class="portada-columna-texto">
+          <h1 class="portada-logo">
+            <img src="logo-recortado.png" alt="PUBLICOLA — Inteligencia de compras públicas">
+          </h1>
+          <p class="descripcion">
+            En Publicola convertimos las compras públicas dominicanas en oportunidades
+            claras para tu empresa: vigilamos, te explicamos y te acompañamos en cada paso.
+          </p>
+        </div>
+        <div class="portada-columna-foto">
+          <img
+            src="hero-construccion.jpg"
+            alt="Equipo de ingeniería revisando planos en una obra de construcción"
+            class="portada-foto-construccion"
+            loading="lazy"
+            onerror="this.style.display='none'"
+          >
+        </div>
       </div>
     </section>
 
@@ -350,13 +365,6 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >LinkedIn</a>
-              <!-- Instagram provisional — se cambiará al perfil propio de Publicola -->
-              <a
-                href="https://instagram.com/lic.lazala"
-                class="boton boton-secundario boton-chico"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Instagram</a>
             </div>
           </div>
         </div>
@@ -406,6 +414,9 @@
         <p class="correo-contacto">
           <a href="mailto:info@publicola.com.do">info@publicola.com.do</a>
         </p>
+        <!-- Texto plano a proposito, sin enlace: el perfil de Instagram no
+             esta activo todavia. -->
+        <p class="instagram-contacto">Instagram: @lic.lazala</p>
         <a
           href="https://wa.me/18297856028?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Publicola."
           class="boton boton-whatsapp"

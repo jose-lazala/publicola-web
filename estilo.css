@@ -71,20 +71,11 @@ body {
   padding: 0 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* Sin logo, el unico item de flujo normal en movil es el boton de
+     menu (nav-enlaces es un desplegable position:absolute, no cuenta en
+     el flujo); flex-end lo deja pegado a la derecha, donde estaba antes. */
+  justify-content: flex-end;
   position: relative;
-}
-
-.nav-marca {
-  display: flex;
-  align-items: center;
-  line-height: 0;
-}
-
-.nav-logo {
-  height: 30px;
-  width: auto;
-  display: block;
 }
 
 .nav-boton-menu {
@@ -158,6 +149,23 @@ body {
   align-items: center;
   text-align: center;
   gap: 22px;
+}
+
+/* Columna de texto (logo + eslogan). En movil es simplemente la unica
+   columna visible, apilada; en escritorio (900px+) se convierte en la
+   columna izquierda del hero de dos columnas (ver mas abajo). */
+.portada-columna-texto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+/* Columna de la foto de la obra en construccion: oculta en movil a
+   proposito (para no alargar la pagina) y solo se muestra a partir del
+   punto de quiebre de escritorio grande. */
+.portada-columna-foto {
+  display: none;
 }
 
 .portada-logo {
@@ -822,6 +830,12 @@ body {
   text-decoration: underline;
 }
 
+.instagram-contacto {
+  margin: 0 0 20px 0;
+  font-size: 14px;
+  color: var(--gris-texto-suave);
+}
+
 .aviso-privacidad {
   margin-top: 32px;
 }
@@ -856,10 +870,6 @@ body {
     padding: 0 32px;
   }
 
-  .nav-logo {
-    height: 34px;
-  }
-
   .nav-boton-menu {
     display: none;
   }
@@ -873,6 +883,11 @@ body {
     gap: 28px;
     max-height: none;
     overflow: visible;
+    /* Sin logo que le haga contrapeso, los enlaces son el unico
+       contenido de la barra: ocupan todo el ancho disponible y se
+       reparten con espacio entre ellos en vez de quedar agrupados. */
+    flex: 1;
+    justify-content: space-between;
   }
 
   .nav-enlaces a {
@@ -1072,17 +1087,45 @@ body {
     padding: 40px 0;
   }
 
-  /* logo-recortado.png mide 1494px de ancho real, asi que ampliarlo
-     hasta 1100px lo deja como protagonista de la portada sin que se
-     vea pixelado (sigue habiendo margen de sobra hasta su tamaño
-     nativo). */
+  /* ---------- Hero de dos columnas ---------- */
+
+  .portada-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    text-align: left;
+    gap: 64px;
+  }
+
+  .portada-columna-texto {
+    align-items: flex-start;
+  }
+
+  /* logo-recortado.png mide 1494px de ancho real; al pasar a columna,
+     se deja que llene el ancho de su columna (sin el limite fijo de
+     1100px que usaba cuando el hero era de una sola columna). */
   .portada-logo img {
-    max-width: 1100px;
+    max-width: 100%;
+    margin: 0;
   }
 
   .descripcion {
-    max-width: 760px;
+    max-width: none;
+    margin: 0;
     font-size: 23px;
+  }
+
+  .portada-columna-foto {
+    display: block;
+  }
+
+  .portada-foto-construccion {
+    width: 100%;
+    height: auto;
+    max-height: 560px;
+    object-fit: cover;
+    border-radius: var(--radio-borde);
+    display: block;
   }
 
   /* ---------- Titulos y aire de las secciones en general ---------- */
