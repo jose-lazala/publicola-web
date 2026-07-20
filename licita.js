@@ -57,7 +57,7 @@ const MAXIMO_MENSAJES_HISTORIAL = 20;
 // segundos con regularidad (se midieron respuestas correctas de hasta
 // 47 segundos), y con 20 segundos el chat mostraba el respaldo aunque
 // el Worker terminara respondiendo bien poco despues.
-const TIEMPO_ESPERA_WORKER_MS = 1; // FORZADO TEMPORAL PARA PRUEBA EN VIVO — restaurar a 60000 antes del commit final
+const TIEMPO_ESPERA_WORKER_MS = 60000;
 
 const MENSAJE_SALUDO_LICITA =
   "¡Hola! Somos el equipo de Publicola. Soy Alicia. Cuéntanos qué necesita tu empresa y te decimos cómo te podemos ayudar.";
