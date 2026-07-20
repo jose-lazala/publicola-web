@@ -492,7 +492,8 @@ body {
   margin: 0;
 }
 
-.boton-respaldo-whatsapp {
+.boton-respaldo-whatsapp,
+.boton-formulario-chat {
   align-self: flex-start;
   padding: 10px 16px;
   font-size: 14px;
@@ -501,7 +502,8 @@ body {
 /* En movil el boton ocupa todo el ancho de la burbuja: mas facil de
    tocar con el pulgar que un boton chico alineado a la izquierda. */
 @media (max-width: 480px) {
-  .boton-respaldo-whatsapp {
+  .boton-respaldo-whatsapp,
+  .boton-formulario-chat {
     align-self: stretch;
   }
 }

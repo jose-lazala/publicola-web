@@ -84,6 +84,11 @@ const MENSAJE_WHATSAPP_BOTON_RESPALDO = "Hola, les escribo desde la página de P
 // visible, no es un chip de sugerencia).
 const MENSAJE_WHATSAPP_FIJO = "Hola, quiero hablar con el equipo de Publicola.";
 
+// Nombre del archivo del formulario descargable: el mismo que usa el
+// enlace "Descargar el formulario" en el resto de la pagina (ver
+// index.html), servido desde la raiz del sitio.
+const RUTA_DESCARGA_FORMULARIO = "formulario-publicola.docx";
+
 // ============================================================
 // UTILIDADES GENERALES
 // ============================================================
@@ -438,10 +443,22 @@ function agregarAlHistorialChat(rol, texto) {
 // Burbuja de respaldo: mismo estilo que una burbuja normal del bot, pero
 // con el boton verde "Hablar con el equipo" DENTRO de la misma burbuja
 // (no en la fila de controles aparte), para que el visitante lo vea
-// pegado al mensaje que le explica por que no hay respuesta de la IA.
-function agregarBurbujaRespaldoChat(texto) {
+// pegado al mensaje que le explica por que no hay respuesta de la IA (o
+// al mensaje que le entrega el formulario). mostrarFormulario es opcional:
+// cuando es true, se agrega ADEMAS un enlace real de descarga del
+// formulario, antes del boton de WhatsApp.
+function agregarBurbujaRespaldoChat(texto, mostrarFormulario) {
   const burbuja = crearElemento("div", "burbuja burbuja-bot burbuja-respaldo");
   burbuja.appendChild(crearElemento("p", null, limpiarMarkdown(texto)));
+
+  if (mostrarFormulario) {
+    const enlaceFormulario = document.createElement("a");
+    enlaceFormulario.className = "boton boton-secundario boton-formulario-chat";
+    enlaceFormulario.href = RUTA_DESCARGA_FORMULARIO;
+    enlaceFormulario.setAttribute("download", "");
+    enlaceFormulario.textContent = "Descargar el formulario";
+    burbuja.appendChild(enlaceFormulario);
+  }
 
   const boton = document.createElement("a");
   boton.className = "boton boton-whatsapp boton-respaldo-whatsapp";
@@ -455,19 +472,26 @@ function agregarBurbujaRespaldoChat(texto) {
   elementoTranscursoChat.scrollTop = elementoTranscursoChat.scrollHeight;
 }
 
-// Cuando el guion de Alicia indica invitar a hablar con el equipo, el
-// Worker de IA lo marca con "[[BOTON_WHATSAPP]]" al final del texto (ver
-// worker.js) en vez de escribir la palabra "boton" o corchetes visibles
-// -- eso causaba que la etiqueta literal "[Hablar con el equipo]"
-// apareciera en pantalla (bug reportado). Esta funcion quita esa marca
-// (o cualquier variante entre corchetes que mencione "hablar con el
-// equipo", por si el modelo se desvia del formato exacto) del texto
-// visible y avisa si corresponde mostrar el boton verde real.
-function extraerMarcaBotonWhatsapp(texto) {
-  const patron = /\[\[?\s*(?:BOTON_WHATSAPP|hablar con el equipo)\s*\]?\]/gi;
-  const mostrarBoton = patron.test(texto);
-  const textoLimpio = texto.replace(patron, "").replace(/[ \t]{2,}/g, " ").trim();
-  return { textoLimpio: textoLimpio, mostrarBoton: mostrarBoton };
+// Cuando el guion de Alicia indica invitar a hablar con el equipo y/o
+// entregar el formulario descargable, el Worker de IA lo marca con
+// "[[BOTON_WHATSAPP]]" y/o "[[FORMULARIO]]" al final del texto (ver
+// worker.js) en vez de escribir la palabra "boton", "enlace" o corchetes
+// visibles -- eso causaba que la etiqueta literal apareciera en pantalla
+// (bug reportado). Esta funcion quita ambas marcas (o variantes entre
+// corchetes, por si el modelo se desvia del formato exacto) del texto
+// visible y avisa cuales de los dos elementos especiales corresponde
+// mostrar.
+function extraerMarcasDeAlicia(texto) {
+  const patronBoton = /\[\[?\s*(?:BOTON_WHATSAPP|hablar con el equipo)\s*\]?\]/gi;
+  const patronFormulario = /\[\[?\s*FORMULARIO\s*\]?\]/gi;
+  const mostrarBoton = patronBoton.test(texto);
+  const mostrarFormulario = patronFormulario.test(texto);
+  const textoLimpio = texto
+    .replace(patronBoton, "")
+    .replace(patronFormulario, "")
+    .replace(/[ \t]{2,}/g, " ")
+    .trim();
+  return { textoLimpio: textoLimpio, mostrarBoton: mostrarBoton, mostrarFormulario: mostrarFormulario };
 }
 
 // Ahorro local (sin llamar al Worker de IA): detecta mensajes triviales
@@ -606,10 +630,10 @@ async function enviarMensajeChat(textoOriginal) {
       // con el boton verde dentro de la burbuja.
       agregarBurbujaRespaldoChat(respuesta);
     } else {
-      const deteccion = extraerMarcaBotonWhatsapp(respuesta);
+      const deteccion = extraerMarcasDeAlicia(respuesta);
       textoParaHistorial = deteccion.textoLimpio;
-      if (deteccion.mostrarBoton) {
-        agregarBurbujaRespaldoChat(deteccion.textoLimpio);
+      if (deteccion.mostrarBoton || deteccion.mostrarFormulario) {
+        agregarBurbujaRespaldoChat(deteccion.textoLimpio, deteccion.mostrarFormulario);
       } else {
         agregarBurbujaBotChat(deteccion.textoLimpio);
       }
