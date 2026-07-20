@@ -27,40 +27,50 @@
 
   <main>
 
-    <section id="inicio" class="seccion-portada">
-      <div class="contenedor portada-grid">
+    <!--
+      Hero a todo el ancho con video de fondo (sin sonido, en loop). El
+      <video> lleva su propio "poster" (hero-poster.jpg) como respaldo
+      para celulares que no arrancan el video solo, y como lo que se ve
+      si prefers-reduced-motion esta activo (hero.js pausa el video en
+      ese caso). El velo oscuro (.hero-velo) va encima del video para
+      que el texto blanco tenga contraste.
+    -->
+    <section id="inicio" class="hero-portada">
+      <video
+        id="hero-video"
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="hero-poster.jpg"
+      >
+        <source src="video-hero.mp4" type="video/mp4">
+      </video>
+      <div class="hero-velo"></div>
+      <div class="contenedor hero-contenido">
         <!--
-          El logo ya trae integrado el nombre "PUBLICOLA" y el eslogan
-          "Inteligencia de compras públicas", por eso ya no se repiten
-          como texto aparte aqui. Sigue siendo un <h1> (con el nombre en
-          el atributo alt) para que la pagina conserve un titulo principal
-          para accesibilidad y buscadores.
-
-          En escritorio (min-width 900px) este bloque de texto es la
-          columna izquierda del hero; "portada-columna-foto" (justo
-          debajo) es la columna derecha, con la foto de la obra en
-          construccion. En movil "portada-columna-foto" se oculta por
-          completo (ver estilo.css) y solo queda esta columna, en una
-          sola columna apilada como antes.
+          El logo transparente (generado por herramientas/logo_transparente.py)
+          es un <img>; si por algun motivo no carga, onerror lo oculta y
+          muestra el texto "PUBLICOLA" de respaldo en su lugar. Sigue
+          siendo un <h1> para que la pagina conserve su titulo principal.
         -->
-        <div class="portada-columna-texto">
-          <h1 class="portada-logo">
-            <img src="logo-recortado.png" alt="PUBLICOLA — Inteligencia de compras públicas">
-          </h1>
-          <p class="descripcion">
-            En Publicola convertimos las compras públicas dominicanas en oportunidades
-            claras para tu empresa: vigilamos, te explicamos y te acompañamos en cada paso.
-          </p>
-        </div>
-        <div class="portada-columna-foto">
+        <h1 class="hero-logo-caja">
           <img
-            src="hero-construccion.jpg"
-            alt="Equipo de ingeniería revisando planos en una obra de construcción"
-            class="portada-foto-construccion"
-            loading="lazy"
-            onerror="this.style.display='none'"
+            src="logo-transparente.png"
+            alt="PUBLICOLA"
+            class="hero-logo"
+            onerror="this.style.display='none'; document.getElementById('hero-logo-texto').hidden = false;"
           >
-        </div>
+          <span id="hero-logo-texto" class="hero-logo-texto" hidden>PUBLICOLA</span>
+        </h1>
+        <p class="hero-eslogan">Inteligencia de compras públicas</p>
+        <p class="hero-frase-rotativa" id="hero-frase">En Publicola convertimos las compras públicas dominicanas en oportunidades claras para tu empresa.</p>
+        <a
+          href="mailto:info@publicola.com.do?subject=Quiero%20inscribirme%20en%20Radar%20Publicola&body=Hola%2C%20me%20quiero%20inscribir%20en%20Radar%20Publicola."
+          class="boton boton-secundario hero-boton"
+        >Inscríbete en Radar Publicola</a>
       </div>
     </section>
 
@@ -463,6 +473,7 @@
     </div>
   </div>
 
+  <script src="hero.js"></script>
   <script src="licita.js"></script>
 </body>
 </html>

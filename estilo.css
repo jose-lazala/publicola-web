@@ -136,56 +136,116 @@ body {
   background-color: var(--azul-marino-claro);
 }
 
-/* ---------- Portada ---------- */
+/* ---------- Portada: hero de video a todo el ancho ---------- */
 
-.seccion-portada {
-  background-color: var(--blanco);
-  padding: 40px 0;
+/* Reglas base = celular. object-fit: cover en el video mas el color de
+   fondo (por si el video tarda o falla) y background-image con el mismo
+   poster que usa el <video>, para que SIEMPRE haya algo detras del velo
+   (ver .hero-video mas abajo sobre por que ademas se pone en el propio
+   <video>). */
+.hero-portada {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 520px;
+  height: 75vh;
+  overflow: hidden;
+  background-color: var(--azul-marino);
+  background-image: url("hero-poster.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-.portada-grid {
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Velo de legibilidad: mas oscuro abajo-izquierda (donde esta el texto)
+   y mas claro arriba-derecha. */
+.hero-velo {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top right, rgba(11, 29, 53, 0.82) 0%, rgba(11, 29, 53, 0.45) 100%);
+}
+
+.hero-contenido {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 22px;
+  align-items: flex-start;
+  text-align: left;
+  gap: 14px;
 }
 
-/* Columna de texto (logo + eslogan). En movil es simplemente la unica
-   columna visible, apilada; en escritorio (900px+) se convierte en la
-   columna izquierda del hero de dos columnas (ver mas abajo). */
-.portada-columna-texto {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 22px;
-}
-
-/* Columna de la foto de la obra en construccion: oculta en movil a
-   proposito (para no alargar la pagina) y solo se muestra a partir del
-   punto de quiebre de escritorio grande. */
-.portada-columna-foto {
-  display: none;
-}
-
-.portada-logo {
+.hero-logo-caja {
   margin: 0;
 }
 
-.portada-logo img {
-  width: 100%;
-  max-width: 340px;
-  height: auto;
+.hero-logo {
   display: block;
-  margin: 0 auto;
-  border-radius: var(--radio-borde);
+  height: 60px;
+  width: auto;
 }
 
-.descripcion {
-  margin: 0 auto;
-  max-width: 440px;
-  font-size: 16px;
-  color: var(--gris-texto-suave);
+/* Texto de respaldo si logo-transparente.png no carga (ver onerror en
+   el HTML): imita el logo -- mayusculas, tipografia fina, harto espaciado.
+   El selector ":not([hidden])" es a proposito: si se pusiera "display"
+   en la regla de abajo sin condicion, un estilo de autor (aunque sea de
+   baja especificidad) le gana SIEMPRE a la regla nativa del navegador
+   "[hidden] { display: none }", y el texto de respaldo quedaria visible
+   aunque el atributo "hidden" siga puesto (el logo cargo bien). */
+.hero-logo-texto:not([hidden]) {
+  display: block;
+  margin: 0;
+  color: var(--blanco);
+  font-size: 26px;
+  font-weight: 300;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+.hero-eslogan {
+  margin: 0;
+  color: var(--gris-plata-claro);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.hero-frase-rotativa {
+  margin: 0;
+  max-width: 560px;
+  color: var(--blanco);
+  font-size: 19px;
+  line-height: 1.45;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+  opacity: 1;
+  transition: opacity 0.6s ease;
+  /* Tope de 3 lineas en celular, para que el hero no crezca de mas. */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.hero-boton {
+  margin-top: 4px;
+}
+
+/* Con movimiento reducido, hero.js pausa el video, pero ademas lo
+   ocultamos por CSS para que se vea directo el poster (background-image
+   de .hero-portada) sin depender de que el video llegue a pintar un
+   frame antes de pausarse. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-video {
+    display: none;
+  }
 }
 
 /* ---------- Quienes somos ---------- */
@@ -1097,16 +1157,18 @@ body {
     text-decoration: underline;
   }
 
-  .seccion-portada {
-    padding: 64px 0;
+  .hero-logo {
+    height: 74px;
   }
 
-  .portada-logo img {
-    max-width: 460px;
+  .hero-logo-texto {
+    font-size: 34px;
+    letter-spacing: 8px;
   }
 
-  .descripcion {
-    font-size: 17px;
+  .hero-frase-rotativa {
+    font-size: 22px;
+    max-width: 620px;
   }
 
   .quienes-grid {
@@ -1289,54 +1351,36 @@ body {
     max-width: 1280px;
   }
 
-  /* ---------- Hero: una sola columna, protagonista ---------- */
+  /* ---------- Hero: video a todo el ancho, protagonista ---------- */
 
-  /* Poco padding arriba a proposito: la barra de navegacion (56px,
-     fija) ya separa el hero del borde de la pantalla, asi que aqui
-     solo hace falta un margen comodo, no otro salto grande encima. */
-  .seccion-portada {
-    padding: 40px 0;
+  .hero-portada {
+    height: 85vh;
   }
 
-  /* ---------- Hero de dos columnas ---------- */
-
-  .portada-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    text-align: left;
-    gap: 64px;
+  .hero-contenido {
+    gap: 20px;
   }
 
-  .portada-columna-texto {
-    align-items: flex-start;
+  .hero-logo {
+    height: 90px;
   }
 
-  /* logo-recortado.png mide 1494px de ancho real; al pasar a columna,
-     se deja que llene el ancho de su columna (sin el limite fijo de
-     1100px que usaba cuando el hero era de una sola columna). */
-  .portada-logo img {
-    max-width: 100%;
-    margin: 0;
+  .hero-logo-texto {
+    font-size: 44px;
+    letter-spacing: 10px;
   }
 
-  .descripcion {
-    max-width: none;
-    margin: 0;
-    font-size: 23px;
+  .hero-eslogan {
+    font-size: 18px;
   }
 
-  .portada-columna-foto {
+  /* En escritorio sobra ancho: se quita el tope de 3 lineas del celular. */
+  .hero-frase-rotativa {
     display: block;
-  }
-
-  .portada-foto-construccion {
-    width: 100%;
-    height: auto;
-    max-height: 560px;
-    object-fit: cover;
-    border-radius: var(--radio-borde);
-    display: block;
+    -webkit-line-clamp: unset;
+    overflow: visible;
+    font-size: 28px;
+    max-width: 720px;
   }
 
   /* ---------- Titulos y aire de las secciones en general ---------- */
