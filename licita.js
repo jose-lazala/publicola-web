@@ -58,28 +58,17 @@ const MAXIMO_MENSAJES_HISTORIAL = 20;
 const TIEMPO_ESPERA_WORKER_MS = 20000;
 
 const MENSAJE_SALUDO_LICITA =
-  "¡Hola! Somos el equipo de Publicola. Soy Licita, ¿en qué te podemos ayudar?";
+  "¡Hola! Somos el equipo de Publicola. Soy Alicia. Cuéntanos qué necesita tu empresa y te decimos cómo te podemos ayudar.";
 
 const MENSAJE_RESPALDO_FALLA_WORKER =
   "En este momento no podemos responder por aquí. Escríbenos por WhatsApp y nuestro equipo te atiende.";
 
 const MENSAJE_WHATSAPP_RESPALDO_FALLA =
-  "Hola, estaba conversando con Licita en la página y no pudo responderme. ¿Me pueden ayudar?";
+  "Hola, estaba conversando con Alicia en la página y no pudo responderme. ¿Me pueden ayudar?";
 
-// Chips atajo: siempre visibles debajo del historial de la conversacion.
-// Los de tipo "mensaje" se mandan a la IA como si el visitante los
-// hubiera escrito; el de tipo "whatsapp" abre WhatsApp directo y nunca
-// pasa por la IA.
-const CHIPS_ATAJO_CHAT = [
-  { tipo: "mensaje", texto: "¿Cómo constituyo mi empresa?" },
-  { tipo: "mensaje", texto: "¿Qué es el RPE y cómo lo obtengo?" },
-  { tipo: "mensaje", texto: "Quiero el Radar Publicola" },
-  {
-    tipo: "whatsapp",
-    texto: "Hablar con el equipo",
-    mensajeWhatsapp: "Hola, quiero hablar con el equipo de Publicola.",
-  },
-];
+// Mensaje del boton fijo de WhatsApp del encabezado del panel (siempre
+// visible, no es un chip de sugerencia).
+const MENSAJE_WHATSAPP_FIJO = "Hola, quiero hablar con el equipo de Publicola.";
 
 // ============================================================
 // UTILIDADES GENERALES
@@ -98,6 +87,22 @@ function crearElemento(etiqueta, clase, texto) {
 
 function construirEnlaceWhatsapp(mensaje) {
   return "https://wa.me/" + NUMERO_WHATSAPP_PUBLICOLA + "?text=" + encodeURIComponent(mensaje);
+}
+
+// Quita el marcado Markdown (negrita, cursiva, codigo, encabezados) del
+// texto que devuelve el Worker de IA, para que nunca se vean asteriscos,
+// guiones bajos ni comillas invertidas crudos en pantalla. Se limpia el
+// texto en vez de convertirlo a HTML real a proposito: las burbujas usan
+// textContent (nunca innerHTML) porque el texto viene de la IA y no debe
+// interpretarse como HTML.
+function limpiarMarkdown(texto) {
+  return texto
+    .replace(/\*\*(.+?)\*\*/g, "$1")
+    .replace(/\*(.+?)\*/g, "$1")
+    .replace(/__(.+?)__/g, "$1")
+    .replace(/_(.+?)_/g, "$1")
+    .replace(/`(.+?)`/g, "$1")
+    .replace(/^#{1,6}\s+/gm, "");
 }
 
 // ============================================================
@@ -324,7 +329,6 @@ const estadoChatLicita = {
 };
 
 let elementoTranscursoChat = null;
-let elementoChipsChat = null;
 let elementoControlesChat = null;
 let elementoCampoMensaje = null;
 let elementoBotonEnviarChat = null;
@@ -333,8 +337,9 @@ let enviandoMensajeActualmente = false;
 
 function agregarBurbujaBotChat(texto) {
   // textContent a proposito (nunca innerHTML): el texto puede venir del
-  // Worker de IA, y no debe interpretarse como HTML.
-  elementoTranscursoChat.appendChild(crearElemento("p", "burbuja burbuja-bot", texto));
+  // Worker de IA, y no debe interpretarse como HTML. limpiarMarkdown
+  // quita asteriscos/guiones bajos/comillas invertidas antes de mostrarlo.
+  elementoTranscursoChat.appendChild(crearElemento("p", "burbuja burbuja-bot", limpiarMarkdown(texto)));
   elementoTranscursoChat.scrollTop = elementoTranscursoChat.scrollHeight;
 }
 
@@ -421,10 +426,10 @@ async function pedirRespuestaAlWorker() {
   }
 }
 
-// Nucleo del chat: manda un mensaje del visitante (escrito a mano o
-// desde un chip atajo) y muestra la respuesta, o el mensaje de respaldo
-// si algo falla. El chat nunca se rompe ni se queda congelado: cualquier
-// error termina liberando de nuevo el campo de texto.
+// Nucleo del chat: manda un mensaje del visitante y muestra la
+// respuesta, o el mensaje de respaldo si algo falla. El chat nunca se
+// rompe ni se queda congelado: cualquier error termina liberando de
+// nuevo el campo de texto.
 async function enviarMensajeChat(textoOriginal) {
   if (enviandoMensajeActualmente) {
     return;
@@ -465,45 +470,15 @@ async function enviarMensajeChat(textoOriginal) {
   }
 }
 
-// Construye los 4 chips atajo, siempre visibles debajo del historial de
-// la conversacion (no solo al abrir el chat). El de WhatsApp es un
-// enlace normal que abre la conversacion directo, sin pasar por la IA;
-// los otros 3 mandan su texto a la IA, igual que si el visitante lo
-// hubiera escrito.
-function construirChipsChat() {
-  elementoChipsChat.innerHTML = "";
-  for (const chip of CHIPS_ATAJO_CHAT) {
-    if (chip.tipo === "whatsapp") {
-      const enlace = document.createElement("a");
-      enlace.className = "chat-chip chat-chip-whatsapp";
-      enlace.textContent = chip.texto;
-      enlace.href = construirEnlaceWhatsapp(chip.mensajeWhatsapp);
-      enlace.target = "_blank";
-      enlace.rel = "noopener noreferrer";
-      elementoChipsChat.appendChild(enlace);
-    } else {
-      const boton = document.createElement("button");
-      boton.type = "button";
-      boton.className = "chat-chip";
-      boton.textContent = chip.texto;
-      boton.addEventListener("click", function () {
-        enviarMensajeChat(chip.texto);
-      });
-      elementoChipsChat.appendChild(boton);
-    }
-  }
-}
-
-// Arma el chat desde cero dentro de "#licita-chat": historial, chips,
-// zona de respaldo y la fila de entrada de texto. Se llama una sola vez,
-// al cargar la pagina (el chat no depende de rubros.json ni de
+// Arma el chat desde cero dentro de "#licita-chat": historial, zona de
+// respaldo y la fila de entrada de texto. Se llama una sola vez, al
+// cargar la pagina (el chat no depende de rubros.json ni de
 // procesos_semana.json, por eso arranca de inmediato).
 function inicializarChatLicita() {
   const contenedor = document.getElementById("licita-chat");
   contenedor.innerHTML = "";
 
   elementoTranscursoChat = crearElemento("div", "chat-transcurso");
-  elementoChipsChat = crearElemento("div", "chat-chips");
   elementoControlesChat = crearElemento("div", "chat-controles");
 
   const formulario = document.createElement("form");
@@ -515,7 +490,7 @@ function inicializarChatLicita() {
   elementoCampoMensaje.placeholder = "Escribe tu mensaje…";
   elementoCampoMensaje.maxLength = MAXIMO_CARACTERES_MENSAJE;
   elementoCampoMensaje.autocomplete = "off";
-  elementoCampoMensaje.setAttribute("aria-label", "Escribe tu mensaje para Licita");
+  elementoCampoMensaje.setAttribute("aria-label", "Escribe tu mensaje para Alicia");
 
   elementoBotonEnviarChat = document.createElement("button");
   elementoBotonEnviarChat.type = "submit";
@@ -535,14 +510,18 @@ function inicializarChatLicita() {
   });
 
   contenedor.appendChild(elementoTranscursoChat);
-  contenedor.appendChild(elementoChipsChat);
   contenedor.appendChild(elementoControlesChat);
   contenedor.appendChild(formulario);
 
-  construirChipsChat();
-
   agregarBurbujaBotChat(MENSAJE_SALUDO_LICITA);
   agregarAlHistorialChat("licita", MENSAJE_SALUDO_LICITA);
+
+  // Boton fijo de WhatsApp del encabezado del panel: siempre visible,
+  // no es un chip de sugerencia y no pasa por la IA.
+  const botonWhatsappFijo = document.getElementById("licita-boton-whatsapp-fijo");
+  if (botonWhatsappFijo) {
+    botonWhatsappFijo.href = construirEnlaceWhatsapp(MENSAJE_WHATSAPP_FIJO);
+  }
 }
 
 // ============================================================

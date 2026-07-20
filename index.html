@@ -453,19 +453,41 @@
   <div id="licita-flotante" class="licita-flotante">
     <div id="licita-panel" class="licita-panel" hidden>
       <div class="licita-panel-cabecera">
-        <span>Conversa con Licita</span>
-        <button type="button" id="licita-boton-cerrar" class="licita-panel-cerrar" aria-label="Cerrar chat">&times;</button>
+        <div class="licita-panel-identidad">
+          <div class="licita-panel-avatar">
+            <img src="imagen-licita.jpg" alt="Alicia" onerror="this.style.display='none'">
+            <span class="licita-punto-en-linea" aria-hidden="true"></span>
+          </div>
+          <div class="licita-panel-nombre-estado">
+            <span class="licita-panel-nombre">Alicia</span>
+            <span class="licita-panel-estado">En línea</span>
+          </div>
+        </div>
+        <div class="licita-panel-cabecera-acciones">
+          <a
+            id="licita-boton-whatsapp-fijo"
+            class="licita-panel-whatsapp"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Escribir por WhatsApp"
+          >WhatsApp</a>
+          <button type="button" id="licita-boton-cerrar" class="licita-panel-cerrar" aria-label="Cerrar chat">&times;</button>
+        </div>
       </div>
       <div class="licita-panel-cuerpo">
         <div id="licita-chat" class="chat-contenedor" aria-live="polite">
-          <p class="mensaje-estado">Cargando a Licita…</p>
+          <p class="mensaje-estado">Cargando a Alicia…</p>
         </div>
       </div>
     </div>
     <div id="licita-burbuja" class="licita-burbuja">
-      <span class="licita-etiqueta">Conversa con Licita</span>
-      <button type="button" id="licita-boton-abrir" class="licita-circulo" aria-label="Conversar con Licita">
-        <img src="imagen-licita.jpg" alt="Licita" onerror="this.style.display='none'">
+      <span class="licita-etiqueta">Alicia está en línea</span>
+      <button type="button" id="licita-boton-abrir" class="licita-circulo" aria-label="Conversar con Alicia">
+        <span class="licita-avatar-envoltura">
+          <img src="imagen-licita.jpg" alt="Alicia" onerror="this.style.display='none'">
+          <span class="licita-punto-en-linea" aria-hidden="true"></span>
+        </span>
       </button>
     </div>
   </div>
