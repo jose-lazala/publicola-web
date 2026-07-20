@@ -226,7 +226,18 @@ body {
   line-height: 1.45;
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
   opacity: 1;
-  transition: opacity 0.5s ease;
+  visibility: visible;
+  /* "visibility" va en la misma transicion que "opacity" a proposito:
+     al ir de visible a hidden, el navegador mantiene "visible" durante
+     TODA la animacion y recien cambia a "hidden" en el instante exacto
+     en que termina (nunca antes) -- eso es lo que hace imposible que
+     quede un rastro de texto legible mientras se desvanece. Al volver
+     de hidden a visible pasa lo contrario: cambia a "visible" de
+     inmediato, al arrancar la animacion, para que la frase nueva se
+     pueda leer desde que empieza a aparecer. Ver hero.js para el ciclo
+     completo de 6 pasos que controla estos cambios.
+  */
+  transition: opacity 0.5s ease, visibility 0.5s ease;
   /* Alto minimo fijo (3 renglones a esta line-height) para que el resto
      del hero (el boton de abajo) no salte cuando una frase ocupa menos
      lineas que otra -- la altura del bloque queda igual siempre. */
