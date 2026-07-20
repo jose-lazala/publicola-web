@@ -35,10 +35,19 @@ const NUMERO_WHATSAPP_PUBLICOLA = "18297856028";
 const RUTA_JSON_RUBROS = "rubros.json";
 const RUTA_JSON_PROCESOS = "procesos_semana.json";
 
+// Fuente UNICA de los nombres de empresas semi-constituidas
+// disponibles: alimenta tanto la seccion "Empresas semi-constituidas
+// disponibles" de esta pagina (mas abajo) como la lista que usa Alicia
+// en el chat (el Worker de IA lee este mismo archivo). Para vender una
+// empresa y quitarla de la lista (o agregar una nueva), se edita
+// UNICAMENTE web/empresas_disponibles.json.
+const RUTA_JSON_EMPRESAS = "empresas_disponibles.json";
+
 // Cuantas tarjetas de muestra se ven en "Licitaciones de la semana".
 const MAXIMO_TARJETAS_INICIO = 3;
 
 const MENSAJE_ERROR_CARGA = "En este momento no podemos cargar las licitaciones, intenta más tarde.";
+const MENSAJE_ERROR_EMPRESAS = "En este momento no podemos mostrar las empresas disponibles, escríbenos por WhatsApp.";
 
 // --- Chat de Licita: Worker de IA ---
 
@@ -322,6 +331,53 @@ function mostrarErrorLicitacionesSemana() {
 }
 
 // ============================================================
+// SECCION "EMPRESAS SEMI-CONSTITUIDAS DISPONIBLES"
+// ============================================================
+
+function construirItemEmpresaDisponible(nombre) {
+  const item = document.createElement("li");
+  item.appendChild(crearElemento("span", "empresa-nombre", nombre));
+
+  const enlace = document.createElement("a");
+  enlace.className = "boton boton-whatsapp boton-chico";
+  enlace.target = "_blank";
+  enlace.rel = "noopener noreferrer";
+  enlace.href = construirEnlaceWhatsapp("Hola, me interesa la empresa " + nombre + ".");
+  enlace.textContent = "WhatsApp";
+  item.appendChild(enlace);
+
+  return item;
+}
+
+function renderizarEmpresasDisponibles(nombres) {
+  const contenedor = document.getElementById("lista-empresas-disponibles");
+  if (!contenedor) {
+    return;
+  }
+  contenedor.innerHTML = "";
+
+  if (!Array.isArray(nombres) || nombres.length === 0) {
+    mostrarErrorEmpresasDisponibles();
+    return;
+  }
+
+  for (const nombre of nombres) {
+    contenedor.appendChild(construirItemEmpresaDisponible(nombre));
+  }
+}
+
+function mostrarErrorEmpresasDisponibles() {
+  const contenedor = document.getElementById("lista-empresas-disponibles");
+  if (!contenedor) {
+    return;
+  }
+  contenedor.innerHTML = "";
+  const item = document.createElement("li");
+  item.appendChild(crearElemento("p", "mensaje-estado", MENSAJE_ERROR_EMPRESAS));
+  contenedor.appendChild(item);
+}
+
+// ============================================================
 // CHATBOT LICITA - chat libre conectado al Worker de IA
 // ============================================================
 
@@ -397,6 +453,21 @@ function agregarBurbujaRespaldoChat(texto) {
 
   elementoTranscursoChat.appendChild(burbuja);
   elementoTranscursoChat.scrollTop = elementoTranscursoChat.scrollHeight;
+}
+
+// Cuando el guion de Alicia indica invitar a hablar con el equipo, el
+// Worker de IA lo marca con "[[BOTON_WHATSAPP]]" al final del texto (ver
+// worker.js) en vez de escribir la palabra "boton" o corchetes visibles
+// -- eso causaba que la etiqueta literal "[Hablar con el equipo]"
+// apareciera en pantalla (bug reportado). Esta funcion quita esa marca
+// (o cualquier variante entre corchetes que mencione "hablar con el
+// equipo", por si el modelo se desvia del formato exacto) del texto
+// visible y avisa si corresponde mostrar el boton verde real.
+function extraerMarcaBotonWhatsapp(texto) {
+  const patron = /\[\[?\s*(?:BOTON_WHATSAPP|hablar con el equipo)\s*\]?\]/gi;
+  const mostrarBoton = patron.test(texto);
+  const textoLimpio = texto.replace(patron, "").replace(/[ \t]{2,}/g, " ").trim();
+  return { textoLimpio: textoLimpio, mostrarBoton: mostrarBoton };
 }
 
 // Ahorro local (sin llamar al Worker de IA): detecta mensajes triviales
@@ -528,15 +599,22 @@ async function enviarMensajeChat(textoOriginal) {
   try {
     const respuesta = await pedirRespuestaAlWorker();
     quitarEscribiendo();
+    let textoParaHistorial = respuesta;
     if (respuesta === MENSAJE_RESPALDO_FALLA_WORKER) {
       // El propio Worker no pudo obtener respuesta de la IA y devolvio
       // su mensaje de respaldo: se muestra igual que una falla local,
       // con el boton verde dentro de la burbuja.
       agregarBurbujaRespaldoChat(respuesta);
     } else {
-      agregarBurbujaBotChat(respuesta);
+      const deteccion = extraerMarcaBotonWhatsapp(respuesta);
+      textoParaHistorial = deteccion.textoLimpio;
+      if (deteccion.mostrarBoton) {
+        agregarBurbujaRespaldoChat(deteccion.textoLimpio);
+      } else {
+        agregarBurbujaBotChat(deteccion.textoLimpio);
+      }
     }
-    agregarAlHistorialChat("licita", respuesta);
+    agregarAlHistorialChat("licita", textoParaHistorial);
   } catch (error) {
     console.error("Licita: error consultando el Worker de IA:", error);
     quitarEscribiendo();
@@ -673,5 +751,17 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch(function (error) {
       console.error("Licita: error cargando rubros.json / procesos_semana.json:", error);
       mostrarErrorLicitacionesSemana();
+    });
+
+  // "Empresas semi-constituidas disponibles" tambien se carga aparte,
+  // desde la misma fuente unica (empresas_disponibles.json) que usa
+  // Alicia en el chat.
+  cargarJson(RUTA_JSON_EMPRESAS)
+    .then(function (datos) {
+      renderizarEmpresasDisponibles(datos && datos.empresas);
+    })
+    .catch(function (error) {
+      console.error("Licita: error cargando empresas_disponibles.json:", error);
+      mostrarErrorEmpresasDisponibles();
     });
 });
