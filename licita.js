@@ -51,11 +51,13 @@ const MAXIMO_CARACTERES_MENSAJE = 1000;
 const MAXIMO_MENSAJES_HISTORIAL = 20;
 
 // Tiempo maximo de espera por la respuesta del Worker antes de mostrar
-// el mensaje de respaldo (en milisegundos). Se sube de 15 a 20 segundos
-// como margen extra: el primer mensaje de una conversacion a veces
-// tardaba mas que el resto (bug reportado) y llegaba a mostrar el
-// respaldo aunque el Worker terminara respondiendo bien poco despues.
-const TIEMPO_ESPERA_WORKER_MS = 20000;
+// el mensaje de respaldo (en milisegundos). Se sube de 20 a 60 segundos:
+// al ampliar el guion del Worker (regla de precios + personalidad de
+// Alicia) las respuestas de Gemini empezaron a tardar mas de 20
+// segundos con regularidad (se midieron respuestas correctas de hasta
+// 47 segundos), y con 20 segundos el chat mostraba el respaldo aunque
+// el Worker terminara respondiendo bien poco despues.
+const TIEMPO_ESPERA_WORKER_MS = 60000;
 
 const MENSAJE_SALUDO_LICITA =
   "¡Hola! Somos el equipo de Publicola. Soy Alicia. Cuéntanos qué necesita tu empresa y te decimos cómo te podemos ayudar.";
