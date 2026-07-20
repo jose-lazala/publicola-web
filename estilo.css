@@ -479,6 +479,33 @@ body {
   opacity: 0.7;
 }
 
+/* Burbuja de respaldo (Alicia no pudo responder): mismo estilo que una
+   burbuja normal del bot, pero con el boton verde "Hablar con el
+   equipo" DENTRO de la misma burbuja, apilado debajo del texto. */
+.burbuja-respaldo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.burbuja-respaldo p {
+  margin: 0;
+}
+
+.boton-respaldo-whatsapp {
+  align-self: flex-start;
+  padding: 10px 16px;
+  font-size: 14px;
+}
+
+/* En movil el boton ocupa todo el ancho de la burbuja: mas facil de
+   tocar con el pulgar que un boton chico alineado a la izquierda. */
+@media (max-width: 480px) {
+  .boton-respaldo-whatsapp {
+    align-self: stretch;
+  }
+}
+
 /* Zona de respaldo: normalmente vacia, solo aparece con el boton de
    WhatsApp cuando el Worker de IA falla o tarda demasiado. Vacia no
    ocupa espacio, para no dejar un hueco de aire de mas en el chat. */

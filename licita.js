@@ -57,16 +57,19 @@ const MAXIMO_MENSAJES_HISTORIAL = 20;
 // segundos con regularidad (se midieron respuestas correctas de hasta
 // 47 segundos), y con 20 segundos el chat mostraba el respaldo aunque
 // el Worker terminara respondiendo bien poco despues.
-const TIEMPO_ESPERA_WORKER_MS = 60000;
+const TIEMPO_ESPERA_WORKER_MS = 1; // FORZADO TEMPORAL PARA PRUEBA EN VIVO — restaurar a 60000 antes del commit final
 
 const MENSAJE_SALUDO_LICITA =
   "¡Hola! Somos el equipo de Publicola. Soy Alicia. Cuéntanos qué necesita tu empresa y te decimos cómo te podemos ayudar.";
 
 const MENSAJE_RESPALDO_FALLA_WORKER =
-  "En este momento no podemos responder por aquí. Escríbenos por WhatsApp y nuestro equipo te atiende.";
+  "Disculpa, en este momento no podemos responderte por aquí. Con mucho gusto te atendemos directamente: toca el botón 'Hablar con el equipo' y conversamos.";
 
-const MENSAJE_WHATSAPP_RESPALDO_FALLA =
-  "Hola, estaba conversando con Alicia en la página y no pudo responderme. ¿Me pueden ayudar?";
+// Mensaje precargado del boton verde "Hablar con el equipo" que aparece
+// dentro de la burbuja de respaldo. Usa el mismo enlace wa.me (misma
+// funcion construirEnlaceWhatsapp, mismo numero) que el boton de
+// WhatsApp del encabezado, con su propio texto precargado.
+const MENSAJE_WHATSAPP_BOTON_RESPALDO = "Hola, les escribo desde la página de Publicola";
 
 // Mensaje del boton fijo de WhatsApp del encabezado del panel (siempre
 // visible, no es un chip de sugerencia).
@@ -376,15 +379,53 @@ function agregarAlHistorialChat(rol, texto) {
   }
 }
 
-function mostrarBotonRespaldoWhatsapp(mensajeWhatsapp) {
-  elementoControlesChat.innerHTML = "";
+// Burbuja de respaldo: mismo estilo que una burbuja normal del bot, pero
+// con el boton verde "Hablar con el equipo" DENTRO de la misma burbuja
+// (no en la fila de controles aparte), para que el visitante lo vea
+// pegado al mensaje que le explica por que no hay respuesta de la IA.
+function agregarBurbujaRespaldoChat(texto) {
+  const burbuja = crearElemento("div", "burbuja burbuja-bot burbuja-respaldo");
+  burbuja.appendChild(crearElemento("p", null, limpiarMarkdown(texto)));
+
   const boton = document.createElement("a");
-  boton.className = "boton boton-whatsapp";
-  boton.textContent = "Escribirnos por WhatsApp";
-  boton.href = construirEnlaceWhatsapp(mensajeWhatsapp);
+  boton.className = "boton boton-whatsapp boton-respaldo-whatsapp";
+  boton.textContent = "Hablar con el equipo";
+  boton.href = construirEnlaceWhatsapp(MENSAJE_WHATSAPP_BOTON_RESPALDO);
   boton.target = "_blank";
   boton.rel = "noopener noreferrer";
-  elementoControlesChat.appendChild(boton);
+  burbuja.appendChild(boton);
+
+  elementoTranscursoChat.appendChild(burbuja);
+  elementoTranscursoChat.scrollTop = elementoTranscursoChat.scrollHeight;
+}
+
+// Ahorro local (sin llamar al Worker de IA): detecta mensajes triviales
+// -- saludos solos, agradecimientos o despedidas, SIN contenido real -- y
+// devuelve una respuesta fija en el tono calido de Alicia (en plural).
+// Cualquier mensaje con contenido real (aunque incluya un saludo pegado
+// a una pregunta) no hace match aqui y sigue de largo hacia la IA.
+// Maximo 3 patrones a proposito, conservadores: coinciden solo si el
+// mensaje ENTERO (ya limpio de acentos y signos) es uno de estos casos.
+function detectarRespuestaLocalTrivial(texto) {
+  const normalizado = texto
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/^[¡!¿?.,\s]+|[¡!¿?.,\s]+$/g, "");
+
+  if (/^(hola+|hey|buenas|buenos dias|buenas tardes|buenas noches|que tal)$/.test(normalizado)) {
+    return "¡Hola! Un gusto saludarte. Somos el equipo de Publicola — cuéntanos en qué te podemos ayudar.";
+  }
+
+  if (/^(gracias|muchas gracias|mil gracias|ok|okay|okey|vale|perfecto)$/.test(normalizado)) {
+    return "¡Con mucho gusto! Aquí estamos para lo que necesites.";
+  }
+
+  if (/^(adios|chao|nos vemos|hasta luego|bye)$/.test(normalizado)) {
+    return "¡Un gusto conversar contigo! Cuando quieras, aquí estamos para ayudarte.";
+  }
+
+  return null;
 }
 
 function habilitarEntradaChat(habilitada) {
@@ -449,23 +490,39 @@ async function enviarMensajeChat(textoOriginal) {
     );
   }
 
-  enviandoMensajeActualmente = true;
   elementoControlesChat.innerHTML = ""; // limpia el boton de respaldo de un error anterior, si habia
   agregarBurbujaUsuarioChat(texto);
   agregarAlHistorialChat("usuario", texto);
+
+  // Ahorro local: saludos, agradecimientos y despedidas sin contenido
+  // real se responden aqui mismo, sin llamar al Worker de IA.
+  const respuestaLocal = detectarRespuestaLocalTrivial(texto);
+  if (respuestaLocal) {
+    agregarBurbujaBotChat(respuestaLocal);
+    agregarAlHistorialChat("licita", respuestaLocal);
+    return;
+  }
+
+  enviandoMensajeActualmente = true;
   habilitarEntradaChat(false);
   mostrarEscribiendo();
 
   try {
     const respuesta = await pedirRespuestaAlWorker();
     quitarEscribiendo();
-    agregarBurbujaBotChat(respuesta);
+    if (respuesta === MENSAJE_RESPALDO_FALLA_WORKER) {
+      // El propio Worker no pudo obtener respuesta de la IA y devolvio
+      // su mensaje de respaldo: se muestra igual que una falla local,
+      // con el boton verde dentro de la burbuja.
+      agregarBurbujaRespaldoChat(respuesta);
+    } else {
+      agregarBurbujaBotChat(respuesta);
+    }
     agregarAlHistorialChat("licita", respuesta);
   } catch (error) {
     console.error("Licita: error consultando el Worker de IA:", error);
     quitarEscribiendo();
-    agregarBurbujaBotChat(MENSAJE_RESPALDO_FALLA_WORKER);
-    mostrarBotonRespaldoWhatsapp(MENSAJE_WHATSAPP_RESPALDO_FALLA);
+    agregarBurbujaRespaldoChat(MENSAJE_RESPALDO_FALLA_WORKER);
   } finally {
     enviandoMensajeActualmente = false;
     habilitarEntradaChat(true);
