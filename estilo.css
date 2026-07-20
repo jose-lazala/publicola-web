@@ -426,7 +426,7 @@ body {
   flex-direction: column;
   gap: 10px;
   margin-bottom: 14px;
-  max-height: 360px;
+  max-height: 420px;
   overflow-y: auto;
 }
 
@@ -436,6 +436,10 @@ body {
   font-size: 14px;
   max-width: 85%;
   line-height: 1.45;
+  /* Defensivo: si algun dia llega una palabra o URL muy larga sin
+     espacios, que se parta en vez de desbordar la burbuja o el panel. */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .burbuja-bot {
@@ -754,7 +758,7 @@ body {
   right: 12px;
   bottom: 12px;
   left: 12px;
-  max-height: min(70svh, 560px);
+  max-height: min(78svh, 620px);
   background-color: var(--blanco);
   border-radius: 14px;
   box-shadow: 0 10px 30px rgba(11, 31, 58, 0.35);
@@ -1167,8 +1171,8 @@ body {
     left: auto;
     right: 28px;
     bottom: 28px;
-    width: 400px;
-    max-height: min(620px, calc(100vh - 56px));
+    width: 440px;
+    max-height: min(680px, calc(100vh - 56px));
   }
 }
 

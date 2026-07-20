@@ -51,8 +51,11 @@ const MAXIMO_CARACTERES_MENSAJE = 1000;
 const MAXIMO_MENSAJES_HISTORIAL = 20;
 
 // Tiempo maximo de espera por la respuesta del Worker antes de mostrar
-// el mensaje de respaldo (en milisegundos).
-const TIEMPO_ESPERA_WORKER_MS = 15000;
+// el mensaje de respaldo (en milisegundos). Se sube de 15 a 20 segundos
+// como margen extra: el primer mensaje de una conversacion a veces
+// tardaba mas que el resto (bug reportado) y llegaba a mostrar el
+// respaldo aunque el Worker terminara respondiendo bien poco despues.
+const TIEMPO_ESPERA_WORKER_MS = 20000;
 
 const MENSAJE_SALUDO_LICITA =
   "¡Hola! Somos el equipo de Publicola. Soy Licita, ¿en qué te podemos ayudar?";
