@@ -60,7 +60,7 @@ const MAXIMO_MENSAJES_HISTORIAL = 20;
 const TIEMPO_ESPERA_WORKER_MS = 60000;
 
 const MENSAJE_SALUDO_LICITA =
-  "¡Hola! Somos el equipo de Publicola. Soy Alicia. Cuéntanos qué necesita tu empresa y te decimos cómo te podemos ayudar.";
+  "¡Hola! Soy Alicia, del equipo de Publicola. Cuéntame qué necesita tu empresa y te digo cómo te puedo ayudar.";
 
 const MENSAJE_RESPALDO_FALLA_WORKER =
   "Disculpa, en este momento no podemos responderte por aquí. Con mucho gusto te atendemos directamente: toca el botón 'Hablar con el equipo' y conversamos.";
@@ -401,12 +401,19 @@ function agregarBurbujaRespaldoChat(texto) {
 
 // Ahorro local (sin llamar al Worker de IA): detecta mensajes triviales
 // -- saludos solos, agradecimientos o despedidas, SIN contenido real -- y
-// devuelve una respuesta fija en el tono calido de Alicia (en plural).
-// Cualquier mensaje con contenido real (aunque incluya un saludo pegado
-// a una pregunta) no hace match aqui y sigue de largo hacia la IA.
-// Maximo 3 patrones a proposito, conservadores: coinciden solo si el
-// mensaje ENTERO (ya limpio de acentos y signos) es uno de estos casos.
-function detectarRespuestaLocalTrivial(texto) {
+// devuelve una respuesta fija en el tono calido de Alicia, en singular
+// (ella habla de si misma en singular; ver worker.js). Cualquier mensaje
+// con contenido real (aunque incluya un saludo pegado a una pregunta) no
+// hace match aqui y sigue de largo hacia la IA. Maximo 3 patrones a
+// proposito, conservadores: coinciden solo si el mensaje ENTERO (ya
+// limpio de acentos y signos) es uno de estos casos.
+//
+// esPrimerMensajeUsuario: la burbuja de apertura (MENSAJE_SALUDO_LICITA)
+// ya saluda al abrir el chat. Si el visitante saluda en su PRIMER
+// mensaje, no se le saluda de nuevo -- se responde con algo breve que
+// continue la conversacion. Si ya hubo intercambio previo, el saludo
+// local responde con un saludo normal.
+function detectarRespuestaLocalTrivial(texto, esPrimerMensajeUsuario) {
   const normalizado = texto
     .toLowerCase()
     .normalize("NFD")
@@ -414,7 +421,10 @@ function detectarRespuestaLocalTrivial(texto) {
     .replace(/^[¡!¿?.,\s]+|[¡!¿?.,\s]+$/g, "");
 
   if (/^(hola+|hey|buenas|buenos dias|buenas tardes|buenas noches|que tal)$/.test(normalizado)) {
-    return "¡Hola! Un gusto saludarte. Somos el equipo de Publicola — cuéntanos en qué te podemos ayudar.";
+    if (esPrimerMensajeUsuario) {
+      return "Cuéntame, ¿qué necesita tu empresa?";
+    }
+    return "¡Hola de nuevo! Cuéntame, ¿en qué te puedo ayudar?";
   }
 
   if (/^(gracias|muchas gracias|mil gracias|ok|okay|okey|vale|perfecto)$/.test(normalizado)) {
@@ -491,12 +501,20 @@ async function enviarMensajeChat(textoOriginal) {
   }
 
   elementoControlesChat.innerHTML = ""; // limpia el boton de respaldo de un error anterior, si habia
+
+  // Se calcula ANTES de agregar este mensaje al historial: "primer
+  // mensaje" significa que el visitante todavia no habia escrito nada
+  // (el historial solo tiene la burbuja de apertura de Alicia).
+  const esPrimerMensajeUsuario = !estadoChatLicita.historial.some(function (mensaje) {
+    return mensaje.rol === "usuario";
+  });
+
   agregarBurbujaUsuarioChat(texto);
   agregarAlHistorialChat("usuario", texto);
 
   // Ahorro local: saludos, agradecimientos y despedidas sin contenido
   // real se responden aqui mismo, sin llamar al Worker de IA.
-  const respuestaLocal = detectarRespuestaLocalTrivial(texto);
+  const respuestaLocal = detectarRespuestaLocalTrivial(texto, esPrimerMensajeUsuario);
   if (respuestaLocal) {
     agregarBurbujaBotChat(respuestaLocal);
     agregarAlHistorialChat("licita", respuestaLocal);

@@ -1,5 +1,5 @@
 {
-  "generado": "2026-07-20T13:26:38",
+  "generado": "2026-07-20T14:19:22",
   "fuente": "Datos: DGCP / Portal Transaccional (comprasdominicana.gob.do), bajo licencia ODbL con atribucion.",
   "rubros": [
     {
@@ -59,32 +59,6 @@
       "total_abiertos": 15,
       "muestra": [
         {
-          "codigo_proceso": "Hosp. Reid Cabral-DAF-CM-2026-0068",
-          "institucion": "Hospital Infantil Robert Reid Cabral",
-          "objeto": "COMPRA TRIMESTRAL DE JUGOS Y LECHE PARA SER CONSUMIDOS POR LOS PACIENTES DEL HOSPITAL PEDIATRICO ROBERT REID CABRAL.",
-          "modalidad": "CM",
-          "fecha_limite_ofertas": "2026-07-20",
-          "dirigido_a": "abierto a todos",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741804",
-          "monto_referencia_formateado": "Monto de referencia: RD$416,100.00"
-        },
-        {
-          "codigo_proceso": "INTRANT-DAF-CM-2026-0024",
-          "institucion": "Instituto Nacional de Transito y Transporte Terrestre",
-          "objeto": "Adquisición de Agua para consumo humano para el INTRANT",
-          "modalidad": "CM",
-          "fecha_limite_ofertas": "2026-07-20",
-          "dirigido_a": "abierto a todos",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1743231",
-          "monto_referencia_formateado": "Monto de referencia: RD$1,680,000.00"
-        }
-      ]
-    },
-    {
-      "codigo_familia": "5016",
-      "total_abiertos": 10,
-      "muestra": [
-        {
           "codigo_proceso": "HMVLV-DAF-CM-2026-0008",
           "institucion": "Hospital municipal Villa la mata",
           "objeto": "compra de alimentos",
@@ -95,6 +69,22 @@
           "monto_referencia_formateado": "Monto de referencia: RD$526,985.00"
         },
         {
+          "codigo_proceso": "Hosp. Reid Cabral-DAF-CM-2026-0068",
+          "institucion": "Hospital Infantil Robert Reid Cabral",
+          "objeto": "COMPRA TRIMESTRAL DE JUGOS Y LECHE PARA SER CONSUMIDOS POR LOS PACIENTES DEL HOSPITAL PEDIATRICO ROBERT REID CABRAL.",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-20",
+          "dirigido_a": "abierto a todos",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741804",
+          "monto_referencia_formateado": "Monto de referencia: RD$416,100.00"
+        }
+      ]
+    },
+    {
+      "codigo_familia": "5016",
+      "total_abiertos": 10,
+      "muestra": [
+        {
           "codigo_proceso": "APORDOM-DAF-CM-2026-0018",
           "institucion": "APORDOM (Autoridad Portuaria Dominicana)",
           "objeto": "Adquisición de alfombras y cortinas tipo zebra para uso de la sede central",
@@ -103,6 +93,16 @@
           "dirigido_a": "MIPYME",
           "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741758",
           "monto_referencia_formateado": "Monto de referencia: RD$1,374,354.12"
+        },
+        {
+          "codigo_proceso": "Bomberos SDE-DAF-CM-2026-0019",
+          "institucion": "Cuerpo de Bomberos de Santo Domingo Este",
+          "objeto": "COMPRA DE ALIMENTOS DEL MES DE JUNIO PARA USO DEL PERSONAL DEL CUERPO DE BOMBEROS SANTO DOMINGO ESTE.",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-21",
+          "dirigido_a": "abierto a todos",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1742120",
+          "monto_referencia_formateado": "Monto de referencia: RD$296,530.55"
         }
       ]
     },
@@ -163,14 +163,14 @@
       "total_abiertos": 8,
       "muestra": [
         {
-          "codigo_proceso": "Bomberos SDE-DAF-CM-2026-0019",
-          "institucion": "Cuerpo de Bomberos de Santo Domingo Este",
-          "objeto": "COMPRA DE ALIMENTOS DEL MES DE JUNIO PARA USO DEL PERSONAL DEL CUERPO DE BOMBEROS SANTO DOMINGO ESTE.",
+          "codigo_proceso": "UNIQUEM-DAF-CM-2026-0017",
+          "institucion": "Centro Infantil de Quemados Dra. Thelma Rosario",
+          "objeto": "ADQUISICON DE ALIMENTOS T3",
           "modalidad": "CM",
-          "fecha_limite_ofertas": "2026-07-21",
-          "dirigido_a": "abierto a todos",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1742120",
-          "monto_referencia_formateado": "Monto de referencia: RD$296,530.55"
+          "fecha_limite_ofertas": "2026-07-22",
+          "dirigido_a": "MIPYME",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1743148",
+          "monto_referencia_formateado": "Monto de referencia: RD$712,375.00"
         },
         {
           "codigo_proceso": "HHMVV-DAF-CM-2026-0003",
@@ -189,14 +189,14 @@
       "total_abiertos": 12,
       "muestra": [
         {
-          "codigo_proceso": "HOSPNEYARIAS-DAF-CM-2026-0273",
-          "institucion": "Hospital Traumatológico Dr. Ney Arias Lora",
-          "objeto": "CARNE",
+          "codigo_proceso": "HPFAG-DAF-CM-2026-0008",
+          "institucion": "Hospital Provincial Dr. Francisco Antonio Gonzalvo",
+          "objeto": "Carnes y Embutidos Para la Despensa del Hospital",
           "modalidad": "CM",
           "fecha_limite_ofertas": "2026-07-20",
           "dirigido_a": "abierto a todos",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1742017",
-          "monto_referencia_formateado": "Monto de referencia: RD$1,116,000.00"
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741537",
+          "monto_referencia_formateado": "Monto de referencia: RD$388,164.00"
         },
         {
           "codigo_proceso": "HOSPNEYARIAS-DAF-CM-2026-0272",
@@ -214,16 +214,6 @@
       "codigo_familia": "5022",
       "total_abiertos": 11,
       "muestra": [
-        {
-          "codigo_proceso": "UNIQUEM-DAF-CM-2026-0017",
-          "institucion": "Centro Infantil de Quemados Dra. Thelma Rosario",
-          "objeto": "ADQUISICON DE ALIMENTOS T3",
-          "modalidad": "CM",
-          "fecha_limite_ofertas": "2026-07-22",
-          "dirigido_a": "MIPYME",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1743148",
-          "monto_referencia_formateado": "Monto de referencia: RD$712,375.00"
-        },
         {
           "codigo_proceso": "HMLS-DAF-CM-2026-0005",
           "institucion": "Hospital Municipal Laguna Salada",
@@ -244,33 +234,12 @@
     {
       "codigo_familia": "5013",
       "total_abiertos": 13,
-      "muestra": [
-        {
-          "codigo_proceso": "HPFAG-DAF-CM-2026-0008",
-          "institucion": "Hospital Provincial Dr. Francisco Antonio Gonzalvo",
-          "objeto": "Carnes y Embutidos Para la Despensa del Hospital",
-          "modalidad": "CM",
-          "fecha_limite_ofertas": "2026-07-20",
-          "dirigido_a": "abierto a todos",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741537",
-          "monto_referencia_formateado": "Monto de referencia: RD$388,164.00"
-        }
-      ]
+      "muestra": []
     },
     {
       "codigo_familia": "5214",
       "total_abiertos": 7,
       "muestra": [
-        {
-          "codigo_proceso": "RSCS-DAF-CM-2026-0090",
-          "institucion": "Servicio Regional de Salud Cibao Sur",
-          "objeto": "APARATOS ELECTRODOMÉSTICOS",
-          "modalidad": "CM",
-          "fecha_limite_ofertas": "2026-07-17",
-          "dirigido_a": "MIPYME",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1740939",
-          "monto_referencia_formateado": "Monto de referencia: RD$1,645,700.00"
-        },
         {
           "codigo_proceso": "ETED-DAF-CM-2026-0125",
           "institucion": "Empresa de Transmisión Eléctrica Dominicana",
@@ -280,6 +249,16 @@
           "dirigido_a": "abierto a todos",
           "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741402",
           "monto_referencia_formateado": "Monto de referencia: RD$1,739,000.00"
+        },
+        {
+          "codigo_proceso": "RSCS-DAF-CM-2026-0090",
+          "institucion": "Servicio Regional de Salud Cibao Sur",
+          "objeto": "APARATOS ELECTRODOMÉSTICOS",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-17",
+          "dirigido_a": "MIPYME",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1740939",
+          "monto_referencia_formateado": "Monto de referencia: RD$1,645,700.00"
         }
       ]
     },
@@ -287,16 +266,6 @@
       "codigo_familia": "5216",
       "total_abiertos": 7,
       "muestra": [
-        {
-          "codigo_proceso": "MINERD-DAF-CM-2026-0176",
-          "institucion": "Ministerio de Educación",
-          "objeto": "Adquisición de disco duro, memoria UBS, baterías UPS y accesorios informático pata varias dependencias del MINERD., Dirigido a MIPYMES(Segunda convocatoria)",
-          "modalidad": "CM",
-          "fecha_limite_ofertas": "2026-07-17",
-          "dirigido_a": "MIPYME",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1742302",
-          "monto_referencia_formateado": "Monto de referencia: RD$1,974,175.40"
-        },
         {
           "codigo_proceso": "PERPETUO SOCORRRO-DAF-CM-2026-0004",
           "institucion": "Colegio Nuestra Sr. del Perpetuo Socorro",
@@ -306,6 +275,16 @@
           "dirigido_a": "abierto a todos",
           "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741064",
           "monto_referencia_formateado": "Monto de referencia: RD$1,348,905.34"
+        },
+        {
+          "codigo_proceso": "MINERD-DAF-CM-2026-0176",
+          "institucion": "Ministerio de Educación",
+          "objeto": "Adquisición de disco duro, memoria UBS, baterías UPS y accesorios informático pata varias dependencias del MINERD., Dirigido a MIPYMES(Segunda convocatoria)",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-17",
+          "dirigido_a": "MIPYME",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1742302",
+          "monto_referencia_formateado": "Monto de referencia: RD$1,974,175.40"
         }
       ]
     },
@@ -423,16 +402,6 @@
       "total_abiertos": 6,
       "muestra": [
         {
-          "codigo_proceso": "UTECO-DAF-CM-2026-0025",
-          "institucion": "Universidad Tecnologica del Cibao Oriental",
-          "objeto": "Adquisición de herramientas, equipos y materiales de mantenimiento, refrigeración y seguridad industrial, correspondientes a los ítems declarados desiertos del proceso UTECO-DAF-CM-2026-0019.",
-          "modalidad": "CM",
-          "fecha_limite_ofertas": "2026-07-17",
-          "dirigido_a": "abierto a todos",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741029",
-          "monto_referencia_formateado": "Monto de referencia: RD$554,151.00"
-        },
-        {
           "codigo_proceso": "CECANOT-DAF-CM-2026-0169",
           "institucion": "Centro Cardio-Neuro Oftalmologico y Trasplante",
           "objeto": "ADQUISICION DE MATERIALES PARA PARA TRABAJOS DE PLOMERIA",
@@ -441,6 +410,16 @@
           "dirigido_a": "abierto a todos",
           "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1740915",
           "monto_referencia_formateado": "Monto de referencia: RD$1,559,631.58"
+        },
+        {
+          "codigo_proceso": "DGII-DAF-CM-2026-0062",
+          "institucion": "Dirección General Impuestos Internos",
+          "objeto": "Adquisición de unidades acondicionadoras de aire para diversas localidades de la DGII. Proceso Dirigido a Mipymes.2da. Convocatoria.",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-17",
+          "dirigido_a": "MIPYME",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1742306",
+          "monto_referencia_formateado": "Monto de referencia: RD$1,046,600.02"
         }
       ]
     },
@@ -448,16 +427,6 @@
       "codigo_familia": "4014",
       "total_abiertos": 9,
       "muestra": [
-        {
-          "codigo_proceso": "MIDE-DAF-CM-2026-0103",
-          "institucion": "Ministerio de Defensa",
-          "objeto": "Adquisiciones materiales electricos",
-          "modalidad": "CM",
-          "fecha_limite_ofertas": "2026-07-17",
-          "dirigido_a": "MIPYME",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1740906",
-          "monto_referencia_formateado": "Monto de referencia: RD$1,838,741.00"
-        },
         {
           "codigo_proceso": "MIDE-DAF-CM-2026-0106",
           "institucion": "Ministerio de Defensa",
@@ -467,6 +436,16 @@
           "dirigido_a": "MIPYME mujer",
           "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741304",
           "monto_referencia_formateado": "Monto de referencia: RD$1,694,459.00"
+        },
+        {
+          "codigo_proceso": "MIDE-DAF-CM-2026-0103",
+          "institucion": "Ministerio de Defensa",
+          "objeto": "Adquisiciones materiales electricos",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-17",
+          "dirigido_a": "MIPYME",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1740906",
+          "monto_referencia_formateado": "Monto de referencia: RD$1,838,741.00"
         }
       ]
     },
@@ -511,14 +490,14 @@
           "monto_referencia_formateado": "Monto de referencia: RD$759,725.00"
         },
         {
-          "codigo_proceso": "MIDE-DAF-CM-2026-0108",
-          "institucion": "Ministerio de Defensa",
-          "objeto": "Adquisición de materiales ferreteros",
+          "codigo_proceso": "UTECO-DAF-CM-2026-0025",
+          "institucion": "Universidad Tecnologica del Cibao Oriental",
+          "objeto": "Adquisición de herramientas, equipos y materiales de mantenimiento, refrigeración y seguridad industrial, correspondientes a los ítems declarados desiertos del proceso UTECO-DAF-CM-2026-0019.",
           "modalidad": "CM",
-          "fecha_limite_ofertas": "2026-07-20",
-          "dirigido_a": "MIPYME mujer",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1742026",
-          "monto_referencia_formateado": "Monto de referencia: RD$1,695,043.00"
+          "fecha_limite_ofertas": "2026-07-17",
+          "dirigido_a": "abierto a todos",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741029",
+          "monto_referencia_formateado": "Monto de referencia: RD$554,151.00"
         }
       ]
     },
@@ -647,6 +626,16 @@
       "total_abiertos": 4,
       "muestra": [
         {
+          "codigo_proceso": "MIDE-DAF-CM-2026-0108",
+          "institucion": "Ministerio de Defensa",
+          "objeto": "Adquisición de materiales ferreteros",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-20",
+          "dirigido_a": "MIPYME mujer",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1742026",
+          "monto_referencia_formateado": "Monto de referencia: RD$1,695,043.00"
+        },
+        {
           "codigo_proceso": "HSLM-DAF-CM-2026-0144",
           "institucion": "Hospital Materno Infantil San Lorenzo de Los Minas",
           "objeto": "ADQUISICION DE MATERIALES ELECTRICOS",
@@ -766,16 +755,6 @@
       "total_abiertos": 10,
       "muestra": [
         {
-          "codigo_proceso": "AMGU-DAF-CM-2026-0001",
-          "institucion": "Ayuntamiento Municipio de Guaymate",
-          "objeto": "CONSTRUCCION DE CANCHA DE BALONCESTO SECTOR LOS BARRETOS DE GUAYMATE",
-          "modalidad": "CM",
-          "fecha_limite_ofertas": "2026-07-17",
-          "dirigido_a": "abierto a todos",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1740907",
-          "monto_referencia_formateado": "Monto de referencia: RD$2,901,000.00"
-        },
-        {
           "codigo_proceso": "AYUNTAMIENTO SAN P.-DAF-CM-2026-0025",
           "institucion": "Ayuntamiento de San Pedro de Macoris",
           "objeto": "Proceso de Contratación Menor de Obra para la Construcción y Reparaciones de Parques, Centro comunal y Canchas Deportivas, con Fondos Provenientes del Presupuesto Participativo del año 2026.",
@@ -784,6 +763,16 @@
           "dirigido_a": "abierto a todos",
           "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1740943",
           "monto_referencia_formateado": "Monto de referencia: RD$4,305,000.00"
+        },
+        {
+          "codigo_proceso": "AMGU-DAF-CM-2026-0001",
+          "institucion": "Ayuntamiento Municipio de Guaymate",
+          "objeto": "CONSTRUCCION DE CANCHA DE BALONCESTO SECTOR LOS BARRETOS DE GUAYMATE",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-17",
+          "dirigido_a": "abierto a todos",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1740907",
+          "monto_referencia_formateado": "Monto de referencia: RD$2,901,000.00"
         }
       ]
     },
@@ -927,14 +916,14 @@
           "monto_referencia_formateado": "Monto de referencia: RD$313,000.00"
         },
         {
-          "codigo_proceso": "HSLM-DAF-CM-2026-0143",
-          "institucion": "Hospital Materno Infantil San Lorenzo de Los Minas",
-          "objeto": "ADQUISICION DE EQUIPOS DE TECNOLOGIA",
+          "codigo_proceso": "FONPER-DAF-CM-2026-0024",
+          "institucion": "Fondo Patrimonial para las Empresas Reformadas",
+          "objeto": "Adquisición de accesorios y materiales de escritorio y oficinas para el Fondo Patrimonial de las Empresas Reformadas (FONPER) relacioando al lote declarado desierto del proceso:FONPER-DAF-CM-2026-0018",
           "modalidad": "CM",
           "fecha_limite_ofertas": "2026-07-22",
           "dirigido_a": "MIPYME",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1742938",
-          "monto_referencia_formateado": "Monto de referencia: RD$1,896,400.00"
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1743016",
+          "monto_referencia_formateado": "Monto de referencia: RD$1,041,135.00"
         }
       ]
     },
@@ -1073,16 +1062,6 @@
       "total_abiertos": 2,
       "muestra": [
         {
-          "codigo_proceso": "INABIE-DAF-CM-2026-0078",
-          "institucion": "INSTITUTO NACIONAL DE BIENESTAR ESTUDIANTIL",
-          "objeto": "Adquisición de caja para Reveladora de Radiografías periapical, para la Division de Salud Bucal del Instituto Nacional de Bienestar Estudiantil (INABIE).",
-          "modalidad": "CM",
-          "fecha_limite_ofertas": "2026-07-22",
-          "dirigido_a": "abierto a todos",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1742146",
-          "monto_referencia_formateado": "Monto de referencia: RD$356,320.00"
-        },
-        {
           "codigo_proceso": "HRILLB-DAF-CM-2026-0013",
           "institucion": "Hospital Regional Ing. Luis L. Bogaert",
           "objeto": "ADQUISICION DE MEDICAMENTOS",
@@ -1091,6 +1070,16 @@
           "dirigido_a": "abierto a todos",
           "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1743233",
           "monto_referencia_formateado": "Monto de referencia: RD$1,891,710.00"
+        },
+        {
+          "codigo_proceso": "INABIE-DAF-CM-2026-0078",
+          "institucion": "INSTITUTO NACIONAL DE BIENESTAR ESTUDIANTIL",
+          "objeto": "Adquisición de caja para Reveladora de Radiografías periapical, para la Division de Salud Bucal del Instituto Nacional de Bienestar Estudiantil (INABIE).",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-22",
+          "dirigido_a": "abierto a todos",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1742146",
+          "monto_referencia_formateado": "Monto de referencia: RD$356,320.00"
         }
       ]
     },
@@ -1131,16 +1120,6 @@
       "total_abiertos": 7,
       "muestra": [
         {
-          "codigo_proceso": "HPDLM-DAF-CM-2026-0004",
-          "institucion": "Hospital Provincial Dr. Leopoldo Martinez",
-          "objeto": "Adquisicion de medicamento e Insumo",
-          "modalidad": "CM",
-          "fecha_limite_ofertas": "2026-07-17",
-          "dirigido_a": "abierto a todos",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741419",
-          "monto_referencia_formateado": "Monto de referencia: RD$1,022,811.00"
-        },
-        {
           "codigo_proceso": "HOSP RAMON DE LARA-DAF-CM-2026-0074",
           "institucion": "Hospital Ramón de Lara FFAA",
           "objeto": "Adquisición de Materiales Médicos.",
@@ -1149,6 +1128,16 @@
           "dirigido_a": "abierto a todos",
           "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741323",
           "monto_referencia_formateado": "Monto de referencia: RD$970,352.00"
+        },
+        {
+          "codigo_proceso": "HPDLM-DAF-CM-2026-0004",
+          "institucion": "Hospital Provincial Dr. Leopoldo Martinez",
+          "objeto": "Adquisicion de medicamento e Insumo",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-17",
+          "dirigido_a": "abierto a todos",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741419",
+          "monto_referencia_formateado": "Monto de referencia: RD$1,022,811.00"
         }
       ]
     },
@@ -1198,14 +1187,14 @@
           "monto_referencia_formateado": "Monto de referencia: RD$1,974,000.00"
         },
         {
-          "codigo_proceso": "HFMP-DAF-CM-2026-0089",
-          "institucion": "Hospital Docente Universitario Doctor Francisco E, Moscoso Puello",
-          "objeto": "COMPRA DE INSUMOS MEDICOS  PARA USO DEL HOSPITAL",
+          "codigo_proceso": "HSBG-DAF-CM-2026-0072",
+          "institucion": "Hospital Dr. Salvador B. Gautier",
+          "objeto": "Adquisición de Medicamentos varios, Lido -Bicarbonato-Meropenem-Fluconazol-vaso Humificador",
           "modalidad": "CM",
           "fecha_limite_ofertas": "2026-07-20",
           "dirigido_a": "abierto a todos",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741924",
-          "monto_referencia_formateado": "Monto de referencia: RD$2,004,550.00"
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741748",
+          "monto_referencia_formateado": "Monto de referencia: RD$1,650,000.00"
         }
       ]
     },
@@ -1256,6 +1245,16 @@
       "total_abiertos": 12,
       "muestra": [
         {
+          "codigo_proceso": "HFMP-DAF-CM-2026-0089",
+          "institucion": "Hospital Docente Universitario Doctor Francisco E, Moscoso Puello",
+          "objeto": "COMPRA DE INSUMOS MEDICOS  PARA USO DEL HOSPITAL",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-20",
+          "dirigido_a": "abierto a todos",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741924",
+          "monto_referencia_formateado": "Monto de referencia: RD$2,004,550.00"
+        },
+        {
           "codigo_proceso": "HTDDC-DAF-CM-2026-0097",
           "institucion": "Hospital Traumatológico Dr. Darío Contreras",
           "objeto": "ADQUISICIÓN DE REACTIVOS DE LABORATORIO",
@@ -1264,16 +1263,6 @@
           "dirigido_a": "abierto a todos",
           "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1742327",
           "monto_referencia_formateado": "Monto de referencia: RD$1,234,056.00"
-        },
-        {
-          "codigo_proceso": "HDMTD-DAF-CM-2026-0137",
-          "institucion": "Hospital General de Especialidades Dr. Mario Tolentino Dipp",
-          "objeto": "ADQUISICION DE SUTURAS, SELLO DE AGUA, CIRCUITO RESPIRATORIO Y TUBO TORACICO PARA EL HDMTD",
-          "modalidad": "CM",
-          "fecha_limite_ofertas": "2026-07-22",
-          "dirigido_a": "abierto a todos",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1743005",
-          "monto_referencia_formateado": "Monto de referencia: RD$2,005,000.00"
         }
       ]
     },
@@ -1281,16 +1270,6 @@
       "codigo_familia": "4228",
       "total_abiertos": 8,
       "muestra": [
-        {
-          "codigo_proceso": "Hosp Marcelino Velez-DAF-CM-2026-0119",
-          "institucion": "Hospital General Regional Dr. Macelino Velez Santana",
-          "objeto": "COMPRA DE REACTIVOS,CONTROLES Y CARTUCHOS ARTERIALES",
-          "modalidad": "CM",
-          "fecha_limite_ofertas": "2026-07-17",
-          "dirigido_a": "abierto a todos",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741241",
-          "monto_referencia_formateado": "Monto de referencia: RD$995,217.00"
-        },
         {
           "codigo_proceso": "Hosp Marcelino Velez-DAF-CM-2026-0118",
           "institucion": "Hospital General Regional Dr. Macelino Velez Santana",
@@ -1300,6 +1279,16 @@
           "dirigido_a": "abierto a todos",
           "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1740928",
           "monto_referencia_formateado": "Monto de referencia: RD$1,304,964.08"
+        },
+        {
+          "codigo_proceso": "Hosp Marcelino Velez-DAF-CM-2026-0119",
+          "institucion": "Hospital General Regional Dr. Macelino Velez Santana",
+          "objeto": "COMPRA DE REACTIVOS,CONTROLES Y CARTUCHOS ARTERIALES",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-17",
+          "dirigido_a": "abierto a todos",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741241",
+          "monto_referencia_formateado": "Monto de referencia: RD$995,217.00"
         }
       ]
     },
@@ -1355,16 +1344,6 @@
       "total_abiertos": 11,
       "muestra": [
         {
-          "codigo_proceso": "HIRUDAG-DAF-CM-2026-0009",
-          "institucion": "Hospital Regional Infantil Dr. Arturo Grullón",
-          "objeto": "COMPRA DE MATERIALES GASTABLES",
-          "modalidad": "CM",
-          "fecha_limite_ofertas": "2026-07-17",
-          "dirigido_a": "abierto a todos",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741170",
-          "monto_referencia_formateado": "Monto de referencia: RD$997,541.92"
-        },
-        {
           "codigo_proceso": "HPSB-DAF-CM-2026-0025",
           "institucion": "Hospital Provincial San Bartolomé",
           "objeto": "AQUISICION DE CATETER #20, 22 Y 24 PARA USAR EN EL HPSB.",
@@ -1373,6 +1352,16 @@
           "dirigido_a": "abierto a todos",
           "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741338",
           "monto_referencia_formateado": "Monto de referencia: RD$440,000.00"
+        },
+        {
+          "codigo_proceso": "HIRUDAG-DAF-CM-2026-0009",
+          "institucion": "Hospital Regional Infantil Dr. Arturo Grullón",
+          "objeto": "COMPRA DE MATERIALES GASTABLES",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-17",
+          "dirigido_a": "abierto a todos",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741170",
+          "monto_referencia_formateado": "Monto de referencia: RD$997,541.92"
         }
       ]
     },
@@ -1495,16 +1484,6 @@
       "total_abiertos": 19,
       "muestra": [
         {
-          "codigo_proceso": "TRABAJO-DAF-CM-2026-0022",
-          "institucion": "Ministerio de Trabajo",
-          "objeto": "ADQUISICION DE TONER PARA USO DE LOS DIFERENTES DPTO. DE ESTE MINISTERIO DE TRABAJO. PROCESO DIRIGIDO A MYPIMES",
-          "modalidad": "CM",
-          "fecha_limite_ofertas": "2026-07-17",
-          "dirigido_a": "MIPYME",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741035",
-          "monto_referencia_formateado": "Monto de referencia: RD$2,009,000.00"
-        },
-        {
           "codigo_proceso": "Hosp Marcelino Velez-DAF-CM-2026-0116",
           "institucion": "Hospital General Regional Dr. Macelino Velez Santana",
           "objeto": "COMPRA DE REACTIVOS DE LABORATORIO HIPRO Y SMART",
@@ -1513,6 +1492,16 @@
           "dirigido_a": "abierto a todos",
           "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741223",
           "monto_referencia_formateado": "Monto de referencia: RD$841,571.00"
+        },
+        {
+          "codigo_proceso": "ECORD-DAF-CM-2026-0016",
+          "institucion": "ECO5RD",
+          "objeto": "\"Adquisición de tóner y tinta para ser utilizado por esta Unidad Ejecutora ECO5RD\"",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-17",
+          "dirigido_a": "abierto a todos",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741038",
+          "monto_referencia_formateado": "Monto de referencia: RD$957,442.26"
         }
       ]
     },
@@ -1520,6 +1509,16 @@
       "codigo_familia": "4412",
       "total_abiertos": 8,
       "muestra": [
+        {
+          "codigo_proceso": "DGII-DAF-CM-2026-0059",
+          "institucion": "Dirección General Impuestos Internos",
+          "objeto": "Adquisición de materiales para uso de Educación Tributaria DGII.Proceso Dirigido a Mipymes.",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-22",
+          "dirigido_a": "MIPYME",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1743202",
+          "monto_referencia_formateado": "Monto de referencia: RD$1,929,175.00"
+        },
         {
           "codigo_proceso": "HPIC-DAF-CM-2026-0054",
           "institucion": "Hospital Provincial Inmaculada Concepción",
@@ -1529,16 +1528,6 @@
           "dirigido_a": "abierto a todos",
           "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1743112",
           "monto_referencia_formateado": "Monto de referencia: RD$1,302,556.00"
-        },
-        {
-          "codigo_proceso": "INAFOCAM-DAF-CM-2026-0056",
-          "institucion": "Instituto Nacional de Formacion y Capacitacion del Magisterio",
-          "objeto": "Adquisición de suministros y materiales de oficina para uso institucional - Procedimiento dirigido al Sector MiPymes Mujer.",
-          "modalidad": "CM",
-          "fecha_limite_ofertas": "2026-07-22",
-          "dirigido_a": "MIPYME mujer",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1743241",
-          "monto_referencia_formateado": "Monto de referencia: RD$1,828,075.00"
         }
       ]
     },
@@ -1620,14 +1609,14 @@
           "monto_referencia_formateado": "Monto de referencia: RD$2,008,800.00"
         },
         {
-          "codigo_proceso": "SIE-DAF-CM-2026-0034",
-          "institucion": "Superintendencia de Electricidad",
-          "objeto": "Capacitación para Brigadistas SIE (Programa de Primeros auxilios Básicos y Programa de Evacuación a Zona Segura)",
+          "codigo_proceso": "UNADE-DAF-CM-2026-0008",
+          "institucion": "Universidad Nacional para la Defensa",
+          "objeto": "Adquisición de equipos informáticos y cámara de vigilancia.",
           "modalidad": "CM",
           "fecha_limite_ofertas": "2026-07-22",
-          "dirigido_a": "abierto a todos",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1742154",
-          "monto_referencia_formateado": "Monto de referencia: RD$590,000.00"
+          "dirigido_a": "MIPYME mujer",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1742908",
+          "monto_referencia_formateado": "Monto de referencia: RD$416,119.67"
         }
       ]
     },
@@ -1745,14 +1734,14 @@
           "monto_referencia_formateado": "Monto de referencia: RD$605,684.56"
         },
         {
-          "codigo_proceso": "FONPER-DAF-CM-2026-0024",
-          "institucion": "Fondo Patrimonial para las Empresas Reformadas",
-          "objeto": "Adquisición de accesorios y materiales de escritorio y oficinas para el Fondo Patrimonial de las Empresas Reformadas (FONPER) relacioando al lote declarado desierto del proceso:FONPER-DAF-CM-2026-0018",
+          "codigo_proceso": "MMUJER-DAF-CM-2026-0044",
+          "institucion": "Ministerio de la Mujer",
+          "objeto": "Adquisición e instalación de centro de monitoreo digital mediante videowall led INDOOR, dirigido a mipymes.",
           "modalidad": "CM",
           "fecha_limite_ofertas": "2026-07-22",
           "dirigido_a": "MIPYME",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1743016",
-          "monto_referencia_formateado": "Monto de referencia: RD$1,041,135.00"
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1742948",
+          "monto_referencia_formateado": "Monto de referencia: RD$1,891,776.00"
         }
       ]
     },
@@ -1828,6 +1817,16 @@
       "total_abiertos": 10,
       "muestra": [
         {
+          "codigo_proceso": "HSLM-DAF-CM-2026-0143",
+          "institucion": "Hospital Materno Infantil San Lorenzo de Los Minas",
+          "objeto": "ADQUISICION DE EQUIPOS DE TECNOLOGIA",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-22",
+          "dirigido_a": "MIPYME",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1742938",
+          "monto_referencia_formateado": "Monto de referencia: RD$1,896,400.00"
+        },
+        {
           "codigo_proceso": "INAPA-CCC-LPN-2026-0014",
           "institucion": "Instituto Nacional de Aguas Potables y Alcantarillados",
           "objeto": "ADQUISICION DE EQUIPOS DE LABORATORIO PARA TRABAJOS DEL PROGRAMA DE MODERNIZACION DEL SECTOR APS",
@@ -1864,14 +1863,14 @@
           "monto_referencia_formateado": "Monto de referencia: RD$1,995,675.00"
         },
         {
-          "codigo_proceso": "DGII-DAF-CM-2026-0059",
-          "institucion": "Dirección General Impuestos Internos",
-          "objeto": "Adquisición de materiales para uso de Educación Tributaria DGII.Proceso Dirigido a Mipymes.",
+          "codigo_proceso": "INAFOCAM-DAF-CM-2026-0056",
+          "institucion": "Instituto Nacional de Formacion y Capacitacion del Magisterio",
+          "objeto": "Adquisición de suministros y materiales de oficina para uso institucional - Procedimiento dirigido al Sector MiPymes Mujer.",
           "modalidad": "CM",
           "fecha_limite_ofertas": "2026-07-22",
-          "dirigido_a": "MIPYME",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1743202",
-          "monto_referencia_formateado": "Monto de referencia: RD$1,929,175.00"
+          "dirigido_a": "MIPYME mujer",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1743241",
+          "monto_referencia_formateado": "Monto de referencia: RD$1,828,075.00"
         }
       ]
     },
@@ -1942,16 +1941,6 @@
       "total_abiertos": 11,
       "muestra": [
         {
-          "codigo_proceso": "UNADE-DAF-CM-2026-0008",
-          "institucion": "Universidad Nacional para la Defensa",
-          "objeto": "Adquisición de equipos informáticos y cámara de vigilancia.",
-          "modalidad": "CM",
-          "fecha_limite_ofertas": "2026-07-22",
-          "dirigido_a": "MIPYME mujer",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1742908",
-          "monto_referencia_formateado": "Monto de referencia: RD$416,119.67"
-        },
-        {
           "codigo_proceso": "EDESUR-CCC-LPN-2026-0018",
           "institucion": "Empresa Distribuidora de Electricidad del Sur",
           "objeto": "ADQUISICIÓN DE CABLES Y CONDUCTORES PARA LA AMPLIACIÓN Y CONSTRUCCIÓN DE REDES DE DISTRIBUCIÓN ELÉCTRICA",
@@ -1968,16 +1957,6 @@
       "total_abiertos": 13,
       "muestra": [
         {
-          "codigo_proceso": "MIDE-DAF-CM-2026-0102",
-          "institucion": "Ministerio de Defensa",
-          "objeto": "Adquisición de baterías de vehículos",
-          "modalidad": "CM",
-          "fecha_limite_ofertas": "2026-07-17",
-          "dirigido_a": "MIPYME",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741002",
-          "monto_referencia_formateado": "Monto de referencia: RD$719,988.00"
-        },
-        {
           "codigo_proceso": "ARD-DAF-CM-2026-0061",
           "institucion": "Armada de República Dominicana",
           "objeto": "ADQUISICIÓN DE GENERADOR DE EMERGENCIA, PARA SER UTILIZADO EN EL PATRULLERO DE ALTURA “DIDIEZ BURGOS” PA-301, ARD.",
@@ -1986,6 +1965,16 @@
           "dirigido_a": "abierto a todos",
           "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741205",
           "monto_referencia_formateado": "Monto de referencia: RD$2,010,000.00"
+        },
+        {
+          "codigo_proceso": "MIDE-DAF-CM-2026-0102",
+          "institucion": "Ministerio de Defensa",
+          "objeto": "Adquisición de baterías de vehículos",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-17",
+          "dirigido_a": "MIPYME",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741002",
+          "monto_referencia_formateado": "Monto de referencia: RD$719,988.00"
         }
       ]
     },
@@ -2221,16 +2210,6 @@
       "total_abiertos": 10,
       "muestra": [
         {
-          "codigo_proceso": "Inst. Nac. de Cancer-DAF-CM-2026-0186",
-          "institucion": "Instituto Nacional de Cancer 'Rosa E. Tavares'",
-          "objeto": "Adquisición de Reactivos Medicina Nuclear",
-          "modalidad": "CM",
-          "fecha_limite_ofertas": "2026-07-20",
-          "dirigido_a": "abierto a todos",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741642",
-          "monto_referencia_formateado": "Monto de referencia: RD$931,410.42"
-        },
-        {
           "codigo_proceso": "Inst. Nac. de Cancer-DAF-CM-2026-0192",
           "institucion": "Instituto Nacional de Cancer 'Rosa E. Tavares'",
           "objeto": "Adquisicion de AC1 y Kc1",
@@ -2239,6 +2218,16 @@
           "dirigido_a": "abierto a todos",
           "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741565",
           "monto_referencia_formateado": "Monto de referencia: RD$914,046.00"
+        },
+        {
+          "codigo_proceso": "HDMTD-DAF-CM-2026-0128",
+          "institucion": "Hospital General de Especialidades Dr. Mario Tolentino Dipp",
+          "objeto": "ADQUISICION DE CEFEPIME, ENTEROGERMINA, NORADRENALINA Y ACIDO ASCORBICO PARA ESTE HOSPITAL",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-20",
+          "dirigido_a": "abierto a todos",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741963",
+          "monto_referencia_formateado": "Monto de referencia: RD$2,010,000.00"
         }
       ]
     },
@@ -2262,16 +2251,6 @@
       "total_abiertos": 8,
       "muestra": [
         {
-          "codigo_proceso": "HMSA-DAF-CM-2026-0018",
-          "institucion": "Hospital Municipal Sigifredo Alba",
-          "objeto": "ADQUISICION DE SUMINISTRO DE OXIGENO MEDICO Y FLETE",
-          "modalidad": "CM",
-          "fecha_limite_ofertas": "2026-07-20",
-          "dirigido_a": "abierto a todos",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741433",
-          "monto_referencia_formateado": "Monto de referencia: RD$346,500.00"
-        },
-        {
           "codigo_proceso": "Hosp. Juan Bosch-DAF-CM-2026-0110",
           "institucion": "Hospital Traumatológico y Quirúrgico del Cibao Central Juan Bosch",
           "objeto": "ADQUISICION DE SUMINISTRO DE GASES MEDICOS (OXIGENO PARA PACIENTES) DEL HRTQPJB (EQUIPOS INSTALADOS)",
@@ -2280,6 +2259,16 @@
           "dirigido_a": "abierto a todos",
           "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1742046",
           "monto_referencia_formateado": "Monto de referencia: RD$1,873,805.85"
+        },
+        {
+          "codigo_proceso": "HMSA-DAF-CM-2026-0018",
+          "institucion": "Hospital Municipal Sigifredo Alba",
+          "objeto": "ADQUISICION DE SUMINISTRO DE OXIGENO MEDICO Y FLETE",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-20",
+          "dirigido_a": "abierto a todos",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741433",
+          "monto_referencia_formateado": "Monto de referencia: RD$346,500.00"
         }
       ]
     },
@@ -2392,16 +2381,6 @@
       "total_abiertos": 9,
       "muestra": [
         {
-          "codigo_proceso": "Bomb. Los Alcarrizos-DAF-CM-2026-0003",
-          "institucion": "Cuerpo de Bomberos de Los Alcarrizos",
-          "objeto": "Compra de Gasoil Regular correspondientes al semestre Julio-Diciembre 2026",
-          "modalidad": "CM",
-          "fecha_limite_ofertas": "2026-07-17",
-          "dirigido_a": "abierto a todos",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1740910",
-          "monto_referencia_formateado": "Monto de referencia: RD$480,080.32"
-        },
-        {
           "codigo_proceso": "AYUNTAMIENTO SAN P.-CCC-CP-2026-0011",
           "institucion": "Ayuntamiento de San Pedro de Macoris",
           "objeto": "ADQUISICIÓN DE TICKETS DE COMBUSTIBLE TIPO GASOLINA, DESTINADOS A LAS OPERACIONES DIARIAS DE LOS DEPARTAMENTOS ADMINISTRATIVOS Y OPERATIVOS DEL AYUNTAMIENTO DE SAN PEDRO DE MACORÍS, CORRESPONDIENTE AL",
@@ -2410,6 +2389,16 @@
           "dirigido_a": "abierto a todos",
           "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1740253",
           "monto_referencia_formateado": "Monto de referencia: RD$5,100,000.00"
+        },
+        {
+          "codigo_proceso": "Bomb. Los Alcarrizos-DAF-CM-2026-0003",
+          "institucion": "Cuerpo de Bomberos de Los Alcarrizos",
+          "objeto": "Compra de Gasoil Regular correspondientes al semestre Julio-Diciembre 2026",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-17",
+          "dirigido_a": "abierto a todos",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1740910",
+          "monto_referencia_formateado": "Monto de referencia: RD$480,080.32"
         }
       ]
     },
@@ -2522,16 +2511,6 @@
       "total_abiertos": 7,
       "muestra": [
         {
-          "codigo_proceso": "TRABAJO-DAF-CM-2026-0026",
-          "institucion": "Ministerio de Trabajo",
-          "objeto": "ADQUISICION DE MEDICAMENTOS PARA SER UTILIZADOS EN LA UNIDAD MEDICA DE ESTE MINISTERIO DE TRABAJO",
-          "modalidad": "CM",
-          "fecha_limite_ofertas": "2026-07-17",
-          "dirigido_a": "abierto a todos",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741049",
-          "monto_referencia_formateado": "Monto de referencia: RD$748,000.00"
-        },
-        {
           "codigo_proceso": "HFMP-DAF-CM-2026-0088",
           "institucion": "Hospital Docente Universitario Doctor Francisco E, Moscoso Puello",
           "objeto": "COMPRA DE MEDICAMENTOS PARA USO DEL HOSPITAL .",
@@ -2540,6 +2519,16 @@
           "dirigido_a": "abierto a todos",
           "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741168",
           "monto_referencia_formateado": "Monto de referencia: RD$968,275.00"
+        },
+        {
+          "codigo_proceso": "TRABAJO-DAF-CM-2026-0026",
+          "institucion": "Ministerio de Trabajo",
+          "objeto": "ADQUISICION DE MEDICAMENTOS PARA SER UTILIZADOS EN LA UNIDAD MEDICA DE ESTE MINISTERIO DE TRABAJO",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-17",
+          "dirigido_a": "abierto a todos",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741049",
+          "monto_referencia_formateado": "Monto de referencia: RD$748,000.00"
         }
       ]
     },
@@ -2642,14 +2631,14 @@
           "monto_referencia_formateado": "Monto de referencia: RD$713,380.00"
         },
         {
-          "codigo_proceso": "Hosp. Reid Cabral-DAF-CM-2026-0071",
+          "codigo_proceso": "Hosp. Reid Cabral-DAF-CM-2026-0074",
           "institucion": "Hospital Infantil Robert Reid Cabral",
-          "objeto": "COMPRA DE MEDICAMENTO (MILRINONA) PARA PACIENTES DEL HOSPITAL PEDIATRICO DR. ROBERT REID CABRAL.",
+          "objeto": "COMPRA DE MEDICAMENTOS (AMIKACINA, ENALAPRIL, LIDOCAINA S/E, CEFEPIME Y ENTEROGERMINA) PARA PACIENTES DEL HOSPITAL PEDIATRICO DR. ROBERT REID CABRAL.",
           "modalidad": "CM",
           "fecha_limite_ofertas": "2026-07-22",
           "dirigido_a": "abierto a todos",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1743107",
-          "monto_referencia_formateado": "Monto de referencia: RD$320,000.00"
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1743111",
+          "monto_referencia_formateado": "Monto de referencia: RD$369,000.00"
         }
       ]
     },
@@ -2700,14 +2689,14 @@
           "monto_referencia_formateado": "Monto de referencia: RD$1,300,000.00"
         },
         {
-          "codigo_proceso": "HDMTD-DAF-CM-2026-0128",
-          "institucion": "Hospital General de Especialidades Dr. Mario Tolentino Dipp",
-          "objeto": "ADQUISICION DE CEFEPIME, ENTEROGERMINA, NORADRENALINA Y ACIDO ASCORBICO PARA ESTE HOSPITAL",
+          "codigo_proceso": "Inst. Nac. de Cancer-DAF-CM-2026-0198",
+          "institucion": "Instituto Nacional de Cancer 'Rosa E. Tavares'",
+          "objeto": "SUMINISTRO DE MEDICAMENTOS COMBINADOS Y GENERALES",
           "modalidad": "CM",
-          "fecha_limite_ofertas": "2026-07-20",
+          "fecha_limite_ofertas": "2026-07-21",
           "dirigido_a": "abierto a todos",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741963",
-          "monto_referencia_formateado": "Monto de referencia: RD$2,010,000.00"
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1742336",
+          "monto_referencia_formateado": "Monto de referencia: RD$1,459,627.20"
         }
       ]
     },
@@ -2726,14 +2715,14 @@
           "monto_referencia_formateado": "Monto de referencia: RD$2,000,000.00"
         },
         {
-          "codigo_proceso": "HSBG-DAF-CM-2026-0072",
-          "institucion": "Hospital Dr. Salvador B. Gautier",
-          "objeto": "Adquisición de Medicamentos varios, Lido -Bicarbonato-Meropenem-Fluconazol-vaso Humificador",
+          "codigo_proceso": "HTDDC-DAF-CM-2026-0093",
+          "institucion": "Hospital Traumatológico Dr. Darío Contreras",
+          "objeto": "ADQUISICIÓN DE MEDICAMENTOS",
           "modalidad": "CM",
           "fecha_limite_ofertas": "2026-07-20",
           "dirigido_a": "abierto a todos",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741748",
-          "monto_referencia_formateado": "Monto de referencia: RD$1,650,000.00"
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741601",
+          "monto_referencia_formateado": "Monto de referencia: RD$1,121,000.00"
         }
       ]
     },
@@ -2956,14 +2945,14 @@
           "monto_referencia_formateado": "Monto de referencia: RD$1,214,928.00"
         },
         {
-          "codigo_proceso": "EGESERD-DAF-CM-2026-0007",
-          "institucion": "Escuela de Graduados de Estudios Superiores del Ejército",
-          "objeto": "SOLICITUD DE UNIFORME DE DEPORTE",
+          "codigo_proceso": "CPEP-DAF-CM-2026-0016",
+          "institucion": "Comisión Permanente de Efemérides Patrias",
+          "objeto": "Confección de Gorras y tshirts Viva la Patria y Duarte",
           "modalidad": "CM",
           "fecha_limite_ofertas": "2026-07-21",
-          "dirigido_a": "MIPYME mujer",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1742417",
-          "monto_referencia_formateado": "Monto de referencia: RD$350,792.20"
+          "dirigido_a": "abierto a todos",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1742507",
+          "monto_referencia_formateado": "Monto de referencia: RD$283,200.00"
         }
       ]
     },
@@ -2987,14 +2976,14 @@
           "monto_referencia_formateado": "Monto de referencia: RD$562,611.02"
         },
         {
-          "codigo_proceso": "SIE-CCC-CP-2026-0009",
-          "institucion": "Superintendencia de Electricidad",
-          "objeto": "Contratación del Servicio de Renovación de Licencias de Seguridad FortiGate NGFW para la Superintendencia de Electricidad",
-          "modalidad": "CP",
+          "codigo_proceso": "CGLEA-DAF-CM-2026-0031",
+          "institucion": "Centro de Gastroenterología Doctor Luis Eduardo Aybar",
+          "objeto": "SERVICIO DE MANTENIMIENTO Y ALQUILER DE IMPRESORA PARA EL CENTRO.",
+          "modalidad": "CM",
           "fecha_limite_ofertas": "2026-07-20",
           "dirigido_a": "abierto a todos",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1740635",
-          "monto_referencia_formateado": "Monto de referencia: RD$3,000,000.00"
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741727",
+          "monto_referencia_formateado": "Monto de referencia: RD$973,976.88"
         }
       ]
     },
@@ -3092,24 +3081,24 @@
       "total_abiertos": 40,
       "muestra": [
         {
-          "codigo_proceso": "MICM-DAF-CM-2026-0088",
-          "institucion": "Ministerio de Industria, Comercio y Mipymes",
-          "objeto": "Contratación de Servicios de Fumigación Sede Torre y Otras Instalaciones del MICM, y Oficina Regional en Santiago - Compras Verdes",
+          "codigo_proceso": "Dpto. Aeroportuario-DAF-CM-2026-0016",
+          "institucion": "Departamento Aeroportuario",
+          "objeto": "INSTALACIÓN DE PISOS EN PVC EN LA RECEPCIÓN DE LOS SALONES PROTOCOLARES Y GUBERNAMENTALES UBICADOS EN EL AEROPUERTO INTERNACIONAL DE LAS AMÉRICAS DR. FRANCISCO PEÑA GOMEZ (AILA)",
           "modalidad": "CM",
           "fecha_limite_ofertas": "2026-07-17",
-          "dirigido_a": "MIPYME",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1740257",
-          "monto_referencia_formateado": "Monto de referencia: RD$1,700,000.00"
+          "dirigido_a": "abierto a todos",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741124",
+          "monto_referencia_formateado": "Monto de referencia: RD$628,000.00"
         },
         {
-          "codigo_proceso": "SENPA-DAF-CM-2026-0008",
-          "institucion": "Servicio Nacional de Protección Ambiental",
-          "objeto": "SERVICIO DE REMOZAMIENTO, REPARACIÓN Y ACONDICIONAMIENTO DEL TALLER DE MECANICA DEL SENPA",
+          "codigo_proceso": "HFMP-DAF-CM-2026-0086",
+          "institucion": "Hospital Docente Universitario Doctor Francisco E, Moscoso Puello",
+          "objeto": "SERVICIO DE PLOMADO DE MUROS Y PUERTA  DEL QUIROFANO DEL PRIMER NIVEL  DEL HOSPITAL",
           "modalidad": "CM",
           "fecha_limite_ofertas": "2026-07-17",
-          "dirigido_a": "MIPYME mujer",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741202",
-          "monto_referencia_formateado": "Monto de referencia: RD$1,900,000.00"
+          "dirigido_a": "abierto a todos",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741441",
+          "monto_referencia_formateado": "Monto de referencia: RD$3,543,226.81"
         }
       ]
     },
@@ -3117,16 +3106,6 @@
       "codigo_familia": "8014",
       "total_abiertos": 25,
       "muestra": [
-        {
-          "codigo_proceso": "MINERD-DAF-CM-2026-0208",
-          "institucion": "Ministerio de Educación",
-          "objeto": "Contratación de servicios de alojamiento, salón y alimentación para el encuentro de presentación, socialización y acompañamiento sobre la guía de ambientación grupo 1 dirigido a MiPymes",
-          "modalidad": "CM",
-          "fecha_limite_ofertas": "2026-07-17",
-          "dirigido_a": "MIPYME",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741301",
-          "monto_referencia_formateado": "Monto de referencia: RD$2,010,235.00"
-        },
         {
           "codigo_proceso": "MINERD-DAF-CM-2026-0188",
           "institucion": "Ministerio de Educación",
@@ -3136,6 +3115,16 @@
           "dirigido_a": "MIPYME",
           "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741106",
           "monto_referencia_formateado": "Monto de referencia: RD$2,000,000.00"
+        },
+        {
+          "codigo_proceso": "MINERD-DAF-CM-2026-0208",
+          "institucion": "Ministerio de Educación",
+          "objeto": "Contratación de servicios de alojamiento, salón y alimentación para el encuentro de presentación, socialización y acompañamiento sobre la guía de ambientación grupo 1 dirigido a MiPymes",
+          "modalidad": "CM",
+          "fecha_limite_ofertas": "2026-07-17",
+          "dirigido_a": "MIPYME",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741301",
+          "monto_referencia_formateado": "Monto de referencia: RD$2,010,235.00"
         }
       ]
     },
@@ -3444,24 +3433,24 @@
       "total_abiertos": 23,
       "muestra": [
         {
-          "codigo_proceso": "MINERD-DAF-CM-2026-0206",
-          "institucion": "Ministerio de Educación",
-          "objeto": "\"Servicios de salón equipado con alojamiento para el Encuentro de Fortalecimiento Técnico, Grupo 4, dirigido a MIPYMES\".",
+          "codigo_proceso": "EMIDOM-DAF-CM-2026-0015",
+          "institucion": "Empresa Minera Dominicana",
+          "objeto": "Contratación de Servicios de Hospedaje y Alquiler de Salones de Reuniones en Santo Domingo, Distrito Nacional, para el Desarrollo de Actividades Institucionales y Técnicas de EMIDOM.",
           "modalidad": "CM",
           "fecha_limite_ofertas": "2026-07-17",
-          "dirigido_a": "MIPYME",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741307",
-          "monto_referencia_formateado": "Monto de referencia: RD$2,010,835.37"
+          "dirigido_a": "abierto a todos",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741056",
+          "monto_referencia_formateado": "Monto de referencia: RD$1,800,000.00"
         },
         {
-          "codigo_proceso": "MINERD-DAF-CM-2026-0132",
+          "codigo_proceso": "MINERD-DAF-CM-2026-0201",
           "institucion": "Ministerio de Educación",
-          "objeto": "Contratación de servicios de alojamiento, salón  y catering para la jornada de capacitación con centros de Educación Especial 2026, Grupo 2, dirigido a MIPYMES.",
+          "objeto": "\"Contratación de montaje por 4 días, para la jornada de fortalecimiento de competencias técnicas y pedagógica dirigido a MIPYMES.\"",
           "modalidad": "CM",
           "fecha_limite_ofertas": "2026-07-17",
           "dirigido_a": "MIPYME",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741112",
-          "monto_referencia_formateado": "Monto de referencia: RD$2,000,000.00"
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741001",
+          "monto_referencia_formateado": "Monto de referencia: RD$1,800,000.00"
         }
       ]
     },
@@ -3470,14 +3459,14 @@
       "total_abiertos": 30,
       "muestra": [
         {
-          "codigo_proceso": "ONDA-DAF-CM-2026-0012",
-          "institucion": "Oficina Nacional de Derecho de Autor",
-          "objeto": "SOLICITUD SERVICIO DE ALMUERZOS Y CENA PREEMPACADA  A DOMICILIO PARA PERSONAL DE LA ONDA",
+          "codigo_proceso": "MINERD-DAF-CM-2026-0192",
+          "institucion": "Ministerio de Educación",
+          "objeto": "Contratación servicios de Catering para Actividades Relativas a las Consultas Nacional por la Educación, Dirigido a MIPYMES.",
           "modalidad": "CM",
           "fecha_limite_ofertas": "2026-07-17",
-          "dirigido_a": "abierto a todos",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741435",
-          "monto_referencia_formateado": "Monto de referencia: RD$390,000.00"
+          "dirigido_a": "MIPYME",
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1741128",
+          "monto_referencia_formateado": "Monto de referencia: RD$2,010,000.00"
         },
         {
           "codigo_proceso": "INAFOCAM-DAF-CM-2026-0055",
@@ -3589,14 +3578,14 @@
           "monto_referencia_formateado": "Monto de referencia: RD$300,000.00"
         },
         {
-          "codigo_proceso": "CONAVIHSIDA-DAF-CM-2026-0004",
-          "institucion": "Consejo Nacional para el VIH y el SIDA",
-          "objeto": "PARTICIPACION DE COLABORADORES DE RECURSOS HUMANOS Y ADMINISTRATIVO A LAS CAPACITACIONES (congreso y taller)  , CONGRESO INTERNACIONAL, RECURSOS HUMANOS PUBLICOS 5.0, LIDERAZGO Y TRANSFORMACION DEL ES",
+          "codigo_proceso": "SIE-DAF-CM-2026-0034",
+          "institucion": "Superintendencia de Electricidad",
+          "objeto": "Capacitación para Brigadistas SIE (Programa de Primeros auxilios Básicos y Programa de Evacuación a Zona Segura)",
           "modalidad": "CM",
           "fecha_limite_ofertas": "2026-07-22",
           "dirigido_a": "abierto a todos",
-          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1742711",
-          "monto_referencia_formateado": "Monto de referencia: RD$1,197,587.50"
+          "url": "https://comunidad.comprasdominicana.gob.do//Public/Tendering/OpportunityDetail/Index?noticeUID=DO1.NTC.1742154",
+          "monto_referencia_formateado": "Monto de referencia: RD$590,000.00"
         }
       ]
     },
