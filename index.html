@@ -67,10 +67,15 @@
         </h1>
         <p class="hero-eslogan">Inteligencia de compras públicas</p>
         <p class="hero-frase-rotativa" id="hero-frase">En Publicola convertimos las compras públicas dominicanas en oportunidades claras para tu empresa.</p>
-        <a
-          href="mailto:info@publicola.com.do?subject=Quiero%20inscribirme%20en%20Radar%20Publicola&body=Hola%2C%20me%20quiero%20inscribir%20en%20Radar%20Publicola."
-          class="boton boton-secundario hero-boton"
-        >Inscríbete en Radar Publicola</a>
+        <!--
+          Unico boton del hero: lleva a la seccion "Licitaciones de la
+          semana" de esta misma pagina. El desplazamiento suave lo da la
+          regla global "html { scroll-behavior: smooth; }" de estilo.css
+          (no hace falta JavaScript aparte), y el aterrizaje no queda
+          tapado por la barra fija gracias a la regla global
+          "[id] { scroll-margin-top: ... }" que ya aplica a #licitaciones.
+        -->
+        <a href="#licitaciones" class="boton boton-secundario hero-boton">Ver las licitaciones de esta semana</a>
       </div>
     </section>
 
@@ -88,8 +93,8 @@
           <div class="radar-promo-overlay">
             <p class="radar-promo-titulo">Inscríbete en Radar Publicola</p>
             <p class="radar-promo-subtitulo">
-              Por solo RD$2,500 al mes y mantente al día con todas las licitaciones que
-              están saliendo en tu rubro.
+              Por solo RD$2,500 pesos al mes, mantente al día con todas las licitaciones
+              que están saliendo en tu rubro.
             </p>
           </div>
         </div>
@@ -105,7 +110,7 @@
         <img src="radar.png" alt="" class="licitaciones-icono" loading="lazy">
         <div>
           <h2>Licitaciones de la semana</h2>
-          <p class="subtitulo">Una probadita de lo que salió esta semana. Solo datos públicos.</p>
+          <p class="subtitulo">Entérate de las últimas licitaciones que han salido esta semana. Solo datos públicos.</p>
         </div>
       </div>
       <div class="contenedor">
@@ -117,7 +122,7 @@
 
     <section id="servicios" class="seccion encabezado-servicios">
       <div class="contenedor">
-        <h2>Servicios</h2>
+        <h2>Conoce nuestros servicios</h2>
       </div>
     </section>
 

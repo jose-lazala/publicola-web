@@ -3,8 +3,10 @@
  *
  * Hace dos cosas, sin librerias externas, sin analitica y sin cookies
  * (Ley 172-13):
- *   1) Rota cada 5 segundos la frase debajo del eslogan, con un cambio
- *      de opacidad suave (la transicion de 0.6s vive en estilo.css).
+ *   1) Rota el texto de la frase debajo del eslogan: cada frase queda
+ *      visible 5 segundos completos, luego se desvanece a 0 en medio
+ *      segundo, se cambia el texto, y se desvanece de vuelta a 1 en
+ *      otro medio segundo.
  *   2) Respeta prefers-reduced-motion: si el visitante lo tiene activo,
  *      pausa el video (se queda solo el poster) y deja la frase fija en
  *      la primera, sin rotar.
@@ -23,8 +25,8 @@
     "Cada semana, las licitaciones de tu rubro con sus plazos en días hábiles."
   ];
 
-  var MILISEGUNDOS_ENTRE_FRASES = 5000;
-  var MILISEGUNDOS_TRANSICION = 600;
+  var MILISEGUNDOS_VISIBLE = 5000;
+  var MILISEGUNDOS_TRANSICION = 500;
 
   function prefiereMovimientoReducido() {
     return Boolean(
@@ -56,14 +58,35 @@
     }
 
     var indiceActual = 0;
-    setInterval(function () {
-      elementoFrase.style.opacity = "0";
+
+    // Encadenamos un solo setTimeout tras otro (en vez de setInterval)
+    // a proposito: con setInterval, si el hilo principal se demora un
+    // instante (por ejemplo por el video de fondo), se pueden acumular
+    // varios "ticks" pendientes que despues disparan casi al mismo
+    // tiempo, y sus respectivos setTimeout internos terminan pisandose
+    // -- eso es lo que causaba que se vieran dos frases superpuestas.
+    // Con la cadena de abajo solo hay UN temporizador activo a la vez:
+    // el siguiente paso no se programa hasta que el anterior ya
+    // termino, asi que nunca puede haber dos transiciones a la vez.
+    function programarSiguienteCiclo() {
       setTimeout(function () {
-        indiceActual = (indiceActual + 1) % FRASES_ROTATIVAS.length;
-        elementoFrase.textContent = FRASES_ROTATIVAS[indiceActual];
-        elementoFrase.style.opacity = "1";
-      }, MILISEGUNDOS_TRANSICION);
-    }, MILISEGUNDOS_ENTRE_FRASES);
+        // Paso 1: la frase actual, que ya estuvo visible el tiempo
+        // completo, se desvanece a 0.
+        elementoFrase.style.opacity = "0";
+
+        setTimeout(function () {
+          // Paso 2: con la frase ya invisible (opacidad en 0), recien
+          // ahi se cambia el texto y se desvanece de vuelta a 1.
+          indiceActual = (indiceActual + 1) % FRASES_ROTATIVAS.length;
+          elementoFrase.textContent = FRASES_ROTATIVAS[indiceActual];
+          elementoFrase.style.opacity = "1";
+
+          programarSiguienteCiclo();
+        }, MILISEGUNDOS_TRANSICION);
+      }, MILISEGUNDOS_VISIBLE);
+    }
+
+    programarSiguienteCiclo();
   }
 
   try {

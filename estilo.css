@@ -190,7 +190,7 @@ body {
 
 .hero-logo {
   display: block;
-  height: 60px;
+  height: 85px;
   width: auto;
 }
 
@@ -205,9 +205,9 @@ body {
   display: block;
   margin: 0;
   color: var(--blanco);
-  font-size: 26px;
+  font-size: 37px;
   font-weight: 300;
-  letter-spacing: 6px;
+  letter-spacing: 8px;
   text-transform: uppercase;
 }
 
@@ -226,7 +226,11 @@ body {
   line-height: 1.45;
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
   opacity: 1;
-  transition: opacity 0.6s ease;
+  transition: opacity 0.5s ease;
+  /* Alto minimo fijo (3 renglones a esta line-height) para que el resto
+     del hero (el boton de abajo) no salte cuando una frase ocupa menos
+     lineas que otra -- la altura del bloque queda igual siempre. */
+  min-height: 4.35em;
   /* Tope de 3 lineas en celular, para que el hero no crezca de mas. */
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -234,8 +238,16 @@ body {
   overflow: hidden;
 }
 
+/* Unico boton del hero: bien grande, para que sea lo mas llamativo
+   despues del logo. En celular ocupa todo el ancho del bloque de texto
+   (el texto del boton es largo y asi nunca se desborda, aunque le toque
+   partirse en dos renglones dentro del boton). */
 .hero-boton {
   margin-top: 4px;
+  width: 100%;
+  text-align: center;
+  padding: 18px 24px;
+  font-size: 17px;
 }
 
 /* Con movimiento reducido, hero.js pausa el video, pero ademas lo
@@ -1158,12 +1170,18 @@ body {
   }
 
   .hero-logo {
-    height: 74px;
+    height: 110px;
   }
 
   .hero-logo-texto {
-    font-size: 34px;
-    letter-spacing: 8px;
+    font-size: 48px;
+    letter-spacing: 9px;
+  }
+
+  .hero-boton {
+    width: auto;
+    padding: 20px 36px;
+    font-size: 18px;
   }
 
   .hero-frase-rotativa {
@@ -1362,25 +1380,33 @@ body {
   }
 
   .hero-logo {
-    height: 90px;
+    height: 140px;
   }
 
   .hero-logo-texto {
-    font-size: 44px;
-    letter-spacing: 10px;
+    font-size: 62px;
+    letter-spacing: 12px;
   }
 
   .hero-eslogan {
     font-size: 18px;
   }
 
-  /* En escritorio sobra ancho: se quita el tope de 3 lineas del celular. */
+  /* En escritorio sobra ancho: se quita el tope de 3 lineas del celular.
+     El "min-height: 4.35em" base (3 renglones a este tamano de letra)
+     sigue aplicando -- reserva espacio de sobra para la frase mas larga,
+     asi el boton de abajo no salta de una frase a otra. */
   .hero-frase-rotativa {
     display: block;
     -webkit-line-clamp: unset;
     overflow: visible;
     font-size: 28px;
     max-width: 720px;
+  }
+
+  .hero-boton {
+    padding: 22px 48px;
+    font-size: 20px;
   }
 
   /* ---------- Titulos y aire de las secciones en general ---------- */
