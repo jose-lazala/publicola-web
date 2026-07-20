@@ -250,8 +250,8 @@ body {
      concreto (3:4) para que el recorte muestre todo el cabello arriba
      sin cortarlo, la cara centrada, y llegue hasta la mitad del pecho
      (se ve la corbata) en la parte de abajo. */
-  width: 150px;
-  height: 150px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center 20%;
@@ -468,6 +468,59 @@ body {
   margin-bottom: 0;
 }
 
+/* Escribiendo…" mientras se espera la respuesta del Worker de IA:
+   misma burbuja del bot, solo en cursiva y algo mas tenue. */
+.burbuja-escribiendo {
+  font-style: italic;
+  opacity: 0.7;
+}
+
+/* Chips atajo (siempre visibles debajo del historial de la
+   conversacion): 3 mandan un mensaje preescrito a la IA, uno abre
+   WhatsApp directo. Mismo look de "pastilla" para los 4, para que se
+   vean como un solo grupo de accesos rapidos. */
+.chat-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.chat-chip {
+  display: inline-block;
+  background-color: var(--gris-fondo);
+  color: var(--azul-marino);
+  border: 1px solid var(--gris-plata);
+  border-radius: 20px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.chat-chip:hover,
+.chat-chip:focus {
+  background-color: var(--gris-plata-claro);
+}
+
+.chat-chip-whatsapp {
+  background-color: #1f7a4d;
+  color: var(--blanco);
+  border-color: #1f7a4d;
+}
+
+.chat-chip-whatsapp:hover,
+.chat-chip-whatsapp:focus {
+  background-color: #185f3c;
+}
+
+/* Zona de respaldo: normalmente vacia, solo aparece con el boton de
+   WhatsApp cuando el Worker de IA falla o tarda demasiado. Vacia no
+   ocupa espacio, para no dejar un hueco de aire de mas en el chat. */
 .chat-controles {
   display: flex;
   flex-direction: column;
@@ -475,8 +528,39 @@ body {
   gap: 10px;
 }
 
-/* Campo de texto libre (pregunta "¿A qué se dedica tu empresa?" antes de
-   cada cierre por WhatsApp). Generico, no es un buscador. */
+.chat-controles:empty {
+  display: none;
+  margin: 0;
+}
+
+.chat-controles:not(:empty) {
+  margin-bottom: 12px;
+}
+
+/* Fila de entrada de texto: campo + boton "Enviar", siempre visible al
+   pie del panel de chat. */
+.chat-entrada {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.chat-campo-mensaje {
+  flex: 1;
+}
+
+.chat-boton-enviar {
+  flex-shrink: 0;
+}
+
+.chat-campo-mensaje:disabled,
+.chat-boton-enviar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Campo de texto libre generico del chat (mensaje del visitante para
+   Licita). Reutilizado tal cual esta clase para el campo de entrada. */
 .campo-texto-libre {
   width: 100%;
   /* font-size 16px a proposito: por debajo de eso Safari en iPhone hace
@@ -637,17 +721,17 @@ body {
 .licita-etiqueta {
   background-color: var(--azul-marino);
   color: var(--blanco);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
-  padding: 8px 14px;
-  border-radius: 20px;
+  padding: 10px 18px;
+  border-radius: 24px;
   white-space: nowrap;
   box-shadow: 0 2px 8px rgba(11, 31, 58, 0.3);
 }
 
 .licita-circulo {
-  width: 60px;
-  height: 60px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   background-color: var(--azul-marino);
   border: none;
@@ -967,8 +1051,8 @@ body {
   }
 
   .ceo-foto {
-    width: 180px;
-    height: 180px;
+    width: 140px;
+    height: 140px;
   }
 
   .ceo-contacto {
@@ -1067,6 +1151,16 @@ body {
   .licita-flotante {
     right: 28px;
     bottom: 28px;
+  }
+
+  .licita-etiqueta {
+    font-size: 16px;
+    padding: 12px 22px;
+  }
+
+  .licita-circulo {
+    width: 88px;
+    height: 88px;
   }
 
   .licita-panel {
