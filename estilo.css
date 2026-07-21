@@ -1033,6 +1033,14 @@ body {
   color: var(--gris-texto);
 }
 
+/* Espaciado entre parrafos seguidos: las 5 secciones "servicio-completa"
+   (constitucion, revision, preparacion, plan y radar-publicola) tienen
+   ahora varios parrafos cada una, asi que esta regla aplica pareja a
+   las 5 -- no hace falta escoparla por id. */
+.servicio-completa-texto p + p {
+  margin-top: 14px;
+}
+
 .servicio-completa-botones {
   display: flex;
   flex-direction: column;
@@ -1044,21 +1052,12 @@ body {
   margin-top: 16px;
 }
 
-/* ---------- Radar Publicola: seccion con varios parrafos ----------
-   Las otras 4 secciones "servicio-completa" (constitucion, revision,
-   preparacion, plan) tienen un solo parrafo, por eso ".servicio-completa-texto p"
-   no trae espaciado propio (no hace falta). Esta seccion si tiene
-   varios parrafos seguidos, asi que el espaciado entre ellos y el aire
-   extra antes del boton de cierre van ESCOPEADOS a "#radar-publicola"
-   para no afectar a las otras 4 secciones que comparten las mismas
-   clases. */
-#radar-publicola .servicio-completa-texto p + p {
-  margin-top: 14px;
-}
-
+/* El boton de Radar Publicola pidio, en un encargo anterior, un poco
+   mas de aire que el margen por defecto (20px) para notarse como el
+   cierre de todo el texto de esa seccion en particular. Sigue
+   escopeado solo a "#radar-publicola" porque las otras 4 secciones no
+   pidieron ese aire extra. */
 #radar-publicola .servicio-completa-botones {
-  /* Un poco mas de aire que el margen por defecto (20px), para que el
-     boton se note como el cierre de todo el texto de arriba. */
   margin-top: 32px;
 }
 
