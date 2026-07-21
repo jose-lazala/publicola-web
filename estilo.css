@@ -747,30 +747,41 @@ body {
      completo quede arriba del sobre. */
   justify-content: flex-start;
   text-align: center;
-  gap: 4px;
-  padding: 8px 18px;
+  gap: 3px;
+  padding: 6px 18px;
 }
 
 .radar-promo-titulo {
   margin: 0;
   color: var(--azul-marino);
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1.2;
+  /* Serifa clasica (fuentes locales del sistema, sin Google Fonts ni
+     CDN): le da un aire serio de despacho legal, en vez de la fuente
+     de palo ancha/condensada que se usa en el resto del sitio. */
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.15;
 }
 
 .radar-promo-subtitulo {
   margin: 0;
   color: var(--azul-marino);
-  font-size: 12px;
-  line-height: 1.3;
+  font-size: 11px;
+  line-height: 1.25;
   max-width: 300px;
 }
 
+/* Precio en forma de pildora: fondo azul marino solido y texto blanco,
+   para que se vea como una etiqueta de precio diseñada a proposito y
+   no como un numero suelto en negrita sobre la foto. */
 .radar-promo-precio {
+  display: inline-block;
   margin: 0;
-  color: var(--azul-marino);
-  font-size: 14px;
+  background-color: var(--azul-marino);
+  color: var(--blanco);
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 12px;
   font-weight: 700;
 }
 
@@ -1347,13 +1358,23 @@ body {
     max-width: 560px;
   }
 
+  .radar-promo-overlay {
+    padding: 10px 40px;
+    gap: 6px;
+  }
+
   .radar-promo-titulo {
-    font-size: 26px;
+    font-size: 30px;
   }
 
   .radar-promo-subtitulo {
-    font-size: 16px;
+    font-size: 17px;
     max-width: 420px;
+  }
+
+  .radar-promo-precio {
+    padding: 6px 20px;
+    font-size: 16px;
   }
 
   /* ---------- Licita flotante (escritorio) ---------- */
@@ -1544,13 +1565,17 @@ body {
   /* En vez de una columna, la franja se vuelve una sola celda de
      grid donde la foto (con su overlay) y el boton "Inscribete" se
      superponen en el mismo espacio -- asi el boton queda integrado
-     dentro de la franja en vez de flotar suelto debajo. */
+     dentro de la franja en vez de flotar suelto debajo. Ademas
+     position:relative aqui es lo que le da al boton (position:absolute
+     mas abajo) su punto de referencia para quedar agrupado justo
+     debajo del precio, como parte del mismo bloque centrado. */
   .radar-promo-grid {
     display: grid;
     grid-template-columns: 1fr;
     max-width: none;
     width: 100%;
     padding: 0;
+    position: relative;
   }
 
   .radar-promo-foto {
@@ -1567,37 +1592,43 @@ body {
        rotulos impresos en el sobre ("Publicola" / "Boletin semanal")
        quedan a media altura de la banda de 600px. Menos aire arriba
        mantiene el bloque de texto (titulo + subtitulo + precio) por
-       encima de esa zona, en vez de superponerse. */
-    padding: 24px 56px;
-    gap: 10px;
+       encima de esa zona, en vez de superponerse, y sube todo el
+       bloque para que no quede tan abajo sobre la foto. */
+    padding: 8px 56px;
+    gap: 8px;
   }
 
   /* El titular de la franja es, a proposito, el texto mas grande de
      toda la pagina: es el llamado a suscribirse, el punto que mas
      debe destacar en escritorio. */
   .radar-promo-titulo {
-    font-size: 52px;
+    font-size: 54px;
   }
 
   .radar-promo-subtitulo {
-    font-size: 24px;
+    font-size: 22px;
     max-width: 680px;
     margin: 0 auto;
   }
 
   .radar-promo-precio {
-    font-size: 28px;
+    padding: 8px 26px;
+    font-size: 20px;
   }
 
   /* Selector especifico al boton DENTRO de esta franja (el "Quiero
      el radar" de la seccion de servicios, mas abajo en la pagina,
-     no se toca porque no es hijo directo de .radar-promo-grid). */
+     no se toca porque no es hijo directo de .radar-promo-grid).
+     Posicionado con position:absolute (en vez del truco de grid pegado
+     abajo) para que quede justo debajo de la pildora de precio, como
+     parte del mismo bloque centrado y subido -- no flotando aparte
+     cerca del borde inferior de la foto. */
   .radar-promo-grid > .boton-primario {
-    grid-column: 1;
-    grid-row: 1;
-    align-self: end;
-    justify-self: center;
-    margin-bottom: 64px;
+    position: absolute;
+    left: 50%;
+    top: 271px;
+    transform: translateX(-50%);
+    margin: 0;
     z-index: 2;
     font-size: 20px;
     padding: 20px 52px;
