@@ -739,13 +739,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* El texto arranca arriba (no centrado) para no caer encima de los
-     rotulos "Publicola" / "Boletin semanal" impresos en el sobre, que
-     quedan mas o menos a media altura de la foto. En movil la caja es
-     de solo 4:3 (mucho mas baja que en escritorio), asi que el padding
-     y el espaciado se reducen a proposito para que el bloque de texto
-     completo quede arriba del sobre. */
-  justify-content: flex-start;
+  /* El bloque de texto queda centrado verticalmente en el medio exacto
+     de la franja de la foto (ya no importa la posicion del sobre). */
+  justify-content: center;
   text-align: center;
   gap: 3px;
   padding: 6px 18px;
@@ -754,12 +750,11 @@ body {
 .radar-promo-titulo {
   margin: 0;
   color: var(--azul-marino);
-  /* Serifa clasica (fuentes locales del sistema, sin Google Fonts ni
-     CDN): le da un aire serio de despacho legal, en vez de la fuente
-     de palo ancha/condensada que se usa en el resto del sitio. */
-  font-family: Georgia, "Times New Roman", serif;
+  /* Misma fuente sans-serif que el resto del sitio (body/subtitulo),
+     sin serifa: el titular combina con el resto de la pagina. */
+  font-family: inherit;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.15;
 }
 
@@ -785,17 +780,22 @@ body {
   font-weight: 700;
 }
 
-/* Boton "Conoce mas" de la franja del radar: con la foto oscura vieja
-   hacia falta invertirlo (fondo blanco, borde azul marino) para que no
-   se perdiera de vista. Con la foto clara nueva, el azul marino solido
-   con texto blanco (el .boton por defecto) ya tiene contraste de sobra,
-   asi que este selector solo ajusta tamano/relleno para el hero, sin
-   tocar color. Sigue scoped a .radar-promo-grid para no tocar el boton
-   "Inscribete" de la tarjeta Radar Publicola en la seccion de servicios,
-   mas abajo, que no forma parte de esta franja. */
+/* Boton "Conoce mas" de la franja del radar: boton de contorno (fondo
+   blanco, texto y borde azul marino), no el azul marino solido del
+   .boton por defecto. Sigue scoped a .radar-promo-grid para no tocar
+   el boton "Inscribete" de la tarjeta Radar Publicola en la seccion de
+   servicios, mas abajo, que no forma parte de esta franja. */
 .radar-promo-grid > .boton-primario {
+  background-color: var(--blanco);
+  color: var(--azul-marino);
+  border: 2px solid var(--azul-marino);
   font-size: 16px;
   padding: 15px 26px;
+}
+
+.radar-promo-grid > .boton-primario:hover,
+.radar-promo-grid > .boton-primario:focus {
+  background-color: var(--gris-fondo);
 }
 
 /* ---------- Licita flotante ---------- */
@@ -1588,13 +1588,12 @@ body {
   }
 
   .radar-promo-overlay {
-    /* Padding y separacion reducidos a proposito: en la foto nueva, los
-       rotulos impresos en el sobre ("Publicola" / "Boletin semanal")
-       quedan a media altura de la banda de 600px. Menos aire arriba
-       mantiene el bloque de texto (titulo + subtitulo + precio) por
-       encima de esa zona, en vez de superponerse, y sube todo el
-       bloque para que no quede tan abajo sobre la foto. */
-    padding: 8px 56px;
+    /* padding-top calculado para que el bloque completo (titulo +
+       subtitulo + precio + boton, este ultimo posicionado aparte mas
+       abajo) quede centrado en el medio exacto de la banda de 600px,
+       en vez de solo centrar el texto sin contar el boton. */
+    justify-content: flex-start;
+    padding: 129px 56px 8px;
     gap: 8px;
   }
 
@@ -1621,12 +1620,12 @@ body {
      no se toca porque no es hijo directo de .radar-promo-grid).
      Posicionado con position:absolute (en vez del truco de grid pegado
      abajo) para que quede justo debajo de la pildora de precio, como
-     parte del mismo bloque centrado y subido -- no flotando aparte
-     cerca del borde inferior de la foto. */
+     parte del mismo bloque -- el conjunto completo (titulo + subtitulo
+     + precio + boton) queda centrado en el medio exacto de la banda. */
   .radar-promo-grid > .boton-primario {
     position: absolute;
     left: 50%;
-    top: 271px;
+    top: 396px;
     transform: translateX(-50%);
     margin: 0;
     z-index: 2;
