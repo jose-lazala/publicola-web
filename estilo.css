@@ -310,18 +310,24 @@ body {
 /* ---------- Nuestro presidente ---------- */
 
 .titulo-presidente {
-  margin: 0 0 14px 0;
+  grid-area: titulo;
+  margin: 0;
   font-size: 18px;
   color: var(--azul-marino);
   text-align: center;
 }
 
+/* Mobile-first: una sola columna, orden titulo -> foto -> texto (que la
+   cara se vea antes que el parrafo). El layout de dos columnas (texto a
+   la izquierda, foto a la derecha) es exclusivo de la @media de abajo. */
 .tarjeta-ceo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 14px;
+  display: grid;
+  grid-template-areas:
+    "titulo"
+    "foto"
+    "texto";
+  justify-items: center;
+  gap: 16px;
   background-color: var(--blanco);
   border: 1px solid var(--gris-plata-claro);
   border-radius: var(--radio-borde);
@@ -329,20 +335,25 @@ body {
 }
 
 .ceo-foto {
-  /* Circulo: object-position vertical afinado para esta foto en
-     concreto (3:4) para que el recorte muestre todo el cabello arriba
-     sin cortarlo, la cara centrada, y llegue hasta la mitad del pecho
-     (se ve la corbata) en la parte de abajo. */
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
+  /* Cuadrada (no circular): el recorte redondo cortaba el rostro por los
+     lados. object-position vertical sigue afinado para esta foto en
+     concreto (3:4) para que se vea todo el cabello arriba sin cortarlo,
+     la cara centrada, y llegue hasta la mitad del pecho (se ve la
+     corbata) abajo -- como la relacion de aspecto de la caja sigue
+     siendo 1:1, el mismo encuadre que ya funcionaba en el circulo aplica
+     igual de centrado en el cuadrado, solo que ahora tambien se ven las
+     4 esquinas que el circulo recortaba. */
+  grid-area: foto;
+  width: 220px;
+  height: 220px;
+  border-radius: 14px;
   object-fit: cover;
   object-position: center 20%;
   border: 2px solid var(--azul-marino);
-  flex-shrink: 0;
 }
 
 .ceo-datos {
+  grid-area: texto;
   text-align: left;
 }
 
@@ -358,6 +369,18 @@ body {
   font-size: 14px;
   color: var(--gris-texto);
   margin: 0 0 12px 0;
+}
+
+/* Solo los parrafos de biografia se justifican (el titulo y el nombre
+   se quedan alineados a la izquierda). hyphens:auto es obligatorio junto
+   con justify: en una columna angosta, justificar sin particion de
+   palabras deja huecos blancos enormes; el idioma para la particion lo
+   toma del atributo lang="es" del contenedor .ceo-datos. */
+.ceo-bio {
+  text-align: justify;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
 }
 
 .ceo-contacto {
@@ -1285,9 +1308,16 @@ body {
     text-align: left;
   }
 
+  /* Dos columnas: texto (titulo + nombre + bio + botones) a la
+     izquierda, foto a la derecha -- lo contrario del orden apilado en
+     movil, donde la foto va entre el titulo y el texto. */
   .tarjeta-ceo {
-    flex-direction: row;
-    align-items: flex-start;
+    grid-template-columns: 1fr 260px;
+    grid-template-areas:
+      "titulo foto"
+      "texto  foto";
+    justify-items: stretch;
+    align-items: center;
     text-align: left;
   }
 
@@ -1296,8 +1326,10 @@ body {
   }
 
   .ceo-foto {
-    width: 140px;
-    height: 140px;
+    width: 260px;
+    height: 260px;
+    border-radius: 16px;
+    justify-self: end;
   }
 
   .ceo-contacto {
@@ -1655,5 +1687,122 @@ body {
     z-index: 2;
     font-size: 20px;
     padding: 20px 52px;
+  }
+}
+
+/* ============================================================
+   Enlace dentro del pie (web/index.html): reutiliza los mismos
+   colores del pie, solo agrega subrayado para que se note que es
+   un enlace sobre el fondo navy.
+   ============================================================ */
+
+.pie a {
+  color: var(--gris-plata);
+  text-decoration: underline;
+}
+
+.pie a:hover,
+.pie a:focus {
+  color: var(--blanco);
+}
+
+/* ============================================================
+   Documento legal (web/politica-de-privacidad.html): mismos
+   colores y tipografia del resto del sitio (azul marino, blanco,
+   gris/plata), sin adornos ni iconos. Mobile-first: la base es
+   para celular, la @media de abajo amplia para pantallas grandes,
+   igual que el resto de esta hoja de estilos.
+   ============================================================ */
+
+.cabecera-legal {
+  background-color: var(--azul-marino);
+  padding: 16px 0;
+}
+
+.enlace-volver {
+  color: var(--gris-plata);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.enlace-volver:hover,
+.enlace-volver:focus {
+  color: var(--blanco);
+  text-decoration: underline;
+}
+
+.documento-legal {
+  padding: 32px 0 48px;
+}
+
+.documento-legal h1 {
+  margin: 0 0 10px 0;
+  font-size: 22px;
+  line-height: 1.35;
+  color: var(--azul-marino);
+}
+
+.documento-legal .version-info {
+  margin: 0 0 4px 0;
+  font-size: 13px;
+  color: var(--gris-texto-suave);
+}
+
+.documento-legal .direccion-legal {
+  margin: 20px 0 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--gris-texto);
+}
+
+.documento-legal h2 {
+  margin: 36px 0 16px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--gris-plata-claro);
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--azul-marino);
+}
+
+.documento-legal h2:first-of-type {
+  margin-top: 28px;
+}
+
+.documento-legal h3 {
+  margin: 24px 0 10px 0;
+  font-size: 16px;
+  color: var(--azul-marino);
+}
+
+.documento-legal p {
+  margin: 0 0 12px 0;
+  font-size: 15px;
+  color: var(--gris-texto);
+}
+
+.documento-legal p:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .documento-legal {
+    padding: 48px 0 64px;
+  }
+
+  .documento-legal h1 {
+    font-size: 28px;
+  }
+
+  .documento-legal h2 {
+    font-size: 18px;
+  }
+
+  .documento-legal h3 {
+    font-size: 18px;
+  }
+
+  .documento-legal p {
+    font-size: 16px;
   }
 }
