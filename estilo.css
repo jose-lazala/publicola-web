@@ -610,6 +610,20 @@ body {
   margin-bottom: 12px;
 }
 
+/* Aviso legal fijo justo encima del campo de escritura (Ley 172-13):
+   letra pequeña y gris discreto para no competir visualmente con la
+   conversacion. flex-shrink:0 para que nunca se comprima ni empuje el
+   campo de escritura fuera de pantalla; line-height mas apretado porque
+   son dos lineas de texto en espacios chicos (celular). */
+.chat-aviso-legal {
+  flex-shrink: 0;
+  margin: 0 0 10px 0;
+  font-size: 11px;
+  line-height: 1.35;
+  color: var(--gris-texto-suave);
+  text-align: center;
+}
+
 /* Fila de entrada de texto: campo + boton "Enviar", siempre visible al
    pie del panel de chat. */
 .chat-entrada {
@@ -1160,6 +1174,16 @@ body {
   margin: 0 0 8px 0;
   font-size: 16px;
   color: var(--azul-marino);
+}
+
+/* Segundo subtitulo (y siguientes) dentro del mismo aviso: separacion del
+   parrafo de arriba. El primer h3 no lleva margen superior. */
+.aviso-privacidad h3:not(:first-child) {
+  margin-top: 20px;
+}
+
+.aviso-privacidad p:not(:last-child) {
+  margin-bottom: 10px;
 }
 
 .aviso-privacidad p {

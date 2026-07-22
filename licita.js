@@ -660,6 +660,15 @@ function inicializarChatLicita() {
   elementoTranscursoChat = crearElemento("div", "chat-transcurso");
   elementoControlesChat = crearElemento("div", "chat-controles");
 
+  // Aviso legal fijo, siempre visible encima del campo de escritura (Ley
+  // 172-13): no es un mensaje de la conversacion, por eso no pasa por
+  // agregarBurbujaBotChat ni queda en el historial que se le envia a la IA.
+  const avisoLegalChat = crearElemento(
+    "p",
+    "chat-aviso-legal",
+    "Alicia es una asistente automatizada y no guardamos las conversaciones. Por favor no compartas datos personales por este medio."
+  );
+
   const formulario = document.createElement("form");
   formulario.className = "chat-entrada";
 
@@ -690,6 +699,7 @@ function inicializarChatLicita() {
 
   contenedor.appendChild(elementoTranscursoChat);
   contenedor.appendChild(elementoControlesChat);
+  contenedor.appendChild(avisoLegalChat);
   contenedor.appendChild(formulario);
 
   agregarBurbujaBotChat(MENSAJE_SALUDO_LICITA);
