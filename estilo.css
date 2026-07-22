@@ -1219,7 +1219,13 @@ body {
 .pie {
   background-color: var(--azul-marino);
   color: var(--gris-plata);
-  padding: 18px 0;
+  padding-top: 18px;
+  /* El boton flotante de Alicia es position:fixed, bottom:16px, con el
+     circulo de 72px de alto -- su borde superior cae a 88px del fondo
+     de la pantalla. Este padding-bottom deja ese espacio libre (mas
+     margen) para que nunca tape el enlace legal ni la atribucion de
+     datos, sin mover ni redimensionar el boton. */
+  padding-bottom: 110px;
   text-align: center;
   font-size: 12px;
 }
@@ -1731,8 +1737,14 @@ body {
   text-decoration: underline;
 }
 
+/* Solo padding vertical: el .documento-legal comparte el mismo elemento
+   que .contenedor (misma etiqueta, dos clases), asi que el aire lateral
+   en movil (los 20px de .contenedor) tiene que quedar intacto. Un
+   "padding: 32px 0 48px" de 3 valores pondria left/right en 0 y lo
+   pisaria -- por eso aqui van declaraciones separadas, nunca el atajo. */
 .documento-legal {
-  padding: 32px 0 48px;
+  padding-top: 32px;
+  padding-bottom: 48px;
 }
 
 .documento-legal h1 {
@@ -1787,7 +1799,8 @@ body {
 
 @media (min-width: 768px) {
   .documento-legal {
-    padding: 48px 0 64px;
+    padding-top: 48px;
+    padding-bottom: 64px;
   }
 
   .documento-legal h1 {
