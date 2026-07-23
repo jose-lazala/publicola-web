@@ -1720,6 +1720,17 @@ body {
    igual que el resto de esta hoja de estilos.
    ============================================================ */
 
+/* El "body { padding-top: var(--altura-nav) }" de mas arriba existe
+   para dejarle aire a la barra de navegacion FIJA de index.html
+   (.nav-cabecera, position:fixed). politica-de-privacidad.html no
+   tiene esa barra fija -- .cabecera-legal es una barra normal, en el
+   flujo del documento -- asi que ese padding-top le sobra y se ve como
+   una franja blanca encima. Se anula solo aqui, por clase, sin tocar
+   el body de index.html ni usar margenes negativos. */
+.pagina-legal {
+  padding-top: 0;
+}
+
 .cabecera-legal {
   background-color: var(--azul-marino);
   padding: 16px 0;
