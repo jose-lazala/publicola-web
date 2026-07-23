@@ -122,6 +122,7 @@ const campoBusquedaRubro = document.getElementById("campo-busqueda-rubro");
 const listaSugerencias = document.getElementById("lista-sugerencias-rubro");
 const listaRubrosElegidos = document.getElementById("lista-rubros-elegidos");
 const campoConsentimiento = document.getElementById("campo-consentimiento");
+const campoComunicaciones = document.getElementById("campo-comunicaciones");
 const campoTrampa = document.getElementById(NOMBRE_CAMPO_TRAMPA);
 const botonEnviar = document.getElementById("boton-enviar-inscripcion");
 const mensajeEnvio = document.getElementById("mensaje-envio");
@@ -393,6 +394,7 @@ async function manejarEnvioFormulario(evento) {
     rubro_3: rubrosElegidos[2] ? rubrosElegidos[2].codigo : "",
     politica_version: VERSION_POLITICA_ACTUAL,
     consentimiento: true,
+    consentimiento_comercial: campoComunicaciones.checked ? 1 : 0,
   };
   cuerpo[NOMBRE_CAMPO_TRAMPA] = campoTrampa.value;
 
