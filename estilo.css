@@ -1830,3 +1830,251 @@ body {
     font-size: 16px;
   }
 }
+
+/* ============================================================
+   Pagina de inscripcion al Radar (web/inscripcion.html)
+   Reutiliza .documento-legal (titulo, texto de apoyo, espaciado),
+   .campo-texto-libre (campos de texto) y .boton (envio), todas ya
+   existentes arriba. Las reglas de aqui abajo son EXCLUSIVAS de los
+   elementos nuevos que esa pagina necesita: no se modifica ninguna
+   regla existente por encima de este bloque.
+   ============================================================ */
+
+.inscripcion-apoyo {
+  margin: 0 0 28px 0;
+}
+
+.campo-inscripcion {
+  margin: 0 0 26px 0;
+  border: none;
+  padding: 0;
+}
+
+.campo-inscripcion > label,
+.campo-inscripcion > legend {
+  display: block;
+  margin: 0 0 6px 0;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--azul-marino);
+}
+
+.campo-inscripcion .campo-texto-libre {
+  margin-bottom: 6px;
+}
+
+.campo-inscripcion .campo-texto-libre:disabled {
+  background-color: var(--gris-fondo);
+  color: var(--gris-texto-suave);
+}
+
+.inscripcion-ayuda {
+  margin: 0 0 6px 0;
+  font-size: 13px;
+  color: var(--gris-texto-suave);
+}
+
+/* El error no depende solo del color (que aqui seria un rojo que no
+   existe en la paleta de la marca): la barra lateral y el peso de la
+   letra ya lo distinguen sin inventar un color nuevo. */
+.inscripcion-error {
+  margin: 6px 0 0 0;
+  padding-left: 10px;
+  border-left: 3px solid var(--azul-marino);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gris-texto);
+}
+
+.inscripcion-opciones {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.inscripcion-opcion {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 6px 14px;
+  border: 1px solid var(--gris-plata);
+  border-radius: var(--radio-borde);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--gris-texto);
+  cursor: pointer;
+}
+
+.inscripcion-consentimiento .inscripcion-opcion {
+  min-height: 44px;
+  padding: 6px 0;
+  border: none;
+  align-items: flex-start;
+}
+
+.inscripcion-opcion input[type="radio"],
+.inscripcion-opcion input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.inscripcion-sugerencias {
+  list-style: none;
+  margin: 0 0 6px 0;
+  padding: 0;
+  border: 1px solid var(--gris-plata);
+  border-radius: var(--radio-borde);
+  background-color: var(--blanco);
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.inscripcion-sugerencias li {
+  border-bottom: 1px solid var(--gris-plata-claro);
+}
+
+.inscripcion-sugerencias li:last-child {
+  border-bottom: none;
+}
+
+.inscripcion-sugerencia-boton {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 11px 14px;
+  border: none;
+  background: none;
+  text-align: left;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--gris-texto);
+  cursor: pointer;
+}
+
+.inscripcion-sugerencia-boton:hover,
+.inscripcion-sugerencia-boton:focus {
+  background-color: var(--gris-fondo);
+}
+
+.inscripcion-rubros-elegidos {
+  list-style: none;
+  margin: 0 0 10px 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inscripcion-rubro-elegido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 10px 14px;
+  border: 1px solid var(--gris-plata);
+  border-radius: var(--radio-borde);
+  background-color: var(--gris-fondo);
+  font-size: 14px;
+  color: var(--gris-texto);
+}
+
+.inscripcion-rubro-principal {
+  border-color: var(--azul-marino);
+  background-color: var(--blanco);
+}
+
+.inscripcion-rubro-elegido-nombre {
+  flex: 1 1 auto;
+}
+
+.inscripcion-nota-principal {
+  margin: 4px 0 0 0;
+  width: 100%;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--azul-marino);
+}
+
+.inscripcion-quitar-rubro {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--gris-plata);
+  border-radius: var(--radio-borde);
+  background-color: var(--blanco);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gris-texto);
+  cursor: pointer;
+}
+
+.inscripcion-quitar-rubro:hover,
+.inscripcion-quitar-rubro:focus {
+  border-color: var(--azul-marino);
+  color: var(--azul-marino);
+}
+
+.inscripcion-nota-fija {
+  margin: 0 0 6px 0;
+  font-size: 13px;
+  color: var(--gris-texto-suave);
+}
+
+/* Campo trampa (honeypot): oculto visualmente pero presente en el DOM
+   (no display:none), fuera del orden de tabulacion (tabindex="-1" en el
+   input) y marcado aria-hidden en el HTML para que un lector de
+   pantalla lo omita. Una persona real nunca lo ve ni lo llena. */
+.inscripcion-trampa {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+#boton-enviar-inscripcion {
+  width: 100%;
+  min-height: 44px;
+  margin-top: 6px;
+}
+
+#boton-enviar-inscripcion:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.inscripcion-mensaje-envio {
+  margin: 20px 0 0 0;
+  padding: 16px;
+  border-left: 3px solid var(--azul-marino);
+  border-radius: var(--radio-borde);
+  background-color: var(--gris-fondo);
+  font-size: 15px;
+  color: var(--gris-texto);
+}
+
+@media (min-width: 768px) {
+  .inscripcion-mensaje-envio {
+    font-size: 16px;
+  }
+}
+
+/* ---------- Foco visible en todo el sitio (navegacion por teclado) ----------
+   Regla nueva y aparte: no modifica .boton:focus ni .campo-texto-libre:focus
+   de arriba (que solo cambian color de fondo/borde). Agrega un anillo real,
+   tambien en enlaces y botones que hoy no tenian ninguno. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--azul-marino);
+  outline-offset: 2px;
+}

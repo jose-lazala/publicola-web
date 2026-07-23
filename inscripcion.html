@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recibe gratis la primera edición del Radar — PUBLICOLA</title>
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body class="pagina-legal">
+
+  <header class="cabecera-legal">
+    <div class="contenedor">
+      <a href="index.html" class="enlace-volver">← Volver a publicola.com.do</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="contenedor documento-legal inscripcion-pagina">
+
+      <h1>Recibe gratis la primera edición del Radar de tu rubro.</h1>
+      <p class="inscripcion-apoyo">
+        Es la edición completa, igual a la que reciben los suscriptores. Una sola vez,
+        sin costo y sin compromiso.
+      </p>
+
+      <form id="formulario-inscripcion" novalidate>
+
+        <div class="campo-inscripcion">
+          <label for="campo-correo">Correo electrónico</label>
+          <input
+            type="email"
+            id="campo-correo"
+            name="correo"
+            class="campo-texto-libre"
+            autocomplete="email"
+            aria-describedby="ayuda-correo error-correo"
+          >
+          <p id="ayuda-correo" class="inscripcion-ayuda">A esta dirección llega el boletín cada lunes.</p>
+          <p id="error-correo" class="inscripcion-error" role="alert" hidden>Escribe un correo completo, así: nombre@correo.com</p>
+        </div>
+
+        <div class="campo-inscripcion">
+          <label for="campo-empresa">Nombre de tu empresa o negocio</label>
+          <input
+            type="text"
+            id="campo-empresa"
+            name="empresa"
+            class="campo-texto-libre"
+            maxlength="120"
+            autocomplete="organization"
+            aria-describedby="ayuda-empresa error-empresa"
+          >
+          <p id="ayuda-empresa" class="inscripcion-ayuda">
+            Si operas sin sociedad constituida, indica el nombre comercial con el que
+            trabajas. No se exige registro previo. Obligatorio.
+          </p>
+          <p id="error-empresa" class="inscripcion-error" role="alert" hidden>Escribe el nombre de tu empresa o negocio.</p>
+        </div>
+
+        <fieldset class="campo-inscripcion">
+          <legend>¿Tienes clasificación MIPYME?</legend>
+          <div class="inscripcion-opciones">
+            <label class="inscripcion-opcion">
+              <input type="radio" name="mipyme" value="sí">
+              Sí
+            </label>
+            <label class="inscripcion-opcion">
+              <input type="radio" name="mipyme" value="no">
+              No
+            </label>
+          </div>
+          <p id="ayuda-mipyme" class="inscripcion-ayuda">
+            Determinadas compras del Estado están reservadas a empresas con
+            clasificación MIPYME. La indicación es declarativa: no se verifica ante
+            ninguna entidad y puede modificarse después.
+          </p>
+          <p id="error-mipyme" class="inscripcion-error" role="alert" hidden>Indica si tienes clasificación MIPYME.</p>
+        </fieldset>
+
+        <div class="campo-inscripcion">
+          <label for="campo-busqueda-rubro">Rubros de actividad</label>
+          <p id="ayuda-rubros" class="inscripcion-ayuda">
+            Escribe una palabra de tu actividad y selecciona de la lista. Hasta tres,
+            en orden de prioridad.
+          </p>
+          <input
+            type="text"
+            id="campo-busqueda-rubro"
+            class="campo-texto-libre"
+            autocomplete="off"
+            aria-describedby="ayuda-rubros error-rubros"
+          >
+          <ul id="lista-sugerencias-rubro" class="inscripcion-sugerencias" hidden></ul>
+          <ul id="lista-rubros-elegidos" class="inscripcion-rubros-elegidos" aria-live="polite"></ul>
+          <p class="inscripcion-nota-fija">
+            Recibes cuatro procesos por edición. Con tres rubros, dos del principal y
+            uno de cada otro. Con dos, dos y dos. Con uno, los cuatro de ese.
+          </p>
+          <p id="error-rubros" class="inscripcion-error" role="alert" hidden>Selecciona al menos un rubro de actividad.</p>
+        </div>
+
+        <div class="campo-inscripcion inscripcion-consentimiento">
+          <label class="inscripcion-opcion">
+            <input type="checkbox" id="campo-consentimiento" name="consentimiento">
+            He leído y acepto la
+            <a href="politica-de-privacidad.html">Política de Privacidad y Términos de Uso</a>.
+          </label>
+          <p id="error-consentimiento" class="inscripcion-error" role="alert" hidden>
+            Debes aceptar la Política de Privacidad y Términos de Uso para continuar.
+          </p>
+
+          <label class="inscripcion-opcion">
+            <input type="checkbox" id="campo-comunicaciones" name="comunicaciones">
+            Quiero recibir además información sobre los servicios de Publicola.
+          </label>
+        </div>
+
+        <!--
+          Campo trampa oculto (honeypot) que espera el Worker de
+          inscripcion (publicola-inscripcion/worker.js, constante
+          CAMPO_TRAMPA = "sitio_web"). Oculto por CSS (.inscripcion-trampa,
+          no display:none) y fuera del foco de teclado, para que una
+          persona real nunca lo vea ni lo llene, pero un robot que rellena
+          todos los campos si.
+        -->
+        <div class="inscripcion-trampa" aria-hidden="true">
+          <label for="sitio_web">No llenar este campo</label>
+          <input type="text" id="sitio_web" name="sitio_web" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button type="submit" id="boton-enviar-inscripcion" class="boton">Enviar inscripción</button>
+
+      </form>
+
+      <p id="mensaje-envio" class="inscripcion-mensaje-envio" role="status" aria-live="polite" hidden></p>
+
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <p><a href="index.html">Volver a publicola.com.do</a></p>
+    </div>
+  </footer>
+
+  <script src="inscripcion.js"></script>
+</body>
+</html>
