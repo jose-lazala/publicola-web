@@ -237,6 +237,47 @@ function inicializarMenuNavegacion() {
 // SECCION "LICITACIONES DE LA SEMANA"
 // ============================================================
 
+// Fecha de HOY en la zona horaria de la Republica Dominicana
+// (America/Santo_Domingo), como texto "YYYY-MM-DD". Se ancla SIEMPRE a la
+// hora dominicana, nunca a la zona horaria del visitante: quien abra la
+// pagina desde otro pais vera los mismos procesos vigentes que uno en RD.
+// Usa Intl.DateTimeFormat (API nativa del navegador, sin librerias
+// externas); el locale "en-CA" produce el formato YYYY-MM-DD.
+function fechaHoySantoDomingo() {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "America/Santo_Domingo",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
+}
+
+// Decide si un proceso sigue vigente comparando su fecha limite de ofertas
+// contra la fecha de hoy en RD. Reglas:
+//   - Solo acepta el formato exacto "YYYY-MM-DD"; cualquier otra cosa
+//     (vacio, formato distinto, mes/dia imposibles, valor no textual) se
+//     considera ilegible y se DESCARTA, para no arriesgar mostrar un
+//     proceso cuya vigencia no podemos verificar.
+//   - Una fecha igual a hoy sigue vigente (el plazo vence ese mismo dia).
+//   - La comparacion es de texto: al ser ambos "YYYY-MM-DD" de largo fijo,
+//     el orden alfabetico coincide con el cronologico, asi que no hace
+//     falta construir objetos Date ni arriesgar corrimientos de zona.
+function fechaProcesoVigenteRD(fechaTexto, hoyTextoRD) {
+  if (typeof fechaTexto !== "string") {
+    return false;
+  }
+  const coincidencia = /^(\d{4})-(\d{2})-(\d{2})$/.exec(fechaTexto);
+  if (!coincidencia) {
+    return false;
+  }
+  const mes = Number(coincidencia[2]);
+  const dia = Number(coincidencia[3]);
+  if (mes < 1 || mes > 12 || dia < 1 || dia > 31) {
+    return false;
+  }
+  return fechaTexto >= hoyTextoRD;
+}
+
 function construirTarjetaLicitacion(nombreRubro, proceso) {
   const tarjeta = crearElemento("article", "tarjeta-licitacion");
 
@@ -281,6 +322,12 @@ function renderizarLicitacionesSemana() {
   }
   contenedor.innerHTML = "";
 
+  // Fecha de hoy en RD: se calcula UNA sola vez por render y se usa para
+  // descartar procesos ya vencidos. Es la segunda barrera, del lado del
+  // navegador; la fuente (procesos_semana.json) ya se filtra ademas en
+  // exportador_web.py.
+  const hoyRD = fechaHoySantoDomingo();
+
   // La deduplicacion es por codigo_proceso (identificador unico del
   // proceso), no por rubro: un mismo proceso puede caer en varios rubros
   // (items de familias UNSPSC distintas) y no debe repetirse como
@@ -308,7 +355,10 @@ function renderizarLicitacionesSemana() {
         continue;
       }
       const proceso = datosRubro.muestra.find(function (candidato) {
-        return !codigosUsados.has(candidato.codigo_proceso);
+        return (
+          !codigosUsados.has(candidato.codigo_proceso) &&
+          fechaProcesoVigenteRD(candidato.fecha_limite_ofertas, hoyRD)
+        );
       });
       if (proceso) {
         tarjetas.push({ rubro: entradaRubro.rubro, proceso: proceso });
@@ -340,6 +390,9 @@ function renderizarLicitacionesSemana() {
             break;
           }
           if (codigosUsados.has(proceso.codigo_proceso)) {
+            continue;
+          }
+          if (!fechaProcesoVigenteRD(proceso.fecha_limite_ofertas, hoyRD)) {
             continue;
           }
           tarjetas.push({ rubro: entradaRubro.rubro, proceso: proceso });
