@@ -2068,13 +2068,68 @@ body {
 }
 
 /* ---------- Foco visible en todo el sitio (navegacion por teclado) ----------
-   Regla nueva y aparte: no modifica .boton:focus ni .campo-texto-libre:focus
-   de arriba (que solo cambian color de fondo/borde). Agrega un anillo real,
-   tambien en enlaces y botones que hoy no tenian ninguno. */
+   Regla nueva y aparte: no modifica .boton:focus, .campo-texto-libre:focus
+   ni ninguna otra regla ":focus" existente arriba (que solo cambian color
+   de fondo/borde). Agrega un anillo real, en todos los enlaces y botones
+   del sitio.
+   Empieza con la MISMA convencion que ya usa .campo-texto-libre:focus (el
+   campo de texto del chat de Alicia): outline de 2px solido en
+   --azul-marino con 1px de separacion. Pero ese azul marino solo, EL
+   MISMO color que el fondo de la barra de navegacion, el pie, el hero y
+   los botones solidos (.boton, .boton-whatsapp), se vuelve invisible
+   sobre esos fondos -- probado navegando el sitio con Tab. Por eso se le
+   suma un segundo anillo, mas afuera, en --blanco: entre los dos colores
+   de marca que ya existen (ninguno nuevo), el anillo se ve completo
+   sobre fondo claro, sobre fondo azul marino y sobre el verde de
+   whatsapp. Sobre .campo-texto-libre (fondo blanco) el anillo blanco
+   exterior no se nota, pero el azul marino interior -- el mismo que ya
+   pinta esa regla existente -- sigue marcando el foco igual que siempre. */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 [tabindex]:focus-visible {
-  outline: 3px solid var(--azul-marino);
-  outline-offset: 2px;
+  outline: 2px solid var(--azul-marino);
+  outline-offset: 1px;
+  box-shadow: 0 0 0 4px var(--blanco);
+}
+
+/* ---------- Salto al contenido (accesibilidad por teclado) ----------
+   Primer elemento del <body> en cada pagina. Invisible por defecto
+   (desplazado fuera de pantalla); al recibir foco por teclado se mete a
+   la vista para que quien navega con Tab pueda saltar la cabecera sin
+   tener que recorrerla entero cada vez. */
+.salto-al-contenido {
+  position: absolute;
+  top: -60px;
+  left: 8px;
+  z-index: 3000;
+  background-color: var(--azul-marino);
+  color: var(--blanco);
+  padding: 10px 16px;
+  border-radius: var(--radio-borde);
+  text-decoration: none;
+  font-weight: 600;
+  transition: top 0.15s ease;
+}
+
+.salto-al-contenido:focus {
+  top: 8px;
+}
+
+/* Aviso de Alicia: linea permanente, fuera del hilo de mensajes del
+   chat, debajo del nombre de Alicia. Tamano menor que el texto del
+   chat, gris de bajo contraste (misma variable que ya usa el resto del
+   sitio para texto secundario), sin caja, sin icono, sin borde. Vive
+   como hermano fijo entre la cabecera y el cuerpo del panel (los dos
+   son flex-shrink:0 salvo el cuerpo, que es el que scrollea), asi que
+   nunca desaparece al enviar mensajes ni al hacer scroll del hilo. */
+.licita-aviso-alicia {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 6px 16px;
+  font-size: 11px;
+  line-height: 1.35;
+  color: var(--gris-texto-suave);
+  text-align: center;
+  background-color: var(--blanco);
 }

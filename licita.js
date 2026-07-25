@@ -68,6 +68,13 @@ const MAXIMO_MENSAJES_HISTORIAL = 20;
 // el Worker terminara respondiendo bien poco despues.
 const TIEMPO_ESPERA_WORKER_MS = 60000;
 
+// Tiempo maximo de espera al leer un archivo JSON del propio sitio
+// (rubros.json, procesos_semana.json, empresas_disponibles.json) antes
+// de abandonar el intento, mismo patron (AbortController + setTimeout)
+// que TIEMPO_ESPERA_WORKER_MS de arriba. Son archivos estaticos livianos,
+// asi que un limite mucho mas corto que el del asistente es suficiente.
+const TIEMPO_ESPERA_DATOS_MS = 15000;
+
 const MENSAJE_SALUDO_LICITA =
   "¡Hola! Soy Alicia, del equipo de Publicola. Cuéntame qué necesita tu empresa y te digo cómo te puedo ayudar.";
 
@@ -130,11 +137,20 @@ function limpiarMarkdown(texto) {
 // ============================================================
 
 async function cargarJson(ruta) {
-  const respuesta = await fetch(ruta);
-  if (!respuesta.ok) {
-    throw new Error("No se pudo leer " + ruta + " (HTTP " + respuesta.status + ")");
+  const controlador = new AbortController();
+  const temporizador = setTimeout(function () {
+    controlador.abort();
+  }, TIEMPO_ESPERA_DATOS_MS);
+
+  try {
+    const respuesta = await fetch(ruta, { signal: controlador.signal });
+    if (!respuesta.ok) {
+      throw new Error("No se pudo leer " + ruta + " (HTTP " + respuesta.status + ")");
+    }
+    return await respuesta.json();
+  } finally {
+    clearTimeout(temporizador);
   }
-  return respuesta.json();
 }
 
 async function cargarDatosLicitaciones() {
@@ -162,6 +178,17 @@ async function cargarDatosLicitaciones() {
 
 let datosAreas = [];
 let mapaProcesosPorFamilia = new Map();
+
+function arrancarConProteccion(nombre, tarea) {
+  // Ejecuta una inicializacion de forma aislada. Si falla, deja constancia
+  // en la consola del navegador y permite que las demas inicializaciones
+  // sigan corriendo, en vez de apagar la pagina entera en silencio.
+  try {
+    tarea();
+  } catch (error) {
+    console.error("Publicola: fallo la inicializacion " + nombre, error);
+  }
+}
 
 // ============================================================
 // MENU DE NAVEGACION (hamburguesa en movil)
@@ -249,6 +276,9 @@ function construirTarjetaLicitacion(nombreRubro, proceso) {
 
 function renderizarLicitacionesSemana() {
   const contenedor = document.getElementById("lista-licitaciones");
+  if (!contenedor) {
+    return;
+  }
   contenedor.innerHTML = "";
 
   // La deduplicacion es por codigo_proceso (identificador unico del
@@ -331,6 +361,9 @@ function renderizarLicitacionesSemana() {
 
 function mostrarErrorLicitacionesSemana() {
   const contenedor = document.getElementById("lista-licitaciones");
+  if (!contenedor) {
+    return;
+  }
   contenedor.innerHTML = "";
   contenedor.appendChild(crearElemento("p", "mensaje-estado", MENSAJE_ERROR_CARGA));
 }
@@ -660,15 +693,6 @@ function inicializarChatLicita() {
   elementoTranscursoChat = crearElemento("div", "chat-transcurso");
   elementoControlesChat = crearElemento("div", "chat-controles");
 
-  // Aviso legal fijo, siempre visible encima del campo de escritura (Ley
-  // 172-13): no es un mensaje de la conversacion, por eso no pasa por
-  // agregarBurbujaBotChat ni queda en el historial que se le envia a la IA.
-  const avisoLegalChat = crearElemento(
-    "p",
-    "chat-aviso-legal",
-    "Alicia es una asistente automatizada y no guardamos las conversaciones. Por favor no compartas datos personales por este medio."
-  );
-
   const formulario = document.createElement("form");
   formulario.className = "chat-entrada";
 
@@ -699,7 +723,6 @@ function inicializarChatLicita() {
 
   contenedor.appendChild(elementoTranscursoChat);
   contenedor.appendChild(elementoControlesChat);
-  contenedor.appendChild(avisoLegalChat);
   contenedor.appendChild(formulario);
 
   agregarBurbujaBotChat(MENSAJE_SALUDO_LICITA);
@@ -768,11 +791,11 @@ function inicializarLicitaFlotante() {
 // ============================================================
 
 document.addEventListener("DOMContentLoaded", function () {
-  inicializarMenuNavegacion();
-  inicializarLicitaFlotante();
+  arrancarConProteccion("inicializarMenuNavegacion", function () { inicializarMenuNavegacion(); });
+  arrancarConProteccion("inicializarLicitaFlotante", function () { inicializarLicitaFlotante(); });
 
   // El chatbot no depende de ningun JSON: arranca de inmediato.
-  inicializarChatLicita();
+  arrancarConProteccion("inicializarChatLicita", function () { inicializarChatLicita(); });
 
   // "Licitaciones de la semana" si depende de los datos; se carga aparte
   // y no bloquea ni afecta al chatbot si falla.
