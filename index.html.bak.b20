@@ -140,35 +140,6 @@
       </div>
     </section>
 
-    <!--
-      Buscador de rubro: vista de CONTEO, no de lista. El visitante escribe
-      su rubro y solo ve el numero de procesos abiertos esta semana en ese
-      rubro (total_abiertos de procesos_semana.json) -- nunca la
-      institucion, el objeto ni la fecha de esos procesos: esa informacion
-      queda reservada al Radar de pago. La logica completa vive en
-      licita.js, seccion "BUSCADOR DE RUBRO".
-    -->
-    <section id="conteo-rubro" class="seccion seccion-alterna">
-      <div class="contenedor">
-        <h2>Busca tu rubro</h2>
-        <p class="subtitulo">
-          Escribe el rubro de tu empresa y te decimos cuántos procesos abiertos hay esta semana.
-        </p>
-        <div class="buscador-rubro">
-          <input
-            type="text"
-            id="buscador-rubro-campo"
-            class="campo-texto-libre buscador-rubro-campo"
-            placeholder="Escribe tu rubro, por ejemplo: construcción…"
-            autocomplete="off"
-            aria-label="Buscar tu rubro"
-          >
-          <ul id="buscador-rubro-lista" class="buscador-rubro-lista" hidden></ul>
-          <div id="buscador-rubro-resultado" class="buscador-rubro-resultado" hidden></div>
-        </div>
-      </div>
-    </section>
-
     <section id="servicios" class="seccion encabezado-servicios">
       <div class="contenedor">
         <h2>Conoce nuestros servicios</h2>
