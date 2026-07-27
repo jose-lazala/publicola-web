@@ -428,7 +428,7 @@ function mostrarErrorLicitacionesSemana() {
 // procesos abiertos (total_abiertos) del rubro que el visitante elige.
 // NUNCA muestra el contenido de "muestra" (institucion, objeto, fecha) de
 // ningun proceso individual -- eso es exclusivo de "Licitaciones de la
-// semana" de mas arriba y, con el detalle completo, del Radar de pago. No
+// semana" de mas arriba y, con el detalle completo, de los planes de pago. No
 // se agrega aqui ningun buscador ni listado navegable de procesos.
 //
 // Depende de los mismos datos que "Licitaciones de la semana" (datosAreas
@@ -493,8 +493,8 @@ function construirResultadoRubro(rubro) {
     const textoProcesos = totalAbiertos === 1 ? "1 proceso abierto" : totalAbiertos + " procesos abiertos";
     return {
       texto:
-        "En " + rubro.rubro + " hay " + textoProcesos + " esta semana. En el Radar te decimos qué requisito " +
-        "te piden en cada uno y cuántos días hábiles te quedan. RD$5,000 al mes.",
+        "En " + rubro.rubro + " hay " + textoProcesos + " esta semana. Te decimos qué requisito " +
+        "te piden en cada uno y cuántos días hábiles te quedan. ¿Quieres saber qué incluye cada plan?",
       mostrarEnlacePrimeraEdicion: false,
     };
   }
@@ -502,7 +502,7 @@ function construirResultadoRubro(rubro) {
   return {
     texto:
       "Esta semana no hay procesos abiertos en " + rubro.rubro + ". Te enviamos gratis la primera edición " +
-      "del Radar de tu rubro en cuanto haya movimiento.",
+      "en cuanto haya movimiento. ¿Quieres saber qué incluye cada plan?",
     mostrarEnlacePrimeraEdicion: true,
   };
 }
@@ -525,6 +525,12 @@ function mostrarResultadoRubro(rubro) {
       enlace.textContent = "Recibe gratis la primera edición";
       elementoResultadoBuscadorRubro.appendChild(enlace);
     }
+
+    const enlacePlanes = document.createElement("a");
+    enlacePlanes.className = "boton boton-pildora";
+    enlacePlanes.href = "planes.html";
+    enlacePlanes.textContent = "Conoce nuestros planes →";
+    elementoResultadoBuscadorRubro.appendChild(enlacePlanes);
 
     elementoResultadoBuscadorRubro.hidden = false;
   } catch (error) {

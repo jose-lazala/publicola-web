@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuestros planes — Publicola</title>
+<meta name="description" content="Los planes de Publicola: Plan Básico disponible hoy y Plan Competitivo, próximamente.">
+<link rel="canonical" href="https://publicola.com.do/planes.html">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <a href="#contenido-principal" class="salto-al-contenido">Saltar al contenido</a>
+
+  <header class="nav-cabecera">
+    <div class="nav-contenedor">
+      <button id="boton-menu" class="nav-boton-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-enlaces">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav-enlaces" class="nav-enlaces">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="index.html#licitaciones">Licitaciones</a>
+        <a href="index.html#servicios">Servicios</a>
+        <a href="index.html#quienes-somos">Quiénes somos</a>
+        <a href="index.html#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido-principal">
+    <section class="seccion">
+      <div class="contenedor planes-encabezado">
+        <h1>Nuestros planes</h1>
+        <p class="subtitulo">
+          El portal del Estado te lista los procesos. Nosotros te traducimos lo que cada
+          proceso te exige, cuántos días hábiles te quedan y a qué precios de referencia
+          oficiales ha comprado antes la institución.
+        </p>
+      </div>
+
+      <div class="contenedor">
+        <div class="planes-grid">
+
+          <div class="tarjeta-plan">
+            <h2>Plan Básico</h2>
+            <p class="plan-precio">RD$5,000 al mes</p>
+            <ul class="plan-lista">
+              <li>Acceso a la plataforma</li>
+              <li>Buscador por rubro</li>
+              <li>Procesos abiertos</li>
+              <li>Días hábiles al cierre de cada proceso</li>
+              <li>Boletín semanal por correo</li>
+              <li>Alerta cuando quedan cinco días o menos</li>
+            </ul>
+            <a href="inscripcion.html" class="boton">Inscribirme</a>
+          </div>
+
+          <div class="tarjeta-plan">
+            <span class="plan-etiqueta">Disponible próximamente</span>
+            <h2>Plan Competitivo</h2>
+            <p class="plan-precio">RD$7,500 al mes</p>
+            <ul class="plan-lista">
+              <li>Todo lo del Plan Básico, y además:</li>
+              <li>El requisito del pliego traducido: qué te exige ese proceso</li>
+              <li>Precios de referencia oficiales publicados por la institución</li>
+              <li>Historial de compras de la institución</li>
+              <li>Comparar dos procesos</li>
+              <li>Exportar</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <p class="planes-nota-cierre">Cada dato que verás sale de la fuente oficial de la DGCP, con su enlace.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <p>Datos: DGCP / Portal Transaccional (comprasdominicana.gob.do), bajo licencia ODbL con atribución.</p>
+      <p><a href="politica-de-privacidad.html">Política de Privacidad y Términos de Uso</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Menu de navegacion (hamburguesa en movil). Logica identica a la de
+    // licita.js, pero aparte: esta pagina no lleva chatbot ni boton de
+    // WhatsApp, asi que no carga ese archivo completo.
+    document.addEventListener("DOMContentLoaded", function () {
+      try {
+        var boton = document.getElementById("boton-menu");
+        var enlaces = document.getElementById("nav-enlaces");
+        if (!boton || !enlaces) {
+          return;
+        }
+
+        function cerrarMenu() {
+          enlaces.classList.remove("nav-enlaces-abierto");
+          boton.setAttribute("aria-expanded", "false");
+        }
+
+        boton.addEventListener("click", function (evento) {
+          evento.stopPropagation();
+          var abierto = enlaces.classList.toggle("nav-enlaces-abierto");
+          boton.setAttribute("aria-expanded", abierto ? "true" : "false");
+        });
+
+        enlaces.querySelectorAll("a").forEach(function (enlace) {
+          enlace.addEventListener("click", cerrarMenu);
+        });
+
+        document.addEventListener("click", function (evento) {
+          if (!enlaces.classList.contains("nav-enlaces-abierto")) {
+            return;
+          }
+          if (enlaces.contains(evento.target) || boton.contains(evento.target)) {
+            return;
+          }
+          cerrarMenu();
+        });
+      } catch (error) {
+        console.error("Publicola: fallo el menu de navegacion de planes.html", error);
+      }
+    });
+  </script>
+</body>
+</html>
