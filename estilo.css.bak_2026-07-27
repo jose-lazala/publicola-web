@@ -10,20 +10,14 @@
 */
 
 :root {
-  --fondo: #042C53;
-  --superficie: #0C447C;
-  --linea: #185FA5;
-  --accion: #378ADD;
-  --texto-accion: #042C53;
-  --texto: #E6F1FB;
-  --texto-suave: #85B7EB;
-  --urgencia: #EF9F27;
-  --urgencia-clara: #FAC775;
-  --activo-fondo: #0F6E56;
-  --activo-texto: #E1F5EE;
-  --sombra: rgba(4, 44, 83, 0.35);
-  --velo: rgba(4, 44, 83, 0.72);
-  --borde-suave: rgba(230, 241, 251, 0.18);
+  --azul-marino: #0b1f3a;
+  --azul-marino-claro: #14294f;
+  --blanco: #ffffff;
+  --gris-plata: #b7bec9;
+  --gris-plata-claro: #e4e7ec;
+  --gris-fondo: #f4f5f7;
+  --gris-texto: #333333;
+  --gris-texto-suave: #5b6472;
   --radio-borde: 6px;
   --altura-nav: 56px;
 }
@@ -39,8 +33,8 @@ html {
 body {
   margin: 0;
   padding-top: var(--altura-nav);
-  background-color: var(--fondo);
-  color: var(--texto);
+  background-color: var(--gris-fondo);
+  color: var(--gris-texto);
   font-family: -apple-system, "Segoe UI", Arial, Helvetica, sans-serif;
   line-height: 1.55;
 }
@@ -67,7 +61,7 @@ body {
   right: 0;
   z-index: 1000;
   height: var(--altura-nav);
-  background-color: var(--fondo);
+  background-color: var(--azul-marino);
 }
 
 .nav-contenedor {
@@ -104,7 +98,7 @@ body {
   width: 24px;
   height: 2px;
   margin: 0 auto;
-  background-color: var(--texto);
+  background-color: var(--blanco);
 }
 
 .nav-enlaces {
@@ -114,8 +108,8 @@ body {
   top: 100%;
   left: 0;
   right: 0;
-  background-color: var(--fondo);
-  border-top: 1px solid var(--borde-suave);
+  background-color: var(--azul-marino);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
   max-height: calc(100vh - var(--altura-nav));
   overflow-y: auto;
 }
@@ -125,12 +119,12 @@ body {
 }
 
 .nav-enlaces a {
-  color: var(--texto);
+  color: var(--blanco);
   text-decoration: none;
   font-size: 15px;
   /* Filas altas: comodas de tocar con el pulgar en una sola mano */
   padding: 16px 20px;
-  border-top: 1px solid var(--borde-suave);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .nav-enlaces a:first-child {
@@ -139,7 +133,7 @@ body {
 
 .nav-enlaces a:hover,
 .nav-enlaces a:focus {
-  background-color: var(--linea);
+  background-color: var(--azul-marino-claro);
 }
 
 /* ---------- Portada: hero de video a todo el ancho ---------- */
@@ -156,7 +150,7 @@ body {
   min-height: 520px;
   height: 75vh;
   overflow: hidden;
-  background-color: var(--fondo);
+  background-color: var(--azul-marino);
   background-image: url("hero-poster.jpg");
   background-size: cover;
   background-position: center;
@@ -177,7 +171,7 @@ body {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(to top right, var(--velo) 0%, var(--velo) 100%);
+  background: linear-gradient(to top right, rgba(11, 29, 53, 0.82) 0%, rgba(11, 29, 53, 0.45) 100%);
 }
 
 .hero-contenido {
@@ -210,27 +204,27 @@ body {
 .hero-logo-texto:not([hidden]) {
   display: block;
   margin: 0;
-  color: var(--texto);
+  color: var(--blanco);
   font-size: 37px;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 8px;
   text-transform: uppercase;
 }
 
 .hero-eslogan {
   margin: 0;
-  color: var(--texto-suave);
+  color: var(--gris-plata-claro);
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .hero-frase-rotativa {
   margin: 0;
   max-width: 560px;
-  color: var(--texto);
+  color: var(--blanco);
   font-size: 19px;
   line-height: 1.45;
-  text-shadow: 0 2px 14px var(--sombra);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
   opacity: 1;
   visibility: visible;
   /* "visibility" va en la misma transicion que "opacity" a proposito:
@@ -304,7 +298,7 @@ body {
 }
 
 .quienes-texto p {
-  color: var(--texto);
+  color: var(--gris-texto);
   font-size: 15px;
   margin: 0 0 14px 0;
 }
@@ -319,7 +313,7 @@ body {
   grid-area: titulo;
   margin: 0;
   font-size: 18px;
-  color: var(--texto);
+  color: var(--azul-marino);
   text-align: center;
 }
 
@@ -334,8 +328,8 @@ body {
     "texto";
   justify-items: center;
   gap: 16px;
-  background-color: var(--superficie);
-  border: 1px solid var(--linea);
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-plata-claro);
   border-radius: var(--radio-borde);
   padding: 24px 18px;
 }
@@ -355,7 +349,7 @@ body {
   border-radius: 14px;
   object-fit: cover;
   object-position: center 20%;
-  border: 2px solid var(--linea);
+  border: 2px solid var(--azul-marino);
 }
 
 .ceo-datos {
@@ -365,15 +359,15 @@ body {
 
 .ceo-nombre {
   margin: 0 0 10px 0;
-  font-weight: 500;
-  color: var(--texto);
+  font-weight: 700;
+  color: var(--azul-marino);
   font-size: 17px;
   text-align: center;
 }
 
 .ceo-datos p {
   font-size: 14px;
-  color: var(--texto);
+  color: var(--gris-texto);
   margin: 0 0 12px 0;
 }
 
@@ -409,30 +403,41 @@ body {
 }
 
 .seccion-alterna {
-  background-color: var(--superficie);
+  background-color: var(--blanco);
 }
 
 .seccion h2 {
   margin: 0 0 6px 0;
   font-size: 21px;
-  color: var(--texto);
+  color: var(--azul-marino);
 }
 
 .seccion .subtitulo {
   margin: 0 0 20px 0;
-  color: var(--texto-suave);
+  color: var(--gris-texto-suave);
   font-size: 14px;
 }
 
 .mensaje-estado {
-  color: var(--texto-suave);
+  color: var(--gris-texto-suave);
   font-style: italic;
 }
 
 /* ---------- Licitaciones de la semana ---------- */
 
 .licitaciones-encabezado {
+  display: flex;
+  align-items: center;
+  gap: 14px;
   margin-bottom: 6px;
+}
+
+.licitaciones-icono {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: var(--radio-borde);
+  flex-shrink: 0;
 }
 
 .licitaciones-encabezado h2 {
@@ -451,41 +456,41 @@ body {
 }
 
 .tarjeta-licitacion {
-  background-color: var(--superficie);
-  border: 1px solid var(--linea);
-  border-left: 4px solid var(--linea);
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-plata-claro);
+  border-left: 4px solid var(--azul-marino);
   border-radius: var(--radio-borde);
   padding: 16px 18px;
 }
 
 .tarjeta-licitacion .rubro-etiqueta {
   display: inline-block;
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: var(--texto-suave);
-  background-color: var(--superficie);
+  color: var(--azul-marino);
+  background-color: var(--gris-plata-claro);
   border-radius: 3px;
   padding: 2px 8px;
   margin-bottom: 8px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .tarjeta-licitacion .institucion {
-  font-weight: 500;
+  font-weight: 700;
   margin: 0 0 4px 0;
 }
 
 .tarjeta-licitacion .objeto {
   margin: 0 0 8px 0;
-  color: var(--texto);
+  color: var(--gris-texto);
   font-size: 14px;
 }
 
 .tarjeta-licitacion .monto-referencia {
   margin: 0 0 8px 0;
-  color: var(--texto);
-  font-weight: 500;
+  color: var(--azul-marino);
+  font-weight: 700;
   font-size: 1.15em;
   /* Permite partir palabras largas (montos con muchos digitos en
      pantallas angostas) para que nunca desborde la tarjeta. */
@@ -494,15 +499,15 @@ body {
 
 .tarjeta-licitacion .detalle {
   font-size: 13px;
-  color: var(--texto-suave);
+  color: var(--gris-texto-suave);
 }
 
 .tarjeta-licitacion .enlace-portal {
   display: inline-block;
   margin-top: 10px;
   font-size: 13px;
-  font-weight: 500;
-  color: var(--accion);
+  font-weight: 600;
+  color: var(--azul-marino);
   text-decoration: none;
 }
 
@@ -527,10 +532,10 @@ body {
   margin: 0;
   padding: 6px;
   list-style: none;
-  background-color: var(--superficie);
-  border: 1px solid var(--linea);
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-plata);
   border-radius: var(--radio-borde);
-  box-shadow: 0 2px 8px var(--sombra);
+  box-shadow: 0 2px 8px rgba(11, 31, 58, 0.3);
   max-height: 260px;
   overflow-y: auto;
 }
@@ -544,28 +549,28 @@ body {
   padding: 10px 12px;
   font-size: 14px;
   font-family: inherit;
-  color: var(--texto);
+  color: var(--gris-texto);
   border-radius: var(--radio-borde);
   cursor: pointer;
 }
 
 .buscador-rubro-opcion:hover,
 .buscador-rubro-opcion:focus {
-  background-color: var(--fondo);
+  background-color: var(--gris-fondo);
   outline: none;
 }
 
 .buscador-rubro-resultado {
   margin-top: 18px;
   padding: 16px 18px;
-  background-color: var(--fondo);
-  border-left: 4px solid var(--linea);
+  background-color: var(--gris-fondo);
+  border-left: 4px solid var(--azul-marino);
   border-radius: var(--radio-borde);
 }
 
 .buscador-rubro-resultado p {
   margin: 0 0 12px 0;
-  color: var(--texto);
+  color: var(--gris-texto);
   font-size: 14px;
   line-height: 1.5;
 }
@@ -581,8 +586,8 @@ body {
 /* ---------- Chatbot Licita ---------- */
 
 .chat-contenedor {
-  background-color: var(--superficie);
-  border: 1px solid var(--linea);
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-plata-claro);
   border-radius: var(--radio-borde);
   padding: 16px;
   max-width: 480px;
@@ -611,15 +616,15 @@ body {
 }
 
 .burbuja-bot {
-  background-color: var(--fondo);
-  color: var(--texto);
+  background-color: var(--gris-fondo);
+  color: var(--gris-texto);
   align-self: flex-start;
   border-bottom-left-radius: 3px;
 }
 
 .burbuja-usuario {
-  background-color: var(--accion);
-  color: var(--texto-accion);
+  background-color: var(--azul-marino);
+  color: var(--blanco);
   align-self: flex-end;
   border-bottom-right-radius: 3px;
 }
@@ -703,9 +708,9 @@ body {
 .chat-aviso-legal {
   flex-shrink: 0;
   margin: 0 0 10px 0;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.35;
-  color: var(--texto-suave);
+  color: var(--gris-texto-suave);
   text-align: center;
 }
 
@@ -740,33 +745,28 @@ body {
   font-size: 16px;
   font-family: inherit;
   padding: 13px 14px;
-  border: 1px solid var(--linea);
+  border: 1px solid var(--gris-plata);
   border-radius: var(--radio-borde);
-  background-color: var(--superficie);
-  color: var(--texto);
+  background-color: var(--blanco);
+  color: var(--gris-texto);
 }
 
 .campo-texto-libre:focus {
-  outline: 2px solid var(--linea);
+  outline: 2px solid var(--azul-marino);
   outline-offset: 1px;
-  border-color: var(--linea);
+  border-color: var(--azul-marino);
 }
 
-/* Boton principal (solido). Aqui "--texto" hace de relleno claro a
-   proposito (no es su uso habitual de color de letra): letra oscura
-   sobre relleno claro es la combinacion que cumple el contraste minimo
-   de 4.5:1 exigido por B.38 -- "--accion" como relleno con letra oscura
-   se quedaba en 3.92:1, por debajo del minimo. */
 .boton {
   display: inline-block;
-  background-color: var(--texto);
-  color: var(--fondo);
+  background-color: var(--azul-marino);
+  color: var(--blanco);
   border: none;
   border-radius: var(--radio-borde);
   /* Padding generoso: objetivo tactil comodo con el pulgar (~44px de alto) */
   padding: 13px 18px;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
   text-align: center;
@@ -774,25 +774,33 @@ body {
 
 .boton:hover,
 .boton:focus {
-  background-color: var(--texto-suave);
-  color: var(--fondo);
+  background-color: var(--azul-marino-claro);
 }
 
 .boton-secundario {
-  background-color: transparent;
-  color: var(--texto);
-  border: 2px solid var(--texto);
+  background-color: var(--blanco);
+  color: var(--azul-marino);
+  border: 1px solid var(--azul-marino);
 }
 
 .boton-secundario:hover,
 .boton-secundario:focus {
-  background-color: var(--superficie);
+  background-color: var(--gris-fondo);
+}
+
+.boton-whatsapp {
+  background-color: #1f7a4d;
+}
+
+.boton-whatsapp:hover,
+.boton-whatsapp:focus {
+  background-color: #185f3c;
 }
 
 /* ---------- Bloque promocional Radar Publicola (debajo del hero) ---------- */
 
 .radar-promo {
-  background-color: var(--superficie);
+  background-color: var(--blanco);
   padding: 36px 0;
 }
 
@@ -814,7 +822,7 @@ body {
   aspect-ratio: 4 / 3;
   border-radius: var(--radio-borde);
   overflow: hidden;
-  background-color: var(--fondo);
+  background-color: var(--azul-marino);
 }
 
 .radar-promo-foto img {
@@ -831,7 +839,7 @@ body {
      madera, manos y sobre), asi que una capa oscura la apagaria. Una
      capa clara le da contraste al texto azul marino sin oscurecer la
      foto. */
-  background-color: var(--borde-suave);
+  background-color: rgba(255, 255, 255, 0.4);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -845,19 +853,19 @@ body {
 
 .radar-promo-titulo {
   margin: 0;
-  color: var(--texto);
+  color: var(--azul-marino);
   /* Misma fuente sans-serif que el resto del sitio (body/subtitulo),
      sin serifa: el titular combina con el resto de la pagina. */
   font-family: inherit;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.15;
 }
 
 .radar-promo-subtitulo {
   margin: 0;
-  color: var(--texto);
-  font-size: 12px;
+  color: var(--azul-marino);
+  font-size: 11px;
   line-height: 1.25;
   max-width: 300px;
 }
@@ -868,12 +876,30 @@ body {
 .radar-promo-precio {
   display: inline-block;
   margin: 0;
-  background-color: var(--superficie);
-  color: var(--texto);
+  background-color: var(--azul-marino);
+  color: var(--blanco);
   padding: 4px 14px;
   border-radius: 999px;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 700;
+}
+
+/* Boton "Conoce mas" de la franja del radar: boton de contorno (fondo
+   blanco, texto y borde azul marino), no el azul marino solido del
+   .boton por defecto. Sigue scoped a .radar-promo-grid para no tocar
+   el boton "Inscribete" de la tarjeta Radar Publicola en la seccion de
+   servicios, mas abajo, que no forma parte de esta franja. */
+.radar-promo-grid > .boton-primario {
+  background-color: var(--blanco);
+  color: var(--azul-marino);
+  border: 2px solid var(--azul-marino);
+  font-size: 16px;
+  padding: 15px 26px;
+}
+
+.radar-promo-grid > .boton-primario:hover,
+.radar-promo-grid > .boton-primario:focus {
+  background-color: var(--gris-fondo);
 }
 
 /* ---------- Licita flotante ---------- */
@@ -892,25 +918,25 @@ body {
 }
 
 .licita-etiqueta {
-  background-color: var(--superficie);
-  color: var(--texto);
+  background-color: var(--azul-marino);
+  color: var(--blanco);
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   padding: 10px 18px;
   border-radius: 24px;
   white-space: nowrap;
-  box-shadow: 0 2px 8px var(--sombra);
+  box-shadow: 0 2px 8px rgba(11, 31, 58, 0.3);
 }
 
 .licita-circulo {
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background-color: var(--accion);
+  background-color: var(--azul-marino);
   border: none;
   padding: 0;
   cursor: pointer;
-  box-shadow: 0 2px 10px var(--sombra);
+  box-shadow: 0 2px 10px rgba(11, 31, 58, 0.35);
   flex-shrink: 0;
 }
 
@@ -942,8 +968,8 @@ body {
   bottom: -2px;
   width: 14px;
   height: 14px;
-  background-color: var(--activo-fondo);
-  border: 2px solid var(--linea);
+  background-color: #22c55e;
+  border: 2px solid var(--blanco);
   border-radius: 50%;
 }
 
@@ -953,9 +979,9 @@ body {
   bottom: 12px;
   left: 12px;
   max-height: min(78svh, 620px);
-  background-color: var(--superficie);
+  background-color: var(--blanco);
   border-radius: 14px;
-  box-shadow: 0 10px 30px var(--sombra);
+  box-shadow: 0 10px 30px rgba(11, 31, 58, 0.35);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -971,9 +997,9 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 14px 16px;
-  background-color: var(--fondo);
-  color: var(--texto);
-  font-weight: 500;
+  background-color: var(--azul-marino);
+  color: var(--blanco);
+  font-weight: 700;
   flex-shrink: 0;
 }
 
@@ -1016,7 +1042,7 @@ body {
 
 .licita-panel-nombre {
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .licita-panel-estado {
@@ -1038,10 +1064,10 @@ body {
   display: inline-flex;
   align-items: center;
   font-size: 12px;
-  font-weight: 500;
-  color: var(--texto);
-  background-color: var(--borde-suave);
-  border: 1px solid var(--borde-suave);
+  font-weight: 600;
+  color: var(--blanco);
+  background-color: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 20px;
   padding: 5px 12px;
   text-decoration: none;
@@ -1050,13 +1076,13 @@ body {
 
 .licita-panel-whatsapp:hover,
 .licita-panel-whatsapp:focus {
-  background-color: var(--borde-suave);
+  background-color: rgba(255, 255, 255, 0.24);
 }
 
 .licita-panel-cerrar {
   background: none;
   border: none;
-  color: var(--texto);
+  color: var(--blanco);
   font-size: 24px;
   line-height: 1;
   cursor: pointer;
@@ -1101,7 +1127,7 @@ body {
   /* Fondo azul marino solido: si la imagen falta o no carga, el
      onerror="this.style.display='none'" del <img> la oculta y este
      fondo queda visible en su lugar -- la seccion nunca se ve rota. */
-  background-color: var(--fondo);
+  background-color: var(--azul-marino);
   height: 55svh;
   overflow: hidden;
 }
@@ -1124,13 +1150,13 @@ body {
 .servicio-completa-texto h2 {
   margin: 0 0 14px 0;
   font-size: 24px;
-  color: var(--texto);
+  color: var(--azul-marino);
 }
 
 .servicio-completa-texto p {
   margin: 0;
   font-size: 15px;
-  color: var(--texto);
+  color: var(--gris-texto);
 }
 
 /* Espaciado entre parrafos seguidos: las 5 secciones "servicio-completa"
@@ -1175,22 +1201,22 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  background-color: var(--fondo);
-  border: 1px solid var(--linea);
+  background-color: var(--gris-fondo);
+  border: 1px solid var(--gris-plata-claro);
   border-radius: var(--radio-borde);
   padding: 12px 14px;
 }
 
 .empresa-nombre {
   font-size: 14px;
-  font-weight: 500;
-  color: var(--texto);
+  font-weight: 600;
+  color: var(--gris-texto);
 }
 
 .nota-privacidad-formulario {
   margin: 12px 0 0 0;
   font-size: 12px;
-  color: var(--texto-suave);
+  color: var(--gris-texto-suave);
   font-style: italic;
 }
 
@@ -1205,7 +1231,7 @@ body {
 .direccion {
   margin: 0 0 16px 0;
   font-size: 14px;
-  color: var(--texto-suave);
+  color: var(--gris-texto-suave);
 }
 
 .correo-contacto {
@@ -1214,8 +1240,8 @@ body {
 }
 
 .correo-contacto a {
-  color: var(--accion);
-  font-weight: 500;
+  color: var(--azul-marino);
+  font-weight: 600;
   text-decoration: none;
 }
 
@@ -1227,7 +1253,7 @@ body {
 .instagram-contacto {
   margin: 0 0 20px 0;
   font-size: 14px;
-  color: var(--texto-suave);
+  color: var(--gris-texto-suave);
 }
 
 .aviso-privacidad {
@@ -1237,7 +1263,7 @@ body {
 .aviso-privacidad h3 {
   margin: 0 0 8px 0;
   font-size: 16px;
-  color: var(--texto);
+  color: var(--azul-marino);
 }
 
 /* Segundo subtitulo (y siguientes) dentro del mismo aviso: separacion del
@@ -1252,14 +1278,14 @@ body {
 
 .aviso-privacidad p {
   font-size: 13px;
-  color: var(--texto-suave);
+  color: var(--gris-texto-suave);
 }
 
 /* ---------- Pie de pagina ---------- */
 
 .pie {
-  background-color: var(--fondo);
-  color: var(--texto-suave);
+  background-color: var(--azul-marino);
+  color: var(--gris-plata);
   padding-top: 18px;
   /* El boton flotante de Alicia es position:fixed, bottom:16px, con el
      circulo de 72px de alto -- su borde superior cae a 88px del fondo
@@ -1303,7 +1329,7 @@ body {
   .nav-enlaces a {
     padding: 0;
     border-top: none;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 14px;
   }
 
@@ -1385,6 +1411,11 @@ body {
 
   .seccion {
     padding: 52px 0;
+  }
+
+  .licitaciones-icono {
+    width: 72px;
+    height: 72px;
   }
 
   .lista-licitaciones {
@@ -1657,17 +1688,23 @@ body {
 
   .seccion.radar-promo {
     padding: 0;
-    background-color: var(--fondo);
+    background-color: var(--azul-marino);
   }
 
   /* En vez de una columna, la franja se vuelve una sola celda de
-     grid donde la foto ocupa todo el ancho completo. */
+     grid donde la foto (con su overlay) y el boton "Inscribete" se
+     superponen en el mismo espacio -- asi el boton queda integrado
+     dentro de la franja en vez de flotar suelto debajo. Ademas
+     position:relative aqui es lo que le da al boton (position:absolute
+     mas abajo) su punto de referencia para quedar agrupado justo
+     debajo del precio, como parte del mismo bloque centrado. */
   .radar-promo-grid {
     display: grid;
     grid-template-columns: 1fr;
     max-width: none;
     width: 100%;
     padding: 0;
+    position: relative;
   }
 
   .radar-promo-foto {
@@ -1680,9 +1717,12 @@ body {
   }
 
   .radar-promo-overlay {
-    /* Bloque de texto (titulo + subtitulo + precio, ya sin boton
-       debajo) centrado en el medio exacto de la banda de 600px. */
-    padding: 8px 56px;
+    /* padding-top calculado para que el bloque completo (titulo +
+       subtitulo + precio + boton, este ultimo posicionado aparte mas
+       abajo) quede centrado en el medio exacto de la banda de 600px,
+       en vez de solo centrar el texto sin contar el boton. */
+    justify-content: flex-start;
+    padding: 129px 56px 8px;
     gap: 8px;
   }
 
@@ -1703,6 +1743,24 @@ body {
     padding: 8px 26px;
     font-size: 20px;
   }
+
+  /* Selector especifico al boton DENTRO de esta franja (el "Quiero
+     el radar" de la seccion de servicios, mas abajo en la pagina,
+     no se toca porque no es hijo directo de .radar-promo-grid).
+     Posicionado con position:absolute (en vez del truco de grid pegado
+     abajo) para que quede justo debajo de la pildora de precio, como
+     parte del mismo bloque -- el conjunto completo (titulo + subtitulo
+     + precio + boton) queda centrado en el medio exacto de la banda. */
+  .radar-promo-grid > .boton-primario {
+    position: absolute;
+    left: 50%;
+    top: 396px;
+    transform: translateX(-50%);
+    margin: 0;
+    z-index: 2;
+    font-size: 20px;
+    padding: 20px 52px;
+  }
 }
 
 /* ============================================================
@@ -1712,13 +1770,13 @@ body {
    ============================================================ */
 
 .pie a {
-  color: var(--texto-suave);
+  color: var(--gris-plata);
   text-decoration: underline;
 }
 
 .pie a:hover,
 .pie a:focus {
-  color: var(--texto);
+  color: var(--blanco);
 }
 
 /* ============================================================
@@ -1741,30 +1799,20 @@ body {
 }
 
 .cabecera-legal {
-  background-color: var(--fondo);
+  background-color: var(--azul-marino);
   padding: 16px 0;
 }
 
 .enlace-volver {
-  color: var(--texto-suave);
+  color: var(--gris-plata);
   text-decoration: none;
   font-size: 14px;
 }
 
 .enlace-volver:hover,
 .enlace-volver:focus {
-  color: var(--texto);
+  color: var(--blanco);
   text-decoration: underline;
-}
-
-/* El enlace "Volver al inicio" de la pagina 404 (unico parrafo suelto,
-   sin clase, dentro de #contenido-principal) nunca tuvo color propio por
-   la misma razon que el de arriba: heredaba el azul por defecto del
-   navegador, invisible ahora sobre el fondo oscuro. Selector acotado a
-   esta estructura exacta (main > .contenedor > p > a) para no afectar
-   ningun otro enlace del sitio. */
-main#contenido-principal > .contenedor > p > a {
-  color: var(--accion);
 }
 
 /* Solo padding vertical: el .documento-legal comparte el mismo elemento
@@ -1781,29 +1829,30 @@ main#contenido-principal > .contenedor > p > a {
   margin: 0 0 10px 0;
   font-size: 22px;
   line-height: 1.35;
-  color: var(--texto);
+  color: var(--azul-marino);
 }
 
 .documento-legal .version-info {
   margin: 0 0 4px 0;
   font-size: 13px;
-  color: var(--texto-suave);
+  color: var(--gris-texto-suave);
 }
 
 .documento-legal .direccion-legal {
   margin: 20px 0 0 0;
   font-size: 14px;
   line-height: 1.5;
-  color: var(--texto);
+  color: var(--gris-texto);
 }
 
 .documento-legal h2 {
   margin: 36px 0 16px 0;
   padding-bottom: 10px;
-  border-bottom: 2px solid var(--linea);
+  border-bottom: 2px solid var(--gris-plata-claro);
   font-size: 16px;
   letter-spacing: 0.03em;
-  color: var(--texto);
+  text-transform: uppercase;
+  color: var(--azul-marino);
 }
 
 .documento-legal h2:first-of-type {
@@ -1813,13 +1862,13 @@ main#contenido-principal > .contenedor > p > a {
 .documento-legal h3 {
   margin: 24px 0 10px 0;
   font-size: 16px;
-  color: var(--texto);
+  color: var(--azul-marino);
 }
 
 .documento-legal p {
   margin: 0 0 12px 0;
   font-size: 15px;
-  color: var(--texto);
+  color: var(--gris-texto);
 }
 
 .documento-legal p:last-child {
@@ -1874,8 +1923,8 @@ main#contenido-principal > .contenedor > p > a {
   margin: 0 0 6px 0;
   padding: 0;
   font-size: 15px;
-  font-weight: 500;
-  color: var(--texto-suave);
+  font-weight: 600;
+  color: var(--azul-marino);
 }
 
 .campo-inscripcion .campo-texto-libre {
@@ -1883,14 +1932,14 @@ main#contenido-principal > .contenedor > p > a {
 }
 
 .campo-inscripcion .campo-texto-libre:disabled {
-  background-color: var(--fondo);
-  color: var(--texto-suave);
+  background-color: var(--gris-fondo);
+  color: var(--gris-texto-suave);
 }
 
 .inscripcion-ayuda {
   margin: 0 0 6px 0;
   font-size: 13px;
-  color: var(--texto-suave);
+  color: var(--gris-texto-suave);
 }
 
 /* El error no depende solo del color (que aqui seria un rojo que no
@@ -1899,10 +1948,10 @@ main#contenido-principal > .contenedor > p > a {
 .inscripcion-error {
   margin: 6px 0 0 0;
   padding-left: 10px;
-  border-left: 3px solid var(--linea);
+  border-left: 3px solid var(--azul-marino);
   font-size: 13px;
-  font-weight: 500;
-  color: var(--texto);
+  font-weight: 600;
+  color: var(--gris-texto);
 }
 
 .inscripcion-opciones {
@@ -1917,11 +1966,11 @@ main#contenido-principal > .contenedor > p > a {
   gap: 8px;
   min-height: 44px;
   padding: 6px 14px;
-  border: 1px solid var(--linea);
+  border: 1px solid var(--gris-plata);
   border-radius: var(--radio-borde);
   font-size: 15px;
   font-weight: 400;
-  color: var(--texto);
+  color: var(--gris-texto);
   cursor: pointer;
 }
 
@@ -1930,14 +1979,6 @@ main#contenido-principal > .contenedor > p > a {
   padding: 6px 0;
   border: none;
   align-items: flex-start;
-}
-
-/* El enlace a la Politica de Privacidad dentro de este checkbox nunca
-   tuvo color propio (heredaba el azul por defecto del navegador). Sobre
-   fondo claro no se notaba; sobre el fondo oscuro de esta paleta ese
-   azul por defecto queda casi ilegible, asi que se le da color explicito. */
-.inscripcion-consentimiento a {
-  color: var(--accion);
 }
 
 .inscripcion-opcion input[type="radio"],
@@ -1951,15 +1992,15 @@ main#contenido-principal > .contenedor > p > a {
   list-style: none;
   margin: 0 0 6px 0;
   padding: 0;
-  border: 1px solid var(--linea);
+  border: 1px solid var(--gris-plata);
   border-radius: var(--radio-borde);
-  background-color: var(--superficie);
+  background-color: var(--blanco);
   max-height: 220px;
   overflow-y: auto;
 }
 
 .inscripcion-sugerencias li {
-  border-bottom: 1px solid var(--linea);
+  border-bottom: 1px solid var(--gris-plata-claro);
 }
 
 .inscripcion-sugerencias li:last-child {
@@ -1976,13 +2017,13 @@ main#contenido-principal > .contenedor > p > a {
   text-align: left;
   font-family: inherit;
   font-size: 15px;
-  color: var(--texto);
+  color: var(--gris-texto);
   cursor: pointer;
 }
 
 .inscripcion-sugerencia-boton:hover,
 .inscripcion-sugerencia-boton:focus {
-  background-color: var(--fondo);
+  background-color: var(--gris-fondo);
 }
 
 .inscripcion-rubros-elegidos {
@@ -2001,16 +2042,16 @@ main#contenido-principal > .contenedor > p > a {
   gap: 10px;
   flex-wrap: wrap;
   padding: 10px 14px;
-  border: 1px solid var(--linea);
+  border: 1px solid var(--gris-plata);
   border-radius: var(--radio-borde);
-  background-color: var(--fondo);
+  background-color: var(--gris-fondo);
   font-size: 14px;
-  color: var(--texto);
+  color: var(--gris-texto);
 }
 
 .inscripcion-rubro-principal {
-  border-color: var(--accion);
-  background-color: var(--superficie);
+  border-color: var(--azul-marino);
+  background-color: var(--blanco);
 }
 
 .inscripcion-rubro-elegido-nombre {
@@ -2021,8 +2062,8 @@ main#contenido-principal > .contenedor > p > a {
   margin: 4px 0 0 0;
   width: 100%;
   font-size: 12px;
-  font-weight: 500;
-  color: var(--texto-suave);
+  font-weight: 600;
+  color: var(--azul-marino);
 }
 
 .inscripcion-quitar-rubro {
@@ -2032,26 +2073,26 @@ main#contenido-principal > .contenedor > p > a {
   min-width: 44px;
   min-height: 44px;
   padding: 0 12px;
-  border: 1px solid var(--linea);
+  border: 1px solid var(--gris-plata);
   border-radius: var(--radio-borde);
-  background-color: var(--superficie);
+  background-color: var(--blanco);
   font-family: inherit;
   font-size: 13px;
-  font-weight: 500;
-  color: var(--texto);
+  font-weight: 600;
+  color: var(--gris-texto);
   cursor: pointer;
 }
 
 .inscripcion-quitar-rubro:hover,
 .inscripcion-quitar-rubro:focus {
-  border-color: var(--texto);
-  color: var(--texto);
+  border-color: var(--azul-marino);
+  color: var(--azul-marino);
 }
 
 .inscripcion-nota-fija {
   margin: 0 0 6px 0;
   font-size: 13px;
-  color: var(--texto-suave);
+  color: var(--gris-texto-suave);
 }
 
 /* Campo trampa (honeypot): oculto visualmente pero presente en el DOM
@@ -2080,11 +2121,11 @@ main#contenido-principal > .contenedor > p > a {
 .inscripcion-mensaje-envio {
   margin: 20px 0 0 0;
   padding: 16px;
-  border-left: 3px solid var(--linea);
+  border-left: 3px solid var(--azul-marino);
   border-radius: var(--radio-borde);
-  background-color: var(--fondo);
+  background-color: var(--gris-fondo);
   font-size: 15px;
-  color: var(--texto);
+  color: var(--gris-texto);
 }
 
 @media (min-width: 768px) {
@@ -2114,9 +2155,9 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid var(--linea);
+  outline: 2px solid var(--azul-marino);
   outline-offset: 1px;
-  box-shadow: 0 0 0 4px var(--linea);
+  box-shadow: 0 0 0 4px var(--blanco);
 }
 
 /* ---------- Salto al contenido (accesibilidad por teclado) ----------
@@ -2129,12 +2170,12 @@ input:focus-visible,
   top: -60px;
   left: 8px;
   z-index: 3000;
-  background-color: var(--accion);
-  color: var(--texto-accion);
+  background-color: var(--azul-marino);
+  color: var(--blanco);
   padding: 10px 16px;
   border-radius: var(--radio-borde);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   transition: top 0.15s ease;
 }
 
@@ -2153,9 +2194,9 @@ input:focus-visible,
   flex-shrink: 0;
   margin: 0;
   padding: 6px 16px;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.35;
-  color: var(--texto-suave);
+  color: var(--gris-texto-suave);
   text-align: center;
-  background-color: var(--superficie);
+  background-color: var(--blanco);
 }

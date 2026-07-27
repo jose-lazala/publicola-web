@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Publicola — Inteligencia de compras públicas</title>
+<title>PUBLICOLA — Inteligencia de compras públicas</title>
 <meta name="description" content="Inteligencia de compras públicas dominicana: licitaciones por rubro, plazos en días hábiles y acompañamiento legal bajo la Ley 47-25.">
 <link rel="canonical" href="https://publicola.com.do/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Publicola">
-<meta property="og:title" content="Publicola — Inteligencia de compras públicas">
+<meta property="og:title" content="PUBLICOLA — Inteligencia de compras públicas">
 <meta property="og:description" content="Inteligencia de compras públicas dominicana: licitaciones por rubro, plazos en días hábiles y acompañamiento legal bajo la Ley 47-25.">
 <meta property="og:url" content="https://publicola.com.do/">
 <meta property="og:image" content="https://publicola.com.do/hero-poster.jpg">
 <meta property="og:locale" content="es_DO">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Publicola — Inteligencia de compras públicas">
+<meta name="twitter:title" content="PUBLICOLA — Inteligencia de compras públicas">
 <meta name="twitter:description" content="Inteligencia de compras públicas dominicana: licitaciones por rubro, plazos en días hábiles y acompañamiento legal bajo la Ley 47-25.">
 <meta name="twitter:image" content="https://publicola.com.do/hero-poster.jpg">
 <link rel="icon" href="favicon.png" type="image/png">
@@ -74,11 +74,11 @@
         <h1 class="hero-logo-caja">
           <img
             src="logo-transparente.png"
-            alt="Publicola"
+            alt="PUBLICOLA"
             class="hero-logo"
             onerror="this.style.display='none'; document.getElementById('hero-logo-texto').hidden = false;"
           >
-          <span id="hero-logo-texto" class="hero-logo-texto" hidden>Publicola</span>
+          <span id="hero-logo-texto" class="hero-logo-texto" hidden>PUBLICOLA</span>
         </h1>
         <p class="hero-eslogan">Inteligencia de compras públicas</p>
         <p class="hero-frase-rotativa" id="hero-frase">En Publicola convertimos las compras públicas dominicanas en oportunidades claras para tu empresa.</p>
@@ -89,10 +89,8 @@
           (no hace falta JavaScript aparte), y el aterrizaje no queda
           tapado por la barra fija gracias a la regla global
           "[id] { scroll-margin-top: ... }" que ya aplica a #licitaciones.
-          Boton principal (solido): la receta de contraste de B.38 lo
-          exige asi en vez del contorno que tenia antes.
         -->
-        <a href="#licitaciones" class="boton hero-boton">Ver las licitaciones de esta semana</a>
+        <a href="#licitaciones" class="boton boton-secundario hero-boton">Ver las licitaciones de esta semana</a>
       </div>
     </section>
 
@@ -115,13 +113,25 @@
             <p class="radar-promo-precio">RD$5,000/mes</p>
           </div>
         </div>
+        <!--
+          "Conoce más" baja con desplazamiento suave hasta la seccion
+          "Radar Publicola" de mas abajo (misma pagina, no envia correo).
+          El desplazamiento suave lo da la regla global
+          "html { scroll-behavior: smooth; }" de estilo.css, igual que el
+          boton del hero -- no hace falta JavaScript aparte.
+        -->
+        <a href="#radar-publicola" class="boton boton-primario">Conoce más</a>
+        <a href="inscripcion.html" class="boton boton-primario">Recibe gratis la primera edición</a>
       </div>
     </section>
 
     <section id="licitaciones" class="seccion">
       <div class="contenedor licitaciones-encabezado">
-        <h2>Licitaciones de la semana</h2>
-        <p class="subtitulo">Entérate de las últimas licitaciones que han salido esta semana. Solo datos públicos.</p>
+        <img src="radar.png" alt="" class="licitaciones-icono" loading="lazy">
+        <div>
+          <h2>Licitaciones de la semana</h2>
+          <p class="subtitulo">Entérate de las últimas licitaciones que han salido esta semana. Solo datos públicos.</p>
+        </div>
       </div>
       <div class="contenedor">
         <div id="lista-licitaciones" class="lista-licitaciones">

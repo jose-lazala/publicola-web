@@ -2044,8 +2044,8 @@ main#contenido-principal > .contenedor > p > a {
 
 .inscripcion-quitar-rubro:hover,
 .inscripcion-quitar-rubro:focus {
-  border-color: var(--texto);
-  color: var(--texto);
+  border-color: var(--accion);
+  color: var(--accion);
 }
 
 .inscripcion-nota-fija {

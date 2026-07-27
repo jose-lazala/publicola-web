@@ -89,10 +89,8 @@
           (no hace falta JavaScript aparte), y el aterrizaje no queda
           tapado por la barra fija gracias a la regla global
           "[id] { scroll-margin-top: ... }" que ya aplica a #licitaciones.
-          Boton principal (solido): la receta de contraste de B.38 lo
-          exige asi en vez del contorno que tenia antes.
         -->
-        <a href="#licitaciones" class="boton hero-boton">Ver las licitaciones de esta semana</a>
+        <a href="#licitaciones" class="boton boton-secundario hero-boton">Ver las licitaciones de esta semana</a>
       </div>
     </section>
 
@@ -115,13 +113,25 @@
             <p class="radar-promo-precio">RD$5,000/mes</p>
           </div>
         </div>
+        <!--
+          "Conoce más" baja con desplazamiento suave hasta la seccion
+          "Radar Publicola" de mas abajo (misma pagina, no envia correo).
+          El desplazamiento suave lo da la regla global
+          "html { scroll-behavior: smooth; }" de estilo.css, igual que el
+          boton del hero -- no hace falta JavaScript aparte.
+        -->
+        <a href="#radar-publicola" class="boton boton-primario">Conoce más</a>
+        <a href="inscripcion.html" class="boton boton-primario">Recibe gratis la primera edición</a>
       </div>
     </section>
 
     <section id="licitaciones" class="seccion">
       <div class="contenedor licitaciones-encabezado">
-        <h2>Licitaciones de la semana</h2>
-        <p class="subtitulo">Entérate de las últimas licitaciones que han salido esta semana. Solo datos públicos.</p>
+        <img src="radar.png" alt="" class="licitaciones-icono" loading="lazy">
+        <div>
+          <h2>Licitaciones de la semana</h2>
+          <p class="subtitulo">Entérate de las últimas licitaciones que han salido esta semana. Solo datos públicos.</p>
+        </div>
       </div>
       <div class="contenedor">
         <div id="lista-licitaciones" class="lista-licitaciones">

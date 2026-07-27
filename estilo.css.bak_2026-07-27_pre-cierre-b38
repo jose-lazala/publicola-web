@@ -432,7 +432,18 @@ body {
 /* ---------- Licitaciones de la semana ---------- */
 
 .licitaciones-encabezado {
+  display: flex;
+  align-items: center;
+  gap: 14px;
   margin-bottom: 6px;
+}
+
+.licitaciones-icono {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: var(--radio-borde);
+  flex-shrink: 0;
 }
 
 .licitaciones-encabezado h2 {
@@ -752,15 +763,10 @@ body {
   border-color: var(--linea);
 }
 
-/* Boton principal (solido). Aqui "--texto" hace de relleno claro a
-   proposito (no es su uso habitual de color de letra): letra oscura
-   sobre relleno claro es la combinacion que cumple el contraste minimo
-   de 4.5:1 exigido por B.38 -- "--accion" como relleno con letra oscura
-   se quedaba en 3.92:1, por debajo del minimo. */
 .boton {
   display: inline-block;
-  background-color: var(--texto);
-  color: var(--fondo);
+  background-color: var(--accion);
+  color: var(--texto-accion);
   border: none;
   border-radius: var(--radio-borde);
   /* Padding generoso: objetivo tactil comodo con el pulgar (~44px de alto) */
@@ -774,19 +780,27 @@ body {
 
 .boton:hover,
 .boton:focus {
-  background-color: var(--texto-suave);
-  color: var(--fondo);
+  background-color: var(--linea);
 }
 
 .boton-secundario {
-  background-color: transparent;
-  color: var(--texto);
-  border: 2px solid var(--texto);
+  background-color: var(--superficie);
+  color: var(--accion);
+  border: 1px solid var(--accion);
 }
 
 .boton-secundario:hover,
 .boton-secundario:focus {
-  background-color: var(--superficie);
+  background-color: var(--fondo);
+}
+
+.boton-whatsapp {
+  background-color: var(--accion);
+}
+
+.boton-whatsapp:hover,
+.boton-whatsapp:focus {
+  background-color: var(--linea);
 }
 
 /* ---------- Bloque promocional Radar Publicola (debajo del hero) ---------- */
@@ -874,6 +888,24 @@ body {
   border-radius: 999px;
   font-size: 12px;
   font-weight: 500;
+}
+
+/* Boton "Conoce mas" de la franja del radar: boton de contorno (fondo
+   blanco, texto y borde azul marino), no el azul marino solido del
+   .boton por defecto. Sigue scoped a .radar-promo-grid para no tocar
+   el boton "Inscribete" de la tarjeta Radar Publicola en la seccion de
+   servicios, mas abajo, que no forma parte de esta franja. */
+.radar-promo-grid > .boton-primario {
+  background-color: var(--superficie);
+  color: var(--accion);
+  border: 2px solid var(--accion);
+  font-size: 16px;
+  padding: 15px 26px;
+}
+
+.radar-promo-grid > .boton-primario:hover,
+.radar-promo-grid > .boton-primario:focus {
+  background-color: var(--fondo);
 }
 
 /* ---------- Licita flotante ---------- */
@@ -1387,6 +1419,11 @@ body {
     padding: 52px 0;
   }
 
+  .licitaciones-icono {
+    width: 72px;
+    height: 72px;
+  }
+
   .lista-licitaciones {
     flex-direction: row;
     flex-wrap: wrap;
@@ -1661,13 +1698,19 @@ body {
   }
 
   /* En vez de una columna, la franja se vuelve una sola celda de
-     grid donde la foto ocupa todo el ancho completo. */
+     grid donde la foto (con su overlay) y el boton "Inscribete" se
+     superponen en el mismo espacio -- asi el boton queda integrado
+     dentro de la franja en vez de flotar suelto debajo. Ademas
+     position:relative aqui es lo que le da al boton (position:absolute
+     mas abajo) su punto de referencia para quedar agrupado justo
+     debajo del precio, como parte del mismo bloque centrado. */
   .radar-promo-grid {
     display: grid;
     grid-template-columns: 1fr;
     max-width: none;
     width: 100%;
     padding: 0;
+    position: relative;
   }
 
   .radar-promo-foto {
@@ -1680,9 +1723,12 @@ body {
   }
 
   .radar-promo-overlay {
-    /* Bloque de texto (titulo + subtitulo + precio, ya sin boton
-       debajo) centrado en el medio exacto de la banda de 600px. */
-    padding: 8px 56px;
+    /* padding-top calculado para que el bloque completo (titulo +
+       subtitulo + precio + boton, este ultimo posicionado aparte mas
+       abajo) quede centrado en el medio exacto de la banda de 600px,
+       en vez de solo centrar el texto sin contar el boton. */
+    justify-content: flex-start;
+    padding: 129px 56px 8px;
     gap: 8px;
   }
 
@@ -1702,6 +1748,24 @@ body {
   .radar-promo-precio {
     padding: 8px 26px;
     font-size: 20px;
+  }
+
+  /* Selector especifico al boton DENTRO de esta franja (el "Quiero
+     el radar" de la seccion de servicios, mas abajo en la pagina,
+     no se toca porque no es hijo directo de .radar-promo-grid).
+     Posicionado con position:absolute (en vez del truco de grid pegado
+     abajo) para que quede justo debajo de la pildora de precio, como
+     parte del mismo bloque -- el conjunto completo (titulo + subtitulo
+     + precio + boton) queda centrado en el medio exacto de la banda. */
+  .radar-promo-grid > .boton-primario {
+    position: absolute;
+    left: 50%;
+    top: 396px;
+    transform: translateX(-50%);
+    margin: 0;
+    z-index: 2;
+    font-size: 20px;
+    padding: 20px 52px;
   }
 }
 
@@ -2044,8 +2108,8 @@ main#contenido-principal > .contenedor > p > a {
 
 .inscripcion-quitar-rubro:hover,
 .inscripcion-quitar-rubro:focus {
-  border-color: var(--texto);
-  color: var(--texto);
+  border-color: var(--accion);
+  color: var(--accion);
 }
 
 .inscripcion-nota-fija {
