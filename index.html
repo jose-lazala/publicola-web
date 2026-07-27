@@ -31,7 +31,6 @@
       </button>
       <nav id="nav-enlaces" class="nav-enlaces">
         <a href="#inicio">Inicio</a>
-        <a href="#radar-promo">Radar Publicola</a>
         <a href="#licitaciones">Licitaciones</a>
         <a href="#servicios">Servicios</a>
         <a href="#quienes-somos">Quiénes somos</a>
@@ -65,56 +64,66 @@
       </video>
       <div class="hero-velo"></div>
       <div class="contenedor hero-contenido">
-        <!--
-          El logo transparente (generado por herramientas/logo_transparente.py)
-          es un <img>; si por algun motivo no carga, onerror lo oculta y
-          muestra el texto "PUBLICOLA" de respaldo en su lugar. Sigue
-          siendo un <h1> para que la pagina conserve su titulo principal.
-        -->
-        <h1 class="hero-logo-caja">
-          <img
-            src="logo-transparente.png"
-            alt="Publicola"
-            class="hero-logo"
-            onerror="this.style.display='none'; document.getElementById('hero-logo-texto').hidden = false;"
-          >
-          <span id="hero-logo-texto" class="hero-logo-texto" hidden>Publicola</span>
-        </h1>
-        <p class="hero-eslogan">Inteligencia de compras públicas</p>
-        <p class="hero-frase-rotativa" id="hero-frase">En Publicola convertimos las compras públicas dominicanas en oportunidades claras para tu empresa.</p>
-        <!--
-          Unico boton del hero: lleva a la seccion "Licitaciones de la
-          semana" de esta misma pagina. El desplazamiento suave lo da la
-          regla global "html { scroll-behavior: smooth; }" de estilo.css
-          (no hace falta JavaScript aparte), y el aterrizaje no queda
-          tapado por la barra fija gracias a la regla global
-          "[id] { scroll-margin-top: ... }" que ya aplica a #licitaciones.
-          Boton principal (solido): la receta de contraste de B.38 lo
-          exige asi en vez del contorno que tenia antes.
-        -->
-        <a href="#licitaciones" class="boton hero-boton">Ver las licitaciones de esta semana</a>
-      </div>
-    </section>
-
-    <!--
-      Licita ya no tiene boton propio aqui (se elimino: solo queda la Licita
-      flotante de abajo a la derecha). En su lugar, justo debajo del texto
-      del hero, va este bloque promocional del Radar con el mensaje en
-      overlay (texto blanco sobre capa oscura semitransparente) DENTRO de
-      la imagen, no como texto aparte encima.
-    -->
-    <section id="radar-promo" class="seccion radar-promo">
-      <div class="contenedor radar-promo-grid">
-        <div class="radar-promo-foto">
-          <img src="hero-radar-v2.png" alt="Radar Publicola" loading="lazy" onerror="this.style.display='none'">
-          <div class="radar-promo-overlay">
-            <p class="radar-promo-titulo">Recibe las licitaciones de tu rubro cada lunes</p>
-            <p class="radar-promo-subtitulo">
-              Mantente al día con todas las licitaciones que están saliendo en tu rubro.
-            </p>
-            <p class="radar-promo-precio">RD$5,000/mes</p>
-          </div>
+        <div class="hero-columna-texto">
+          <!--
+            El logo transparente (generado por herramientas/logo_transparente.py)
+            es un <img>; si por algun motivo no carga, onerror lo oculta y
+            muestra el texto "PUBLICOLA" de respaldo en su lugar. Sigue
+            siendo un <h1> para que la pagina conserve su titulo principal.
+          -->
+          <h1 class="hero-logo-caja">
+            <img
+              src="logo-transparente.png"
+              alt="Publicola"
+              class="hero-logo"
+              onerror="this.style.display='none'; document.getElementById('hero-logo-texto').hidden = false;"
+            >
+            <span id="hero-logo-texto" class="hero-logo-texto" hidden>Publicola</span>
+          </h1>
+          <p class="hero-eslogan">Inteligencia de compras públicas</p>
+          <p class="hero-frase-rotativa" id="hero-frase">En Publicola convertimos las compras públicas dominicanas en oportunidades claras para tu empresa.</p>
+          <!--
+            Unico boton del hero: lleva a la seccion "Licitaciones de la
+            semana" de esta misma pagina. El desplazamiento suave lo da la
+            regla global "html { scroll-behavior: smooth; }" de estilo.css
+            (no hace falta JavaScript aparte), y el aterrizaje no queda
+            tapado por la barra fija gracias a la regla global
+            "[id] { scroll-margin-top: ... }" que ya aplica a #licitaciones.
+            Boton principal (solido): la receta de contraste de B.38 lo
+            exige asi en vez del contorno que tenia antes.
+          -->
+          <a href="#licitaciones" class="boton hero-boton">Ver las licitaciones de esta semana</a>
         </div>
+
+        <!--
+          Buscador de rubro: vista de CONTEO, no de lista. El visitante escribe
+          su rubro y solo ve el numero de procesos abiertos esta semana en ese
+          rubro (total_abiertos de procesos_semana.json) -- nunca la
+          institucion, el objeto ni la fecha de esos procesos: esa informacion
+          queda reservada al Radar de pago. La logica completa vive en
+          licita.js, seccion "BUSCADOR DE RUBRO". El id="conteo-rubro" es el
+          interruptor que usa licita.js (inicializarBuscadorRubro) para saber
+          si debe engancharse -- tiene que seguir existiendo en el documento,
+          sin importar donde viva el bloque.
+        -->
+        <section id="conteo-rubro" class="hero-buscador">
+          <h2>Busca tu rubro</h2>
+          <p class="subtitulo">
+            Escribe el rubro de tu empresa y te decimos cuántos procesos abiertos hay esta semana.
+          </p>
+          <div class="buscador-rubro">
+            <input
+              type="text"
+              id="buscador-rubro-campo"
+              class="campo-texto-libre buscador-rubro-campo"
+              placeholder="Escribe tu rubro, por ejemplo: construcción…"
+              autocomplete="off"
+              aria-label="Buscar tu rubro"
+            >
+            <ul id="buscador-rubro-lista" class="buscador-rubro-lista" hidden></ul>
+            <div id="buscador-rubro-resultado" class="buscador-rubro-resultado" hidden></div>
+          </div>
+        </section>
       </div>
     </section>
 
@@ -126,35 +135,6 @@
       <div class="contenedor">
         <div id="lista-licitaciones" class="lista-licitaciones">
           <p class="mensaje-estado">Cargando licitaciones…</p>
-        </div>
-      </div>
-    </section>
-
-    <!--
-      Buscador de rubro: vista de CONTEO, no de lista. El visitante escribe
-      su rubro y solo ve el numero de procesos abiertos esta semana en ese
-      rubro (total_abiertos de procesos_semana.json) -- nunca la
-      institucion, el objeto ni la fecha de esos procesos: esa informacion
-      queda reservada al Radar de pago. La logica completa vive en
-      licita.js, seccion "BUSCADOR DE RUBRO".
-    -->
-    <section id="conteo-rubro" class="seccion seccion-alterna">
-      <div class="contenedor">
-        <h2>Busca tu rubro</h2>
-        <p class="subtitulo">
-          Escribe el rubro de tu empresa y te decimos cuántos procesos abiertos hay esta semana.
-        </p>
-        <div class="buscador-rubro">
-          <input
-            type="text"
-            id="buscador-rubro-campo"
-            class="campo-texto-libre buscador-rubro-campo"
-            placeholder="Escribe tu rubro, por ejemplo: construcción…"
-            autocomplete="off"
-            aria-label="Buscar tu rubro"
-          >
-          <ul id="buscador-rubro-lista" class="buscador-rubro-lista" hidden></ul>
-          <div id="buscador-rubro-resultado" class="buscador-rubro-resultado" hidden></div>
         </div>
       </div>
     </section>
@@ -446,12 +426,6 @@
             rubro y las alertas de cierre. Si en algún momento necesitas acompañamiento
             para preparar una oferta, nuestro equipo está disponible.
           </p>
-          <div class="servicio-completa-botones">
-            <a
-              href="inscripcion.html"
-              class="boton boton-primario"
-            >Recibe gratis la primera edición</a>
-          </div>
         </div>
       </div>
     </section>

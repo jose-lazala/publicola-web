@@ -153,8 +153,13 @@ body {
   position: relative;
   display: flex;
   align-items: center;
+  /* Sin "height" fijo aqui a proposito: desde que el buscador de rubro
+     se sumo como segunda columna, el hero en celular (una sola columna,
+     apilada) necesita crecer segun su contenido en vez de recortarlo a
+     una altura fija -- "min-height" solo pone un piso, nunca un techo.
+     En escritorio (>=900px), la @media de mas abajo SI fija una altura,
+     porque alli el contenido entra de sobra en dos columnas lado a lado. */
   min-height: 520px;
-  height: 75vh;
   overflow: hidden;
   background-color: var(--fondo);
   background-image: url("hero-poster.jpg");
@@ -180,14 +185,57 @@ body {
   background: linear-gradient(to top right, var(--velo) 0%, var(--velo) 100%);
 }
 
+/* Dos bloques verticales en celular: primero el logo/frase/boton
+   (.hero-columna-texto), debajo el buscador de rubro (.hero-buscador,
+   la seccion "#conteo-rubro" movida aqui dentro). En escritorio grande
+   pasan a columnas lado a lado -- ver la @media de mas abajo. */
 .hero-contenido {
   position: relative;
   z-index: 2;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   text-align: left;
+  gap: 32px;
+  width: 100%;
+}
+
+.hero-columna-texto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 14px;
+}
+
+/* Buscador de rubro dentro del hero (antes era su propia seccion
+   "#conteo-rubro" mas abajo en la pagina). El id se mantiene igual
+   (licita.js lo usa para saber si debe engancharse), solo cambia donde
+   vive y su presentacion. */
+.hero-buscador {
+  width: 100%;
+}
+
+/* Titulo pequeño encima del campo, no un h2 grande de seccion: aqui
+   "#conteo-rubro" ya no tiene la clase "seccion" que le daba el tamaño
+   de h2 de pagina (21px), asi que sin esta regla caeria al tamaño de h2
+   por defecto del navegador -- mas grande todavia. */
+.hero-buscador h2 {
+  margin: 0 0 4px 0;
+  /* --urgencia (naranja base) medido en vivo contra la foto del hero
+     con velo daba 4.18:1, por debajo del minimo de 4.5:1 -- se usa la
+     version clara en su lugar. */
+  color: var(--urgencia-clara);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.hero-buscador .subtitulo {
+  margin: 0 0 10px 0;
+  color: var(--texto-suave);
+  font-size: 13px;
+  line-height: 1.4;
 }
 
 .hero-logo-caja {
@@ -732,7 +780,11 @@ body {
 }
 
 /* Campo de texto libre generico del chat (mensaje del visitante para
-   Licita). Reutilizado tal cual esta clase para el campo de entrada. */
+   Licita). Reutilizado tal cual esta clase para el campo de entrada.
+   Relleno oscuro (--fondo) con borde grueso claro (--texto): antes el
+   relleno era --superficie con borde --linea de 1px, una combinacion
+   que se leia 1.51:1 a 2.16:1 contra el fondo detras, por debajo del
+   minimo de 3:1 -- el campo no se distinguia del resto de la pagina. */
 .campo-texto-libre {
   width: 100%;
   /* font-size 16px a proposito: por debajo de eso Safari en iPhone hace
@@ -740,16 +792,24 @@ body {
   font-size: 16px;
   font-family: inherit;
   padding: 13px 14px;
-  border: 1px solid var(--linea);
+  border: 2px solid var(--texto);
   border-radius: var(--radio-borde);
-  background-color: var(--superficie);
+  background-color: var(--fondo);
   color: var(--texto);
 }
 
+.campo-texto-libre::placeholder {
+  color: var(--texto);
+}
+
+/* El borde no cambia en :focus (ya es el mismo --texto de siempre); lo
+   que distingue el campo enfocado es el anillo exterior en
+   --texto-suave, un color de marca distinto del borde, para no
+   depender del azul de foco por defecto del navegador. */
 .campo-texto-libre:focus {
-  outline: 2px solid var(--linea);
-  outline-offset: 1px;
-  border-color: var(--linea);
+  border-color: var(--texto);
+  outline: 2px solid var(--texto-suave);
+  outline-offset: 2px;
 }
 
 /* Boton principal (solido). Aqui "--texto" hace de relleno claro a
@@ -778,102 +838,27 @@ body {
   color: var(--fondo);
 }
 
+/* Relleno --superficie en vez de transparente: con relleno transparente
+   el boton se leia como un hueco del fondo, no como un boton (se notaba
+   solo por el borde). El hover pasa a --linea (un tono mas, dentro de
+   la misma escala de azules) porque --superficie ya quedo ocupado por
+   el estado normal -- si el hover siguiera siendo --superficie, pasar
+   el mouse no cambiaria nada visible. */
 .boton-secundario {
-  background-color: transparent;
+  background-color: var(--superficie);
   color: var(--texto);
   border: 2px solid var(--texto);
 }
 
+/* color:var(--texto) explicito aqui, no solo en el estado normal: sin
+   esto la letra hereda el color:var(--fondo) de la regla .boton:hover
+   de mas arriba (pensada para el boton principal, letra oscura sobre
+   relleno claro) y quedaria oscura sobre el relleno --linea del hover,
+   un 2.16:1 casi ilegible. */
 .boton-secundario:hover,
 .boton-secundario:focus {
-  background-color: var(--superficie);
-}
-
-/* ---------- Bloque promocional Radar Publicola (debajo del hero) ---------- */
-
-.radar-promo {
-  background-color: var(--superficie);
-  padding: 36px 0;
-}
-
-.radar-promo-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 18px;
-}
-
-.radar-promo-foto {
-  /* aspect-ratio fijo (mas alto que la proporcion original de radar.png)
-     para que el overlay de texto tenga aire de sobra en 375px, en vez de
-     depender de las proporciones exactas del archivo de imagen. */
-  position: relative;
-  width: 100%;
-  max-width: 420px;
-  aspect-ratio: 4 / 3;
-  border-radius: var(--radio-borde);
-  overflow: hidden;
-  background-color: var(--fondo);
-}
-
-.radar-promo-foto img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.radar-promo-overlay {
-  position: absolute;
-  inset: 0;
-  /* Capa blanca semitransparente: la foto nueva es clara (mesa de
-     madera, manos y sobre), asi que una capa oscura la apagaria. Una
-     capa clara le da contraste al texto azul marino sin oscurecer la
-     foto. */
-  background-color: var(--borde-suave);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* El bloque de texto queda centrado verticalmente en el medio exacto
-     de la franja de la foto (ya no importa la posicion del sobre). */
-  justify-content: center;
-  text-align: center;
-  gap: 3px;
-  padding: 6px 18px;
-}
-
-.radar-promo-titulo {
-  margin: 0;
+  background-color: var(--linea);
   color: var(--texto);
-  /* Misma fuente sans-serif que el resto del sitio (body/subtitulo),
-     sin serifa: el titular combina con el resto de la pagina. */
-  font-family: inherit;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.15;
-}
-
-.radar-promo-subtitulo {
-  margin: 0;
-  color: var(--texto);
-  font-size: 12px;
-  line-height: 1.25;
-  max-width: 300px;
-}
-
-/* Precio en forma de pildora: fondo azul marino solido y texto blanco,
-   para que se vea como una etiqueta de precio diseñada a proposito y
-   no como un numero suelto en negrita sobre la foto. */
-.radar-promo-precio {
-  display: inline-block;
-  margin: 0;
-  background-color: var(--superficie);
-  color: var(--texto);
-  padding: 4px 14px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 500;
 }
 
 /* ---------- Licita flotante ---------- */
@@ -1150,15 +1135,6 @@ body {
 
 .servicio-completa-texto .nota-privacidad-formulario {
   margin-top: 16px;
-}
-
-/* El boton de Radar Publicola pidio, en un encargo anterior, un poco
-   mas de aire que el margen por defecto (20px) para notarse como el
-   cierre de todo el texto de esa seccion en particular. Sigue
-   escopeado solo a "#radar-publicola" porque las otras 4 secciones no
-   pidieron ese aire extra. */
-#radar-publicola .servicio-completa-botones {
-  margin-top: 32px;
 }
 
 .lista-empresas-disponibles {
@@ -1450,31 +1426,6 @@ body {
     flex-direction: row;
   }
 
-  /* ---------- Bloque promocional Radar (escritorio) ---------- */
-
-  .radar-promo-foto {
-    max-width: 560px;
-  }
-
-  .radar-promo-overlay {
-    padding: 10px 40px;
-    gap: 6px;
-  }
-
-  .radar-promo-titulo {
-    font-size: 30px;
-  }
-
-  .radar-promo-subtitulo {
-    font-size: 17px;
-    max-width: 420px;
-  }
-
-  .radar-promo-precio {
-    padding: 6px 20px;
-    font-size: 16px;
-  }
-
   /* ---------- Licita flotante (escritorio) ---------- */
 
   .licita-flotante {
@@ -1533,8 +1484,19 @@ body {
     height: 85vh;
   }
 
+  /* De columna apilada a dos columnas lado a lado: texto a la
+     izquierda (mas ancho, es el mensaje principal), buscador de rubro
+     a la derecha. align-items:center las centra verticalmente entre
+     si, ya que el buscador es mucho mas bajo que el bloque de texto. */
   .hero-contenido {
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .hero-buscador {
+    max-width: 420px;
   }
 
   .hero-logo {
@@ -1653,56 +1615,6 @@ body {
     font-size: 17px;
   }
 
-  /* ---------- Franja del radar: banda azul de ancho completo ---------- */
-
-  .seccion.radar-promo {
-    padding: 0;
-    background-color: var(--fondo);
-  }
-
-  /* En vez de una columna, la franja se vuelve una sola celda de
-     grid donde la foto ocupa todo el ancho completo. */
-  .radar-promo-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    max-width: none;
-    width: 100%;
-    padding: 0;
-  }
-
-  .radar-promo-foto {
-    grid-column: 1;
-    grid-row: 1;
-    width: 100%;
-    max-width: none;
-    aspect-ratio: unset;
-    height: 600px;
-  }
-
-  .radar-promo-overlay {
-    /* Bloque de texto (titulo + subtitulo + precio, ya sin boton
-       debajo) centrado en el medio exacto de la banda de 600px. */
-    padding: 8px 56px;
-    gap: 8px;
-  }
-
-  /* El titular de la franja es, a proposito, el texto mas grande de
-     toda la pagina: es el llamado a suscribirse, el punto que mas
-     debe destacar en escritorio. */
-  .radar-promo-titulo {
-    font-size: 54px;
-  }
-
-  .radar-promo-subtitulo {
-    font-size: 22px;
-    max-width: 680px;
-    margin: 0 auto;
-  }
-
-  .radar-promo-precio {
-    padding: 8px 26px;
-    font-size: 20px;
-  }
 }
 
 /* ============================================================
