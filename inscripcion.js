@@ -1,6 +1,6 @@
 /**
- * inscripcion.js - Formulario de inscripcion al Radar Publicola (primera
- * edicion gratuita). JavaScript puro, sin librerias externas ni CDN.
+ * inscripcion.js - Formulario de inscripcion a los planes de Publicola.
+ * JavaScript puro, sin librerias externas ni CDN.
  *
  * Privacidad (Ley 172-13): nada de lo que la persona escribe aqui se
  * guarda en localStorage, sessionStorage ni cookies. Los datos solo
@@ -28,15 +28,20 @@ const URL_INSCRIPCION_WORKER = "https://publicola-inscripcion.publicola.workers.
 
 // Version vigente de la politica de privacidad (web/politica-de-privacidad.html).
 // Si esa pagina cambia de version, actualizar esta constante tambien.
-const VERSION_POLITICA_ACTUAL = "1.4";
+const VERSION_POLITICA_ACTUAL = "1.6";
 
-const MAXIMO_RUBROS = 3;
+// Un solo rubro por inscripcion: el selector se reutiliza tal cual (misma
+// busqueda con sugerencias sobre rubros.json), solo que ahora se detiene
+// en uno en vez de en tres.
+const MAXIMO_RUBROS = 1;
 
 // Nombre exacto que espera el Worker para el campo trampa (honeypot).
 const NOMBRE_CAMPO_TRAMPA = "sitio_web";
 
-const MENSAJE_EXITO =
-  "Inscripción registrada. Te enviamos la primera edición del Radar de tu rubro sin costo, en cuanto haya procesos publicados en los rubros que escogiste. No se te escribe por ningún otro motivo.";
+// Unico plan que hoy se puede elegir. El Plan Competitivo se muestra
+// deshabilitado en pantalla ("Disponible proximamente") y el Worker
+// tambien lo rechaza si llegara a recibirlo.
+const PLAN_DISPONIBLE = "basico";
 
 const MENSAJE_ERROR_CONEXION =
   "No pudimos enviar tu inscripción. Revisa tu conexión e inténtalo de nuevo.";
@@ -53,7 +58,7 @@ const PATRON_CORREO = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 let areasDisponibles = []; // [{ codigo, nombre }], cargado de rubros.json
 let sinonimos = {}; // palabra -> codigo de area (vacio si el archivo no existe)
-let rubrosElegidos = []; // [{ codigo, nombre }], orden = prioridad del boletin
+let rubrosElegidos = []; // [{ codigo, nombre }], como mucho un elemento
 let enviandoActualmente = false;
 
 // ============================================================
@@ -126,6 +131,7 @@ const campoComunicaciones = document.getElementById("campo-comunicaciones");
 const campoTrampa = document.getElementById(NOMBRE_CAMPO_TRAMPA);
 const botonEnviar = document.getElementById("boton-enviar-inscripcion");
 const mensajeEnvio = document.getElementById("mensaje-envio");
+const bloqueExito = document.getElementById("bloque-exito");
 
 // ============================================================
 // ERRORES DE CAMPO
@@ -215,9 +221,8 @@ function actualizarEstadoBusquedaRubro() {
 
 function renderizarRubrosElegidos() {
   listaRubrosElegidos.innerHTML = "";
-  rubrosElegidos.forEach(function (area, indice) {
-    const esPrincipal = indice === 0;
-    const item = crearElemento("li", "inscripcion-rubro-elegido" + (esPrincipal ? " inscripcion-rubro-principal" : ""));
+  rubrosElegidos.forEach(function (area) {
+    const item = crearElemento("li", "inscripcion-rubro-elegido");
 
     item.appendChild(crearElemento("span", "inscripcion-rubro-elegido-nombre", area.codigo + " · " + area.nombre));
 
@@ -230,10 +235,6 @@ function renderizarRubrosElegidos() {
       quitarArea(area.codigo);
     });
     item.appendChild(botonQuitar);
-
-    if (esPrincipal) {
-      item.appendChild(crearElemento("p", "inscripcion-nota-principal", "Este es tu rubro principal."));
-    }
 
     listaRubrosElegidos.appendChild(item);
   });
@@ -257,9 +258,6 @@ function elegirArea(area) {
   }
 }
 
-// Al quitar un rubro, el orden del arreglo se recalcula solo: el que
-// quede primero pasa a ser el principal automaticamente, porque
-// renderizarRubrosElegidos() siempre marca el indice 0 como tal.
 function quitarArea(codigo) {
   rubrosElegidos = rubrosElegidos.filter(function (r) { return r.codigo !== codigo; });
   renderizarRubrosElegidos();
@@ -314,21 +312,30 @@ function validarFormulario() {
     campoEmpresa.removeAttribute("aria-invalid");
   }
 
-  const mipymeElegido = formulario.querySelector('input[name="mipyme"]:checked');
-  if (!mipymeElegido) {
-    mostrarErrorCampo("mipyme");
-    valido = false;
-    primerCampoInvalido = primerCampoInvalido || formulario.querySelector('input[name="mipyme"]');
-  } else {
-    ocultarErrorCampo("mipyme");
-  }
-
   if (rubrosElegidos.length === 0) {
     mostrarErrorCampo("rubros");
     valido = false;
     primerCampoInvalido = primerCampoInvalido || campoBusquedaRubro;
   } else {
     ocultarErrorCampo("rubros");
+  }
+
+  const rpeElegido = formulario.querySelector('input[name="rpe"]:checked');
+  if (!rpeElegido) {
+    mostrarErrorCampo("rpe");
+    valido = false;
+    primerCampoInvalido = primerCampoInvalido || formulario.querySelector('input[name="rpe"]');
+  } else {
+    ocultarErrorCampo("rpe");
+  }
+
+  const planElegido = formulario.querySelector('input[name="plan"]:checked');
+  if (!planElegido) {
+    mostrarErrorCampo("plan");
+    valido = false;
+    primerCampoInvalido = primerCampoInvalido || formulario.querySelector('input[name="plan"]');
+  } else {
+    ocultarErrorCampo("plan");
   }
 
   if (!campoConsentimiento.checked) {
@@ -367,7 +374,7 @@ function ocultarMensajeEnvio() {
 
 function mostrarExito() {
   formulario.hidden = true;
-  mostrarMensajeEnvio(MENSAJE_EXITO);
+  bloqueExito.hidden = false;
 }
 
 async function manejarEnvioFormulario(evento) {
@@ -388,10 +395,9 @@ async function manejarEnvioFormulario(evento) {
   const cuerpo = {
     correo: campoCorreo.value.trim(),
     empresa: campoEmpresa.value.trim(),
-    mipyme: formulario.querySelector('input[name="mipyme"]:checked').value,
     rubro_estrella: rubrosElegidos[0].codigo,
-    rubro_2: rubrosElegidos[1] ? rubrosElegidos[1].codigo : "",
-    rubro_3: rubrosElegidos[2] ? rubrosElegidos[2].codigo : "",
+    rpe: formulario.querySelector('input[name="rpe"]:checked').value,
+    plan: formulario.querySelector('input[name="plan"]:checked').value,
     politica_version: VERSION_POLITICA_ACTUAL,
     consentimiento: true,
     consentimiento_comercial: campoComunicaciones.checked ? 1 : 0,

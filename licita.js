@@ -79,13 +79,7 @@ const MENSAJE_SALUDO_LICITA =
   "¡Hola! Soy Alicia, del equipo de Publicola. Cuéntame qué necesita tu empresa y te digo cómo te puedo ayudar.";
 
 const MENSAJE_RESPALDO_FALLA_WORKER =
-  "Disculpa, en este momento no podemos responderte por aquí. Con mucho gusto te atendemos directamente: toca el botón 'Hablar con el equipo' y conversamos.";
-
-// Mensaje precargado del boton verde "Hablar con el equipo" que aparece
-// dentro de la burbuja de respaldo. Usa el mismo enlace wa.me (misma
-// funcion construirEnlaceWhatsapp, mismo numero) que el boton de
-// WhatsApp del encabezado, con su propio texto precargado.
-const MENSAJE_WHATSAPP_BOTON_RESPALDO = "Hola, les escribo desde la página de Publicola";
+  "Disculpa, en este momento no podemos responderte por aquí. Escríbenos a info@publicola.com.do con tu consulta y el nombre de tu empresa, y nuestro equipo te responde.";
 
 // Mensaje del boton fijo de WhatsApp del encabezado del panel (siempre
 // visible, no es un chip de sugerencia).
@@ -743,13 +737,17 @@ function agregarAlHistorialChat(rol, texto) {
   }
 }
 
-// Burbuja de respaldo: mismo estilo que una burbuja normal del bot, pero
-// con el boton verde "Hablar con el equipo" DENTRO de la misma burbuja
-// (no en la fila de controles aparte), para que el visitante lo vea
-// pegado al mensaje que le explica por que no hay respuesta de la IA (o
-// al mensaje que le entrega el formulario). mostrarFormulario es opcional:
-// cuando es true, se agrega ADEMAS un enlace real de descarga del
-// formulario, antes del boton de WhatsApp.
+// Burbuja de respaldo: mismo estilo que una burbuja normal del bot,
+// para el mensaje que le explica al visitante por que no hay respuesta
+// de la IA (o que le entrega el formulario). Nunca crea aqui dentro un
+// boton ni enlace de WhatsApp u otro medio de mensajeria instantanea
+// (regla de CLAUDE.md: dentro del chat no existe boton de mensajeria
+// instantanea); el propio texto del mensaje es el que indica, cuando
+// corresponde, el medio de contacto fuera de la conversacion (correo,
+// o el boton de WhatsApp fijo del encabezado del panel, que esta fuera
+// de esta burbuja y no lo toca esta funcion). mostrarFormulario es
+// opcional: cuando es true, se agrega un enlace real de descarga del
+// formulario (esto no es mensajeria, es una descarga directa de archivo).
 function agregarBurbujaRespaldoChat(texto, mostrarFormulario) {
   const burbuja = crearElemento("div", "burbuja burbuja-bot burbuja-respaldo");
   burbuja.appendChild(crearElemento("p", null, limpiarMarkdown(texto)));
@@ -762,14 +760,6 @@ function agregarBurbujaRespaldoChat(texto, mostrarFormulario) {
     enlaceFormulario.textContent = "Descargar el formulario";
     burbuja.appendChild(enlaceFormulario);
   }
-
-  const boton = document.createElement("a");
-  boton.className = "boton boton-whatsapp boton-respaldo-whatsapp";
-  boton.textContent = "Hablar con el equipo";
-  boton.href = construirEnlaceWhatsapp(MENSAJE_WHATSAPP_BOTON_RESPALDO);
-  boton.target = "_blank";
-  boton.rel = "noopener noreferrer";
-  burbuja.appendChild(boton);
 
   elementoTranscursoChat.appendChild(burbuja);
   elementoTranscursoChat.scrollTop = elementoTranscursoChat.scrollHeight;
@@ -958,6 +948,9 @@ async function enviarMensajeChat(textoOriginal) {
 // procesos_semana.json, por eso arranca de inmediato).
 function inicializarChatLicita() {
   const contenedor = document.getElementById("licita-chat");
+  if (!contenedor) {
+    return;
+  }
   contenedor.innerHTML = "";
 
   elementoTranscursoChat = crearElemento("div", "chat-transcurso");

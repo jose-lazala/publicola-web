@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex">
 <title>Página no encontrada — Publicola</title>
 <link rel="icon" href="favicon.png" type="image/png">
-<link rel="stylesheet" href="estilo.css">
+<link rel="stylesheet" href="/lanzamiento.css">
 </head>
 <body>
 
@@ -14,16 +14,12 @@
 
 <header class="nav-cabecera">
     <div class="nav-contenedor">
-      <button id="boton-menu" class="nav-boton-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-enlaces">
-        <span></span><span></span><span></span>
-      </button>
-      <nav id="nav-enlaces" class="nav-enlaces">
-        <a href="#inicio">Inicio</a>
-        <a href="#radar-promo">Radar Publicola</a>
-        <a href="#licitaciones">Licitaciones</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#quienes-somos">Quiénes somos</a>
-        <a href="#contacto">Contacto</a>
+      <nav class="nav-enlaces" aria-label="Principal">
+        <a href="/">Inicio</a>
+        <a href="/planes/">Planes</a>
+        <a href="/servicios/">Servicios</a>
+        <a href="/legal/">Legal</a>
+        <a href="/contacto/">Contacto</a>
       </nav>
     </div>
   </header>
@@ -32,14 +28,15 @@
     <div class="contenedor">
       <h1>Esta página no existe.</h1>
       <p>Puedes volver al inicio para seguir navegando en publicola.com.do.</p>
-      <p><a href="index.html">Volver al inicio</a></p>
+      <p class="error-codigo">ERROR 404</p>
+      <p><a class="boton" href="/">Volver al inicio</a></p>
     </div>
   </main>
 
 <footer class="pie">
     <div class="contenedor">
-      <p>Datos: DGCP / Portal Transaccional (comprasdominicana.gob.do), bajo licencia ODbL con atribución.</p>
-      <p><a href="politica-de-privacidad.html">Política de Privacidad y Términos de Uso</a></p>
+      <p>Datos de procesos: DGCP/SECP, recurso oficial «Datos de procesos publicados», licencia ODbL.</p>
+      <p><a href="/fuentes/">Fuentes y metodología</a> · <a href="/legal/">Privacidad y términos</a></p>
     </div>
   </footer>
 

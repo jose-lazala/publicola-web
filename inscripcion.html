@@ -3,19 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Recibe gratis la primera edición del Radar — Publicola</title>
-<meta name="description" content="Recibe sin costo la primera edición del Radar Publicola con las licitaciones de tu rubro.">
+<title>Inscríbete — Publicola</title>
+<meta name="description" content="Inscripción a los planes de Publicola. Inteligencia de compras públicas para proveedores del Estado dominicano.">
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="refresh" content="0; url=/app/?intent=registro">
 <link rel="canonical" href="https://publicola.com.do/inscripcion.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Publicola">
-<meta property="og:title" content="Recibe gratis la primera edición del Radar — Publicola">
-<meta property="og:description" content="Recibe sin costo la primera edición del Radar Publicola con las licitaciones de tu rubro.">
+<meta property="og:title" content="Inscríbete — Publicola">
+<meta property="og:description" content="Inscripción a los planes de Publicola. Inteligencia de compras públicas para proveedores del Estado dominicano.">
 <meta property="og:url" content="https://publicola.com.do/inscripcion.html">
 <meta property="og:image" content="https://publicola.com.do/hero-poster.jpg">
 <meta property="og:locale" content="es_DO">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Recibe gratis la primera edición del Radar — Publicola">
-<meta name="twitter:description" content="Recibe sin costo la primera edición del Radar Publicola con las licitaciones de tu rubro.">
+<meta name="twitter:title" content="Inscríbete — Publicola">
+<meta name="twitter:description" content="Inscripción a los planes de Publicola. Inteligencia de compras públicas para proveedores del Estado dominicano.">
 <meta name="twitter:image" content="https://publicola.com.do/hero-poster.jpg">
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="stylesheet" href="estilo.css">
@@ -33,30 +35,19 @@
   <main id="contenido-principal">
     <div class="contenedor documento-legal inscripcion-pagina">
 
-      <h1>Recibe gratis la primera edición del Radar de tu rubro.</h1>
+      <h1>Inscríbete a Publicola</h1>
       <p class="inscripcion-apoyo">
-        Es la edición completa, igual a la que reciben los suscriptores. Una sola vez,
-        sin costo y sin compromiso.
+        El portal del Estado lista los procesos. Nosotros leemos los documentos de cada
+        proceso y te decimos qué te están pidiendo, para cuándo y qué debes entregar, con
+        los días hábiles que quedan hasta el cierre.
       </p>
 
       <form id="formulario-inscripcion" novalidate>
 
-        <div class="campo-inscripcion">
-          <label for="campo-correo">Correo electrónico</label>
-          <input
-            type="email"
-            id="campo-correo"
-            name="correo"
-            class="campo-texto-libre"
-            autocomplete="email"
-            aria-describedby="ayuda-correo error-correo"
-          >
-          <p id="ayuda-correo" class="inscripcion-ayuda">A esta dirección llega el boletín cada lunes.</p>
-          <p id="error-correo" class="inscripcion-error" role="alert" hidden>Escribe un correo completo, así: nombre@correo.com</p>
-        </div>
+        <h2>Tu empresa</h2>
 
         <div class="campo-inscripcion">
-          <label for="campo-empresa">Nombre de tu empresa o negocio</label>
+          <label for="campo-empresa">Nombre comercial de la empresa</label>
           <input
             type="text"
             id="campo-empresa"
@@ -68,40 +59,32 @@
           >
           <p id="ayuda-empresa" class="inscripcion-ayuda">
             Si operas sin sociedad constituida, indica el nombre comercial con el que
-            trabajas. No se exige registro previo. Obligatorio.
+            trabajas.
           </p>
-          <p id="error-empresa" class="inscripcion-error" role="alert" hidden>Escribe el nombre de tu empresa o negocio.</p>
+          <p id="error-empresa" class="inscripcion-error" role="alert" hidden>Escribe el nombre comercial de tu empresa.</p>
         </div>
 
-        <fieldset class="campo-inscripcion">
-          <legend>¿Tienes clasificación MIPYME?</legend>
-          <div class="inscripcion-opciones">
-            <label class="inscripcion-opcion">
-              <input type="radio" name="mipyme" value="sí">
-              Sí
-            </label>
-            <label class="inscripcion-opcion">
-              <input type="radio" name="mipyme" value="no">
-              No
-            </label>
-          </div>
-          <p id="ayuda-mipyme" class="inscripcion-ayuda">
-            Determinadas compras del Estado están reservadas a empresas con
-            clasificación MIPYME. La indicación es declarativa: no se verifica ante
-            ninguna entidad y puede modificarse después.
-          </p>
-          <p id="error-mipyme" class="inscripcion-error" role="alert" hidden>Indica si tienes clasificación MIPYME.</p>
-        </fieldset>
+        <div class="campo-inscripcion">
+          <label for="campo-correo">Correo</label>
+          <input
+            type="email"
+            id="campo-correo"
+            name="correo"
+            class="campo-texto-libre"
+            autocomplete="email"
+            aria-describedby="ayuda-correo error-correo"
+          >
+          <!-- La etiqueta dice solo "Correo", asi que la ayuda es la que deja
+               claro que pedimos el correo de la empresa y no uno personal
+               (Ley 172-13: solo recogemos datos de empresa). -->
+          <p id="ayuda-correo" class="inscripcion-ayuda">Correo de contacto de tu empresa. A este correo te enviamos el boletín semanal y las instrucciones de pago.</p>
+          <p id="error-correo" class="inscripcion-error" role="alert" hidden>Escribe un correo completo, así: nombre@correo.com</p>
+        </div>
 
         <div class="campo-inscripcion">
-          <label for="campo-busqueda-rubro">Rubros de actividad</label>
+          <label for="campo-busqueda-rubro">Área o rubro en el que vendes</label>
           <p id="ayuda-rubros" class="inscripcion-ayuda">
-            Escribe una palabra de tu actividad y selecciona de la lista. Hasta tres,
-            en orden de prioridad.
-          </p>
-          <p class="inscripcion-ayuda">
-            Si tu rubro no tiene procesos abiertos esta semana, esperamos a la
-            siguiente para enviarte tu primera edición.
+            Escribe una palabra de tu actividad y selecciona de la lista.
           </p>
           <input
             type="text"
@@ -112,12 +95,47 @@
           >
           <ul id="lista-sugerencias-rubro" class="inscripcion-sugerencias" hidden></ul>
           <ul id="lista-rubros-elegidos" class="inscripcion-rubros-elegidos" aria-live="polite"></ul>
-          <p class="inscripcion-nota-fija">
-            Recibes cuatro procesos por edición. Con tres rubros, dos del principal y
-            uno de cada otro. Con dos, dos y dos. Con uno, los cuatro de ese.
-          </p>
-          <p id="error-rubros" class="inscripcion-error" role="alert" hidden>Selecciona al menos un rubro de actividad.</p>
+          <p id="error-rubros" class="inscripcion-error" role="alert" hidden>Selecciona tu área o rubro de actividad.</p>
         </div>
+
+        <fieldset class="campo-inscripcion">
+          <legend>¿Tu empresa está inscrita en el RPE?</legend>
+          <div class="inscripcion-opciones">
+            <label class="inscripcion-opcion">
+              <input type="radio" name="rpe" value="sí">
+              Sí
+            </label>
+            <label class="inscripcion-opcion">
+              <input type="radio" name="rpe" value="no">
+              No
+            </label>
+            <label class="inscripcion-opcion">
+              <input type="radio" name="rpe" value="no estoy seguro">
+              No estoy seguro
+            </label>
+          </div>
+          <p id="error-rpe" class="inscripcion-error" role="alert" hidden>Indica si tu empresa está inscrita en el RPE.</p>
+        </fieldset>
+
+        <h2>Tu plan</h2>
+
+        <fieldset class="campo-inscripcion">
+          <legend>Elige tu plan</legend>
+          <div class="inscripcion-opciones">
+            <label class="inscripcion-opcion">
+              <input type="radio" name="plan" value="basico">
+              Plan Básico — RD$800
+            </label>
+            <label class="inscripcion-opcion inscripcion-opcion-deshabilitada">
+              <input type="radio" name="plan" value="competitivo" disabled aria-disabled="true">
+              <span>
+                Plan Competitivo — RD$1,450
+                <span class="plan-etiqueta">Disponible próximamente</span>
+              </span>
+            </label>
+          </div>
+          <p id="error-plan" class="inscripcion-error" role="alert" hidden>Elige un plan para continuar.</p>
+        </fieldset>
 
         <div class="campo-inscripcion inscripcion-consentimiento">
           <label class="inscripcion-opcion">
@@ -153,6 +171,19 @@
       </form>
 
       <p id="mensaje-envio" class="inscripcion-mensaje-envio" role="status" aria-live="polite" hidden></p>
+
+      <div id="bloque-exito" class="inscripcion-exito" role="status" aria-live="polite" hidden>
+        <h2>Recibimos tu inscripción.</h2>
+        <p>
+          Te enviamos a tu correo los datos para hacer la transferencia y el
+          monto exacto de tu plan.
+        </p>
+        <p>
+          Cuando hayas transferido, responde a ese mismo correo con la captura de pantalla
+          de la transferencia. Verificamos el pago y te enviamos tu acceso.
+        </p>
+        <p class="inscripcion-ayuda">Si no ves el correo en unos minutos, revisa la carpeta de correo no deseado.</p>
+      </div>
 
     </div>
   </main>

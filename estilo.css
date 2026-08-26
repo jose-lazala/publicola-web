@@ -22,11 +22,35 @@
   --activo-fondo: #0F6E56;
   --activo-texto: #E1F5EE;
   --sombra: rgba(4, 44, 83, 0.35);
-  --velo: rgba(4, 44, 83, 0.72);
   --borde-suave: rgba(230, 241, 251, 0.18);
   --radio-borde: 6px;
   --radio-pildora: 999px;
-  --altura-nav: 56px;
+}
+
+/* Poppins autoalojada (archivos .woff2 en esta misma carpeta, licencia
+   SIL Open Font License 1.1 -- permite redistribuir e incrustar la
+   fuente). Nunca se carga desde fonts.googleapis.com ni ningun otro
+   dominio externo: eso haria que el navegador del visitante contactara
+   a un tercero que registra su IP, algo que contradice el aviso de
+   privacidad del sitio (Ley 172-13). Solo dos pesos, los que usa el
+   hero: 400 (regular) y 700 (negrita). El pie de foto en cursiva del
+   hero usa una cursiva sintetica del propio navegador (font-style:
+   italic sin un archivo italico aparte) -- no hace falta un tercer
+   archivo para eso. */
+@font-face {
+  font-family: "Poppins";
+  src: url("poppins-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("poppins-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 * {
@@ -39,7 +63,6 @@ html {
 
 body {
   margin: 0;
-  padding-top: var(--altura-nav);
   background-color: var(--fondo);
   color: var(--texto);
   font-family: -apple-system, "Segoe UI", Arial, Helvetica, sans-serif;
@@ -52,37 +75,27 @@ body {
   padding: 0 20px;
 }
 
-/* Todos los elementos con ancla (secciones, y tambien bloques internos a
-   los que el chatbot hace scroll, como "empresas-disponibles") dejan
-   aire debajo de la barra fija para que no queden tapados. */
-[id] {
-  scroll-margin-top: var(--altura-nav);
-}
-
-/* ---------- Barra de navegacion fija ---------- */
+/* ---------- Barra de navegacion (B.39: comun a las seis paginas) ----------
+   Ya no es una barra fija ni depende de JavaScript: los seis enlaces
+   viven siempre visibles, en fila y centrados con flex-wrap, asi que en
+   pantalla estrecha bajan solos a dos lineas sin ningun script que los
+   tenga que mostrar u ocultar. Al no ser "position:fixed" tampoco hace
+   falta compensar con padding-top en el body ni con scroll-margin-top:
+   la barra ocupa su propio espacio en el flujo normal del documento, no
+   tapa nada. El boton de hamburguesa (".nav-boton-menu") ya no se usa en
+   ninguna de las seis paginas -- su regla se deja intacta mas abajo
+   porque web/404.html (fuera del alcance de esta tarea) todavia trae ese
+   boton en su HTML. */
 
 .nav-cabecera {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  height: var(--altura-nav);
   background-color: var(--fondo);
+  border-bottom: 1px solid var(--borde-suave);
 }
 
 .nav-contenedor {
   max-width: 720px;
   margin: 0 auto;
-  height: 100%;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  /* Sin logo, el unico item de flujo normal en movil es el boton de
-     menu (nav-enlaces es un desplegable position:absolute, no cuenta en
-     el flujo); flex-end lo deja pegado a la derecha, donde estaba antes. */
-  justify-content: flex-end;
-  position: relative;
+  padding: 10px 20px;
 }
 
 .nav-boton-menu {
@@ -109,221 +122,120 @@ body {
 }
 
 .nav-enlaces {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background-color: var(--fondo);
-  border-top: 1px solid var(--borde-suave);
-  max-height: calc(100vh - var(--altura-nav));
-  overflow-y: auto;
-}
-
-.nav-enlaces.nav-enlaces-abierto {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 20px;
+  row-gap: 8px;
 }
 
 .nav-enlaces a {
   color: var(--texto);
   text-decoration: none;
-  font-size: 15px;
-  /* Filas altas: comodas de tocar con el pulgar en una sola mano */
-  padding: 16px 20px;
-  border-top: 1px solid var(--borde-suave);
-}
-
-.nav-enlaces a:first-child {
-  border-top: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 2px;
 }
 
 .nav-enlaces a:hover,
 .nav-enlaces a:focus {
-  background-color: var(--linea);
+  text-decoration: underline;
 }
 
-/* ---------- Portada: hero de video a todo el ancho ---------- */
+/* Pagina activa: se distingue por peso de letra y subrayado, sin
+   inventar un color de estado nuevo (regla dura de la B.39). */
+.nav-enlaces a[aria-current="page"] {
+  font-weight: 700;
+  text-decoration: underline;
+}
 
-/* Reglas base = celular. object-fit: cover en el video mas el color de
-   fondo (por si el video tarda o falla) y background-image con el mismo
-   poster que usa el <video>, para que SIEMPRE haya algo detras del velo
-   (ver .hero-video mas abajo sobre por que ademas se pone en el propio
-   <video>). */
+/* ---------- Portada: hero recreado en HTML (banner hero-planes-v2.png) ---------- */
+
+/* El hero anterior era un video de fondo con un velo oscuro encima
+   (.hero-video, .hero-velo) para que el texto se leyera, y un logo en
+   imagen (.hero-logo-caja). El banner de referencia (hero-planes-v2.png)
+   es en cambio un fondo plano del mismo color que --fondo con texto real
+   escrito encima -- por eso el video, el velo y el logo-imagen se
+   quitan enteros en vez de solo ajustarse: no queda nada huerfano. */
 .hero-portada {
-  position: relative;
-  display: flex;
-  align-items: center;
-  /* Sin "height" fijo aqui a proposito: desde que el buscador de rubro
-     se sumo como segunda columna, el hero en celular (una sola columna,
-     apilada) necesita crecer segun su contenido en vez de recortarlo a
-     una altura fija -- "min-height" solo pone un piso, nunca un techo.
-     En escritorio (>=900px), la @media de mas abajo SI fija una altura,
-     porque alli el contenido entra de sobra en dos columnas lado a lado. */
-  min-height: 520px;
-  overflow: hidden;
   background-color: var(--fondo);
-  background-image: url("hero-poster.jpg");
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
 }
 
-.hero-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-
-/* Velo de legibilidad: mas oscuro abajo-izquierda (donde esta el texto)
-   y mas claro arriba-derecha. */
-.hero-velo {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(to top right, var(--velo) 0%, var(--velo) 100%);
-}
-
-/* Dos bloques verticales en celular: primero el logo/frase/boton
-   (.hero-columna-texto), debajo el buscador de rubro (.hero-buscador,
-   la seccion "#conteo-rubro" movida aqui dentro). En escritorio grande
-   pasan a columnas lado a lado -- ver la @media de mas abajo. */
-.hero-contenido {
-  position: relative;
-  z-index: 2;
+/* Contenedor propio del hero, mas ancho que ".contenedor" (max-width:
+   720px): en la imagen de referencia el parrafo mide mas de 800px sobre
+   1280px de ancho total, no le entra a la caja angosta que usa el resto
+   del sitio. No se toca ".contenedor" porque el resto de las secciones
+   siguen dependiendo de sus 720px. */
+.hero-marco {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 56px 20px;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  text-align: left;
-  gap: 32px;
-  width: 100%;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+  font-family: "Poppins", -apple-system, "Segoe UI", Arial, Helvetica, sans-serif;
 }
 
-.hero-columna-texto {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 14px;
-}
-
-/* Buscador de rubro dentro del hero (antes era su propia seccion
-   "#conteo-rubro" mas abajo en la pagina). El id se mantiene igual
-   (licita.js lo usa para saber si debe engancharse), solo cambia donde
-   vive y su presentacion. */
-.hero-buscador {
-  width: 100%;
-}
-
-/* Titulo pequeño encima del campo, no un h2 grande de seccion: aqui
-   "#conteo-rubro" ya no tiene la clase "seccion" que le daba el tamaño
-   de h2 de pagina (21px), asi que sin esta regla caeria al tamaño de h2
-   por defecto del navegador -- mas grande todavia. */
-.hero-buscador h2 {
-  margin: 0 0 4px 0;
-  /* --urgencia (naranja base) medido en vivo contra la foto del hero
-     con velo daba 4.18:1, por debajo del minimo de 4.5:1 -- se usa la
-     version clara en su lugar. */
-  color: var(--urgencia-clara);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  text-transform: uppercase;
-}
-
-.hero-buscador .subtitulo {
-  margin: 0 0 10px 0;
-  color: var(--texto-suave);
-  font-size: 13px;
-  line-height: 1.4;
-}
-
-.hero-logo-caja {
+/* "publicola" en minusculas, pegado a la izquierda -- unico elemento
+   del hero que rompe el centrado del resto (align-self lo saca del
+   "align-items: center" del padre sin afectar a sus hermanos). */
+.hero-marca {
+  align-self: flex-start;
   margin: 0;
+  color: var(--texto-suave);
+  font-size: 16px;
+  font-weight: 400;
 }
 
-.hero-logo {
-  display: block;
-  height: 85px;
-  width: auto;
-}
-
-/* Texto de respaldo si logo-transparente.png no carga (ver onerror en
-   el HTML): imita el logo -- mayusculas, tipografia fina, harto espaciado.
-   El selector ":not([hidden])" es a proposito: si se pusiera "display"
-   en la regla de abajo sin condicion, un estilo de autor (aunque sea de
-   baja especificidad) le gana SIEMPRE a la regla nativa del navegador
-   "[hidden] { display: none }", y el texto de respaldo quedaria visible
-   aunque el atributo "hidden" siga puesto (el logo cargo bien). */
-.hero-logo-texto:not([hidden]) {
-  display: block;
+.hero-titular {
   margin: 0;
   color: var(--texto);
-  font-size: 37px;
-  font-weight: 400;
-  letter-spacing: 8px;
-  text-transform: uppercase;
+  font-size: 26px;
+  line-height: 1.25;
+  font-weight: 700;
 }
 
-.hero-eslogan {
-  margin: 0;
-  color: var(--texto-suave);
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.hero-frase-rotativa {
+.hero-parrafo {
   margin: 0;
   max-width: 560px;
+  color: var(--texto-suave);
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.hero-precio {
+  margin: 0;
+  color: var(--urgencia-clara);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* Reutiliza ".boton" (relleno --texto, letra --fondo, sin borde) y
+   ".boton-pildora" (radio 999px) ya existentes -- aqui solo se agranda
+   el tamano, como pide el encargo ("EL BOTON... en tamano grande"). */
+.hero-boton-planes {
+  margin: 6px 0;
+  padding: 18px 30px;
+  font-size: 16px;
+}
+
+.hero-cierre {
+  margin: 0;
   color: var(--texto);
-  font-size: 19px;
-  line-height: 1.45;
-  text-shadow: 0 2px 14px var(--sombra);
-  opacity: 1;
-  visibility: visible;
-  /* "visibility" va en la misma transicion que "opacity" a proposito:
-     al ir de visible a hidden, el navegador mantiene "visible" durante
-     TODA la animacion y recien cambia a "hidden" en el instante exacto
-     en que termina (nunca antes) -- eso es lo que hace imposible que
-     quede un rastro de texto legible mientras se desvanece. Al volver
-     de hidden a visible pasa lo contrario: cambia a "visible" de
-     inmediato, al arrancar la animacion, para que la frase nueva se
-     pueda leer desde que empieza a aparecer. Ver hero.js para el ciclo
-     completo de 6 pasos que controla estos cambios.
-  */
-  transition: opacity 0.5s ease, visibility 0.5s ease;
-  /* Alto minimo fijo (3 renglones a esta line-height) para que el resto
-     del hero (el boton de abajo) no salte cuando una frase ocupa menos
-     lineas que otra -- la altura del bloque queda igual siempre. */
-  min-height: 4.35em;
-  /* Tope de 3 lineas en celular, para que el hero no crezca de mas. */
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  font-size: 18px;
+  font-weight: 700;
 }
 
-/* Unico boton del hero: bien grande, para que sea lo mas llamativo
-   despues del logo. En celular ocupa todo el ancho del bloque de texto
-   (el texto del boton es largo y asi nunca se desborda, aunque le toque
-   partirse en dos renglones dentro del boton). */
-.hero-boton {
-  margin-top: 4px;
-  width: 100%;
-  text-align: center;
-  padding: 18px 24px;
-  font-size: 17px;
-}
-
-/* Con movimiento reducido, hero.js pausa el video, pero ademas lo
-   ocultamos por CSS para que se vea directo el poster (background-image
-   de .hero-portada) sin depender de que el video llegue a pintar un
-   frame antes de pausarse. */
-@media (prefers-reduced-motion: reduce) {
-  .hero-video {
-    display: none;
-  }
+.hero-pie {
+  margin: 0;
+  color: var(--texto-suave);
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 400;
 }
 
 /* ---------- Quienes somos ---------- */
@@ -1014,7 +926,7 @@ body {
 .licita-panel-estado {
   font-size: 12px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--texto-suave);
 }
 
 .licita-panel-cabecera-acciones {
@@ -1073,20 +985,17 @@ body {
   border-radius: 0;
 }
 
-/* ---------- Servicios: 5 secciones a pantalla completa ---------- */
-
-/* svh (small viewport height) en vez de vh: en movil, vh cuenta la
-   pantalla completa incluyendo el area que tapa la barra de direcciones
-   del navegador, y la seccion queda mas alta que la pantalla visible
-   real. svh se ajusta a lo que el usuario ve de verdad. */
-.seccion-servicio-completa {
-  min-height: 100svh;
-}
+/* ---------- Servicios: 5 secciones con techo de altura en la foto (B.39 / 3.4) ----------
+   Antes cada seccion era pantalla completa (min-height:100svh/100vh) y la
+   foto llenaba esa pantalla entera (55svh) -- eso es justo lo que se
+   quita aqui: ninguna foto de servicio puede ocupar mas de la mitad de
+   la altura visible, ni en telefono ni en escritorio, para que la foto
+   entera y el arranque del texto se vean juntos sin necesidad de hacer
+   scroll dentro de la propia foto. */
 
 .servicio-completa-grid {
   display: flex;
   flex-direction: column;
-  min-height: 100svh;
 }
 
 .servicio-completa-foto {
@@ -1094,14 +1003,22 @@ body {
      onerror="this.style.display='none'" del <img> la oculta y este
      fondo queda visible en su lugar -- la seccion nunca se ve rota. */
   background-color: var(--fondo);
-  height: 55svh;
+  /* svh (small viewport height) en vez de vh: en movil, vh cuenta la
+     pantalla completa incluyendo el area que tapa la barra de
+     direcciones del navegador, y el techo de altura quedaria mas alto
+     que la pantalla visible real. svh se ajusta a lo que el usuario ve
+     de verdad. Techo exacto en el 50%, el maximo que permite la B.39. */
+  height: 50svh;
   overflow: hidden;
 }
 
 .servicio-completa-foto img {
   width: 100%;
   height: 100%;
+  /* object-fit:cover recorta sin deformar (la imagen nunca se estira);
+     object-position:center centra el recorte, como pide la B.39. */
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 
@@ -1267,53 +1184,31 @@ body {
     display: none;
   }
 
-  .nav-enlaces {
-    display: flex !important;
-    flex-direction: row;
-    position: static;
-    background: none;
-    border-top: none;
-    gap: 28px;
-    max-height: none;
-    overflow: visible;
-    /* Sin logo que le haga contrapeso, los enlaces son el unico
-       contenido de la barra: ocupan todo el ancho disponible y se
-       reparten con espacio entre ellos en vez de quedar agrupados. */
-    flex: 1;
-    justify-content: space-between;
+  .hero-marco {
+    gap: 22px;
+    padding: 72px 20px;
   }
 
-  .nav-enlaces a {
-    padding: 0;
-    border-top: none;
-    font-weight: 500;
-    font-size: 14px;
+  .hero-titular {
+    font-size: 34px;
   }
 
-  .nav-enlaces a:hover,
-  .nav-enlaces a:focus {
-    background: none;
-    text-decoration: underline;
-  }
-
-  .hero-logo {
-    height: 110px;
-  }
-
-  .hero-logo-texto {
-    font-size: 48px;
-    letter-spacing: 9px;
-  }
-
-  .hero-boton {
-    width: auto;
-    padding: 20px 36px;
-    font-size: 18px;
-  }
-
-  .hero-frase-rotativa {
-    font-size: 22px;
+  .hero-parrafo {
+    font-size: 16px;
     max-width: 620px;
+  }
+
+  .hero-precio {
+    font-size: 20px;
+  }
+
+  .hero-boton-planes {
+    padding: 20px 36px;
+    font-size: 17px;
+  }
+
+  .hero-cierre {
+    font-size: 20px;
   }
 
   .quienes-grid {
@@ -1384,15 +1279,17 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* ---------- Servicios: 5 secciones a pantalla completa (escritorio) ---------- */
-
-  .seccion-servicio-completa {
-    min-height: 100vh;
-  }
+  /* ---------- Servicios: foto y texto en fila (escritorio), foto con techo de 50vh ---------- */
 
   .servicio-completa-grid {
     flex-direction: row;
-    min-height: 100vh;
+    /* align-items:flex-start (no el "stretch" por defecto de flex): sin
+       esto, el navegador estira la foto para igualar la altura de la
+       columna de texto (mucho mas alta, por los varios parrafos), y el
+       techo de 50vh de abajo quedaria anulado. Con flex-start cada
+       columna conserva su propia altura: la foto los 50vh que le tocan,
+       el texto lo que necesite su contenido. */
+    align-items: flex-start;
   }
 
   /* Alternancia: por defecto la foto (primera en el HTML) queda a la
@@ -1405,19 +1302,15 @@ body {
   }
 
   .servicio-completa-foto {
-    height: auto;
+    /* Techo de altura: el 50% de la ventana, igual que en movil pero con
+       "vh" (en escritorio no hay barra de direcciones que tape pantalla,
+       asi que no hace falta "svh" aqui). */
+    height: 50vh;
     flex: 1 1 50%;
   }
 
   .servicio-completa-texto {
     flex: 1 1 50%;
-    /* La regla base (movil) centra el texto verticalmente
-       (justify-content:center), pensada para el apilado en columna. En
-       fila (tablet/escritorio) eso dejaba un hueco vacio arriba: el
-       texto quedaba a media altura de los 100vh mientras la foto los
-       llena de punta a punta. Aqui arranca desde arriba, a la misma
-       altura que el borde superior de la foto. */
-    justify-content: flex-start;
     padding: 72px 64px 40px;
   }
 
@@ -1485,55 +1378,35 @@ body {
     max-width: 1280px;
   }
 
-  /* ---------- Hero: video a todo el ancho, protagonista ---------- */
+  /* ---------- Hero recreado en HTML, banner estatico centrado ---------- */
 
-  .hero-portada {
-    height: 85vh;
+  .hero-marco {
+    max-width: 1040px;
+    padding: 88px 20px;
+    gap: 26px;
   }
 
-  /* De columna apilada a dos columnas lado a lado: texto a la
-     izquierda (mas ancho, es el mensaje principal), buscador de rubro
-     a la derecha. align-items:center las centra verticalmente entre
-     si, ya que el buscador es mucho mas bajo que el bloque de texto. */
-  .hero-contenido {
-    display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    align-items: center;
-    gap: 48px;
+  .hero-titular {
+    font-size: 46px;
+    max-width: 980px;
   }
 
-  .hero-buscador {
-    max-width: 420px;
+  .hero-parrafo {
+    font-size: 17px;
+    max-width: 680px;
   }
 
-  .hero-logo {
-    height: 140px;
+  .hero-precio {
+    font-size: 22px;
   }
 
-  .hero-logo-texto {
-    font-size: 62px;
-    letter-spacing: 12px;
-  }
-
-  .hero-eslogan {
+  .hero-boton-planes {
+    padding: 22px 44px;
     font-size: 18px;
   }
 
-  /* En escritorio sobra ancho: se quita el tope de 3 lineas del celular.
-     El "min-height: 4.35em" base (3 renglones a este tamano de letra)
-     sigue aplicando -- reserva espacio de sobra para la frase mas larga,
-     asi el boton de abajo no salta de una frase a otra. */
-  .hero-frase-rotativa {
-    display: block;
-    -webkit-line-clamp: unset;
-    overflow: visible;
-    font-size: 28px;
-    max-width: 720px;
-  }
-
-  .hero-boton {
-    padding: 22px 48px;
-    font-size: 20px;
+  .hero-cierre {
+    font-size: 22px;
   }
 
   /* ---------- Titulos y aire de las secciones en general ---------- */
@@ -1830,18 +1703,40 @@ main#contenido-principal > .contenedor > p > a {
   flex-wrap: wrap;
 }
 
+/* Borde en --accion (no --linea): contra el fondo (--fondo) da 3.92:1,
+   por encima del minimo de 3:1 que exige B.38 para bordes de campo.
+   --linea contra --fondo se queda en 2.16:1, por debajo (mismo calculo
+   que ya documenta .tarjeta-plan mas abajo). */
 .inscripcion-opcion {
   display: flex;
   align-items: center;
   gap: 8px;
   min-height: 44px;
   padding: 6px 14px;
-  border: 1px solid var(--linea);
+  border: 1px solid var(--accion);
   border-radius: var(--radio-borde);
   font-size: 15px;
   font-weight: 400;
   color: var(--texto);
   cursor: pointer;
+}
+
+/* Opcion de plan deshabilitada (Plan Competitivo): se ve, pero no se
+   puede elegir. El "disabled" del input ya impide seleccionarla con
+   teclado o raton, y el propio navegador ya atenua un radio deshabilitado
+   sin ayuda de CSS -- no se le baja opacidad al texto ni al borde porque
+   eso arrastraria su contraste por debajo de 4.5:1 / 3:1 (una opacidad de
+   0.7 deja el borde en 2.67:1 y la etiqueta "Disponible proximamente" en
+   3.76:1, las dos por debajo del minimo). Lo que marca que no se puede
+   elegir es el cursor y la propia etiqueta de texto, no un color mas
+   tenue. */
+.inscripcion-opcion-deshabilitada {
+  cursor: not-allowed;
+}
+
+.inscripcion-opcion-deshabilitada .plan-etiqueta {
+  display: inline-block;
+  margin: 0 0 0 8px;
 }
 
 .inscripcion-consentimiento .inscripcion-opcion {
@@ -2037,17 +1932,22 @@ main#contenido-principal > .contenedor > p > a {
   padding: 24px 20px;
 }
 
+/* El encabezado de la tarjeta (nombre del plan y precio) va centrado en las
+   dos tarjetas. Las viñetas NO se centran: una lista de doce lineas
+   centrada se vuelve dificil de leer. */
 .tarjeta-plan h2 {
   margin: 0 0 4px 0;
-  font-size: 19px;
+  font-size: 22px;
   color: var(--texto);
+  text-align: center;
 }
 
 .plan-precio {
   margin: 0 0 18px 0;
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 500;
   color: var(--texto);
+  text-align: center;
 }
 
 .plan-etiqueta {
@@ -2064,7 +1964,17 @@ main#contenido-principal > .contenedor > p > a {
   margin: 0 0 20px 0;
   padding-left: 20px;
   color: var(--texto);
-  font-size: 15px;
+  font-size: 17px;
+}
+
+/* Solo el NOMBRE del Plan Competitivo va en dorado claro de la paleta
+   (--urgencia-clara, #FAC775). Contraste medido: 6.32:1 contra el fondo de
+   la tarjeta (--superficie), por encima del minimo de 4.5:1. El precio y
+   las viñetas de esta tarjeta se quedan en blanco (--texto), igual que en
+   el Plan Basico. La etiqueta "Disponible proximamente" tampoco se toca:
+   conserva su --urgencia de siempre. */
+.tarjeta-plan-competitivo h2 {
+  color: var(--urgencia-clara);
 }
 
 .plan-lista li {
@@ -2087,11 +1997,18 @@ main#contenido-principal > .contenedor > p > a {
     font-size: 28px;
   }
 
+  /* En pantalla grande ".contenedor" llega a 1280px, y a ese ancho las dos
+     tarjetas quedaban estiradas contra los extremos con un hueco enorme en
+     el medio. El max-width propio de la rejilla (mas el margin auto) las
+     mantiene juntas y centradas en la pagina. "align-items: stretch" las
+     deja del mismo alto aunque una tenga mas viñetas que la otra. */
   .planes-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
-    align-items: start;
+    align-items: stretch;
+    max-width: 900px;
+    margin: 0 auto;
   }
 }
 
