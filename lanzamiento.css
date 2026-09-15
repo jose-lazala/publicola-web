@@ -114,9 +114,13 @@ a { color:var(--navy-2); }
 /* ---------- Gratuidad: único cierre de la portada ----------
    Una sola banda a todo el ancho, integrada con la página: sin tarjeta
    interior, sin etiquetas ni enlaces. Solo tipografía y aire. */
-.gratis { padding-block:96px; background:linear-gradient(125deg,var(--navy),var(--navy-2)); color:var(--white); }
-.gratis h2 { max-width:860px; margin:0 0 16px; font-size:clamp(2.2rem,4.6vw,3.5rem); line-height:1.1; letter-spacing:-.04em; }
-.gratis p { max-width:720px; margin:0; color:#cfe7f4; font-size:clamp(1.05rem,1.8vw,1.25rem); }
+.gratis { padding-block:96px; background:linear-gradient(125deg,var(--navy),var(--navy-2)); color:var(--white); text-align:center; }
+.gratis h2 { max-width:900px; margin:0 auto 22px; font-size:clamp(2.2rem,4.6vw,3.5rem); line-height:1.1; letter-spacing:-.04em; }
+/* "gratis." siempre en su propia línea, centrada bajo el resto del titular. */
+.gratis-final { display:block; }
+.gratis p { max-width:760px; margin:0 auto; color:#cfe7f4; font-size:clamp(1.05rem,1.8vw,1.25rem); line-height:1.65; }
+.gratis a { color:var(--white); font-weight:700; text-decoration:underline; text-decoration-color:rgba(255,255,255,.55); text-decoration-thickness:1px; text-underline-offset:5px; overflow-wrap:anywhere; }
+.gratis a:hover,.gratis a:focus-visible { text-decoration-color:var(--white); }
 
 /* ---------- Páginas sencillas (Servicios, Contacto) ----------
    Composición tipográfica: sin tarjetas, cajas, fondos ni bordes. */
