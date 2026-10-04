@@ -495,16 +495,17 @@ function construirResultadoRubro(rubro) {
 
   return {
     texto:
-      "Esta semana no hay procesos abiertos en " + rubro.rubro + ". Te enviamos gratis la primera edición " +
-      "en cuanto haya movimiento. ¿Quieres saber qué incluye cada plan?",
+      "Esta semana no hay procesos abiertos en " + rubro.rubro + ". Crea tu cuenta gratis y te " +
+      "avisamos en cuanto haya movimiento.",
     mostrarEnlacePrimeraEdicion: true,
   };
 }
 
 // Pinta el resultado del rubro elegido dentro de "#buscador-rubro-resultado".
-// El enlace a "Recibe gratis la primera edición" solo aparece cuando el
-// rubro esta en cero (mismo destino real, inscripcion.html, que ya usan
-// los otros botones de primera edicion de esta pagina).
+// El enlace a "Crear mi cuenta gratis" solo aparece cuando el rubro esta en
+// cero (destino real: inscripcion.html). 4-oct-2026: sustituye a la antigua
+// oferta de la primera edicion gratis, que ya no existe -- el software de
+// Publicola es gratuito (decision del Owner, aprobada en chat).
 function mostrarResultadoRubro(rubro) {
   try {
     const resultado = construirResultadoRubro(rubro);
@@ -516,7 +517,7 @@ function mostrarResultadoRubro(rubro) {
       const enlace = document.createElement("a");
       enlace.className = "boton boton-primario boton-chico";
       enlace.href = "inscripcion.html";
-      enlace.textContent = "Recibe gratis la primera edición";
+      enlace.textContent = "Crear mi cuenta gratis";
       elementoResultadoBuscadorRubro.appendChild(enlace);
     }
 
