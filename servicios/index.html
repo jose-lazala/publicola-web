@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Servicios — Publicola</title>
-  <meta name="description" content="Creación y modificación de empresas totalmente en línea, cobro de deudas, sometimiento de ofertas, revisión de licitaciones, preparación de ofertas con asistencia legal, registro de marca, documentos y certificaciones, e inscripciones en el RPE, MIPYME y TSS.">
+  <meta name="description" content="Creación y modificación de empresas totalmente en línea, lista para licitar. Sometimiento de ofertas, revisión de licitaciones, preparación de ofertas con asistencia legal, cobro de deudas, registro de marca y solicitud de documentos y certificaciones.">
   <link rel="canonical" href="https://publicola.com.do/servicios/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Publicola">
   <meta property="og:title" content="Servicios — Publicola">
-  <meta property="og:description" content="Servicios para tu empresa y tus licitaciones, con el respaldo de un equipo legal.">
+  <meta property="og:description" content="Creamos tu empresa y la dejamos lista para licitar. Y te acompañamos en cada licitación.">
   <meta property="og:url" content="https://publicola.com.do/servicios/">
   <meta property="og:image" content="https://publicola.com.do/marca/og-image.jpg">
   <link rel="icon" type="image/png" sizes="32x32" href="/marca/favicon-32.png"><link rel="icon" type="image/png" sizes="64x64" href="/marca/favicon-64.png"><link rel="apple-touch-icon" sizes="180x180" href="/marca/apple-touch-icon.png">
   <link rel="stylesheet" href="/lanzamiento.css?v=20261004">
-  <link rel="stylesheet" href="/servicios.css?v=20261004c">
+  <link rel="stylesheet" href="/servicios.css?v=20261004e">
   <!-- El movimiento se prepara antes de pintar (sin parpadeo). Si servicios.js no llega, todo se muestra a los 2,5 s. -->
   <script>document.documentElement.classList.add("sv-movimiento");setTimeout(function(){if(!window.svListo){document.documentElement.classList.remove("sv-movimiento");}},2500);</script>
 </head>
@@ -33,21 +33,56 @@
   </header>
 
   <main id="contenido">
-    <!-- ============ PORTADA ============ -->
+    <!-- ============ PORTADA: el expediente de tu empresa se abre en abanico ============ -->
     <section class="sv-portada">
-      <div class="sv-orbita" aria-hidden="true"></div>
-      <div class="contenedor">
-        <p class="eyebrow" data-entra>Servicios</p>
-        <h1 data-entra>Tu empresa y tus licitaciones, en buenas manos.</h1>
-        <p data-entra>Además de la plataforma gratuita, nuestro equipo te acompaña con servicios humanos y respaldo legal: desde crear o modificar tu empresa totalmente en línea hasta someter tu oferta.</p>
-        <div class="acciones" data-entra>
-          <a class="boton boton-claro" href="#servicios">Ver los servicios</a>
-          <a class="boton" style="border-color:rgba(255,255,255,.5);background:transparent" href="mailto:info@publicola.com.do?subject=Quiero%20un%20servicio%20de%20Publicola">Escríbenos</a>
+      <svg class="sv-cinta" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="svg-cinta" x1="0" x2="1"><stop offset="0" stop-color="#d89926"/><stop offset=".55" stop-color="#f3c66f"/><stop offset="1" stop-color="#8ed0f5"/></linearGradient></defs><path d="M0 170 C 360 60, 760 220, 1440 40 L1440 220 L0 220 Z" fill="url(#svg-cinta)" opacity=".9"/></svg>
+      <div class="contenedor sv-portada-rejilla">
+        <div>
+          <p class="eyebrow" data-entra>Servicios</p>
+          <h1 data-entra>Tu empresa y tus licitaciones, en buenas manos.</h1>
+          <p class="sv-lead" data-entra>Además de la plataforma gratuita, nuestro equipo te acompaña con servicios humanos y respaldo legal: desde crear o modificar tu empresa totalmente en línea hasta someter tu oferta.</p>
+          <div class="acciones" data-entra>
+            <a class="boton boton-claro" href="#servicios">Ver los servicios</a>
+            <a class="boton sv-boton-borde" href="mailto:info@publicola.com.do?subject=Quiero%20un%20servicio%20de%20Publicola">Escríbenos</a>
+          </div>
+        </div>
+        <div class="sv-expediente" aria-hidden="true">
+          <div class="sv-doc d1"><span class="sv-doc-icono oro"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M9 11h6M9 15h6"/></svg></span><b>Estatutos sociales</b><i></i><i></i></div>
+          <div class="sv-doc d2"><span class="sv-doc-icono azul"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 10h8M8 14h5"/></svg></span><b>RNC</b><i></i><i></i></div>
+          <div class="sv-doc d3"><span class="sv-doc-icono verde"><svg viewBox="0 0 24 24"><path d="M4 10l8-5 8 5"/><path d="M6 10v8M10 10v8M14 10v8M18 10v8M4 20h16"/></svg></span><b>Registro de Proveedores del Estado</b><i></i><i></i></div>
+          <div class="sv-doc d4"><span class="sv-doc-icono coral"><svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5M13 19c0-3 2-5 4-5s4 2 4 5"/></svg></span><b>Inscripción en la TSS</b><i></i><i></i></div>
+          <div class="sv-sello"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Lista para licitar</div>
         </div>
       </div>
     </section>
 
-    <!-- ============ CARRUSEL DE SERVICIOS (catalogo de once servicios, dec.owner.SERVICES-OS01) ============ -->
+    <!-- ============ INSTITUCIONES ============ -->
+    <section class="sv-instituciones" aria-label="Instituciones ante las que gestionamos">
+      <div class="contenedor">
+        <p data-entra>Gestionamos por ti ante</p>
+        <ul>
+          <li data-entra>Cámara de Comercio · Registro Mercantil</li>
+          <li data-entra>DGII</li>
+          <li data-entra>Dirección General de Contrataciones Públicas</li>
+          <li data-entra>Ministerio de Industria, Comercio y Mipymes</li>
+          <li data-entra>Tesorería de la Seguridad Social</li>
+          <li data-entra>ONAPI</li>
+          <li data-entra>DIGEMAPS</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ CIFRAS ============ -->
+    <section class="sv-cifras" aria-label="En cifras">
+      <div class="contenedor">
+        <div data-entra><strong><span data-contar="5">5</span> a <span data-contar="6">6</span></strong><span>días laborables para tener tu empresa</span></div>
+        <div data-entra><strong><span data-contar="12">12</span></strong><span>servicios para tu empresa y tus licitaciones</span></div>
+        <div data-entra><strong><span data-contar="100">100</span>&nbsp;%</strong><span>en línea, sin ir a ninguna oficina</span></div>
+        <div data-entra><strong><span data-contar="1">1</span></strong><span>correo para pedir cualquier servicio</span></div>
+      </div>
+    </section>
+
+    <!-- ============ CARRUSEL DE SERVICIOS ============ -->
     <section class="seccion" id="servicios">
       <div class="contenedor">
         <div class="encabezado-seccion">
@@ -58,17 +93,25 @@
 
         <div class="sv-carrusel" data-sv-carrusel aria-roledescription="carrusel" aria-label="Servicios de Publicola">
           <div class="sv-pista" tabindex="0">
-
-            <article class="sv-tarjeta" data-entra="derecha" data-nombre="Creación de empresas">
+            <article class="sv-tarjeta oro" data-entra="derecha" data-nombre="Creación de empresas">
               <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 34h28"/><path d="M9 34V14l11-7 11 7v20"/><path d="M16 34v-9h8v9"/><path d="M15 17h2M23 17h2"/></svg></span>
               <span class="sv-familia">Empresa</span>
               <h3>Creación de empresas</h3>
               <p>Creamos tu empresa totalmente en línea y te la dejamos lista para licitar en 5 a 6 días laborables.</p>
-              <ul><li>Certificación MIPYME incluida</li><li>Registro de Proveedores del Estado incluido</li><li>Registro en la TSS incluido</li></ul>
-              <a class="boton" href="#constitucion">Cómo funciona</a>
+              <ul><li>Estatutos, acta y nómina</li><li>RNC y Registro Mercantil</li><li>RPE, TSS y MIPYME si la requiere</li></ul>
+              <a class="boton" href="#creacion">Qué recibes</a>
             </article>
 
-            <article class="sv-tarjeta" data-entra="derecha" data-nombre="Sometimiento de oferta">
+            <article class="sv-tarjeta oro" data-entra="derecha" data-nombre="Modificación de empresas">
+              <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h16l7 7v8"/><path d="M8 6v28h10"/><path d="M33 22l3 3-10 10h-3v-3z"/></svg></span>
+              <span class="sv-familia">Empresa</span>
+              <h3>Modificación de empresas</h3>
+              <p>Hacemos los cambios que tu empresa necesita, totalmente en línea.</p>
+              <ul><li>Cambio de socios o de dueño</li><li>Gerente, nombre, domicilio u objeto</li><li>Transformación y aumento de capital</li></ul>
+              <a class="boton" href="#modificacion">Ver los cambios</a>
+            </article>
+
+            <article class="sv-tarjeta azul" data-entra="derecha" data-nombre="Sometimiento de oferta">
               <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="30" height="21" rx="3"/><path d="M5 13l15 10 15-10"/><path d="M28 3l5 5-5 5"/></svg></span>
               <span class="sv-familia">Licitaciones</span>
               <h3>Sometimiento de oferta</h3>
@@ -77,7 +120,7 @@
               <a class="boton" href="mailto:info@publicola.com.do?subject=Sometimiento%20de%20oferta">Solicitar</a>
             </article>
 
-            <article class="sv-tarjeta" data-entra="derecha" data-nombre="Revisión humana de licitaciones">
+            <article class="sv-tarjeta azul" data-entra="derecha" data-nombre="Revisión humana de licitaciones">
               <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4h14l8 8v12"/><path d="M24 4v8h8"/><path d="M10 4v30h11"/><circle cx="27" cy="29" r="5"/><path d="M31 33l4 4"/></svg></span>
               <span class="sv-familia">Licitaciones</span>
               <h3>Revisión humana de licitaciones</h3>
@@ -86,7 +129,7 @@
               <a class="boton" href="mailto:info@publicola.com.do?subject=Revisi%C3%B3n%20de%20licitaci%C3%B3n">Solicitar</a>
             </article>
 
-            <article class="sv-tarjeta" data-entra="derecha" data-nombre="Preparación de oferta con asistencia legal">
+            <article class="sv-tarjeta morado" data-entra="derecha" data-nombre="Preparación de oferta con asistencia legal">
               <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 5v30"/><path d="M8 12h24"/><path d="M8 12l-5 11h10z"/><path d="M32 12l-5 11h10z"/><path d="M13 35h14"/></svg></span>
               <span class="sv-familia">Asesoría legal</span>
               <h3>Preparación de oferta con asistencia legal</h3>
@@ -95,8 +138,8 @@
               <a class="boton" href="mailto:info@publicola.com.do?subject=Preparaci%C3%B3n%20de%20oferta%20con%20asistencia%20legal">Solicitar</a>
             </article>
 
-            <article class="sv-tarjeta" data-entra="derecha" data-nombre="Cobro de deudas">
-              <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="30" height="20" rx="3"/><circle cx="20" cy="20" r="4"/><path d="M10 15v10M30 15v10"/><path d="M25 35l5-5-5-5"/></svg></span>
+            <article class="sv-tarjeta morado" data-entra="derecha" data-nombre="Cobro de deudas">
+              <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="30" height="20" rx="3"/><circle cx="20" cy="20" r="4"/><path d="M10 15v10M30 15v10"/></svg></span>
               <span class="sv-familia">Asesoría legal</span>
               <h3>Cobro de deudas</h3>
               <p>Te ayudamos a cobrar lo que le deben a tu empresa, con el respaldo de nuestro equipo legal.</p>
@@ -104,7 +147,16 @@
               <a class="boton" href="mailto:info@publicola.com.do?subject=Cobro%20de%20deudas">Solicitar</a>
             </article>
 
-            <article class="sv-tarjeta" data-entra="derecha" data-nombre="Registro de marca">
+            <article class="sv-tarjeta coral" data-entra="derecha" data-nombre="Solicitud de documentos y certificaciones">
+              <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h15l7 7v21H9z"/><path d="M24 6v7h7"/><path d="M14 21l4 4 8-8"/><path d="M14 30h12"/></svg></span>
+              <span class="sv-familia">Documentos</span>
+              <h3>Solicitud de documentos y certificaciones</h3>
+              <p>Si una licitación te pide un documento o una certificación específica, nosotros lo solicitamos por ti.</p>
+              <ul><li>Por ejemplo, el registro en DIGEMAPS</li><li>Cualquier certificación que pida el pliego</li></ul>
+              <a class="boton" href="#documentos">Ver más</a>
+            </article>
+
+            <article class="sv-tarjeta coral" data-entra="derecha" data-nombre="Registro de marca">
               <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="20" r="15"/><path d="M15 28V12h6a5 5 0 010 10h-6"/><path d="M21 22l5 6"/></svg></span>
               <span class="sv-familia">Propiedad intelectual</span>
               <h3>Registro de marca</h3>
@@ -113,16 +165,7 @@
               <a class="boton" href="mailto:info@publicola.com.do?subject=Registro%20de%20marca">Solicitar</a>
             </article>
 
-            <article class="sv-tarjeta" data-entra="derecha" data-nombre="Solicitud de documentos y certificaciones">
-              <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h15l7 7v21H9z"/><path d="M24 6v7h7"/><path d="M14 21l4 4 8-8"/><path d="M14 30h12"/></svg></span>
-              <span class="sv-familia">Documentos</span>
-              <h3>Solicitud de documentos y certificaciones</h3>
-              <p>Conseguimos los documentos y certificaciones que te piden para participar.</p>
-              <ul><li>Lo que exige cada pliego</li><li>Te cotizamos según tu caso</li></ul>
-              <a class="boton" href="mailto:info@publicola.com.do?subject=Documentos%20y%20certificaciones">Solicitar</a>
-            </article>
-
-            <article class="sv-tarjeta" data-entra="derecha" data-nombre="Registro de Proveedores del Estado">
+            <article class="sv-tarjeta verde" data-entra="derecha" data-nombre="Registro de Proveedores del Estado">
               <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16l15-9 15 9"/><path d="M8 16v14M16 16v14M24 16v14M32 16v14"/><path d="M4 34h32"/></svg></span>
               <span class="sv-familia">Registros</span>
               <h3>Registro de Proveedores del Estado (RPE)</h3>
@@ -131,34 +174,25 @@
               <a class="boton" href="mailto:info@publicola.com.do?subject=Inscripci%C3%B3n%20en%20el%20RPE">Solicitar</a>
             </article>
 
-            <article class="sv-tarjeta" data-entra="derecha" data-nombre="Certificación MIPYME">
+            <article class="sv-tarjeta verde" data-entra="derecha" data-nombre="Certificación MIPYME">
               <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="16" r="10"/><path d="M15 16l3.5 3.5L25 13"/><path d="M14 25l-4 11 10-5 10 5-4-11"/></svg></span>
               <span class="sv-familia">Registros</span>
               <h3>Certificación MIPYME</h3>
               <p>Gestionamos la certificación de tu empresa como MIPYME.</p>
-              <ul><li>Para empresas que ya existen</li><li>Incluida cuando creamos tu empresa</li></ul>
+              <ul><li>Para empresas que ya existen</li><li>Incluida al crear tu empresa, si la requiere</li></ul>
               <a class="boton" href="mailto:info@publicola.com.do?subject=Certificaci%C3%B3n%20MIPYME">Solicitar</a>
             </article>
 
-            <article class="sv-tarjeta" data-entra="derecha" data-nombre="Registro en la TSS">
+            <article class="sv-tarjeta verde" data-entra="derecha" data-nombre="Inscripción en la TSS">
               <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="5"/><circle cx="27" cy="14" r="5"/><path d="M5 33c0-5 4-9 9-9s9 4 9 9"/><path d="M19 33c0-5 4-9 8-9s8 4 8 9"/></svg></span>
               <span class="sv-familia">Registros</span>
-              <h3>Registro en la TSS</h3>
-              <p>Registramos tu empresa en la Tesorería de la Seguridad Social.</p>
-              <ul><li>Para empresas que ya existen</li><li>Incluido cuando creamos tu empresa</li></ul>
-              <a class="boton" href="mailto:info@publicola.com.do?subject=Registro%20en%20la%20TSS">Solicitar</a>
+              <h3>Inscripción en la TSS</h3>
+              <p>Inscribimos tu empresa en la Tesorería de la Seguridad Social.</p>
+              <ul><li>Para empresas que ya existen</li><li>Incluida cuando creamos tu empresa</li></ul>
+              <a class="boton" href="mailto:info@publicola.com.do?subject=Inscripci%C3%B3n%20en%20la%20TSS">Solicitar</a>
             </article>
 
-            <article class="sv-tarjeta" data-entra="derecha" data-nombre="Modificación de empresa">
-              <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h16l7 7v8"/><path d="M8 6v28h10"/><path d="M33 22l3 3-10 10h-3v-3z"/></svg></span>
-              <span class="sv-familia">Empresa</span>
-              <h3>Modificación de empresas</h3>
-              <p>Hacemos los cambios que tu empresa necesita, totalmente en línea.</p>
-              <ul><li>Cambio de socios o de dueño</li><li>Cambio de gerente, de nombre, de domicilio o de objeto</li><li>Transformación y aumento del capital social</li><li>Varios cambios en un solo expediente</li></ul>
-              <a class="boton" href="mailto:info@publicola.com.do?subject=Modificaci%C3%B3n%20de%20empresa">Solicitar</a>
-            </article>
-
-            <article class="sv-tarjeta" data-entra="derecha" data-nombre="Otros servicios y asesoría legal">
+            <article class="sv-tarjeta azul" data-entra="derecha" data-nombre="Otros servicios y asesoría legal">
               <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10h20a4 4 0 014 4v8a4 4 0 01-4 4H15l-7 6v-6H6"/><path d="M30 16h2a3 3 0 013 3v8a3 3 0 01-3 3h-1v5l-6-5"/></svg></span>
               <span class="sv-familia">A tu medida</span>
               <h3>Otros servicios y asesoría legal</h3>
@@ -175,45 +209,67 @@
       </div>
     </section>
 
-    <!-- ============ CONSTITUCION EN LINEA ============ -->
-    <section class="seccion seccion-suave" id="constitucion">
-      <div class="contenedor sv-constitucion">
-        <div>
-          <div class="encabezado-seccion" style="margin-bottom:0">
-            <p class="eyebrow" data-entra>Creación y modificación de empresas</p>
-            <h2 data-entra>Creamos tu empresa y la dejamos lista para licitar.</h2>
-            <p data-entra>Totalmente en línea, en 5 a 6 días laborables y sin que tengas que ir a ninguna oficina. Tu empresa sale con la certificación MIPYME, el Registro de Proveedores del Estado y el registro en la TSS.</p>
+    <!-- ============ CREACION: lo que recibes (bento) ============ -->
+    <section class="seccion seccion-suave" id="creacion">
+      <div class="contenedor">
+        <div class="encabezado-seccion">
+          <p class="eyebrow" data-entra>Creación de empresas</p>
+          <h2 data-entra>Creamos tu empresa y la dejamos lista para licitar.</h2>
+          <p data-entra>Totalmente en línea, en 5 a 6 días laborables y sin que tengas que ir a ninguna oficina. Esto es lo que recibes:</p>
+        </div>
+        <div class="sv-bento">
+          <div class="sv-bloque grande oro" data-entra>
+            <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5h15l7 7v23H9z"/><path d="M24 5v7h7"/><path d="M14 18h12M14 23h12M14 28h8"/></svg></span>
+            <h3>Estatutos, acta y nómina</h3>
+            <p>Los documentos que crean tu empresa, redactados y listos.</p>
           </div>
-          <ol class="sv-pasos">
-            <li data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 33l4-1 18-18-3-3L8 29z"/><path d="M23 14l3 3"/></svg></span><div><strong>Elige el nombre</strong><span>Propón el nombre de tu empresa; te ayudamos a definirlo.</span></div></li>
-            <li data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="5" width="22" height="30" rx="2"/><path d="M14 13h12M14 19h12M14 25h7"/></svg></span><div><strong>Llena el formulario</strong><span>Descárgalo y completa los datos de los socios.</span></div></li>
-            <li data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 35s-11-10-11-18a11 11 0 0122 0c0 8-11 18-11 18z"/><circle cx="20" cy="17" r="4"/></svg></span><div><strong>Agrega la dirección y el objeto</strong><span>En el mismo formulario indicas dónde opera y a qué se dedica.</span></div></li>
-            <li data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="9" width="30" height="22" rx="3"/><path d="M5 12l15 10 15-10"/></svg></span><div><strong>Envíalo por correo</strong><span>Mándanos el formulario y los documentos de identidad de los socios a info@publicola.com.do.</span></div></li>
-            <li data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="20" r="15"/><path d="M13 20l5 5 10-10"/></svg></span><div><strong>Nosotros hacemos el resto</strong><span>Hacemos todas las gestiones y te entregamos tu empresa lista.</span></div></li>
-          </ol>
-          <ul class="sv-incluye" aria-label="Qué incluye la empresa" data-entra>
-            <li>Certificado de Registro Mercantil</li><li>Estatutos Sociales y Acta Constitutiva</li>
-            <li>RNC y Clave DGII</li><li>Sello gomígrafo y comprobantes fiscales</li>
-            <li>Expediente para apertura de cuenta bancaria</li><li>Correo corporativo y cuotas sociales</li>
-            <li>Registro de Proveedores del Estado</li><li>Certificación MIPYME y registro en la TSS</li>
-          </ul>
-          <p class="sv-nota" data-entra>Recibimos los documentos solo por correo, nunca por mensajería instantánea.</p>
-          <div class="sv-acciones" data-entra>
-            <a class="boton" href="/formulario-publicola.docx" download>Descargar el formulario</a>
-            <a class="boton boton-secundario" href="mailto:info@publicola.com.do?subject=Quiero%20constituir%20mi%20empresa">Escríbenos</a>
+          <div class="sv-bloque azul" data-entra>
+            <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h24v28H8z"/><path d="M13 13h14M13 19h14"/><circle cx="20" cy="27" r="3"/></svg></span>
+            <h3>Registro Mercantil</h3>
+            <p>Tu empresa inscrita en la Cámara de Comercio.</p>
+          </div>
+          <div class="sv-bloque azul" data-entra>
+            <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="9" width="28" height="22" rx="3"/><path d="M11 16h10M11 22h6"/><circle cx="27" cy="20" r="3"/></svg></span>
+            <h3>RNC</h3>
+            <p>Tu empresa inscrita en la DGII.</p>
+          </div>
+          <div class="sv-bloque coral" data-entra>
+            <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6h12v9H14z"/><path d="M20 15v6"/><path d="M8 21h24v7H8z"/><path d="M12 34h16"/></svg></span>
+            <h3>Sello gomígrafo</h3>
+            <p>El sello de tu empresa.</p>
+          </div>
+          <div class="sv-bloque verde" data-entra>
+            <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="5"/><circle cx="27" cy="14" r="5"/><path d="M5 33c0-5 4-9 9-9s9 4 9 9"/><path d="M19 33c0-5 4-9 8-9s8 4 8 9"/></svg></span>
+            <h3>Inscripción en la TSS</h3>
+            <p>Lista para tener empleados.</p>
+          </div>
+          <div class="sv-bloque verde ancho" data-entra>
+            <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16l15-9 15 9"/><path d="M8 16v14M16 16v14M24 16v14M32 16v14"/><path d="M4 34h32"/></svg></span>
+            <h3>Registro de Proveedores del Estado</h3>
+            <p>Lista para venderle al Estado desde el primer día.</p>
+          </div>
+          <div class="sv-bloque morado ancho" data-entra>
+            <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="12" width="30" height="20" rx="3"/><path d="M5 18h30"/><path d="M10 26h6"/><path d="M14 12V8h12v4"/></svg></span>
+            <h3>Acta para la cuenta bancaria</h3>
+            <p>Preparada para abrir la cuenta de tu empresa.</p>
+          </div>
+          <div class="sv-bloque oro ancho" data-entra>
+            <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="16" r="10"/><path d="M15 16l3.5 3.5L25 13"/><path d="M14 25l-4 11 10-5 10 5-4-11"/></svg></span>
+            <h3>Certificación MIPYME</h3>
+            <p>Si tu empresa la requiere.</p>
           </div>
         </div>
-        <div class="sv-kit" data-entra>
-          <p class="sv-kit-titulo">Tu empresa sale lista para licitar</p>
-          <ul>
-            <li data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h15l7 7v21H9z"/><path d="M24 6v7h7"/><path d="M14 21h12M14 26h12"/></svg></span><div><strong>Registro Mercantil</strong><span>Tu empresa existe legalmente.</span></div></li>
-            <li data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="9" width="28" height="22" rx="3"/><path d="M11 16h10M11 22h6"/><circle cx="27" cy="20" r="3"/></svg></span><div><strong>RNC y Clave DGII</strong><span>Lista para facturar.</span></div></li>
-            <li data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="16" r="10"/><path d="M15 16l3.5 3.5L25 13"/><path d="M14 25l-4 11 10-5 10 5-4-11"/></svg></span><div><strong>Certificación MIPYME</strong><span>Para participar en los procesos reservados.</span></div></li>
-            <li data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16l15-9 15 9"/><path d="M8 16v14M16 16v14M24 16v14M32 16v14"/><path d="M4 34h32"/></svg></span><div><strong>Registro de Proveedores del Estado</strong><span>Lista para venderle al Estado.</span></div></li>
-            <li data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="5"/><circle cx="27" cy="14" r="5"/><path d="M5 33c0-5 4-9 9-9s9 4 9 9"/><path d="M19 33c0-5 4-9 8-9s8 4 8 9"/></svg></span><div><strong>Registro en la TSS</strong><span>Lista para tener empleados.</span></div></li>
-          </ul>
-          <p class="sv-kit-pie">5 a 6 días laborables · totalmente en línea</p>
-        </div>
+
+        <ol class="sv-linea">
+          <li data-entra><span>1</span><strong>Elige el nombre</strong><em>Propón el nombre de tu empresa; te ayudamos a definirlo.</em></li>
+          <li data-entra><span>2</span><strong>Llena el formulario</strong><em>Con los datos de los socios, la dirección y el objeto.</em></li>
+          <li data-entra><span>3</span><strong>Envíalo por correo</strong><em>Con los documentos de identidad de los socios, a info@publicola.com.do.</em></li>
+          <li data-entra><span>4</span><strong>Nosotros hacemos el resto</strong><em>Te entregamos tu empresa lista para licitar.</em></li>
+        </ol>
+        <p class="sv-nota" data-entra>Recibimos los documentos solo por correo, nunca por mensajería instantánea.</p>
+        <div class="sv-acciones" data-entra>
+          <a class="boton" href="/formulario-publicola.docx" download>Descargar el formulario</a>
+          <a class="boton boton-secundario" href="mailto:info@publicola.com.do?subject=Quiero%20crear%20mi%20empresa">Escríbenos</a>
         </div>
       </div>
     </section>
@@ -227,34 +283,78 @@
           <p data-entra>Hacemos los cambios que tu empresa necesita, totalmente en línea, y podemos reunir varios en un solo expediente.</p>
         </div>
         <ol class="sv-tres sv-cambios">
-          <li data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="5"/><circle cx="27" cy="14" r="5"/><path d="M5 33c0-5 4-9 9-9"/><path d="M27 24c5 0 8 4 8 9"/><path d="M17 29h8M22 26l3 3-3 3"/></svg></span><h3>Cambio de socios o de dueño</h3><p>Cesión de cuotas y entrada o salida de socios.</p></li>
-          <li data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="13" r="6"/><path d="M9 34c0-6 5-11 11-11s11 5 11 11"/><path d="M20 23l-2 5 2 6 2-6z"/></svg></span><h3>Cambio de gerente</h3><p>Nombramiento de un nuevo gerente.</p></li>
-          <li data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 33l4-1 18-18-3-3L8 29z"/><path d="M23 14l3 3"/><path d="M22 33h12"/></svg></span><h3>Cambio de nombre</h3><p>Nueva denominación social.</p></li>
-          <li data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 35s-11-10-11-18a11 11 0 0122 0c0 8-11 18-11 18z"/><circle cx="20" cy="17" r="4"/></svg></span><h3>Cambio de domicilio</h3><p>Traslado del domicilio social.</p></li>
-          <li data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="11" width="28" height="21" rx="3"/><path d="M15 11V7h10v4"/><path d="M6 20h28"/></svg></span><h3>Cambio de objeto</h3><p>Nuevas actividades para tu empresa.</p></li>
-          <li data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 14h20l-5-5"/><path d="M32 26H12l5 5"/></svg></span><h3>Transformación</h3><p>Cambio del tipo de sociedad.</p></li>
-          <li data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 32h28"/><path d="M10 32V22M18 32V16M26 32V10"/><path d="M24 8l2-2 2 2"/></svg></span><h3>Aumento de capital social</h3><p>Más capital para crecer y licitar más.</p></li>
+          <li class="oro" data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="5"/><circle cx="27" cy="14" r="5"/><path d="M5 33c0-5 4-9 9-9"/><path d="M27 24c5 0 8 4 8 9"/><path d="M17 29h8M22 26l3 3-3 3"/></svg></span><h3>Cambio de socios o de dueño</h3><p>Cesión de cuotas y entrada o salida de socios.</p></li>
+          <li class="azul" data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="13" r="6"/><path d="M9 34c0-6 5-11 11-11s11 5 11 11"/><path d="M20 23l-2 5 2 6 2-6z"/></svg></span><h3>Cambio de gerente</h3><p>Nombramiento de un nuevo gerente.</p></li>
+          <li class="coral" data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 33l4-1 18-18-3-3L8 29z"/><path d="M23 14l3 3"/><path d="M22 33h12"/></svg></span><h3>Cambio de nombre</h3><p>Nueva denominación social.</p></li>
+          <li class="verde" data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 35s-11-10-11-18a11 11 0 0122 0c0 8-11 18-11 18z"/><circle cx="20" cy="17" r="4"/></svg></span><h3>Cambio de domicilio</h3><p>Traslado del domicilio social.</p></li>
+          <li class="morado" data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="11" width="28" height="21" rx="3"/><path d="M15 11V7h10v4"/><path d="M6 20h28"/></svg></span><h3>Cambio de objeto</h3><p>Nuevas actividades para tu empresa.</p></li>
+          <li class="azul" data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 14h20l-5-5"/><path d="M32 26H12l5 5"/></svg></span><h3>Transformación</h3><p>Cambio del tipo de sociedad.</p></li>
+          <li class="oro" data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 32h28"/><path d="M10 32V22M18 32V16M26 32V10"/><path d="M24 8l2-2 2 2"/></svg></span><h3>Aumento de capital social</h3><p>Más capital para crecer y licitar más.</p></li>
+          <li class="sv-cambio-cta" data-entra><h3>¿Otro cambio?</h3><p>Cuéntanos qué necesitas y te decimos cómo lo hacemos.</p><a class="boton boton-claro" href="mailto:info@publicola.com.do?subject=Modificaci%C3%B3n%20de%20empresa">Solicitar una modificación</a></li>
         </ol>
-        <div class="sv-acciones" data-entra><a class="boton" href="mailto:info@publicola.com.do?subject=Modificaci%C3%B3n%20de%20empresa">Solicitar una modificación</a></div>
       </div>
     </section>
 
-    <!-- ============ COMO PEDIR ============ -->
-    <section class="seccion">
-      <div class="contenedor">
-        <div class="encabezado-seccion">
-          <p class="eyebrow" data-entra>Cómo pedir un servicio</p>
-          <h2 data-entra>Tres pasos, todo por correo.</h2>
+    <!-- ============ DOCUMENTOS PARA LICITAR ============ -->
+    <section class="seccion sv-documentos" id="documentos">
+      <div class="contenedor sv-documentos-rejilla">
+        <div>
+          <p class="eyebrow" data-entra>Documentos para licitar</p>
+          <h2 data-entra>¿La licitación te pide un documento específico? Lo solicitamos por ti.</h2>
+          <p data-entra>Hay licitaciones que piden registros o certificaciones particulares. Nosotros los solicitamos ante la institución que corresponda para que llegues completo.</p>
+          <a class="boton boton-claro" data-entra href="mailto:info@publicola.com.do?subject=Documentos%20y%20certificaciones%20para%20una%20licitaci%C3%B3n">Pedir un documento</a>
         </div>
-        <ol class="sv-tres">
-          <li data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="9" width="30" height="22" rx="3"/><path d="M5 12l15 10 15-10"/></svg></span><h3>Escríbenos</h3><p>Cuéntanos qué necesitas en info@publicola.com.do.</p></li>
-          <li data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h22v28H9z"/><path d="M14 13h12M14 19h12"/><path d="M14 27h5"/><path d="M24 27h3"/></svg></span><h3>Te cotizamos</h3><p>Te respondemos con lo que incluye y su costo.</p></li>
-          <li data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="20" r="15"/><path d="M13 20l5 5 10-10"/></svg></span><h3>Nosotros lo gestionamos</h3><p>Nuestro equipo se encarga y te mantiene al tanto.</p></li>
-        </ol>
+        <ul class="sv-etiquetas" aria-label="Ejemplos">
+          <li data-entra>Registro en DIGEMAPS</li>
+          <li data-entra>Certificaciones específicas del pliego</li>
+          <li data-entra>Registros sanitarios</li>
+          <li data-entra>Permisos y licencias</li>
+          <li data-entra>Cualquier documento que pida la licitación</li>
+        </ul>
       </div>
     </section>
 
-    <section class="seccion" style="padding-top:0">
+    <!-- ============ COMO PEDIR (con uno de los dibujos del sitio) ============ -->
+    <section class="seccion">
+      <div class="contenedor sv-pedir">
+        <div>
+          <div class="encabezado-seccion">
+            <p class="eyebrow" data-entra>Cómo pedir un servicio</p>
+            <h2 data-entra>Tres pasos, todo por correo.</h2>
+          </div>
+          <ol class="sv-linea compacta">
+            <li data-entra><span>1</span><strong>Escríbenos</strong><em>Cuéntanos qué necesitas en info@publicola.com.do.</em></li>
+            <li data-entra><span>2</span><strong>Te cotizamos</strong><em>Te respondemos con lo que incluye y su costo.</em></li>
+            <li data-entra><span>3</span><strong>Nosotros lo gestionamos</strong><em>Nuestro equipo se encarga y te mantiene al tanto.</em></li>
+          </ol>
+        </div>
+        <div class="sv-dibujo" data-entra>
+          <picture>
+            <source type="image/webp" srcset="/capacidades/trabajo-en-equipo-720.webp 720w, /capacidades/trabajo-en-equipo.webp 1254w" sizes="(max-width:900px) calc(100vw - 40px), 520px">
+            <img src="/capacidades/trabajo-en-equipo.png" width="1254" height="1254" alt="Ilustración: un equipo trabaja junto alrededor de un espacio de trabajo compartido.">
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PREGUNTAS FRECUENTES ============ -->
+    <section class="seccion seccion-suave">
+      <div class="contenedor sv-preguntas">
+        <div class="encabezado-seccion">
+          <p class="eyebrow" data-entra>Preguntas frecuentes</p>
+          <h2 data-entra>Lo que casi siempre nos preguntan.</h2>
+        </div>
+        <div>
+          <details data-entra><summary>¿Tengo que ir a alguna oficina?</summary><p>No. Todo se hace en línea: nos envías el formulario y los documentos por correo y nosotros hacemos las gestiones.</p></details>
+          <details data-entra><summary>¿Cuánto tarda la creación de la empresa?</summary><p>De 5 a 6 días laborables, desde que recibimos el formulario y los documentos completos.</p></details>
+          <details data-entra><summary>¿La empresa queda lista para licitar?</summary><p>Sí. La entregamos con el Registro de Proveedores del Estado, la inscripción en la TSS y la certificación MIPYME si la requiere.</p></details>
+          <details data-entra><summary>¿Cuánto cuesta un servicio?</summary><p>Escríbenos a info@publicola.com.do y te enviamos la cotización con lo que incluye.</p></details>
+          <details data-entra><summary>¿Puedo enviar los documentos por WhatsApp?</summary><p>No. Por tu seguridad, recibimos los documentos solo por correo, en info@publicola.com.do.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion">
       <div class="contenedor">
         <div class="sv-cta" data-entra>
           <div>
@@ -273,6 +373,6 @@
       <nav class="pie-links" aria-label="Pie de página"><a href="/servicios/">Servicios</a><a href="/legal/">Legal</a><a href="/privacidad/">Privacidad</a><a href="/contacto/">Contacto</a></nav>
     </div>
   </footer>
-  <script src="/servicios.js?v=20261004" defer></script>
+  <script src="/servicios.js?v=20261004d" defer></script>
 </body>
 </html>

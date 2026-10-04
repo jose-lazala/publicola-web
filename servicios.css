@@ -110,3 +110,131 @@
 .sv-kit strong { display:block; color:var(--white); font-size:.98rem; }
 .sv-kit span { color:#c3dcea; font-size:.86rem; }
 .sv-kit-pie { margin:18px 0 0; padding-top:14px; border-top:1px solid rgba(255,255,255,.14); color:#f3c66f; font-weight:700; font-size:.9rem; }
+
+/* =====================================================================================
+   Servicios con mas vida (4-oct-2026, referencias: Stripe Atlas, LicitaRD, cuadriculas «bento»).
+   Un color por tipo de servicio; todo entra UNA vez al bajar; nada se mueve solo despues.
+   ===================================================================================== */
+:root { --oro-fondo:#fff3dc; --oro:#a86d07; --azul-fondo:#e3f1fb; --azul:#0b4f82; --verde-fondo:#dcf5ef; --verde:#0f7f6f;
+        --morado-fondo:#ece8fb; --morado:#4b3fb0; --coral-fondo:#ffe8e0; --coral:#bf4a26; }
+.oro { --c-fondo:var(--oro-fondo); --c:var(--oro); } .azul { --c-fondo:var(--azul-fondo); --c:var(--azul); }
+.verde { --c-fondo:var(--verde-fondo); --c:var(--verde); } .morado { --c-fondo:var(--morado-fondo); --c:var(--morado); }
+.coral { --c-fondo:var(--coral-fondo); --c:var(--coral); }
+.oro .sv-icono, .azul .sv-icono, .verde .sv-icono, .morado .sv-icono, .coral .sv-icono { background:var(--c-fondo); color:var(--c); }
+.sv-tarjeta.oro, .sv-tarjeta.azul, .sv-tarjeta.verde, .sv-tarjeta.morado, .sv-tarjeta.coral { border-top:4px solid var(--c); }
+.sv-tarjeta .sv-familia { color:var(--c, var(--blue)); }
+
+/* Portada */
+.sv-portada { padding-block:56px 150px; }
+.sv-portada-rejilla { position:relative; z-index:1; display:grid; grid-template-columns:1.05fr .95fr; gap:40px; align-items:center; }
+.sv-lead { max-width:600px; }
+.sv-boton-borde { background:transparent; border-color:rgba(255,255,255,.55); }
+.sv-boton-borde:hover, .sv-boton-borde:focus-visible { background:rgba(255,255,255,.12); }
+.sv-cinta { position:absolute; left:0; right:0; bottom:-1px; width:100%; height:130px; z-index:0; }
+.sv-expediente { position:relative; height:330px; }
+.sv-doc { position:absolute; width:230px; padding:16px 18px; border-radius:16px; background:var(--white); color:var(--ink); box-shadow:0 22px 50px rgba(0,0,0,.28); display:grid; gap:8px; transition:transform 1s cubic-bezier(.2,1.2,.3,1), opacity .8s; }
+.sv-doc b { font-size:.9rem; }
+.sv-doc i { display:block; height:7px; border-radius:99px; background:#e5edf4; }
+.sv-doc i:last-child { width:60%; }
+.sv-doc-icono { display:flex; width:36px; height:36px; align-items:center; justify-content:center; border-radius:10px; background:var(--c-fondo); color:var(--c); }
+.sv-doc-icono svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+.sv-doc.d1 { left:4%; top:6%; transform:rotate(-8deg); }
+.sv-doc.d2 { left:38%; top:0; transform:rotate(5deg); }
+.sv-doc.d3 { left:10%; top:44%; transform:rotate(4deg); }
+.sv-doc.d4 { left:44%; top:52%; transform:rotate(-5deg); }
+.sv-sello { position:absolute; right:2%; top:36%; display:flex; align-items:center; gap:8px; padding:10px 16px; border-radius:999px; background:var(--gold); color:#2b1b02; font-weight:700; font-size:.88rem; box-shadow:0 14px 30px rgba(0,0,0,.25); transition:transform .7s cubic-bezier(.2,1.5,.4,1) 1.1s, opacity .5s 1.1s; }
+.sv-sello svg { width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
+/* Al cargar: el expediente esta cerrado (apilado) y se abre en abanico UNA vez */
+.sv-movimiento .sv-expediente:not(.abierto) .sv-doc { transform:translate(60px,40px) rotate(0); opacity:0; }
+.sv-movimiento .sv-expediente:not(.abierto) .sv-sello { transform:scale(.3); opacity:0; }
+.sv-expediente .d2 { transition-delay:.12s; } .sv-expediente .d3 { transition-delay:.24s; } .sv-expediente .d4 { transition-delay:.36s; }
+
+/* Franja de instituciones */
+.sv-instituciones { padding-block:26px 30px; background:var(--white); border-bottom:1px solid var(--line); }
+.sv-instituciones p { margin:0 0 14px; color:var(--muted); font-size:.78rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+.sv-instituciones ul { display:flex; flex-wrap:wrap; gap:10px; margin:0; padding:0; list-style:none; }
+.sv-instituciones li { padding:9px 16px; border-radius:999px; background:var(--sky); color:var(--navy); font-size:.86rem; font-weight:700; }
+
+/* Cifras */
+.sv-cifras { padding-block:44px; background:var(--white); }
+.sv-cifras .contenedor { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+.sv-cifras div { padding:22px; border-radius:20px; background:linear-gradient(160deg,#f6fbff,#eaf5fc); border:1px solid var(--line); }
+.sv-cifras strong { display:block; color:var(--navy); font-size:clamp(1.9rem,3.6vw,2.7rem); line-height:1; letter-spacing:-.04em; }
+.sv-cifras div > span { display:block; margin-top:8px; color:var(--muted); font-size:.88rem; }
+.sv-cifras strong span { color:inherit; font-size:inherit; }
+
+/* Bento: lo que recibes */
+.sv-bento { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+.sv-bloque { position:relative; overflow:hidden; padding:24px; border-radius:22px; background:var(--white); border:1px solid var(--line); box-shadow:0 12px 30px rgba(6,52,93,.06); transition:transform .3s, box-shadow .3s; }
+.sv-bloque:hover { transform:translateY(-4px); box-shadow:var(--shadow); }
+.sv-bloque::after { content:""; position:absolute; right:-30px; top:-30px; width:110px; height:110px; border-radius:50%; background:var(--c-fondo); opacity:.7; }
+.sv-bloque .sv-icono { position:relative; z-index:1; }
+.sv-bloque h3 { position:relative; z-index:1; margin:0 0 6px; font-size:1.05rem; color:var(--ink); }
+.sv-bloque p { position:relative; z-index:1; margin:0; color:var(--muted); font-size:.9rem; }
+.sv-bloque.grande { grid-column:span 2; background:linear-gradient(160deg,#fffaf0,#fff3dc); }
+.sv-bloque.grande .sv-icono { width:72px; height:72px; } .sv-bloque.grande .sv-icono svg { width:40px; height:40px; }
+.sv-bloque.grande h3 { font-size:1.45rem; }
+.sv-bloque.ancho { grid-column:span 2; }
+
+/* Linea de pasos */
+.sv-linea { position:relative; display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin:40px 0 0; padding:0; list-style:none; }
+.sv-linea.compacta { grid-template-columns:1fr; gap:14px; margin-top:0; }
+.sv-linea li { position:relative; padding:20px; border-radius:18px; background:var(--white); border:1px solid var(--line); }
+.sv-linea li > span { display:inline-flex; width:34px; height:34px; align-items:center; justify-content:center; margin-bottom:10px; border-radius:50%; background:var(--navy); color:var(--white); font-weight:700; font-size:.9rem; }
+.sv-linea li:last-child > span { background:var(--gold); color:#2b1b02; }
+.sv-linea strong { display:block; color:var(--ink); }
+.sv-linea em { font-style:normal; color:var(--muted); font-size:.9rem; }
+.sv-linea.compacta li { display:grid; grid-template-columns:34px 1fr; column-gap:14px; }
+.sv-linea.compacta li > span { grid-row:span 2; margin:0; }
+
+/* Modificacion: tarjeta de cierre */
+.sv-cambio-cta { background:linear-gradient(150deg,#052c50,#0b4f82) !important; border:0 !important; color:var(--white); display:flex; flex-direction:column; justify-content:center; }
+.sv-cambio-cta h3 { color:var(--white) !important; }
+.sv-cambio-cta p { color:#cfe7f4 !important; margin-bottom:14px !important; }
+.sv-cambio-cta .boton-claro { align-self:flex-start; color:var(--navy); min-height:40px; padding:8px 16px; font-size:.86rem; }
+.sv-cambios li { border-top:4px solid var(--c, var(--line)); }
+
+/* Documentos para licitar */
+.sv-documentos { background:linear-gradient(150deg,#041f38,#06345d 60%,#0b4f82); color:var(--white); }
+.sv-documentos-rejilla { display:grid; grid-template-columns:1.1fr .9fr; gap:44px; align-items:center; }
+.sv-documentos h2 { margin:0 0 14px; font-size:clamp(1.8rem,3.6vw,2.7rem); line-height:1.12; letter-spacing:-.04em; }
+.sv-documentos p { color:#cfe7f4; }
+.sv-documentos .eyebrow { color:#8ed0f5; }
+.sv-documentos .boton-claro { color:var(--navy); margin-top:10px; }
+.sv-etiquetas { display:flex; flex-wrap:wrap; gap:12px; margin:0; padding:0; list-style:none; }
+.sv-etiquetas li { padding:12px 18px; border-radius:16px; background:rgba(255,255,255,.09); border:1px solid rgba(255,255,255,.22); font-weight:700; font-size:.92rem; }
+.sv-etiquetas li:last-child { background:var(--gold); color:#2b1b02; border-color:var(--gold); }
+
+/* Como pedir con dibujo */
+.sv-pedir { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
+.sv-dibujo img { width:100%; height:auto; border-radius:26px; border:1px solid var(--line); box-shadow:0 24px 60px rgba(6,52,93,.12); }
+
+/* Preguntas frecuentes */
+.sv-preguntas { display:grid; grid-template-columns:.8fr 1.2fr; gap:40px; align-items:start; }
+.sv-preguntas details { margin-bottom:12px; padding:18px 22px; border-radius:16px; background:var(--white); border:1px solid var(--line); }
+.sv-preguntas summary { cursor:pointer; font-weight:700; color:var(--ink); list-style:none; display:flex; justify-content:space-between; gap:12px; }
+.sv-preguntas summary::-webkit-details-marker { display:none; }
+.sv-preguntas summary::after { content:"+"; color:var(--blue); font-size:1.3rem; line-height:1; transition:transform .25s; }
+.sv-preguntas details[open] summary::after { transform:rotate(45deg); }
+.sv-preguntas details p { margin:12px 0 0; color:var(--muted); }
+
+@media (max-width:980px) {
+  .sv-portada-rejilla, .sv-documentos-rejilla, .sv-pedir, .sv-preguntas { grid-template-columns:1fr; }
+  .sv-expediente { height:300px; max-width:520px; }
+  .sv-cifras .contenedor { grid-template-columns:repeat(2,1fr); }
+  .sv-bento { grid-template-columns:repeat(2,1fr); }
+  .sv-linea { grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:560px) {
+  .sv-portada { padding-bottom:110px; }
+  .sv-expediente { height:270px; }
+  .sv-doc { width:190px; padding:12px 14px; }
+  .sv-doc.d2 { left:34%; } .sv-doc.d4 { left:30%; }
+  .sv-sello { right:0; top:auto; bottom:2%; }
+  .sv-bento { grid-template-columns:1fr; }
+  .sv-bloque.grande, .sv-bloque.ancho { grid-column:auto; grid-row:auto; }
+  .sv-linea { grid-template-columns:1fr; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .sv-doc, .sv-sello { transition:none !important; }
+}

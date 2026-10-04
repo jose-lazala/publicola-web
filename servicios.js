@@ -115,4 +115,28 @@
       marcar();
     });
   } catch (e) { registrar("carrusel", e); }
+  // ---------------- 3) El expediente de la portada se abre una vez y las cifras cuentan una vez ----------------
+  try {
+    const expediente = document.querySelector(".sv-expediente");
+    if (expediente) setTimeout(() => expediente.classList.add("abierto"), sinMovimiento ? 0 : 250);
+    const cifras = Array.from(document.querySelectorAll("[data-contar]"));
+    const contar = (el) => {
+      const fin = Number(el.dataset.contar) || 0;
+      if (sinMovimiento || fin <= 1) { el.textContent = String(fin); return; }
+      const inicio = performance.now(), duracion = 1200;
+      const paso = (t) => {
+        const avance = Math.min(1, (t - inicio) / duracion);
+        el.textContent = String(Math.round(fin * (1 - Math.pow(1 - avance, 3))));
+        if (avance < 1) requestAnimationFrame(paso);
+      };
+      el.textContent = "0";
+      requestAnimationFrame(paso);
+    };
+    if ("IntersectionObserver" in window && !sinMovimiento) {
+      const obs = new IntersectionObserver((entradas) => {
+        entradas.forEach((e) => { if (e.isIntersecting) { contar(e.target); obs.unobserve(e.target); } });
+      }, { threshold: 0.6 });
+      cifras.forEach((c) => obs.observe(c));
+    }
+  } catch (e) { registrar("expediente y cifras", e); }
 }());
