@@ -196,3 +196,28 @@ a { color:var(--navy-2); }
 .cabecera-cta:hover, .cabecera-cta:focus-visible { background:#f3c66f; }
 @media (max-width:900px) { .barra { flex-wrap:wrap; } .cabecera-cta { order:2; margin-left:auto; min-height:38px; padding:7px 14px; font-size:.82rem; } .nav { order:3; width:100%; } }
 .hero-acciones { margin:22px 0 4px; }
+
+/* Seis pasos de la jornada, con icono y color (Owner, 4-oct-2026): 3 x 2 en computadora, 2 x 3 en el celular */
+.pasos-jornada { grid-template-columns:repeat(3,1fr); gap:12px; }
+.pasos-jornada li { padding:16px; gap:6px; border:1px solid rgba(255,255,255,.12); transition:background .3s, transform .3s; }
+.pasos-jornada li:hover { background:rgba(255,255,255,.11); transform:translateY(-3px); }
+.paso-cabeza { display:flex; align-items:center; justify-content:space-between; margin-bottom:4px; }
+.paso-icono { display:flex; width:40px; height:40px; align-items:center; justify-content:center; border-radius:12px; background:var(--p-fondo); color:var(--p); }
+.paso-icono svg { width:22px; height:22px; }
+.pasos-jornada .paso-num { width:24px; height:24px; background:rgba(255,255,255,.14); color:#eaf5fc; font-size:.7rem; }
+.pasos-jornada li:last-child .paso-num { background:rgba(255,255,255,.14); color:#eaf5fc; }
+.pasos-jornada .paso-titulo { font-size:.95rem; }
+.pasos-jornada .paso-texto { font-size:.82rem; }
+.paso-azul { --p:#8ed0f5; --p-fondo:rgba(142,208,245,.16); }
+.paso-verde { --p:#6fe0c8; --p-fondo:rgba(111,224,200,.15); }
+.paso-morado { --p:#b7adff; --p-fondo:rgba(183,173,255,.16); }
+.paso-coral { --p:#ffa98c; --p-fondo:rgba(255,169,140,.15); }
+.paso-oro { --p:#f3c66f; --p-fondo:rgba(243,198,111,.16); }
+.pasos-jornada li.paso-dorado { background:#d89926; border-color:#d89926; }
+.paso-dorado .paso-icono { background:rgba(43,27,2,.12); color:#2b1b02; }
+.pasos-jornada .paso-dorado .paso-titulo { color:#2b1b02; }
+.pasos-jornada .paso-dorado .paso-texto { color:#3a2606; }
+.pasos-jornada li.paso-dorado .paso-num { background:rgba(43,27,2,.16); color:#2b1b02; }
+@media (max-width:900px) { .pasos-jornada { grid-template-columns:repeat(3,1fr); } }
+@media (max-width:620px) { .pasos-jornada { grid-template-columns:repeat(2,1fr); gap:10px; } .pasos-jornada li { padding:14px 12px; } }
+.paso-icono svg { width:24px; height:24px; stroke-width:2.6; }

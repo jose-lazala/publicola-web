@@ -245,3 +245,75 @@
 @media (prefers-reduced-motion:reduce) {
   .sv-doc, .sv-sello { transition:none !important; }
 }
+
+/* =====================================================================================
+   Paginas «Conocer mas» de cada servicio (4-oct-2026). Las genera generar_servicios.py.
+   ===================================================================================== */
+.sv-miga { margin:0 0 14px; color:#8ed0f5; font-size:.85rem; font-weight:700; }
+.sv-miga a { color:#d7ecf8; text-decoration:none; } .sv-miga a:hover, .sv-miga a:focus-visible { text-decoration:underline; }
+.sv-sub { padding-block:48px 140px; }
+.sv-sub h1 { font-size:clamp(2.1rem,4.2vw,3.4rem); }
+.sv-ficha { padding:26px 24px; border-radius:24px; background:var(--white); color:var(--ink); box-shadow:0 30px 70px rgba(0,0,0,.28); border-top:5px solid var(--c); }
+.sv-ficha-titulo { display:flex; align-items:center; gap:12px; margin:0 0 14px !important; color:var(--ink) !important; font-size:1.08rem !important; font-weight:700; line-height:1.25; }
+.sv-ficha-marca { display:flex; flex:none; width:46px; height:46px; align-items:center; justify-content:center; border-radius:14px; background:var(--c-fondo); color:var(--c); }
+.sv-ficha-marca svg { width:26px; height:26px; }
+.sv-ficha ul { margin:0; padding:0; list-style:none; }
+.sv-ficha li { display:grid; grid-template-columns:40px 1fr; gap:12px; align-items:center; padding:12px 0; border-top:1px solid var(--line); }
+.sv-ficha-icono { display:flex; width:40px; height:40px; align-items:center; justify-content:center; border-radius:12px; background:var(--sky); color:var(--navy-2); }
+.sv-ficha-icono svg { width:22px; height:22px; }
+.sv-ficha strong { display:block; color:var(--ink); font-size:.98rem; line-height:1.3; }
+.sv-ficha li span { color:var(--muted); font-size:.84rem; line-height:1.35; }
+/* Filas completas segun cuantas tarjetas tenga cada servicio */
+.sv-bento.sv-cols-3 { grid-template-columns:repeat(3,1fr); }
+.sv-bento.sv-cols-4 { grid-template-columns:repeat(4,1fr); }
+.sv-linea.sv-pasos-5 { grid-template-columns:repeat(5,1fr); }
+.sv-linea.sv-pasos-4 { grid-template-columns:repeat(4,1fr); }
+/* Saltar a los demas servicios */
+.sv-otros { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+.sv-otro { display:flex; flex-direction:column; gap:6px; padding:20px; border-radius:20px; background:var(--white); border:1px solid var(--line); border-top:4px solid var(--c); text-decoration:none; transition:transform .3s, box-shadow .3s; }
+.sv-otro:hover, .sv-otro:focus-visible { transform:translateY(-4px); box-shadow:var(--shadow); }
+.sv-otro .sv-icono { width:48px; height:48px; margin-bottom:6px; border-radius:14px; } .sv-otro .sv-icono svg { width:26px; height:26px; }
+.sv-otro strong { color:var(--ink); line-height:1.3; }
+.sv-otro span { color:var(--c); font-size:.86rem; font-weight:700; margin-top:auto; }
+@media (max-width:980px) {
+  .sv-bento.sv-cols-3, .sv-bento.sv-cols-4, .sv-otros { grid-template-columns:repeat(2,1fr); }
+  .sv-linea.sv-pasos-5, .sv-linea.sv-pasos-4 { grid-template-columns:repeat(2,1fr); }
+  .sv-ficha { max-width:520px; }
+}
+@media (max-width:560px) {
+  .sv-sub { padding-bottom:100px; }
+  .sv-bento.sv-cols-3, .sv-bento.sv-cols-4 { grid-template-columns:1fr; gap:12px; }
+  /* En el celular cada tarjeta es una fila: icono a la izquierda, texto a la derecha */
+  .sv-cols-3 .sv-bloque, .sv-cols-4 .sv-bloque { display:grid; grid-template-columns:52px 1fr; column-gap:14px; align-items:start; padding:18px; }
+  .sv-cols-3 .sv-bloque .sv-icono, .sv-cols-4 .sv-bloque .sv-icono { grid-row:span 2; width:52px; height:52px; margin:0; border-radius:14px; }
+  .sv-cols-3 .sv-bloque .sv-icono svg, .sv-cols-4 .sv-bloque .sv-icono svg { width:28px; height:28px; }
+  .sv-linea.sv-pasos-5, .sv-linea.sv-pasos-4 { grid-template-columns:1fr; }
+  .sv-otros { grid-template-columns:1fr 1fr; gap:10px; }
+  .sv-otro { padding:16px; }
+}
+
+/* Recorrido «De la idea a la licitacion» (sustituye la franja de instituciones, 4-oct-2026) */
+.sv-ruta { padding-block:40px 18px; background:var(--white); }
+.sv-ruta .eyebrow { margin-bottom:6px; }
+.sv-ruta h2 { margin:0 0 24px; font-size:clamp(1.6rem,3.2vw,2.3rem); line-height:1.15; letter-spacing:-.04em; color:var(--ink); }
+.sv-ruta ol { position:relative; display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin:0; padding:0; list-style:none; }
+.sv-ruta ol::before { content:""; position:absolute; left:6%; right:6%; top:52px; border-top:2px dashed #b9d3e6; }
+.sv-ruta li a { position:relative; display:flex; flex-direction:column; align-items:flex-start; gap:4px; height:100%; padding:20px; border-radius:20px; background:var(--white); border:1px solid var(--line); border-bottom:4px solid var(--c); text-decoration:none; transition:transform .3s, box-shadow .3s; }
+.sv-ruta li a:hover, .sv-ruta li a:focus-visible { transform:translateY(-4px); box-shadow:var(--shadow); }
+.sv-ruta .sv-icono { width:58px; height:58px; margin-bottom:8px; } .sv-ruta .sv-icono svg { width:32px; height:32px; }
+.sv-ruta-num { position:absolute; top:16px; right:18px; display:inline-flex; width:28px; height:28px; align-items:center; justify-content:center; border-radius:50%; background:var(--c); color:var(--white); font-size:.8rem; font-weight:700; }
+.sv-ruta strong { color:var(--ink); font-size:1.05rem; }
+.sv-ruta em { font-style:normal; color:var(--muted); font-size:.88rem; line-height:1.45; }
+/* Las cifras: la caja es cada dato, no el contenedor */
+.sv-cifras div { padding:0; border:0; background:none; border-radius:0; }
+.sv-cifras .contenedor > div { padding:22px; border-radius:20px; background:linear-gradient(160deg,#f6fbff,#eaf5fc); border:1px solid var(--line); }
+@media (max-width:980px) { .sv-ruta ol { grid-template-columns:repeat(2,1fr); } .sv-ruta ol::before { display:none; } }
+@media (max-width:560px) {
+  .sv-ruta ol { grid-template-columns:1fr; gap:10px; }
+  .sv-ruta ol::before { display:block; left:46px; right:auto; top:20px; bottom:20px; border-top:0; border-left:2px dashed #b9d3e6; }
+  .sv-ruta li a { display:grid; grid-template-columns:52px 1fr; column-gap:14px; padding:16px; }
+  .sv-ruta .sv-icono { grid-row:span 2; width:52px; height:52px; margin:0; } .sv-ruta .sv-icono svg { width:28px; height:28px; }
+  .sv-ruta-num { top:12px; right:12px; width:24px; height:24px; font-size:.72rem; }
+  .sv-cifras .contenedor > div { padding:16px; }
+}
+.sv-ficha-icono svg, .sv-ficha-marca svg { stroke-width:2.4; }
