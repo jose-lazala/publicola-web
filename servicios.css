@@ -93,3 +93,8 @@
   .sv-movimiento [data-entra], .sv-movimiento .sv-icono, .sv-movimiento .sv-icono svg * { opacity:1 !important; transform:none !important; stroke-dashoffset:0 !important; transition:none !important; }
   .sv-pista { scroll-behavior:auto; }
 }
+
+/* Tipos de modificacion: cuatro por fila en computadora */
+.sv-cambios { grid-template-columns:repeat(4,1fr); }
+@media (max-width:900px) { .sv-cambios { grid-template-columns:repeat(2,1fr); } }
+@media (max-width:520px) { .sv-cambios { grid-template-columns:1fr; } }
