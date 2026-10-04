@@ -13,8 +13,8 @@
   <meta property="og:url" content="https://publicola.com.do/servicios/">
   <meta property="og:image" content="https://publicola.com.do/marca/og-image.jpg">
   <link rel="icon" type="image/png" sizes="32x32" href="/marca/icono-32-v2.png"><link rel="icon" type="image/png" sizes="64x64" href="/marca/icono-64-v2.png"><link rel="apple-touch-icon" sizes="180x180" href="/marca/icono-180-v2.png">
-  <link rel="stylesheet" href="/lanzamiento.css?v=20261004">
-  <link rel="stylesheet" href="/servicios.css?v=20261004f">
+  <link rel="stylesheet" href="/lanzamiento.css?v=20261004h">
+  <link rel="stylesheet" href="/servicios.css?v=20261004g">
   <!-- El movimiento se prepara antes de pintar (sin parpadeo). Si servicios.js no llega, todo se muestra a los 2,5 s. -->
   <script>document.documentElement.classList.add("sv-movimiento");setTimeout(function(){if(!window.svListo){document.documentElement.classList.remove("sv-movimiento");}},2500);</script>
 </head>
@@ -29,6 +29,7 @@
         <a href="/legal/">Legal</a>
         <a href="/contacto/">Contacto</a>
       </nav>
+      <a class="cabecera-cta" href="/app/">Crear cuenta gratis</a>
     </div>
   </header>
 
@@ -42,15 +43,15 @@
           <h1 data-entra>Tu empresa y tus licitaciones, en buenas manos.</h1>
           <p class="sv-lead" data-entra>Además de la plataforma gratuita, nuestro equipo te acompaña con servicios humanos y respaldo legal: desde crear o modificar tu empresa totalmente en línea hasta someter tu oferta.</p>
           <div class="acciones" data-entra>
-            <a class="boton boton-claro" href="#servicios">Ver los servicios</a>
-            <a class="boton sv-boton-borde" href="mailto:info@publicola.com.do?subject=Quiero%20un%20servicio%20de%20Publicola">Escríbenos</a>
+            <a class="boton boton-claro" href="/app/">Crear mi cuenta gratis</a>
+            <a class="boton sv-boton-borde" href="#servicios">Ver los servicios</a>
           </div>
         </div>
         <div class="sv-expediente" aria-hidden="true">
-          <div class="sv-doc d1"><span class="sv-doc-icono oro"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M9 11h6M9 15h6"/></svg></span><b>Estatutos sociales</b><i></i><i></i></div>
-          <div class="sv-doc d2"><span class="sv-doc-icono azul"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 10h8M8 14h5"/></svg></span><b>RNC</b><i></i><i></i></div>
-          <div class="sv-doc d3"><span class="sv-doc-icono verde"><svg viewBox="0 0 24 24"><path d="M4 10l8-5 8 5"/><path d="M6 10v8M10 10v8M14 10v8M18 10v8M4 20h16"/></svg></span><b>Registro de Proveedores del Estado</b><i></i><i></i></div>
-          <div class="sv-doc d4"><span class="sv-doc-icono coral"><svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5M13 19c0-3 2-5 4-5s4 2 4 5"/></svg></span><b>Inscripción en la TSS</b><i></i><i></i></div>
+          <div class="sv-doc d1 oro"><div class="sv-doc-fila"><span class="sv-doc-icono"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M9 11h6M9 15h6"/></svg></span><em>✓ Listo</em></div><b>Estatutos sociales</b><small>Redactados y registrados</small></div>
+          <div class="sv-doc d2 azul"><div class="sv-doc-fila"><span class="sv-doc-icono"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 10h8M8 14h5"/></svg></span><em>✓ Listo</em></div><b>RNC</b><small>Tu empresa en la DGII</small></div>
+          <div class="sv-doc d3 verde"><div class="sv-doc-fila"><span class="sv-doc-icono"><svg viewBox="0 0 24 24"><path d="M4 10l8-5 8 5"/><path d="M6 10v8M10 10v8M14 10v8M18 10v8M4 20h16"/></svg></span><em>✓ Listo</em></div><b>Proveedor del Estado</b><small>Inscrita en el RPE</small></div>
+          <div class="sv-doc d4 coral"><div class="sv-doc-fila"><span class="sv-doc-icono"><svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5M13 19c0-3 2-5 4-5s4 2 4 5"/></svg></span><em>✓ Listo</em></div><b>Seguridad Social</b><small>Inscrita en la TSS</small></div>
           <div class="sv-sello"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Lista para licitar</div>
         </div>
       </div>
@@ -61,13 +62,14 @@
       <div class="contenedor">
         <p data-entra>Gestionamos por ti ante</p>
         <ul>
-          <li data-entra>Cámara de Comercio · Registro Mercantil</li>
-          <li data-entra>DGII</li>
-          <li data-entra>Dirección General de Contrataciones Públicas</li>
-          <li data-entra>Ministerio de Industria, Comercio y Mipymes</li>
-          <li data-entra>Tesorería de la Seguridad Social</li>
-          <li data-entra>ONAPI</li>
-          <li data-entra>DIGEMAPS</li>
+          <li data-entra><strong>Cámara de Comercio</strong><span>Registro Mercantil</span></li>
+          <li data-entra><strong>DGII</strong><span>Impuestos Internos</span></li>
+          <li data-entra><strong>DGCP</strong><span>Contrataciones Públicas</span></li>
+          <li data-entra><strong>MICM</strong><span>Industria, Comercio y Mipymes</span></li>
+          <li data-entra><strong>TSS</strong><span>Seguridad Social</span></li>
+          <li data-entra><strong>ONAPI</strong><span>Propiedad Industrial</span></li>
+          <li data-entra><strong>DIGEMAPS</strong><span>Registros sanitarios</span></li>
+          <li data-entra><strong>Instituciones del Estado</strong><span>Documentos y certificaciones</span></li>
         </ul>
       </div>
     </section>
@@ -78,7 +80,7 @@
         <div data-entra><strong><span data-contar="5">5</span> a <span data-contar="6">6</span></strong><span>días laborables para tener tu empresa</span></div>
         <div data-entra><strong><span data-contar="12">12</span></strong><span>servicios para tu empresa y tus licitaciones</span></div>
         <div data-entra><strong><span data-contar="100">100</span>&nbsp;%</strong><span>en línea, sin ir a ninguna oficina</span></div>
-        <div data-entra><strong><span data-contar="1">1</span></strong><span>correo para pedir cualquier servicio</span></div>
+        <div data-entra><strong><span data-contar="1">1</span></strong><span>cuenta gratuita para pedir cualquier servicio</span></div>
       </div>
     </section>
 
@@ -88,7 +90,7 @@
         <div class="encabezado-seccion">
           <p class="eyebrow" data-entra>Nuestros servicios</p>
           <h2 data-entra>Lo que hacemos por ti.</h2>
-          <p data-entra>Desliza para verlos todos. Te cotizamos por correo, sin compromiso.</p>
+          <p data-entra>Desliza para verlos todos. Crea tu cuenta gratis y pídenos el que necesites.</p>
         </div>
 
         <div class="sv-carrusel" data-sv-carrusel aria-roledescription="carrusel" aria-label="Servicios de Publicola">
@@ -117,7 +119,7 @@
               <h3>Sometimiento de oferta</h3>
               <p>Presentamos tu oferta ante la institución, en tiempo y forma.</p>
               <ul><li>Para ofertas ya preparadas</li><li>Se puede combinar con la preparación</li></ul>
-              <a class="boton" href="mailto:info@publicola.com.do?subject=Sometimiento%20de%20oferta">Solicitar</a>
+              <a class="boton" href="/app/">Crear mi cuenta gratis</a>
             </article>
 
             <article class="sv-tarjeta azul" data-entra="derecha" data-nombre="Revisión humana de licitaciones">
@@ -126,7 +128,7 @@
               <h3>Revisión humana de licitaciones</h3>
               <p>Revisamos el pliego contigo, con asistencia legal, y te decimos qué te piden y qué te falta.</p>
               <ul><li>Requisitos explicados en lenguaje simple</li><li>Lo que te falta, antes de que venza el plazo</li></ul>
-              <a class="boton" href="mailto:info@publicola.com.do?subject=Revisi%C3%B3n%20de%20licitaci%C3%B3n">Solicitar</a>
+              <a class="boton" href="/app/">Crear mi cuenta gratis</a>
             </article>
 
             <article class="sv-tarjeta morado" data-entra="derecha" data-nombre="Preparación de oferta con asistencia legal">
@@ -135,7 +137,7 @@
               <h3>Preparación de oferta con asistencia legal</h3>
               <p>Preparamos tu oferta completa y conseguimos todos los documentos que te piden, con el acompañamiento de nuestro equipo legal.</p>
               <ul><li>Conseguimos cada documento que pida el pliego</li><li>Revisión legal de cada documento</li><li>El sometimiento se pide aparte</li></ul>
-              <a class="boton" href="mailto:info@publicola.com.do?subject=Preparaci%C3%B3n%20de%20oferta%20con%20asistencia%20legal">Solicitar</a>
+              <a class="boton" href="/app/">Crear mi cuenta gratis</a>
             </article>
 
             <article class="sv-tarjeta morado" data-entra="derecha" data-nombre="Cobro de deudas">
@@ -144,7 +146,7 @@
               <h3>Cobro de deudas</h3>
               <p>Te ayudamos a cobrar lo que le deben a tu empresa, con el respaldo de nuestro equipo legal.</p>
               <ul><li>Gestión de cobro y vía legal</li><li>Te cotizamos según tu caso</li></ul>
-              <a class="boton" href="mailto:info@publicola.com.do?subject=Cobro%20de%20deudas">Solicitar</a>
+              <a class="boton" href="/app/">Crear mi cuenta gratis</a>
             </article>
 
             <article class="sv-tarjeta coral" data-entra="derecha" data-nombre="Solicitud de documentos y certificaciones">
@@ -162,7 +164,7 @@
               <h3>Registro de marca</h3>
               <p>Protegemos el nombre y el signo de tu empresa ante la Oficina Nacional de la Propiedad Industrial.</p>
               <ul><li>Con asistencia legal</li><li>Te cotizamos según tu caso</li></ul>
-              <a class="boton" href="mailto:info@publicola.com.do?subject=Registro%20de%20marca">Solicitar</a>
+              <a class="boton" href="/app/">Crear mi cuenta gratis</a>
             </article>
 
             <article class="sv-tarjeta verde" data-entra="derecha" data-nombre="Registro de Proveedores del Estado">
@@ -171,7 +173,7 @@
               <h3>Registro de Proveedores del Estado (RPE)</h3>
               <p>Inscribimos tu empresa para que pueda venderle al Estado.</p>
               <ul><li>Para empresas que ya existen</li><li>Incluido cuando creamos tu empresa</li></ul>
-              <a class="boton" href="mailto:info@publicola.com.do?subject=Inscripci%C3%B3n%20en%20el%20RPE">Solicitar</a>
+              <a class="boton" href="/app/">Crear mi cuenta gratis</a>
             </article>
 
             <article class="sv-tarjeta verde" data-entra="derecha" data-nombre="Certificación MIPYME">
@@ -180,7 +182,7 @@
               <h3>Certificación MIPYME</h3>
               <p>Gestionamos la certificación de tu empresa como MIPYME.</p>
               <ul><li>Para empresas que ya existen</li><li>Incluida al crear tu empresa, si la requiere</li></ul>
-              <a class="boton" href="mailto:info@publicola.com.do?subject=Certificaci%C3%B3n%20MIPYME">Solicitar</a>
+              <a class="boton" href="/app/">Crear mi cuenta gratis</a>
             </article>
 
             <article class="sv-tarjeta verde" data-entra="derecha" data-nombre="Inscripción en la TSS">
@@ -189,7 +191,7 @@
               <h3>Inscripción en la TSS</h3>
               <p>Inscribimos tu empresa en la Tesorería de la Seguridad Social.</p>
               <ul><li>Para empresas que ya existen</li><li>Incluida cuando creamos tu empresa</li></ul>
-              <a class="boton" href="mailto:info@publicola.com.do?subject=Inscripci%C3%B3n%20en%20la%20TSS">Solicitar</a>
+              <a class="boton" href="/app/">Crear mi cuenta gratis</a>
             </article>
 
             <article class="sv-tarjeta azul" data-entra="derecha" data-nombre="Otros servicios y asesoría legal">
@@ -198,7 +200,7 @@
               <h3>Otros servicios y asesoría legal</h3>
               <p>¿Necesitas algo distinto? Cuéntanos y te decimos cómo podemos ayudarte.</p>
               <ul><li>SA, SAS, ONG y otras estructuras</li><li>Asesorías y gestiones jurídicas</li></ul>
-              <a class="boton" href="mailto:info@publicola.com.do?subject=Otro%20servicio">Escríbenos</a>
+              <a class="boton" href="/app/">Crear mi cuenta gratis</a>
             </article>
           </div>
           <div class="sv-controles">
@@ -288,8 +290,8 @@
         </ol>
         <p class="sv-nota" data-entra>Recibimos los documentos solo por correo, nunca por mensajería instantánea.</p>
         <div class="sv-acciones" data-entra>
-          <a class="boton" href="/formulario-publicola.docx" download>Descargar el formulario</a>
-          <a class="boton boton-secundario" href="mailto:info@publicola.com.do?subject=Quiero%20crear%20mi%20empresa">Escríbenos</a>
+          <a class="boton" href="/app/">Crear mi cuenta gratis</a>
+          <a class="boton boton-secundario" href="/formulario-publicola.docx" download>Descargar el formulario</a>
         </div>
       </div>
     </section>
@@ -310,7 +312,7 @@
           <li class="morado" data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="11" width="28" height="21" rx="3"/><path d="M15 11V7h10v4"/><path d="M6 20h28"/></svg></span><h3>Cambio de objeto</h3><p>Nuevas actividades para tu empresa.</p></li>
           <li class="azul" data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 14h20l-5-5"/><path d="M32 26H12l5 5"/></svg></span><h3>Transformación</h3><p>Cambio del tipo de sociedad.</p></li>
           <li class="oro" data-entra><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 32h28"/><path d="M10 32V22M18 32V16M26 32V10"/><path d="M24 8l2-2 2 2"/></svg></span><h3>Aumento de capital social</h3><p>Más capital para crecer y licitar más.</p></li>
-          <li class="sv-cambio-cta" data-entra><h3>¿Otro cambio?</h3><p>Cuéntanos qué necesitas y te decimos cómo lo hacemos.</p><a class="boton boton-claro" href="mailto:info@publicola.com.do?subject=Modificaci%C3%B3n%20de%20empresa">Solicitar una modificación</a></li>
+          <li class="sv-cambio-cta" data-entra><h3>¿Otro cambio?</h3><p>Cuéntanos qué necesitas y te decimos cómo lo hacemos.</p><a class="boton boton-claro" href="/app/">Crear mi cuenta gratis</a></li>
         </ol>
       </div>
     </section>
@@ -322,7 +324,7 @@
           <p class="eyebrow" data-entra>Preparación de ofertas y documentos</p>
           <h2 data-entra>Preparamos tu oferta y conseguimos todos los documentos para licitar.</h2>
           <p data-entra>No solo armamos tu oferta: también revisamos qué documentos te piden y los conseguimos por ti, ante la institución que corresponda, para que llegues completo y a tiempo.</p>
-          <a class="boton boton-claro" data-entra href="mailto:info@publicola.com.do?subject=Preparaci%C3%B3n%20de%20oferta%20y%20documentos">Quiero preparar mi oferta</a>
+          <a class="boton boton-claro" data-entra href="/app/">Crear mi cuenta gratis</a>
         </div>
         <ul class="sv-etiquetas" aria-label="Ejemplos">
           <li data-entra>Certificaciones que pida el pliego</li>
@@ -341,11 +343,11 @@
         <div>
           <div class="encabezado-seccion">
             <p class="eyebrow" data-entra>Cómo pedir un servicio</p>
-            <h2 data-entra>Tres pasos, todo por correo.</h2>
+            <h2 data-entra>Tres pasos, y empiezas gratis.</h2>
           </div>
           <ol class="sv-linea compacta">
-            <li data-entra><span>1</span><strong>Escríbenos</strong><em>Cuéntanos qué necesitas en info@publicola.com.do.</em></li>
-            <li data-entra><span>2</span><strong>Te cotizamos</strong><em>Te respondemos con lo que incluye y su costo.</em></li>
+            <li data-entra><span>1</span><strong>Crea tu cuenta gratis</strong><em>Solo necesitas tu correo.</em></li>
+            <li data-entra><span>2</span><strong>Pide el servicio</strong><em>Te enviamos por correo la cotización con lo que incluye.</em></li>
             <li data-entra><span>3</span><strong>Nosotros lo gestionamos</strong><em>Nuestro equipo se encarga y te mantiene al tanto.</em></li>
           </ol>
         </div>
@@ -369,7 +371,7 @@
           <details data-entra><summary>¿Tengo que ir a alguna oficina?</summary><p>No. Todo se hace en línea: nos envías el formulario y los documentos por correo y nosotros hacemos las gestiones.</p></details>
           <details data-entra><summary>¿Cuánto tarda la creación de la empresa?</summary><p>De 5 a 6 días laborables, desde que recibimos el formulario y los documentos completos.</p></details>
           <details data-entra><summary>¿La empresa queda lista para licitar?</summary><p>Sí. La entregamos con el Registro de Proveedores del Estado, la inscripción en la TSS y la certificación MIPYME si la requiere.</p></details>
-          <details data-entra><summary>¿Cuánto cuesta un servicio?</summary><p>Escríbenos a info@publicola.com.do y te enviamos la cotización con lo que incluye.</p></details>
+          <details data-entra><summary>¿Cuánto cuesta un servicio?</summary><p>Crea tu cuenta gratis y pídenos el servicio: te enviamos la cotización por correo, con lo que incluye.</p></details>
           <details data-entra><summary>¿Puedo enviar los documentos por WhatsApp?</summary><p>No. Por tu seguridad, recibimos los documentos solo por correo, en info@publicola.com.do.</p></details>
         </div>
       </div>

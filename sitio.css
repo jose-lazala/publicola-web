@@ -304,3 +304,8 @@ section[id] { scroll-margin-top:72px; }
 .pie-links a { color:#bdd6e5; text-decoration:none; font-size:.9rem; }
 .pie-links a:hover, .pie-links a:focus-visible { color:var(--blanco); }
 @media (max-width:760px) { .pie-grid { grid-template-columns:1fr; } .nav { display:flex; position:static; flex-direction:row; flex-wrap:wrap; margin-left:0; padding:0; background:none; border:0; box-shadow:none; gap:16px; } .nav a { padding:0; border:0; } .barra { flex-wrap:wrap; padding-block:10px; } }
+
+/* Botón «Crear cuenta gratis» en la cabecera: la acción principal en todas las páginas (Owner, 4-oct-2026) */
+.cabecera-cta { display:inline-flex; flex:none; align-items:center; min-height:40px; padding:8px 18px; border-radius:999px; background:#d89926; color:#2b1b02; font-size:.88rem; font-weight:700; text-decoration:none; white-space:nowrap; transition:background .2s; }
+.cabecera-cta:hover, .cabecera-cta:focus-visible { background:#f3c66f; }
+@media (max-width:760px) { .barra { flex-wrap:wrap; } .cabecera-cta { order:2; margin-left:auto; min-height:38px; padding:7px 14px; font-size:.82rem; } .nav { order:3; width:100%; } }
