@@ -98,3 +98,15 @@
 .sv-cambios { grid-template-columns:repeat(4,1fr); }
 @media (max-width:900px) { .sv-cambios { grid-template-columns:repeat(2,1fr); } }
 @media (max-width:520px) { .sv-cambios { grid-template-columns:1fr; } }
+
+/* Recuadro dibujado «Tu empresa sale lista para licitar» (sustituye la foto, 4-oct-2026) */
+.sv-kit { padding:30px 28px; border-radius:28px; background:linear-gradient(150deg,#052c50,#084b7c 70%,#0b659a); color:var(--white); box-shadow:0 30px 70px rgba(6,52,93,.22); }
+.sv-kit-titulo { margin:0 0 18px; font-size:1.3rem; font-weight:700; letter-spacing:-.02em; }
+.sv-kit ul { margin:0; padding:0; list-style:none; }
+.sv-kit li { display:grid; grid-template-columns:52px 1fr; gap:14px; align-items:center; padding:12px 0; border-bottom:1px solid rgba(255,255,255,.14); }
+.sv-kit li:last-child { border-bottom:0; }
+.sv-kit .sv-icono { width:52px; height:52px; margin:0; border-radius:14px; background:rgba(255,255,255,.12); color:#8ed0f5; }
+.sv-kit .sv-icono svg { width:28px; height:28px; }
+.sv-kit strong { display:block; color:var(--white); font-size:.98rem; }
+.sv-kit span { color:#c3dcea; font-size:.86rem; }
+.sv-kit-pie { margin:18px 0 0; padding-top:14px; border-top:1px solid rgba(255,255,255,.14); color:#f3c66f; font-weight:700; font-size:.9rem; }
