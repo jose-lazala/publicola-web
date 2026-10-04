@@ -313,3 +313,11 @@ section[id] { scroll-margin-top:72px; }
   .mosaico .mosaico-grande { grid-row:auto; }
   .hero { background-image:linear-gradient(rgba(4,31,56,.62),rgba(4,31,56,.62)),url("/img/radar.webp"),radial-gradient(120% 90% at 85% 10%,#0e5f96 0%,#06345d 45%,#041f38 100%); background-size:cover,auto 55%,cover; background-position:center,right -150px top 30px,center; }
 }
+
+/* Pie sencillo, igual al de la portada (4-oct-2026) */
+.pie-grid { display:grid; grid-template-columns:1fr auto; gap:30px; align-items:center; }
+.pie-grid strong { color:var(--blanco); }
+.pie-links { display:flex; flex-wrap:wrap; gap:18px; }
+.pie-links a { color:#bdd6e5; text-decoration:none; font-size:.9rem; }
+.pie-links a:hover, .pie-links a:focus-visible { color:var(--blanco); }
+@media (max-width:760px) { .pie-grid { grid-template-columns:1fr; } .nav { display:flex; position:static; flex-direction:row; flex-wrap:wrap; margin-left:0; padding:0; background:none; border:0; box-shadow:none; gap:16px; } .nav a { padding:0; border:0; } .barra { flex-wrap:wrap; padding-block:10px; } }
