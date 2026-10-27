@@ -1,0 +1,72 @@
+[
+ {
+  "slug": "licitaciones-publicas",
+  "nombre": "Licitaciones públicas",
+  "descripcion": "",
+  "orden": 1,
+  "invitacion_tipo": "licitaciones"
+ },
+ {
+  "slug": "guias-para-proveedores",
+  "nombre": "Guías para proveedores",
+  "descripcion": "",
+  "orden": 2,
+  "invitacion_tipo": "cuenta"
+ },
+ {
+  "slug": "registro-de-proveedores-del-estado-rpe",
+  "nombre": "Registro de Proveedores del Estado (RPE)",
+  "descripcion": "",
+  "orden": 3,
+  "invitacion_tipo": "rpe"
+ },
+ {
+  "slug": "mipymes-y-compras-publicas",
+  "nombre": "MIPYMES y compras públicas",
+  "descripcion": "",
+  "orden": 4,
+  "invitacion_tipo": "mipyme"
+ },
+ {
+  "slug": "pliegos-de-condiciones",
+  "nombre": "Pliegos de condiciones",
+  "descripcion": "",
+  "orden": 5,
+  "invitacion_tipo": "pliegos"
+ },
+ {
+  "slug": "leyes-y-normativas",
+  "nombre": "Leyes y normativas",
+  "descripcion": "",
+  "orden": 6,
+  "invitacion_tipo": "asesoria"
+ },
+ {
+  "slug": "garantias-y-fianzas",
+  "nombre": "Garantías y fianzas",
+  "descripcion": "",
+  "orden": 7,
+  "invitacion_tipo": "asesoria"
+ },
+ {
+  "slug": "preparacion-de-ofertas",
+  "nombre": "Preparación de ofertas",
+  "descripcion": "",
+  "orden": 8,
+  "invitacion_tipo": "oferta"
+ },
+ {
+  "slug": "precios-y-estudios-de-mercado",
+  "nombre": "Precios y estudios de mercado",
+  "descripcion": "",
+  "orden": 9,
+  "invitacion_tipo": "precios"
+ },
+ {
+  "slug": "consejos-para-venderle-al-estado",
+  "nombre": "Consejos para venderle al Estado",
+  "descripcion": "",
+  "orden": 10,
+  "invitacion_tipo": "cuenta"
+ }
+]

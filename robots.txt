@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://publicola.com.do/sitemap.xml
+Sitemap: https://publicola.com.do/sitemap-recursos.xml

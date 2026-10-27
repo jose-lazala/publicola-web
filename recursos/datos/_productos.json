@@ -1,0 +1,86 @@
+[
+ {
+  "clave": "asesoria",
+  "nombre": "Asesoría legal en compras públicas",
+  "estado": "disponible",
+  "url": "/servicios/asesoria-legal-compras-publicas/",
+  "texto_cta": "Si necesitas apoyo legal en compras y contrataciones públicas, nuestro equipo te puede ayudar."
+ },
+ {
+  "clave": "cuenta",
+  "nombre": "Cuenta gratuita de PUBLICOLA Digital",
+  "estado": "disponible",
+  "url": "/app/?acceso=crear",
+  "texto_cta": "Con una cuenta gratuita de PUBLICOLA Digital puedes explorar las licitaciones y seguir las que te interesan."
+ },
+ {
+  "clave": "empresas",
+  "nombre": "Constitución de empresas",
+  "estado": "disponible",
+  "url": "/servicios/creacion-de-empresas/",
+  "texto_cta": "Si todavía no tienes empresa, nuestro equipo te la puede dejar lista para operar."
+ },
+ {
+  "clave": "licitaciones",
+  "nombre": "Explorar licitaciones",
+  "estado": "disponible",
+  "url": "/app/?acceso=crear",
+  "texto_cta": "En PUBLICOLA Digital reunimos las licitaciones públicas con sus fechas, para que las encuentres en un solo lugar."
+ },
+ {
+  "clave": "mipyme",
+  "nombre": "Inscripción MIPYME",
+  "estado": "disponible",
+  "url": "/servicios/solicitud-de-documentos/",
+  "texto_cta": "Nuestro equipo también te puede ayudar con la inscripción como MIPYME."
+ },
+ {
+  "clave": "oferta",
+  "nombre": "Preparar mi oferta",
+  "estado": "disponible",
+  "url": "/app/?acceso=crear",
+  "texto_cta": "Nuestra herramienta para preparar la oferta te ayuda a organizar los documentos que cada proceso solicita."
+ },
+ {
+  "clave": "pliegos",
+  "nombre": "Ficha de la licitación",
+  "estado": "disponible",
+  "url": "/app/?acceso=crear",
+  "texto_cta": "Nuestra ficha de cada licitación resume lo que pide el pliego, con la referencia a los documentos oficiales."
+ },
+ {
+  "clave": "precios",
+  "nombre": "Precios de referencia",
+  "estado": "disponible",
+  "url": "/app/?acceso=crear",
+  "texto_cta": "En PUBLICOLA Digital puedes consultar precios de referencia de contrataciones anteriores."
+ },
+ {
+  "clave": "publicola_plus",
+  "nombre": "Publicola Plus",
+  "estado": "proximamente",
+  "url": "",
+  "texto_cta": "Publicola Plus, con lectura de pliegos asistida por inteligencia artificial, estará disponible próximamente."
+ },
+ {
+  "clave": "publicola_pro",
+  "nombre": "Publicola Pro",
+  "estado": "proximamente",
+  "url": "",
+  "texto_cta": "Publicola Pro, con nuestro agente Publi, estará disponible próximamente."
+ },
+ {
+  "clave": "radar",
+  "nombre": "Radar de PUBLICOLA",
+  "estado": "disponible",
+  "url": "/app/?acceso=crear",
+  "texto_cta": "Con el Radar recibes por correo, cada semana, las licitaciones de tus rubros."
+ },
+ {
+  "clave": "rpe",
+  "nombre": "Inscripción en el Registro de Proveedores del Estado",
+  "estado": "disponible",
+  "url": "/servicios/solicitud-de-documentos/",
+  "texto_cta": "Nuestro equipo te puede ayudar con la inscripción en el Registro de Proveedores del Estado (RPE)."
+ }
+]
