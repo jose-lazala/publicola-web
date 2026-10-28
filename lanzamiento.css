@@ -269,3 +269,8 @@ a { color:var(--navy-2); }
   .plan { padding:26px 22px; }
   .planes-portada { padding-block:48px 32px; }
 }
+.plan-intro { margin:0 0 12px; color:var(--navy); }
+.plan-proximo { margin:0 0 28px; padding:22px 26px; border:1px dashed var(--line); border-radius:20px; background:var(--white); }
+.plan-proximo .plan-nombre { display:flex; align-items:center; gap:12px; flex-wrap:wrap; font-size:1.3rem; }
+.plan-proximo p { margin:4px 0 0; color:var(--muted); }
+.plan-etiqueta-proximo { padding:4px 10px; border-radius:999px; background:var(--sky); color:var(--navy-2); font-size:.75rem; font-weight:700; letter-spacing:.02em; }
