@@ -523,7 +523,7 @@ function mostrarResultadoRubro(rubro) {
 
     const enlacePlanes = document.createElement("a");
     enlacePlanes.className = "boton boton-pildora";
-    enlacePlanes.href = "planes.html";
+    enlacePlanes.href = "/planes/";
     enlacePlanes.textContent = "Conoce nuestros planes →";
     elementoResultadoBuscadorRubro.appendChild(enlacePlanes);
 
