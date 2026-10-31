@@ -22,21 +22,25 @@
   <link rel="stylesheet" href="/lanzamiento.css?v=20261010a">
   <link rel="stylesheet" href="/recursos.css?v=20261027b">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://publicola.com.do/"}, {"@type": "ListItem", "position": 2, "name": "Recursos", "item": "https://publicola.com.do/recursos/"}]}</script>
+  <link rel="stylesheet" href="/identidad-v3.css?v=20261031a">
 </head>
 <body>
   <a class="salto" href="#contenido">Saltar al contenido</a>
-  <header class="cabecera">
-    <div class="contenedor barra">
-      <a class="marca" href="/" aria-label="Publicola, inicio">Publicola</a>
-      <nav class="nav" aria-label="Principal">
-        <a href="/">Inicio</a>
+  <header class="v3-cabecera">
+    <div class="v3-barra">
+      <a class="v3-marca" href="/" aria-label="Publicola, inicio"><img src="/marca/publicola-marca.png" alt=""><span>PUBLICOLA</span></a>
+      <nav class="v3-enlaces" id="v3-menu" aria-label="Principal">
+        <a href="/#producto">Plataforma</a>
         <a href="/servicios/">Servicios</a>
+        <a href="/planes/">Planes</a>
         <a href="/recursos/" aria-current="page">Recursos</a>
-        <a href="/legal/">Legal</a>
         <a href="/contacto/">Contacto</a>
+        <a class="v3-solo-movil" href="/app/?acceso=entrar">Iniciar sesión</a>
       </nav>
-      <a class="cabecera-entrar" href="/app/?acceso=entrar">Iniciar sesión</a>
-      <a class="cabecera-cta" href="/app/?acceso=crear">Crear cuenta gratis</a>
+      <div class="v3-acciones">
+        <a class="v3-entrar" href="/app/?acceso=entrar">Iniciar sesión ↗</a>
+        <button class="v3-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="v3-menu">☰</button>
+      </div>
     </div>
   </header>
 
@@ -60,12 +64,17 @@
       </div>
     </section>
   </main>
-  <footer class="pie">
-    <div class="contenedor pie-grid">
-      <div><strong>Publicola</strong></div>
-      <nav class="pie-links" aria-label="Pie de página"><a href="/servicios/">Servicios</a><a href="/recursos/">Recursos</a><a href="/legal/">Legal</a><a href="/privacidad/">Privacidad</a><a href="/contacto/">Contacto</a></nav>
+  <footer class="v3-pie">
+    <div class="v3-pie-contenido">
+      <div class="v3-pie-arriba">
+        <a class="v3-marca" href="/"><img src="/marca/publicola-marca.png" alt=""><span>PUBLICOLA</span></a>
+        <small>Compras públicas. Análisis profundo, respuestas sencillas.</small>
+      </div>
+      <nav class="v3-pie-enlaces" aria-label="Más de Publicola"><a href="/servicios/">Servicios</a><a href="/planes/">Planes</a><a href="/recursos/">Recursos</a><a href="/contacto/">Contacto</a></nav>
+      <nav class="v3-pie-legal" aria-label="Información legal"><a href="/legal/">Términos de uso y condiciones</a><a href="/privacidad/">Privacidad</a><a href="/fuentes/">Fuentes y metodología</a></nav>
     </div>
   </footer>
   <script src="/recursos.js?v=20261027a" defer></script>
+  <script src="/sitio-v3.js?v=20261031a"></script>
 </body>
 </html>

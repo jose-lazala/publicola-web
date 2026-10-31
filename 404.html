@@ -7,24 +7,27 @@
 <title>Página no encontrada — Publicola</title>
 <link rel="icon" type="image/png" sizes="32x32" href="/marca/icono-32-v2.png"><link rel="icon" type="image/png" sizes="64x64" href="/marca/icono-64-v2.png"><link rel="apple-touch-icon" sizes="180x180" href="/marca/icono-180-v2.png">
 <link rel="stylesheet" href="/lanzamiento.css?v=20261010a">
+  <link rel="stylesheet" href="/identidad-v3.css?v=20261031a">
 </head>
 <body>
 
   <a href="#contenido-principal" class="salto">Saltar al contenido</a>
 
-  <header class="cabecera">
-    <div class="contenedor barra">
-      <a class="marca" href="/">Publicola</a>
-      <nav class="nav" aria-label="Principal">
-        <a href="/">Inicio</a>
+  <header class="v3-cabecera">
+    <div class="v3-barra">
+      <a class="v3-marca" href="/" aria-label="Publicola, inicio"><img src="/marca/publicola-marca.png" alt=""><span>PUBLICOLA</span></a>
+      <nav class="v3-enlaces" id="v3-menu" aria-label="Principal">
+        <a href="/#producto" aria-current="page">Plataforma</a>
         <a href="/servicios/">Servicios</a>
         <a href="/planes/">Planes</a>
         <a href="/recursos/">Recursos</a>
-        <a href="/legal/">Legal</a>
         <a href="/contacto/">Contacto</a>
+        <a class="v3-solo-movil" href="/app/?acceso=entrar">Iniciar sesión</a>
       </nav>
-      <a class="cabecera-entrar" href="/app/?acceso=entrar">Iniciar sesión</a>
-      <a class="cabecera-cta" href="/app/?acceso=crear">Crear cuenta gratis</a>
+      <div class="v3-acciones">
+        <a class="v3-entrar" href="/app/?acceso=entrar">Iniciar sesión ↗</a>
+        <button class="v3-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="v3-menu">☰</button>
+      </div>
     </div>
   </header>
 
@@ -35,12 +38,17 @@
     <p><a class="boton" href="/">Volver al inicio</a></p>
   </main>
 
-  <footer class="pie">
-    <div class="contenedor pie-grid">
-      <div><strong>Publicola</strong></div>
-      <nav class="pie-links" aria-label="Pie"><a href="/servicios/">Servicios</a><a href="/planes/">Planes</a><a href="/recursos/">Recursos</a><a href="/legal/">Legal</a><a href="/privacidad/">Privacidad</a><a href="/contacto/">Contacto</a></nav>
+  <footer class="v3-pie">
+    <div class="v3-pie-contenido">
+      <div class="v3-pie-arriba">
+        <a class="v3-marca" href="/"><img src="/marca/publicola-marca.png" alt=""><span>PUBLICOLA</span></a>
+        <small>Compras públicas. Análisis profundo, respuestas sencillas.</small>
+      </div>
+      <nav class="v3-pie-enlaces" aria-label="Más de Publicola"><a href="/servicios/">Servicios</a><a href="/planes/">Planes</a><a href="/recursos/">Recursos</a><a href="/contacto/">Contacto</a></nav>
+      <nav class="v3-pie-legal" aria-label="Información legal"><a href="/legal/">Términos de uso y condiciones</a><a href="/privacidad/">Privacidad</a><a href="/fuentes/">Fuentes y metodología</a></nav>
     </div>
   </footer>
 
+  <script src="/sitio-v3.js?v=20261031a"></script>
 </body>
 </html>

@@ -46,3 +46,22 @@
 .salto-v3{position:absolute;left:-9999px;top:8px;z-index:60;background:#fff;color:var(--navy);padding:10px 14px;border-radius:10px;border:1px solid var(--line)}
 .salto-v3:focus{left:16px}
 .sample-follow{display:inline-block}
+
+/* Más de Publicola (Owner, 31-oct-2026): los cuatro capítulos que se conservan, en tarjetas blancas despejadas. */
+.tools{padding:96px 0;background:#fff}
+.tools-head{max-width:640px;margin-bottom:38px}
+.tools-head h2{font-size:clamp(32px,3.6vw,46px)}
+.tools-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.tool-card{border:1px solid var(--line);border-radius:16px;background:#fff;padding:28px 28px 30px}
+.tool-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
+.tool-icon{width:43px;height:43px;display:grid;place-items:center;border:1px solid #dfe9f8;border-radius:12px;background:#f5f8ff;color:#547db5;font-size:20px}
+.tool-card h3{font-size:20px;letter-spacing:-.03em;margin-bottom:10px}
+.tool-card p{font-size:14px;line-height:1.75;color:var(--muted)}
+.tag-amber{background:#fff2d8;color:#946000}
+@media(max-width:760px){.tools{padding:65px 0}.tools-grid{grid-template-columns:1fr;gap:12px}.tool-card{padding:23px}.tools-head h2{font-size:32px}}
+
+/* Capturas reales del ensayo en lugar de las demostraciones de la propuesta. */
+.real-shot img{width:100%;height:auto;display:block}
+.real-shot-inline{width:100%;height:auto;border:1px solid var(--line);border-radius:12px;margin-top:18px}
+.screenshot-button{margin:0;cursor:default}
+.screenshot-button:hover{transform:none}
