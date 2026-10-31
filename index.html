@@ -2,208 +2,271 @@
 <html lang="es-DO">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Publicola — Inteligencia para compras y contrataciones públicas</title>
-  <meta name="description" content="Publicola te ayuda a descubrir, entender y dar seguimiento a oportunidades de compras y contrataciones públicas. Crea tu cuenta gratis.">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#03183e">
+  <title>Publicola — Las licitaciones, por fin claras</title>
+  <meta name="description" content="Encuentra licitaciones del Estado dominicano, entiende sus requisitos y decide en cuáles participar. Crea tu cuenta gratis.">
   <link rel="canonical" href="https://publicola.com.do/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Publicola">
-  <meta property="og:title" content="Publicola — Inteligencia para compras y contrataciones públicas">
-  <meta property="og:description" content="Publicola te ayuda a descubrir, entender y dar seguimiento a oportunidades de compras y contrataciones públicas. Crea tu cuenta gratis.">
+  <meta property="og:title" content="Publicola — Las licitaciones, por fin claras">
+  <meta property="og:description" content="Encuentra licitaciones del Estado dominicano, entiende sus requisitos y decide en cuáles participar. Crea tu cuenta gratis.">
   <meta property="og:url" content="https://publicola.com.do/">
   <meta property="og:image" content="https://publicola.com.do/marca/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" sizes="32x32" href="/marca/icono-32-v2.png"><link rel="icon" type="image/png" sizes="64x64" href="/marca/icono-64-v2.png"><link rel="apple-touch-icon" sizes="180x180" href="/marca/icono-180-v2.png">
-  <link rel="stylesheet" href="lanzamiento.css?v=20261028b">
+  <!-- Diseño aprobado V3 (Owner, 31-oct-2026): la portada muestra el producto desde la primera pantalla. -->
+  <link rel="stylesheet" href="vitrina-v3.css?v=20261031a">
   <!-- Con la sesión abierta, esta portada lleva directo a Mi PUBLICOLA (ver acceso-directo.js). -->
   <style>html.comprobando-sesion body { visibility: hidden; }</style>
   <script src="acceso-directo.js?v=20261010b"></script>
 </head>
 <body>
-  <a class="salto" href="#contenido">Saltar al contenido</a>
-  <header class="cabecera">
-    <div class="contenedor barra">
-      <a class="marca" href="index.html" aria-label="Publicola, inicio">Publicola</a>
-      <nav class="nav" aria-label="Principal">
-        <a href="index.html" aria-current="page">Inicio</a>
-        <a href="/servicios/">Servicios</a>
-        <a href="/planes/">Planes</a>
-        <a href="/recursos/">Recursos</a>
-        <a href="/legal/">Legal</a>
-        <a href="/contacto/">Contacto</a>
-      </nav>
-      <a class="cabecera-entrar" href="/app/?acceso=entrar">Iniciar sesión</a>
-      <a class="cabecera-cta" href="/app/?acceso=crear">Crear cuenta gratis</a>
+<a class="salto-v3" href="#contenido">Saltar al contenido</a>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/" aria-label="Publicola, inicio"><img src="/marca/publicola-marca.png" alt=""><span>PUBLICOLA</span></a>
+    <nav class="nav-links" id="main-menu" aria-label="Navegación principal">
+      <a href="#producto">Plataforma</a>
+      <a href="/servicios/">Servicios</a>
+      <a href="/planes/">Planes</a>
+      <a href="/recursos/">Recursos</a>
+      <a href="/contacto/">Contacto</a>
+      <a href="/app/?acceso=entrar" class="mobile-login">Iniciar sesión</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-secondary btn-small" href="/app/?acceso=entrar">Iniciar sesión ↗</a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-menu">☰</button>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main id="contenido">
-    <section class="hero">
-      <svg class="hero-ornamento" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
-        <circle cx="150" cy="46" r="40" fill="none" stroke="#8ed0f5" stroke-width="1" stroke-dasharray="4 7" opacity=".55"/>
-        <path d="M112 46 a38 38 0 0 1 38 -38" fill="none" stroke="#d89926" stroke-width="1.6" opacity=".7"/>
-        <circle cx="150" cy="8" r="2.6" fill="#d89926" opacity=".85"/>
-        <circle cx="176" cy="80" r="2" fill="#8ed0f5" opacity=".8"/>
-      </svg>
-      <div class="contenedor">
-        <div class="hero-intro">
-          <h1>Los datos públicos informan. Publicola te ayuda a actuar.</h1>
-          <p class="hero-lead">Descubre, entiende y da seguimiento a oportunidades de compras y contrataciones públicas, con datos públicos oficiales.</p>
-          <p class="hero-acciones"><a class="boton boton-claro" href="/app/?acceso=crear">Crear mi cuenta gratis</a></p>
-          <p class="ya-tienes">¿Ya tienes cuenta? <a href="/app/?acceso=entrar">Inicia sesión</a></p>
-          <a class="enlace-descubre" href="#lo-que-viene">Descubre lo que puedes hacer ↓</a>
-        </div>
-        <div class="panel-jornada">
-          <h2>De la oportunidad a tu oferta</h2>
-          <p class="subrotulo">Cómo te acompaña Publicola, paso a paso.</p>
-          <ol class="pasos-jornada">
-            <li class="paso-azul"><span class="paso-cabeza"><span class="paso-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="17" r="10"/><path d="M25 25l9 9"/></svg></span><span class="paso-num">1</span></span><span class="paso-titulo">Descubre</span><p class="paso-texto">Encuentra procesos relacionados con tu actividad.</p></li>
-            <li class="paso-verde"><span class="paso-cabeza"><span class="paso-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h15l7 7v21H9z"/><path d="M24 6v7h7"/><path d="M14 21l4 4 8-8"/><path d="M14 30h12"/></svg></span><span class="paso-num">2</span></span><span class="paso-titulo">Comprende</span><p class="paso-texto">Identifica lo importante antes de decidir.</p></li>
-            <li class="paso-morado"><span class="paso-cabeza"><span class="paso-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 32h28"/><path d="M10 32V22M18 32V16M26 32V10"/><path d="M24 8l2-2 2 2"/></svg></span><span class="paso-num">3</span></span><span class="paso-titulo">Evalúa</span><p class="paso-texto">Consulta contexto, antecedentes y referencias.</p></li>
-            <li class="paso-coral"><span class="paso-cabeza"><span class="paso-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="11"/><path d="M13 18l3.5 3.5L23 15"/><path d="M26 26l8 8"/></svg></span><span class="paso-num">4</span></span><span class="paso-titulo">Decide</span><p class="paso-texto">Determina cuáles oportunidades merecen tu tiempo.</p></li>
-            <li class="paso-oro"><span class="paso-cabeza"><span class="paso-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12a3 3 0 013-3h8l3 4h13a3 3 0 013 3v15a3 3 0 01-3 3H8a3 3 0 01-3-3z"/><path d="M14 22h12"/></svg></span><span class="paso-num">5</span></span><span class="paso-titulo">Prepara</span><p class="paso-texto">Organiza tu participación con las herramientas de Publicola.</p></li>
-            <li class="paso-dorado"><span class="paso-cabeza"><span class="paso-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M35 5L4 18l12 5 5 12z"/><path d="M35 5L16 23"/></svg></span><span class="paso-num">6</span></span><span class="paso-titulo">Presenta</span><p class="paso-texto">Somete tu oferta a tiempo, por tu cuenta o con nuestro equipo.</p></li>
-          </ol>
-        </div>
+<main id="contenido">
+  <section class="hero" id="producto">
+    <div class="wrap reveal">
+      <div class="eyebrow eyebrow-dot">Compras públicas de República Dominicana</div>
+      <h1>Las licitaciones,<br><span class="blue underlined">por fin claras.</span></h1>
+      <p class="hero-copy">Encuentra licitaciones, entiende sus requisitos y decide en cuáles participar.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/app/?acceso=crear">Crear mi cuenta gratis <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn-secondary" href="#ficha">Mira cómo se ve <span aria-hidden="true">↓</span></a>
       </div>
-    </section>
-
-    <!-- Capacidades: recorrido vertical, un capítulo por capacidad. Solo
-         lo que ya funciona en Publicola (Owner, 28-oct-2026: la página habla
-         como un servicio en línea; nada marcado «Próximamente»). Las
-         ilustraciones son los assets finales producidos externamente
-         (capacidades/), sin redibujar ni recortar. -->
-    <section class="seccion capacidades" id="lo-que-viene">
-      <div class="contenedor">
-        <div class="encabezado-seccion capacidades-encabezado">
-          <p class="eyebrow">Lo que puedes hacer</p>
-          <h2>Herramientas para competir con más información.</h2>
-          <p>Empieza con tu cuenta gratuita. Con <a href="/planes/">Plus</a>, además, cada pliego se explica con inteligencia artificial.</p>
-        </div>
-
-        <div class="capitulos" data-capitulos>
-          <article class="capitulo" data-capitulo="oportunidades">
-            <div class="capitulo-texto">
-              <p class="capitulo-tema">Oportunidades</p>
-              <h3>Encuentra oportunidades relacionadas con tu empresa.</h3>
-              <p class="capitulo-copia">Publicola te muestra procesos de compras y contrataciones públicas relacionados con lo que tu empresa ofrece. Tú decides en cuáles participar.</p>
-            </div>
-            <div class="capitulo-imagen">
-              <picture>
-                <source type="image/webp" srcset="capacidades/oportunidades-720.webp 720w, capacidades/oportunidades.webp 1254w" sizes="(max-width:900px) calc(100vw - 28px), 630px">
-                <img src="capacidades/oportunidades.png" width="1254" height="1254" alt="Ilustración: una persona frente a su laptop revisa una lista de procesos que coinciden con lo que ofrece su empresa." loading="lazy" decoding="async">
-              </picture>
-            </div>
-          </article>
-
-          <!-- Inteligencia normativa (Owner, 28-oct-2026): ilustración entregada por el Owner. -->
-          <article class="capitulo" data-capitulo="inteligencia-normativa">
-            <div class="capitulo-texto">
-              <p class="capitulo-tema">Inteligencia normativa</p>
-              <h3>Revisamos cada proceso frente a la norma, punto por punto.</h3>
-              <p class="capitulo-copia">Publicola contrasta el proceso con las normas que le aplican: el plazo para ofertar, la modalidad, las garantías y las leyes que cita el pliego, cada una con su vigencia y su fuente oficial. Donde conviene revisar algo, te dejamos lista la consulta para enviarla a la institución.</p>
-            </div>
-            <div class="capitulo-imagen">
-              <picture>
-                <source type="image/webp" srcset="capacidades/inteligencia-normativa-720.webp 720w, capacidades/inteligencia-normativa.webp 1254w" sizes="(max-width:900px) calc(100vw - 28px), 630px">
-                <img src="capacidades/inteligencia-normativa.png" width="1254" height="1254" alt="Ilustración: un libro de leyes con una balanza le señala a un profesional, sentado frente a su laptop, lo que dice la norma sobre un proceso." loading="lazy" decoding="async">
-              </picture>
-            </div>
-          </article>
-
-          <article class="capitulo" data-capitulo="alertas">
-            <div class="capitulo-texto">
-              <p class="capitulo-tema">Alertas</p>
-              <h3>No tienes que estar buscando todo el día. Publicola te avisa.</h3>
-              <p class="capitulo-copia">Recibes avisos sobre nuevas oportunidades relacionadas con lo que sigues, para que puedas revisarlas con tiempo.</p>
-            </div>
-            <div class="capitulo-imagen">
-              <picture>
-                <source type="image/webp" srcset="capacidades/alertas-720.webp 720w, capacidades/alertas.webp 1254w" sizes="(max-width:900px) calc(100vw - 28px), 630px">
-                <img src="capacidades/alertas.png" width="1254" height="1254" alt="Ilustración: una persona recibe en su teléfono un aviso sobre una nueva oportunidad." loading="lazy" decoding="async">
-              </picture>
-            </div>
-          </article>
-
-          <article class="capitulo" data-capitulo="planificacion">
-            <div class="capitulo-texto">
-              <p class="capitulo-tema">Planificación</p>
-              <h3>Descubre lo que las instituciones planean comprar o contratar.</h3>
-              <p class="capitulo-copia">Publicola organiza la planificación de compras que publican las instituciones para que puedas anticiparte. Lo planificado puede cambiar o no llegar a contratarse.</p>
-            </div>
-            <div class="capitulo-imagen">
-              <picture>
-                <source type="image/webp" srcset="capacidades/planificacion-720.webp 720w, capacidades/planificacion.webp 1254w" sizes="(max-width:900px) calc(100vw - 28px), 630px">
-                <img src="capacidades/planificacion.png" width="1254" height="1254" alt="Ilustración: dos personas conversan frente a un tablero con las etapas de una planificación de compras." loading="lazy" decoding="async">
-              </picture>
-            </div>
-          </article>
-
-          <article class="capitulo" data-capitulo="instituciones">
-            <div class="capitulo-texto">
-              <p class="capitulo-tema">Instituciones · Plan Plus</p>
-              <h3>Conoce a la institución antes de ofertar.</h3>
-              <p class="capitulo-copia">Publicola reúne en un solo lugar información sobre lo que una institución ha comprado y contratado, sus modalidades y otros antecedentes públicos relevantes.</p>
-            </div>
-            <div class="capitulo-imagen">
-              <picture>
-                <source type="image/webp" srcset="capacidades/instituciones-720.webp 720w, capacidades/instituciones.webp 1254w" sizes="(max-width:900px) calc(100vw - 28px), 630px">
-                <img src="capacidades/instituciones.png" width="1254" height="1254" alt="Ilustración: un equipo revisa en pantalla la ficha de una institución con sus compras y antecedentes." loading="lazy" decoding="async">
-              </picture>
-            </div>
-          </article>
-
-          <article class="capitulo" data-capitulo="precios">
-            <div class="capitulo-texto">
-              <p class="capitulo-tema">Precios · Plan Plus</p>
-              <h3>Conoce a qué precios ha comprado o contratado una institución.</h3>
-              <p class="capitulo-copia">Consulta antecedentes de precios publicados para tener más contexto al momento de preparar tu oferta.</p>
-            </div>
-            <div class="capitulo-imagen">
-              <picture>
-                <source type="image/webp" srcset="capacidades/precios-720.webp 720w, capacidades/precios.webp 1254w" sizes="(max-width:900px) calc(100vw - 28px), 630px">
-                <img src="capacidades/precios.png" width="1254" height="1254" alt="Ilustración: dos personas analizan un panel con referencias y tendencias de precios." loading="lazy" decoding="async">
-              </picture>
-            </div>
-          </article>
-
-          <!-- Trabajo en equipo: el Owner pidió conservarlo (28-oct-2026), sin la marca «Próximamente». -->
-          <article class="capitulo" data-capitulo="trabajo-en-equipo">
-            <div class="capitulo-texto">
-              <p class="capitulo-tema">Trabajo en equipo</p>
-              <h3>Trabaja en equipo dentro de Publicola.</h3>
-              <p class="capitulo-copia">Organiza hasta 3 empresas y hasta 10 usuarios por cuenta para compartir oportunidades, coordinar tareas y trabajar desde un mismo espacio.</p>
-            </div>
-            <div class="capitulo-imagen capitulo-imagen-equipo">
-              <picture>
-                <source type="image/webp" srcset="capacidades/trabajo-en-equipo-720.webp 720w, capacidades/trabajo-en-equipo.webp 1254w" sizes="(max-width:900px) calc(100vw - 28px), 630px">
-                <img src="capacidades/trabajo-en-equipo.png" width="1254" height="1254" alt="Ilustración: un equipo trabaja junto alrededor de un espacio de trabajo compartido con empresas, oportunidades y tareas." loading="lazy" decoding="async">
-              </picture>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Único cierre de la portada. Owner, 28-oct-2026: no decir «Publicola es
-         completamente gratis» (hay plan Plus); lo cierto es que la cuenta se
-         crea gratis. Los precios viven en /planes/. -->
-    <section class="gratis" id="gratis">
-      <div class="contenedor">
-        <h2>Crea tu cuenta <span class="gratis-final">gratis.</span></h2>
-        <p>Empieza hoy con tu correo, sin tarjeta. Cuando quieras que cada pliego se explique con inteligencia artificial, pasa a Plus. Si tienes alguna pregunta, escríbenos a <a href="mailto:info@publicola.com.do">info@publicola.com.do</a></p>
-        <p class="gratis-botones"><a class="boton boton-claro" href="/app/?acceso=crear">Crear mi cuenta gratis</a> <a class="boton boton-borde-claro" href="/planes/">Ver los planes</a></p>
-        <p class="ya-tienes">¿Ya tienes cuenta? <a href="/app/?acceso=entrar">Inicia sesión</a></p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="pie">
-    <div class="contenedor pie-grid">
-      <div><strong>Publicola</strong></div>
-      <nav class="pie-links" aria-label="Pie de página"><a href="/servicios/">Servicios</a><a href="/planes/">Planes</a><a href="/recursos/">Recursos</a><a href="/legal/">Legal</a><a href="/privacidad/">Privacidad</a><a href="/contacto/">Contacto</a></nav>
+      <p class="microcopy">Empieza con tu correo.</p>
     </div>
-  </footer>
-  <script src="lanzamiento.js?v=20261004"></script>
+    <div class="hero-stage reveal">
+      <div class="window">
+        <div class="window-top"><i class="window-dot"></i><i class="window-dot"></i><i class="window-dot"></i><small>PUBLICOLA / EXPLORADOR / FICHA DEL PROCESO</small></div>
+        <div class="product-sample">
+          <aside class="sample-side">
+            <div class="sample-logo"><img src="/marca/publicola-marca.png" alt="">PUBLICOLA</div>
+            <div class="sample-nav selected">⌕ &nbsp; Explorar</div>
+            <div class="sample-nav">☆ &nbsp; Mis oportunidades</div>
+            <div class="sample-nav">▦ &nbsp; Instituciones</div>
+            <div class="sample-nav">↗ &nbsp; Precios</div>
+            <div class="sample-plus"><strong>Lo importante, a mano.</strong>Una ficha para entender cada oportunidad.</div>
+          </aside>
+          <div class="sample-main">
+            <div class="sample-breadcrumb"><span>Explorar / INABIMA</span><span>Ejemplo real</span></div>
+            <div class="sample-status"><span class="tag tag-green">● Admite ofertas</span><span class="tag">Contratación Menor</span></div>
+            <div class="sample-heading">
+              <div><h3>Equipos y accesorios tecnológicos para el INABIMA</h3><p>Instituto Nacional de Bienestar Magisterial</p></div>
+              <a class="sample-follow" href="/app/?acceso=crear">Ver ficha →</a>
+            </div>
+            <div class="sample-stats">
+              <div class="sample-stat"><span>Monto de referencia publicado</span><strong>RD$ 2,005,050.00</strong></div>
+              <div class="sample-stat"><span>Cierre de ofertas</span><strong>4 nov · 3:00 p. m.</strong></div>
+              <div class="sample-stat"><span>Qué se compra</span><strong>17 renglones</strong></div>
+            </div>
+            <div class="sample-tabs"><span>Qué hay que presentar</span><span>Qué se compra</span><span>Documentos</span></div>
+            <div class="sample-row"><span class="index">01</span><div><b>Formulario de información sobre el oferente</b><small>SNCC.F.042 · Firmado y sellado</small></div><span class="page">Fuente ↗</span></div>
+            <div class="sample-row"><span class="index">02</span><div><b>Formulario de presentación de oferta</b><small>SNCC.F.034 · Completado, firmado y sellado</small></div><span class="page">Fuente ↗</span></div>
+            <div class="sample-row"><span class="index">03</span><div><b>Registro Mercantil vigente</b><small>Consulta la condición completa en la ficha</small></div><span class="page">Fuente ↗</span></div>
+            <div class="sample-foot">Ejemplo real: INABIMA-DAF-CM-2026-0027 · Datos consultados el 30 de octubre de 2026.</div>
+          </div>
+        </div>
+      </div>
+      <div class="stage-caption">Un proceso real, tal como lo lees en Publicola.</div>
+    </div>
+  </section>
+
+  <section class="journey" id="como-funciona" aria-label="El recorrido en Publicola">
+    <div class="wrap journey-inner">
+      <div class="journey-item"><div class="step-no">01</div><div><strong>Encuentra</strong><small>Lo que compra el Estado.</small></div></div>
+      <div class="journey-item"><div class="step-no">02</div><div><strong>Entiende</strong><small>Qué exige cada proceso.</small></div></div>
+      <div class="journey-item"><div class="step-no">03</div><div><strong>Decide</strong><small>Tu próximo paso.</small></div></div>
+    </div>
+  </section>
+
+  <section class="feature" id="ficha">
+    <div class="wrap feature-grid">
+      <div class="feature-copy">
+        <div class="eyebrow">Tu ficha de licitación</div>
+        <h2>Lo importante del pliego.<br><span class="blue">Donde lo necesitas.</span></h2>
+        <p>Qué se compra, qué tienes que presentar y cuándo cierra. Una lectura organizada para que puedas revisar la oportunidad.</p>
+        <ul class="benefits">
+          <li><span class="check">✓</span>Requisitos agrupados y fáciles de recorrer.</li>
+          <li><span class="check">✓</span>Condiciones y documentos oficiales a mano.</li>
+          <li><span class="check">✓</span>Una fuente que puedes consultar.</li>
+        </ul>
+        <a class="text-link" href="/app/?acceso=crear">Crea tu cuenta y explora la ficha <span>→</span></a>
+      </div>
+      <div class="feature-visual">
+        <div class="focus-card">
+          <div class="focus-head"><h3>Qué hay que presentar</h3><span class="tag">INABIMA</span></div>
+          <div class="requirement"><span class="req-no">01</span><div><h4>Información sobre el oferente</h4><p>Formulario SNCC.F.042, firmado y sellado.</p>
+            <button class="source-toggle" type="button" aria-expanded="false" data-source="source-1">Ver fuente y condición +</button>
+            <div class="source-excerpt" id="source-1" hidden>“Formulario de Información sobre Oferente, firmado y sellado. (SNCC.FO42.)”<br>Pliego de condiciones 0027 · pág. 6.</div></div></div>
+          <div class="requirement"><span class="req-no">02</span><div><h4>Presentación de la oferta</h4><p>Formulario SNCC.F.034, completado, firmado y sellado.</p>
+            <button class="source-toggle" type="button" aria-expanded="false" data-source="source-2">Ver fuente y condición +</button>
+            <div class="source-excerpt" id="source-2" hidden>“Formulario de Presentación de oferta, debidamente completado, firmado y sellado. (SNCC.FO34.)”<br>Pliego de condiciones 0027 · pág. 6.</div></div></div>
+          <div class="requirement"><span class="req-no">03</span><div><h4>Registro Mercantil vigente</h4><p>Con la condición específica que pide este proceso.</p>
+            <button class="source-toggle" type="button" aria-expanded="false" data-source="source-3">Ver fuente y condición +</button>
+            <div class="source-excerpt" id="source-3" hidden>“Registro Mercantil vigente, que valide el domicilio y objeto de la razón social conforme a la contratación solicitada.”<br>Pliego de condiciones 0027 · pág. 6.</div></div></div>
+          <div class="focus-foot">Ejemplo real · Cada requisito conserva su condición y su fuente.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature soft" id="inteligencia">
+    <div class="wrap feature-grid reverse">
+      <div class="feature-copy">
+        <div class="eyebrow">Instituciones e InfoPago · Plus</div>
+        <h2>Conoce a quien compra.<br><span class="blue">Antes de ofertar.</span></h2>
+        <p>Consulta lo que ha contratado una institución y cómo ha pagado según los datos publicados. El contexto también cuenta.</p>
+        <ul class="benefits">
+          <li><span class="check">✓</span>Compras y contratos anteriores.</li>
+          <li><span class="check">✓</span>Historial de pagos con InfoPago.</li>
+          <li><span class="check">✓</span>Plan anual de compras para anticiparte.</li>
+        </ul>
+        <a class="text-link" href="/planes/">Consulta lo que incluye Plus <span>→</span></a>
+      </div>
+      <div class="feature-visual">
+        <div class="white-preview">
+          <span class="eyebrow">InfoPago</span>
+          <h3>Cómo paga la institución.</h3>
+          <p class="preview-subtitle">Instituto Nacional de Bienestar Magisterial</p>
+          <div class="preview-metrics" style="grid-template-columns:1fr 1fr">
+            <div class="preview-metric"><span>La mitad de las facturas</span><strong>16 días</strong><small>o menos</small></div>
+            <div class="preview-metric"><span>Lo más frecuente</span><strong>15 días</strong><small>según InfoPago</small></div>
+            <div class="preview-metric"><span>Promedio</span><strong>20 días</strong></div>
+            <div class="preview-metric"><span>Facturas observadas</span><strong>199</strong></div>
+          </div>
+          <div class="preview-bars">
+            <div class="payment-bar"><span>Hasta 20 días</span><div class="payment-track"><i style="width:86.9%"></i></div><strong>86.9%</strong></div>
+            <div class="payment-bar"><span>De 21 a 40 días</span><div class="payment-track"><i style="width:7.5%"></i></div><strong>7.5%</strong></div>
+            <div class="payment-bar"><span>De 41 a 60 días</span><div class="payment-track"><i style="width:1%"></i></div><strong>1%</strong></div>
+            <div class="payment-bar"><span>Más de 60 días</span><div class="payment-track"><i style="width:4.5%"></i></div><strong>4.5%</strong></div>
+          </div>
+          <p class="preview-foot">Datos consultados el 30 oct 2026 · Año en curso, dato parcial.</p>
+        </div>
+        <p class="image-caption">Ejemplo real · La pantalla completa conserva las fuentes y los detalles.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature" id="precios">
+    <div class="wrap feature-grid">
+      <div class="feature-copy">
+        <div class="eyebrow">Referencias de precios · Plus</div>
+        <h2>Prepara tu precio<br><span class="blue">con más contexto.</span></h2>
+        <p>Consulta antecedentes de compras del Estado y revisa el detalle de cada artículo antes de comparar.</p>
+        <ul class="benefits">
+          <li><span class="check">✓</span>Precios unitarios de contratos publicados.</li>
+          <li><span class="check">✓</span>Estimados de las instituciones por separado.</li>
+          <li><span class="check">✓</span>Descripciones y fuentes para revisar cada compra.</li>
+        </ul>
+        <a class="text-link" href="/planes/">Consulta lo que incluye Plus <span>→</span></a>
+      </div>
+      <div class="feature-visual">
+        <div class="white-preview">
+          <span class="eyebrow">Referencia aproximada</span>
+          <h3>Un precio.<br>Todo su contexto.</h3>
+          <p class="preview-subtitle">Mouse o bola de seguimiento para computador<br>Código oficial 43211708</p>
+          <div class="preview-price-value">RD$ 372.88 <span>/ unidad</span></div>
+          <p class="preview-subtitle">Precio unitario contratado aproximado de esta consulta.</p>
+          <div class="preview-range"></div>
+          <div class="preview-range-labels"><span>RD$ 211.86</span><span>Mitad central</span><span>RD$ 730.59</span></div>
+          <div class="preview-fact-row"><span>Compras verificadas</span><strong>479</strong></div>
+          <div class="preview-fact-row"><span>Período consultado</span><strong>Últimos 24 meses</strong></div>
+          <div class="preview-fact-row"><span>Estimados y contratados</span><strong>Por separado</strong></div>
+          <p class="preview-foot">Consulta del 30 oct 2026. Un mismo código puede reunir artículos distintos; el detalle y la fuente se conservan en la pantalla completa.</p>
+        </div>
+        <p class="image-caption">Ejemplo real · El contenido completo queda disponible al ampliar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="coherence" id="app">
+    <div class="wrap coherence-grid">
+      <div>
+        <div class="eyebrow">Una misma Publicola</div>
+        <h2>La claridad empieza fuera.<br>Y sigue dentro.</h2>
+        <p>Una portada que te muestra el producto. Una aplicación con los mismos colores, la misma tipografía y una forma más fácil de leer.</p>
+        <a class="btn btn-secondary" href="/app/?acceso=entrar">Entra a Mi Publicola <span class="arrow">↗</span></a>
+      </div>
+      <div class="coherence-visual">
+        <div class="brand"><img src="/marca/publicola-marca.png" alt=""><span>PUBLICOLA</span></div>
+        <div class="eyebrow">Explorador</div>
+        <h3>Tu próxima oportunidad,<br>más fácil de ver.</h3>
+        <div class="mini-list">
+          <a class="mini-list-row" href="/app/?acceso=crear"><span><b>Equipos tecnológicos · INABIMA</b><small>Contratación Menor · 17 renglones</small></span><span class="blue">Ver ficha →</span></a>
+          <a class="mini-list-row" href="/app/?acceso=crear"><span><b>Materiales de escritorio · Pasaportes</b><small>Contratación Menor · 20 renglones</small></span><span class="blue">Explorar →</span></a>
+          <a class="mini-list-row" href="/app/?acceso=crear"><span><b>Conoce a la institución</b><small>Compras, planificación y pagos</small></span><span class="blue">Ver más →</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature soft" id="servicios-home">
+    <div class="wrap feature-grid">
+      <div class="feature-copy">
+        <div class="eyebrow">Servicios de Publicola</div>
+        <h2>Tu empresa y tu oferta.<br><span class="blue">Con respaldo profesional.</span></h2>
+        <p>Además de la plataforma, nuestro equipo te acompaña con los trámites, documentos y servicios que necesitas para participar.</p>
+        <a class="btn btn-secondary" href="/servicios/">Conoce nuestros servicios ↗</a>
+      </div>
+      <div>
+        <div class="focus-card">
+          <div class="focus-head"><h3>Acompañamiento para tu empresa</h3></div>
+          <div class="requirement"><span class="req-no">01</span><div><h4>Creación y modificación de empresas</h4><p>Organiza tu empresa para dar el siguiente paso.</p></div></div>
+          <div class="requirement"><span class="req-no">02</span><div><h4>Documentos y certificaciones</h4><p>Apoyo con los trámites que requiere tu participación.</p></div></div>
+          <div class="requirement"><span class="req-no">03</span><div><h4>Asesoría legal para tus licitaciones</h4><p>Acompañamiento desde el pliego hasta la oferta.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" id="comenzar">
+    <div class="wrap">
+      <div class="eyebrow">Tu próximo paso</div>
+      <h2>Primero entiéndela.<br><span class="blue">Después decide.</span></h2>
+      <p>Empieza a explorar las oportunidades de compras públicas.</p>
+      <a class="btn btn-primary" href="/app/?acceso=crear">Crear mi cuenta gratis <span class="arrow">→</span></a>
+      <a class="text-link" href="/planes/">Consulta los planes de Publicola ↗</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <a class="brand" href="/"><img src="/marca/publicola-marca.png" alt=""><span>PUBLICOLA</span></a>
+      <small>Compras públicas. Análisis profundo, respuestas sencillas.</small>
+    </div>
+    <nav class="footer-links" aria-label="Más de Publicola">
+      <a href="/servicios/">Servicios</a><a href="/planes/">Planes</a><a href="/recursos/">Recursos</a><a href="/contacto/">Contacto</a>
+    </nav>
+    <nav class="footer-legal" aria-label="Información legal">
+      <a href="/legal/">Términos de uso y condiciones</a><a href="/privacidad/">Privacidad</a><a href="/fuentes/">Fuentes y metodología</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- «Empieza aquí»: acompaña el desplazamiento en computadora y celular; el pie reserva su espacio (padding inferior). -->
+<div class="floating-cta">
+  <a class="btn btn-primary" href="/app/?acceso=crear" aria-label="Empieza aquí: crea tu cuenta gratis">Empieza aquí <span class="arrow" aria-hidden="true">→</span></a>
+</div>
+<script src="vitrina-v3.js?v=20261031a"></script>
 </body>
 </html>
