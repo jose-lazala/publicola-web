@@ -1,0 +1,109 @@
+/* identidad-v3.css — Diseño aprobado V3 (Owner, 31-oct-2026) para el resto del sitio: Servicios, Planes, Recursos,
+   Contacto y las páginas legales. Se carga DESPUÉS de la hoja propia de cada página: conserva sus contenidos y su
+   organización, y les da la identidad de la portada — blanca, DM Sans y Manrope, marino y cobalto, tarjetas con
+   borde fino — con la cabecera y el pie nuevos (clases v3-*, para no chocar con las de las páginas viejas).
+   Fuentes alojadas en /tipografia/ (licencia SIL OFL 1.1): nunca desde Google (aviso de privacidad, Ley 172-13). */
+@font-face { font-family: "DM Sans"; font-style: normal; font-display: swap; font-weight: 100 1000;
+  src: url("/tipografia/dm-sans-latin-wght-normal.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "DM Sans"; font-style: normal; font-display: swap; font-weight: 100 1000;
+  src: url("/tipografia/dm-sans-latin-ext-wght-normal.woff2") format("woff2-variations");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+20A0-20AB, U+20AD-20C0, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Manrope"; font-style: normal; font-display: swap; font-weight: 200 800;
+  src: url("/tipografia/manrope-latin-wght-normal.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Manrope"; font-style: normal; font-display: swap; font-weight: 200 800;
+  src: url("/tipografia/manrope-latin-ext-wght-normal.woff2") format("woff2-variations");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+20A0-20AB, U+20AD-20C0, U+2C60-2C7F, U+A720-A7FF; }
+
+:root {
+  --v3-navy: #03183e; --v3-blue: #0461fa; --v3-blue-dark: #034ac1; --v3-ink: #153154; --v3-muted: #5a6c85;
+  --v3-ice: #f5f8fd; --v3-pale: #eaf3ff; --v3-line: #dce5f1; --v3-amber: #f5a107;
+  --v3-font: "DM Sans", Arial, sans-serif; --v3-display: "Manrope", Arial, sans-serif;
+  /* Los nombres que usan las hojas viejas, apuntando a la identidad nueva. */
+  --navy: var(--v3-navy); --navy-2: #0a2b5c; --blue: var(--v3-blue); --ink: var(--v3-navy); --muted: var(--v3-muted);
+  --line: var(--v3-line); --sky: var(--v3-pale); --paper: #fff; --gold: var(--v3-amber);
+  --marino: var(--v3-navy); --azul: var(--v3-blue); --dorado: var(--v3-amber); --texto: var(--v3-navy);
+}
+html { scroll-padding-top: 96px; }
+body { font-family: var(--v3-font); color: var(--v3-navy); background: #fff; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4 { font-family: var(--v3-display); letter-spacing: -.035em; color: var(--v3-navy); }
+h1 { font-weight: 800; } h2 { font-weight: 800; } h3 { font-weight: 700; }
+a { color: var(--v3-blue); }
+p, li { color: var(--v3-ink); }
+
+/* Bandas de portada: del azul marino al fondo claro aprobado, con texto marino y antetítulo cobalto. */
+.hero, .sv-portada, .planes-portada, .rec-portada, .portada-doc, .seccion-oscura, .gratis {
+  background: linear-gradient(180deg, #fff 30%, #f0f6ff 100%) !important; color: var(--v3-navy) !important;
+  border-bottom: 1px solid var(--v3-line);
+}
+.hero::before, .sv-portada::before, .sv-portada::after, .portada-doc::before, .rec-portada::before { display: none !important; }
+:is(.hero, .sv-portada, .planes-portada, .rec-portada, .portada-doc, .seccion-oscura, .gratis) :is(h1, h2, h3, strong) { color: var(--v3-navy) !important; }
+:is(.hero, .sv-portada, .planes-portada, .rec-portada, .portada-doc, .seccion-oscura, .gratis) :is(p, li, span, small, label) { color: var(--v3-muted) !important; }
+:is(.hero, .sv-portada, .planes-portada, .rec-portada, .portada-doc, .seccion-oscura, .gratis) a:not(.boton):not([class*="boton"]) { color: var(--v3-blue) !important; }
+:is(.sv-portada, .planes-portada, .rec-portada, .portada-doc) h1 { font-size: clamp(36px, 4.6vw, 56px); line-height: 1.12; letter-spacing: -.045em; }
+.eyebrow, .sv-eyebrow, .portada-doc .eyebrow, [class*="antetitulo"] { color: var(--v3-blue) !important; letter-spacing: .1em; }
+.cta, .sv-cta, .sv-kit, .cierre { background: #f1f6ff !important; color: var(--v3-navy) !important; border: 1px solid #d9e6fb; box-shadow: none !important; }
+:is(.cta, .sv-cta, .sv-kit, .cierre) :is(h2, h3, strong) { color: var(--v3-navy) !important; }
+:is(.cta, .sv-cta, .sv-kit, .cierre) :is(p, li, span) { color: var(--v3-muted) !important; }
+.sv-bloque.grande { background: var(--v3-ice) !important; }
+.servicio-imagen { background: var(--v3-ice) !important; }
+
+/* Botones: cobalto el principal, blanco con borde el secundario (como en la portada). */
+.boton, .boton-claro, .boton-oro, .sv-boton, a.boton { background: var(--v3-blue) !important; color: #fff !important; border: 1px solid var(--v3-blue) !important;
+  border-radius: 12px !important; font-family: var(--v3-font); font-weight: 700; box-shadow: 0 8px 20px #0461fa1a; }
+.boton:hover, .boton-claro:hover { background: var(--v3-blue-dark) !important; border-color: var(--v3-blue-dark) !important; }
+.boton-secundario, .boton-borde-claro, .boton-borde { background: #fff !important; color: var(--v3-navy) !important; border: 1px solid var(--v3-line) !important; box-shadow: none; }
+
+/* Tarjetas y piezas con borde: blancas, borde fino y esquinas de la escala. */
+.tarjeta, .plan, .rec-tarjeta, .sv-tarjeta, .sv-cifras div, .contacto-tarjeta, .plan-proximo {
+  border: 1px solid var(--v3-line) !important; border-radius: 16px !important; box-shadow: none !important; background: #fff;
+}
+.plan.plan-plus { border-color: #a5c6ff !important; }
+.rec-chip.activo, .rec-paginacion [aria-current="page"], .rec-etiqueta { background: var(--v3-blue) !important; border-color: var(--v3-blue) !important; color: #fff !important; }
+
+/* ---------------------------------------------------------------- Cabecera V3 */
+.v3-cabecera { position: sticky; top: 0; z-index: 40; background: #ffffffed; -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border-bottom: 1px solid var(--v3-line); }
+.v3-barra { width: min(1160px, calc(100% - 56px)); margin-inline: auto; height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+.v3-marca { display: flex; align-items: center; gap: 10px; color: var(--v3-navy) !important; text-decoration: none; flex: none; }
+.v3-marca img { width: 39px; height: 39px; object-fit: contain; }
+.v3-marca span { font: 700 25px/1 var(--v3-display); letter-spacing: .025em; color: var(--v3-navy); }
+.v3-enlaces { display: flex; align-items: center; gap: 30px; font: 600 14px/1.4 var(--v3-font); }
+.v3-enlaces a { color: var(--v3-navy); text-decoration: none; }
+.v3-enlaces a:hover, .v3-enlaces a[aria-current="page"] { color: var(--v3-blue); }
+.v3-enlaces .v3-solo-movil { display: none; }
+.v3-acciones { display: flex; align-items: center; gap: 12px; }
+.v3-entrar { display: inline-flex; align-items: center; min-height: 42px; padding: 10px 17px; border: 1px solid var(--v3-line); border-radius: 10px; background: #fff; color: var(--v3-navy) !important; font: 700 13px/1.35 var(--v3-font); text-decoration: none; }
+.v3-menu { display: none; background: #fff; border: 1px solid var(--v3-line); border-radius: 12px; width: 45px; height: 45px; font-size: 22px; color: var(--v3-navy); cursor: pointer; }
+.v3-salto { position: absolute; left: -9999px; top: 8px; z-index: 60; background: #fff; color: var(--v3-navy); padding: 10px 14px; border-radius: 10px; border: 1px solid var(--v3-line); }
+.v3-salto:focus { left: 16px; }
+
+/* ---------------------------------------------------------------- Pie V3 */
+.v3-pie { padding: 36px 0 48px; border-top: 1px solid var(--v3-line); background: #fff; }
+.v3-pie-contenido { width: min(1160px, calc(100% - 56px)); margin-inline: auto; }
+.v3-pie-arriba { display: flex; justify-content: space-between; gap: 25px; align-items: center; }
+.v3-pie-arriba small { font-size: 11px; color: var(--v3-muted); }
+.v3-pie .v3-marca img { width: 30px; height: 30px; } .v3-pie .v3-marca span { font-size: 18px; }
+.v3-pie-enlaces { display: flex; gap: 20px; flex-wrap: wrap; font-size: 12px; margin-top: 25px; }
+.v3-pie-enlaces a { color: #647a97; text-decoration: none; }
+.v3-pie-legal { display: flex; gap: 18px; flex-wrap: wrap; font-size: 10px; padding-top: 24px; margin-top: 24px; border-top: 1px solid var(--v3-line); }
+.v3-pie-legal a { color: #8b9cb1; text-decoration: none; }
+.v3-pie a:hover { color: var(--v3-blue); }
+
+@media (max-width: 760px) {
+  .v3-barra { width: calc(100% - 32px); height: 69px; }
+  .v3-marca img { width: 33px; height: 33px; } .v3-marca span { font-size: 20px; }
+  .v3-enlaces { display: none; position: absolute; top: 69px; left: 0; right: 0; background: #fff; padding: 18px 22px; border-bottom: 1px solid var(--v3-line); flex-direction: column; align-items: stretch; gap: 0; }
+  .v3-enlaces.abierto { display: flex; }
+  .v3-enlaces a { padding: 12px; }
+  .v3-enlaces .v3-solo-movil { display: block; }
+  .v3-entrar { display: none; }
+  .v3-menu { display: block; }
+  .v3-pie-contenido { width: calc(100% - 32px); }
+  .v3-pie-arriba { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+
+/* Servicios: la cinta de colores de la portada anterior no forma parte del estilo nuevo, y el segundo botón es
+   secundario (blanco con borde), como en la portada aprobada. */
+.sv-cinta { display: none !important; }
+.sv-boton-borde, .boton.sv-boton-borde { background: #fff !important; color: var(--v3-navy) !important; border: 1px solid var(--v3-line) !important; box-shadow: none !important; }
