@@ -66,7 +66,7 @@ p, li { color: var(--v3-ink); }
 .v3-cabecera { position: sticky; top: 0; z-index: 40; background: #ffffffed; -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border-bottom: 1px solid var(--v3-line); }
 .v3-barra { width: min(1160px, calc(100% - 56px)); margin-inline: auto; height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
 .v3-marca { display: flex; align-items: center; gap: 10px; color: var(--v3-navy) !important; text-decoration: none; flex: none; }
-.v3-marca img { width: 39px; height: 39px; object-fit: contain; }
+.v3-marca img { width: auto; height: 66px; object-fit: contain; }
 .v3-marca span { font: 700 25px/1 var(--v3-display); letter-spacing: .025em; color: var(--v3-navy); }
 .v3-enlaces { display: flex; align-items: center; gap: 30px; font: 600 14px/1.4 var(--v3-font); }
 .v3-enlaces a { color: var(--v3-navy); text-decoration: none; }
@@ -83,7 +83,7 @@ p, li { color: var(--v3-ink); }
 .v3-pie-contenido { width: min(1160px, calc(100% - 56px)); margin-inline: auto; }
 .v3-pie-arriba { display: flex; justify-content: space-between; gap: 25px; align-items: center; }
 .v3-pie-arriba small { font-size: 11px; color: var(--v3-muted); }
-.v3-pie .v3-marca img { width: 30px; height: 30px; } .v3-pie .v3-marca span { font-size: 18px; }
+.v3-pie .v3-marca img { width: auto; height: 56px; } .v3-pie .v3-marca span { font-size: 18px; }
 .v3-pie-enlaces { display: flex; gap: 20px; flex-wrap: wrap; font-size: 12px; margin-top: 25px; }
 .v3-pie-enlaces a { color: #647a97; text-decoration: none; }
 .v3-pie-legal { display: flex; gap: 18px; flex-wrap: wrap; font-size: 10px; padding-top: 24px; margin-top: 24px; border-top: 1px solid var(--v3-line); }
@@ -92,7 +92,7 @@ p, li { color: var(--v3-ink); }
 
 @media (max-width: 760px) {
   .v3-barra { width: calc(100% - 32px); height: 69px; }
-  .v3-marca img { width: 33px; height: 33px; } .v3-marca span { font-size: 20px; }
+  .v3-marca img { width: auto; height: 52px; } .v3-marca span { font-size: 20px; }
   .v3-enlaces { display: none; position: absolute; top: 69px; left: 0; right: 0; background: #fff; padding: 18px 22px; border-bottom: 1px solid var(--v3-line); flex-direction: column; align-items: stretch; gap: 0; }
   .v3-enlaces.abierto { display: flex; }
   .v3-enlaces a { padding: 12px; }
