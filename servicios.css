@@ -317,3 +317,7 @@
   .sv-cifras .contenedor > div { padding:16px; }
 }
 .sv-ficha-icono svg, .sv-ficha-marca svg { stroke-width:2.4; }
+/* Preguntas frecuentes ampliadas (2-nov-2026): respuestas con varios párrafos y listas legibles. */
+.sv-preguntas details ul { margin:12px 0 0; padding-left:1.25em; color:var(--muted); }
+.sv-preguntas details li { margin:6px 0; }
+.sv-preguntas details a { color:var(--blue, #0b5bd3); text-decoration:underline; text-underline-offset:3px; }
