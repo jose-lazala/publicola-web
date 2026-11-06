@@ -17,8 +17,8 @@
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+20A0-20AB, U+20AD-20C0, U+2C60-2C7F, U+A720-A7FF; }
 
 :root {
-  --v3-navy: #03183e; --v3-blue: #0461fa; --v3-blue-dark: #034ac1; --v3-ink: #153154; --v3-muted: #5a6c85;
-  --v3-ice: #f5f8fd; --v3-pale: #eaf3ff; --v3-line: #dce5f1; --v3-amber: #f5a107;
+  --v3-navy: #10254a; --v3-blue: #004fdb; --v3-blue-dark: #003fb3; --v3-ink: #10254a; --v3-muted: #4f607a;
+  --v3-ice: #f6f8fc; --v3-pale: #e9f0fb; --v3-line: #d6dfef; --v3-amber: #fec418;
   --v3-font: "DM Sans", Arial, sans-serif; --v3-display: "Manrope", Arial, sans-serif;
   /* Los nombres que usan las hojas viejas, apuntando a la identidad nueva. */
   --navy: var(--v3-navy); --navy-2: #0a2b5c; --blue: var(--v3-blue); --ink: var(--v3-navy); --muted: var(--v3-muted);
@@ -107,3 +107,25 @@ p, li { color: var(--v3-ink); }
    secundario (blanco con borde), como en la portada aprobada. */
 .sv-cinta { display: none !important; }
 .sv-boton-borde, .boton.sv-boton-borde { background: #fff !important; color: var(--v3-navy) !important; border: 1px solid var(--v3-line) !important; box-shadow: none !important; }
+
+/* La misma identidad editorial en planes, servicios, recursos y páginas informativas. */
+:root { --v3-editorial: "Iowan Old Style", "Palatino Linotype", Georgia, serif; }
+main h1, main h2 {
+  font-family: var(--v3-editorial);
+  font-weight: 500;
+  letter-spacing: -.035em;
+}
+.sv-portada, .planes-portada, .rec-portada, .portada-doc {
+  background: var(--v3-ice) !important;
+}
+:is(.sv-portada, .planes-portada, .rec-portada, .portada-doc) :is(.eyebrow, .sv-eyebrow)::before {
+  content: ""; display: inline-block; width: 17px; height: 2px; margin-right: 8px;
+  vertical-align: middle; background: var(--v3-amber);
+}
+.boton, .boton-claro, .boton-oro, .sv-boton, a.boton, .v3-entrar {
+  border-radius: 5px !important; box-shadow: none;
+}
+.tarjeta, .plan, .rec-tarjeta, .sv-tarjeta, .sv-cifras div, .contacto-tarjeta, .plan-proximo {
+  border-radius: 5px !important;
+}
+.plan.plan-plus { border-top: 2px solid var(--v3-amber) !important; }
