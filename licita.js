@@ -85,10 +85,8 @@ const MENSAJE_RESPALDO_FALLA_WORKER =
 // visible, no es un chip de sugerencia).
 const MENSAJE_WHATSAPP_FIJO = "Hola, quiero hablar con el equipo de Publicola.";
 
-// Nombre del archivo del formulario descargable: el mismo que usa el
-// enlace "Descargar el formulario" en el resto de la pagina (ver
-// index.html), servido desde la raiz del sitio.
-const RUTA_DESCARGA_FORMULARIO = "formulario-publicola.docx";
+const MENSAJE_CONSTITUIR_EMPRESA =
+  "Para solicitar la constitución de tu empresa, escríbenos a info@publicola.com.do o por WhatsApp al 829-785-6028.";
 
 // ============================================================
 // UTILIDADES GENERALES
@@ -738,43 +736,17 @@ function agregarAlHistorialChat(rol, texto) {
   }
 }
 
-// Burbuja de respaldo: mismo estilo que una burbuja normal del bot,
-// para el mensaje que le explica al visitante por que no hay respuesta
-// de la IA (o que le entrega el formulario). Nunca crea aqui dentro un
-// boton ni enlace de WhatsApp u otro medio de mensajeria instantanea
-// (regla de CLAUDE.md: dentro del chat no existe boton de mensajeria
-// instantanea); el propio texto del mensaje es el que indica, cuando
-// corresponde, el medio de contacto fuera de la conversacion (correo,
-// o el boton de WhatsApp fijo del encabezado del panel, que esta fuera
-// de esta burbuja y no lo toca esta funcion). mostrarFormulario es
-// opcional: cuando es true, se agrega un enlace real de descarga del
-// formulario (esto no es mensajeria, es una descarga directa de archivo).
-function agregarBurbujaRespaldoChat(texto, mostrarFormulario) {
+// El mensaje indica cómo contactar al equipo fuera del chat.
+function agregarBurbujaRespaldoChat(texto) {
   const burbuja = crearElemento("div", "burbuja burbuja-bot burbuja-respaldo");
   burbuja.appendChild(crearElemento("p", null, limpiarMarkdown(texto)));
-
-  if (mostrarFormulario) {
-    const enlaceFormulario = document.createElement("a");
-    enlaceFormulario.className = "boton boton-secundario boton-formulario-chat";
-    enlaceFormulario.href = RUTA_DESCARGA_FORMULARIO;
-    enlaceFormulario.setAttribute("download", "");
-    enlaceFormulario.textContent = "Descargar el formulario";
-    burbuja.appendChild(enlaceFormulario);
-  }
 
   elementoTranscursoChat.appendChild(burbuja);
   elementoTranscursoChat.scrollTop = elementoTranscursoChat.scrollHeight;
 }
 
-// Cuando el guion de Alicia indica invitar a hablar con el equipo y/o
-// entregar el formulario descargable, el Worker de IA lo marca con
-// "[[BOTON_WHATSAPP]]" y/o "[[FORMULARIO]]" al final del texto (ver
-// worker.js) en vez de escribir la palabra "boton", "enlace" o corchetes
-// visibles -- eso causaba que la etiqueta literal apareciera en pantalla
-// (bug reportado). Esta funcion quita ambas marcas (o variantes entre
-// corchetes, por si el modelo se desvia del formato exacto) del texto
-// visible y avisa cuales de los dos elementos especiales corresponde
-// mostrar.
+// Retira las marcas que devuelve el Worker. La marca antigua de formulario
+// activa el mensaje de contacto para constituir una empresa.
 function extraerMarcasDeAlicia(texto) {
   const patronBoton = /\[\[?\s*(?:BOTON_WHATSAPP|hablar con el equipo)\s*\]?\]/gi;
   const patronFormulario = /\[\[?\s*FORMULARIO\s*\]?\]/gi;
@@ -925,9 +897,9 @@ async function enviarMensajeChat(textoOriginal) {
       agregarBurbujaRespaldoChat(respuesta);
     } else {
       const deteccion = extraerMarcasDeAlicia(respuesta);
-      textoParaHistorial = deteccion.textoLimpio;
+      textoParaHistorial = deteccion.mostrarFormulario ? MENSAJE_CONSTITUIR_EMPRESA : deteccion.textoLimpio;
       if (deteccion.mostrarBoton || deteccion.mostrarFormulario) {
-        agregarBurbujaRespaldoChat(deteccion.textoLimpio, deteccion.mostrarFormulario);
+        agregarBurbujaRespaldoChat(textoParaHistorial);
       } else {
         agregarBurbujaBotChat(deteccion.textoLimpio);
       }

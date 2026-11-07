@@ -1,0 +1,86 @@
+.planes-portada { padding-block: clamp(38px, 6vw, 64px) 36px; }
+.planes-portada .planes-enlace-comparar {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--v3-navy);
+  font-weight: 700;
+  text-underline-offset: .22em;
+}
+.planes-rejilla-comparar {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 2vw, 24px);
+  margin-top: 0;
+  padding-block: 32px 0;
+}
+.planes-rejilla-comparar .plan { padding: clamp(18px, 2.5vw, 30px); }
+.planes-rejilla-comparar .plan-pro {
+  border-top: 2px solid var(--v3-navy);
+  background: linear-gradient(160deg, #f4f8ff, var(--white) 46%);
+}
+.plan-uso { margin: 0 0 6px; color: var(--muted); font-size: .83rem; font-weight: 700; }
+.planes-rejilla-comparar .plan-nombre { min-height: 1.6em; }
+.plan-pro .plan-etiqueta-proximo { vertical-align: middle; margin-left: 3px; }
+.planes-rejilla-comparar .plan-precio {
+  margin-block: 14px 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+  font-size: clamp(2.2rem, 4vw, 3.25rem);
+}
+.planes-rejilla-comparar .plan-precio span { display: block; margin: 7px 0 0; font-size: .88rem; }
+.planes-rejilla-comparar .plan-lista { gap: 10px; font-size: .91rem; }
+.planes-rejilla-comparar .plan-intro { font-size: .9rem; }
+.planes-comparacion { margin-top: 56px; scroll-margin-top: 95px; }
+.planes-comparacion h2 { margin: 6px 0; font-size: clamp(1.9rem, 4vw, 2.75rem); color: var(--v3-navy); }
+.planes-nota { max-width: 70ch; margin: 6px 0 20px; color: var(--muted); }
+.planes-ayuda-tabla { margin: 0 0 10px; color: var(--muted); font-size: .85rem; }
+.planes-tabla {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--white);
+}
+.planes-tabla:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+.planes-tabla table { width: 100%; min-width: 660px; table-layout: fixed; border-collapse: separate; border-spacing: 0; }
+.planes-tabla caption { text-align: left; padding: 12px 16px; color: var(--muted); font-size: .84rem; }
+.planes-tabla th, .planes-tabla td {
+  text-align: left;
+  vertical-align: top;
+  padding: 13px clamp(12px, 2vw, 18px);
+  border-bottom: 1px solid var(--line);
+  font-size: .88rem;
+  line-height: 1.5;
+}
+.planes-tabla thead th { background: var(--v3-navy); color: var(--white); font-weight: 700; }
+.planes-tabla thead th:first-child { width: 24%; }
+.planes-tabla thead small { display: block; font-size: .75rem; font-weight: 400; }
+.planes-tabla th[scope="row"] { color: var(--v3-navy); background: var(--white); }
+.planes-tabla .planes-grupo th { color: var(--v3-navy); background: var(--v3-ice); font-weight: 700; }
+.planes-tabla td:last-child { background: #f7faff; }
+.planes-tabla tbody:last-child tr:last-child > * { border-bottom: 0; }
+.plan-en-preparacion {
+  display: inline-block;
+  margin: 3px 0 0;
+  padding: 2px 7px;
+  border: 1px solid #e7d8b6;
+  border-radius: 4px;
+  color: #6a4b15;
+  background: #fff7e6;
+  font-size: .76rem;
+  line-height: 1.4;
+}
+.planes-comparacion .planes-servicios { margin-top: 16px; }
+#funciones-publi { scroll-margin-top: 95px; }
+
+@media (min-width: 761px) {
+  .planes-ayuda-tabla { display: none; }
+}
+@media (max-width: 760px) {
+  .planes-rejilla-comparar { grid-template-columns: 1fr; }
+  .planes-comparacion { margin-top: 36px; }
+  .planes-tabla thead th:first-child, .planes-tabla th[scope="row"] {
+    position: sticky;
+    left: 0;
+    box-shadow: 1px 0 0 var(--line);
+  }
+  .planes-tabla thead th:first-child { width: 23%; }
+}

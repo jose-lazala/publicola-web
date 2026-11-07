@@ -54,6 +54,8 @@
 .sv-incluye li { position:relative; padding-left:24px; font-size:.9rem; color:var(--ink); }
 .sv-incluye li::before { content:"✓"; position:absolute; left:0; color:var(--blue); font-weight:700; }
 .sv-nota { margin:16px 0 0; color:var(--muted); font-size:.85rem; }
+.sv-direccion { margin-top:22px; padding:16px 20px; border:1px solid var(--line); border-left:3px solid var(--gold); border-radius:5px; background:var(--white); color:var(--navy); }
+.sv-direccion address { margin-top:4px; color:var(--muted); font-style:normal; }
 .sv-acciones { display:flex; flex-wrap:wrap; gap:12px; margin-top:24px; }
 
 /* ---------- Como pedir un servicio ---------- */
