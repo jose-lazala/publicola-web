@@ -57,6 +57,15 @@
 .sv-direccion { margin-top:22px; padding:16px 20px; border:1px solid var(--line); border-left:3px solid var(--gold); border-radius:5px; background:var(--white); color:var(--navy); }
 .sv-direccion address { margin-top:4px; color:var(--muted); font-style:normal; }
 .sv-acciones { display:flex; flex-wrap:wrap; gap:12px; margin-top:24px; }
+.boton.boton-whatsapp {
+  background:#117a37 !important;
+  border-color:#117a37 !important;
+  color:#fff !important;
+}
+.boton.boton-whatsapp:hover, .boton.boton-whatsapp:focus-visible {
+  background:#0c622c !important;
+  border-color:#0c622c !important;
+}
 
 /* ---------- Como pedir un servicio ---------- */
 .sv-tres { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin:0; padding:0; list-style:none; }

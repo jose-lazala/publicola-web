@@ -86,7 +86,7 @@ const MENSAJE_RESPALDO_FALLA_WORKER =
 const MENSAJE_WHATSAPP_FIJO = "Hola, quiero hablar con el equipo de Publicola.";
 
 const MENSAJE_CONSTITUIR_EMPRESA =
-  "Para solicitar la constitución de tu empresa, escríbenos a info@publicola.com.do o por WhatsApp al 829-785-6028.";
+  "En Servicios, abre Creación de empresas y elige el botón de Correo o WhatsApp.";
 
 // ============================================================
 // UTILIDADES GENERALES
