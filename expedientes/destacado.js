@@ -65,6 +65,7 @@
       lateral: enlaceOficial(d.url, "Abrir en el SECP"),
     });
     const requisitos = fe.requisitosCotejados(x.cotejo);
+    const archivo = (tipo) => fe.descargas(tipo, "/api/v1/expedientes/destacado/" + encodeURIComponent(x.codigo) + "/descargas/");
     completa.innerHTML = fe.resumen({
       codigo: x.codigo, modalidad: x.modalidad, estado: x.estado, titulo: titulo(x),
       institucion: texto(x.institucion), migas: migas + "<span>Expediente público · Licitación vigente</span>",
@@ -91,20 +92,23 @@
           totalReferencia: x.total_renglones,
           urlOficial: x.url_oficial,
           cotejo: x.cotejo,
-        })
+        }) + archivo("renglones")
         : sinDato("Todavía no tenemos los renglones publicados para este proceso.") + oficial,
       participar: requisitos
         ? requisitos + `<p class="fe-nota">Descarga las plantillas publicadas en <a href="#bloque-fuentes">Los documentos oficiales</a>.</p>`
+          + archivo("requisitos")
         : sinDato("El cotejo de los requisitos está pendiente. Abre el pliego y las enmiendas para saber qué debes presentar.") + oficial,
       fechas: `<p class="fe-nota">Hora de República Dominicana</p>`
         + fe.cotejoCronograma(x.cotejo, x.cierre) + fe.cronograma(x.fechas),
       "informacion-general": fe.condiciones(x.condiciones.map((c) => ({ titulo: c.titulo, valor: texto(c.valor) })))
-        + sinDato("Consulta el pliego para comprobar los canales de presentación, la entrega y las garantías."),
+        + (fe.condicionesCotejadas(x.cotejo)
+          || sinDato("Consulta el pliego para comprobar los canales de presentación, la entrega y las garantías.")),
       fuentes: documentos.length
         ? fe.filas(documentos, 5, `los ${documentos.length} documentos`, pintarDocumento)
         : sinDato("Los documentos del proceso se pueden consultar en el expediente oficial.") + oficial,
     }, { titulos: /servicio|obra|consultor/i.test(tipo)
       ? { contratacion: "Qué se contrata" } : {}, textos: { contratacion: "" } }) + `
+      <footer class="fe-wrap fe-pie">${archivo("ficha")}</footer>
       <section class="fe-cierre"><div class="fe-wrap fe-cierre-interior">
         <div><div class="fe-antetitulo">Tu próximo paso</div><h2>Sigue este proceso<br>y sus cambios.</h2></div>
         <div class="fe-cierre-acciones">${seguir(x, "Seguir este proceso")}${enlaceOficial(x.url_oficial, "Ver expediente oficial", "fe-boton fe-boton-secundario")}</div>
