@@ -68,7 +68,7 @@ p, li { color: var(--v3-ink); }
 .v3-marca { display: flex; align-items: center; gap: 10px; color: var(--v3-navy) !important; text-decoration: none; flex: none; }
 .v3-marca img { width: auto; height: 66px; object-fit: contain; }
 .v3-marca span { font: 700 25px/1 var(--v3-display); letter-spacing: .025em; color: var(--v3-navy); }
-.v3-enlaces { display: flex; align-items: center; gap: 30px; font: 600 14px/1.4 var(--v3-font); }
+.v3-enlaces { display: flex; align-items: center; gap: clamp(16px, 2.2vw, 30px); font: 600 14px/1.4 var(--v3-font); }
 .v3-enlaces a { color: var(--v3-navy); text-decoration: none; }
 .v3-enlaces a:hover, .v3-enlaces a[aria-current="page"] { color: var(--v3-blue); }
 .v3-enlaces .v3-solo-movil { display: none; }
