@@ -1,0 +1,5 @@
+# GitHub Pages (Jekyll): carpetas del repositorio que no se publican.
+# docs/ guarda referencias internas de diseño (por ejemplo docs/diseno/portada-b/, que carga fuentes de Google
+# solo para verse); no deben quedar públicas en publicola.com.do/docs/.
+exclude:
+  - docs/

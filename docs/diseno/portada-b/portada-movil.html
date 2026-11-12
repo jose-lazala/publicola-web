@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publicola · Portada B · Móvil (referencia)</title>
+<!--
+  Publicola · Portada B · referencia visual aprobada el 12 nov. 2026.
+  No es el código final: sirve para implementar la portada en la web real.
+  Las fuentes se cargan aquí desde Google Fonts solo para poder ver la referencia;
+  en producción se sirven desde /tipografia/ (regla de la web: sin fuentes de internet).
+  Las licitaciones de las interfaces son ilustrativas; ver ESPECIFICACION.md.
+-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wdth,wght@75..125,200..900&amp;family=JetBrains+Mono:wght@100..800&amp;display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;background:#050B1E}
+a{color:#8FB0FF}a:hover{color:#C6D6FF}
+.n-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.n-x{font-family:'Mona Sans','Helvetica Neue',Arial,sans-serif;font-stretch:115%}
+.n-mono{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace}
+.n-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:54px;padding:0 20px;border-radius:12px;border:1px solid transparent;font:600 16px/1 'Mona Sans','Helvetica Neue',Arial,sans-serif;text-decoration:none;white-space:nowrap;cursor:pointer}
+.n-btn:focus-visible{outline:none;box-shadow:0 0 0 2px #050B1E,0 0 0 4px #8FB0FF}
+.n-primary{background:#2A62F0;color:#FFFFFF;box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 12px 30px -12px rgba(42,98,240,.95)}
+.n-primary:hover{background:#2559E0;color:#FFFFFF}
+.n-primary:active{background:#1E4BC2}
+.n-secondary{background:rgba(255,255,255,.04);color:#F2F5FC;border-color:rgba(160,185,255,.28)}
+.n-secondary:hover{background:rgba(255,255,255,.08);color:#FFFFFF}
+.n-goldline{background:rgba(244,183,64,.06);color:#F4B740;border-color:rgba(244,183,64,.45)}
+.n-ghost{height:44px;padding:0 12px;background:transparent;color:#C3CDE4;font-size:15px;font-weight:500}
+.n-sm{height:44px;font-size:15px;border-radius:10px}
+.n-full{width:100%}
+.n-icon{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;border:1px solid rgba(160,185,255,.24);background:rgba(255,255,255,.03);color:#F2F5FC;cursor:pointer}
+.n-label{display:flex;align-items:flex-start;gap:10px;margin:0;font:500 11px/1.5 'JetBrains Mono',ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase;color:#8E9CC0}
+.n-h2{margin:16px 0 0;font-family:'Mona Sans',sans-serif;font-stretch:112%;font-weight:720;font-size:34px;line-height:1.04;letter-spacing:-.022em;color:#F2F5FC;text-wrap:balance}
+.n-lead{margin:16px 0 0;font-size:17px;line-height:1.6;color:#C3CDE4}
+.n-panel{position:relative;background:linear-gradient(180deg,#0D1A3B 0%,#0A1531 100%);border:1px solid #1B2A52;border-radius:20px;box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}
+.n-hl{position:absolute;left:24px;right:24px;top:-1px;height:1px;background:linear-gradient(90deg,transparent,rgba(143,176,255,.75),transparent)}
+.n-hl-gold{background:linear-gradient(90deg,transparent,rgba(244,183,64,.8),transparent)}
+.n-search{display:flex;align-items:center;gap:10px;height:48px;padding:0 14px;border:1px solid #24386B;border-radius:12px;background:#071330;color:#8E9CC0}
+.n-input{flex:1;min-width:0;height:100%;border:0;outline:0;background:transparent;font:500 16px/1 'Mona Sans',sans-serif;color:#F2F5FC}
+.n-chip{display:inline-flex;align-items:center;height:34px;padding:0 12px;border-radius:999px;border:1px solid #24386B;background:transparent;color:#C3CDE4;font:500 13px/1 'Mona Sans',sans-serif;white-space:nowrap;flex:none;cursor:pointer}
+.n-chip[aria-pressed="true"]{background:rgba(91,141,255,.16);border-color:rgba(91,141,255,.5);color:#DCE6FF}
+.n-row{display:block;width:100%;text-align:left;padding:13px 14px;border-radius:12px;border:1px solid transparent;background:transparent;font:inherit;color:inherit;cursor:pointer}
+.n-row-on{background:rgba(91,141,255,.10);border-color:rgba(91,141,255,.45);box-shadow:0 0 26px -10px rgba(91,141,255,.65)}
+.n-due{display:inline-flex;align-items:center;height:24px;padding:0 9px;border-radius:999px;background:rgba(255,255,255,.06);color:#C3CDE4;font:600 11px/1 'Mona Sans',sans-serif;white-space:nowrap}
+.n-due-soon{background:rgba(244,183,64,.14);color:#F4B740}
+.n-pill{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;border-radius:999px;border:1px solid #24386B;color:#C3CDE4;font:500 12px/1 'Mona Sans',sans-serif;white-space:nowrap}
+.n-live{border-color:rgba(76,214,154,.35);background:rgba(76,214,154,.08);color:#4CD69A}
+.n-ai{display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 9px;border-radius:999px;background:rgba(244,183,64,.12);color:#F4B740;font:600 11px/1 'Mona Sans',sans-serif;white-space:nowrap}
+.n-cite{display:inline-flex;align-items:center;height:28px;padding:0 9px;border-radius:7px;border:1px solid rgba(244,183,64,.35);background:rgba(244,183,64,.08);color:#F4B740;font:500 11px/1 'JetBrains Mono',ui-monospace,monospace;text-decoration:none;white-space:nowrap;flex:none}
+.n-req{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid #1B2A52;font-size:14px;line-height:1.45;color:#E3E9F6}
+.n-tile{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;background:rgba(91,141,255,.14);color:#8FB0FF;box-shadow:inset 0 0 0 1px rgba(143,176,255,.2);flex:none}
+.n-tile-gold{background:rgba(244,183,64,.12);color:#F4B740;box-shadow:inset 0 0 0 1px rgba(244,183,64,.25)}
+.n-link{display:inline-flex;align-items:center;gap:6px;min-height:32px;color:#8FB0FF;font-weight:600;font-size:15px;text-decoration:none}
+.n-demo{display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:6px;background:rgba(255,255,255,.07);color:#AEBBD8;font:500 11px/1 'JetBrains Mono',ui-monospace,monospace;white-space:nowrap}
+.n-status{display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:999px;font:600 11px/1 'Mona Sans',sans-serif;white-space:nowrap;flex:none}
+.n-ok{background:rgba(76,214,154,.12);color:#4CD69A}
+.n-wait{background:rgba(244,183,64,.14);color:#F4B740}
+.n-doing{background:rgba(91,141,255,.16);color:#AFC6FF}
+.n-wfitem{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid #1B2A52;font-size:13px;line-height:1.35;color:#E3E9F6}
+.n-feat{display:flex;flex-direction:column;gap:8px;padding:18px 0;border-top:1px solid #24386B}
+.n-plan{position:relative;display:flex;flex-direction:column;padding:24px 22px;border-radius:20px;border:1px solid #1B2A52;background:linear-gradient(180deg,#0D1A3B 0%,#0A1531 100%)}
+.n-plan ul{list-style:none;margin:18px 0 20px;padding:16px 0 0;border-top:1px solid #1B2A52;display:flex;flex-direction:column;gap:10px}
+.n-plan li{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.5;color:#DCE3F2}
+.n-svc{display:flex;align-items:center;gap:14px;padding:18px 4px;border-bottom:1px solid #1B2A52;text-decoration:none;color:#F2F5FC}
+.n-art{display:flex;flex-direction:column;gap:10px;padding:22px 20px;border-radius:18px;border:1px solid #1B2A52;background:#0A1531;text-decoration:none;color:#F2F5FC}
+.n-foot{display:flex;flex-direction:column;gap:4px}
+.n-foot a{display:inline-flex;align-items:center;min-height:36px;color:#C3CDE4;text-decoration:none;font-size:15px}
+</style>
+</head>
+<body>
+<div style="width: 390px; margin: 0 auto; font-family: 'Mona Sans', 'Helvetica Neue', Arial, sans-serif; color: #F2F5FC; background: #050B1E; -webkit-font-smoothing: antialiased; overflow: hidden">
+
+<div style="position: relative; overflow: hidden">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(420px 380px at 80% 22%, rgba(42,98,240,.32), transparent 65%), radial-gradient(360px 300px at 0% 90%, rgba(244,183,64,.07), transparent 65%)"></div>
+
+<header style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 8px; height: 66px; padding: 0 12px 0 16px; border-bottom: 1px solid rgba(160,185,255,.10)">
+<a href="https://publicola.com.do/" aria-label="Publicola, ir al inicio" style="display: flex"><img src="publicola-logo-blanco.png" alt="Publicola" style="display: block; height: 38px; width: auto"></a>
+<div style="display: flex; align-items: center; gap: 4px">
+<a class="n-btn n-ghost" href="https://publicola.com.do/app/?acceso=entrar">Entrar</a>
+<button type="button" class="n-icon" aria-label="Abrir menú"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+</div>
+</header>
+
+<section style="position: relative; padding: 40px 20px 28px">
+<p class="n-label"><span aria-hidden="true" style="width: 8px; height: 8px; margin-top: 4px; background: #F4B740; transform: rotate(45deg); flex: none"></span>Compras y contrataciones públicas · República Dominicana</p>
+<h1 class="n-x" style="margin: 22px 0 0; font-size: 40px; line-height: .98; letter-spacing: -.026em; font-weight: 760; color: #FFFFFF">Compite mejor por <span style="color: #8FB0FF">contratos del Estado</span></h1>
+<p class="n-lead" style="margin-top: 18px">Encuentra licitaciones que encajen con tu empresa, revisa los requisitos y decide en cuáles presentar oferta.</p>
+<div style="display: flex; flex-direction: column; gap: 10px; margin-top: 28px">
+<a class="n-btn n-primary" href="https://publicola.com.do/app/?acceso=crear">Crear mi cuenta gratis<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="n-btn n-secondary" href="https://publicola.com.do/expedientes/">Ver un expediente</a>
+</div>
+<p style="display: flex; align-items: center; justify-content: center; gap: 8px; margin: 14px 0 0; font-size: 14px; color: #8E9CC0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4CD69A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"></path></svg>Cuenta gratis, sin tarjeta.</p>
+
+<div class="n-panel" style="margin-top: 36px; box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 30px 60px -24px rgba(0,0,0,.8)">
+<div class="n-hl"></div>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 14px; border-bottom: 1px solid #1B2A52"><span style="font-size: 13px; font-weight: 600">Explorador</span><span class="n-demo">Ejemplo ilustrativo</span></div>
+<div style="padding: 14px">
+<label for="n-q" class="n-sr">Buscar licitaciones por producto, institución o código</label>
+<div class="n-search">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+<input id="n-q" class="n-input" type="search" value="equipos informáticos">
+</div>
+<div style="display: flex; gap: 8px; margin: 12px -14px 0; padding: 0 14px 2px; overflow-x: auto">
+<button type="button" class="n-chip" aria-pressed="true">Vigentes</button>
+<button type="button" class="n-chip" aria-pressed="true">Rubro: equipos informáticos</button>
+<button type="button" class="n-chip" aria-pressed="false">Reservado a MIPYME</button>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px; margin-top: 12px">
+<button type="button" class="n-row n-row-on" aria-pressed="true"><span style="display: block; font-size: 15px; font-weight: 600; line-height: 1.35">Adquisición de computadoras y periféricos para oficinas</span><span style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; margin-top: 8px; font-size: 13px; color: #8E9CC0">Licitación pública<span class="n-due">Cierra en 6 días</span></span></button>
+<button type="button" class="n-row" aria-pressed="false"><span style="display: block; font-size: 15px; font-weight: 600; line-height: 1.35">Suministro de mouse y teclados para centros educativos</span><span style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; margin-top: 8px; font-size: 13px; color: #8E9CC0">Contratación simplificada<span class="n-due n-due-soon">Cierra en 4 días</span></span></button>
+</div>
+</div>
+</div>
+
+<div class="n-panel" style="margin: -18px 0 0 18px; padding: 20px 18px 18px; background: linear-gradient(180deg, #12244F 0%, #0D1B3E 100%); border-color: #2A3F78; box-shadow: inset 0 1px 0 rgba(255,255,255,.07), 0 26px 50px -20px rgba(0,0,0,.85)">
+<div class="n-hl n-hl-gold"></div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<span class="n-pill">Licitación pública</span>
+<span class="n-pill n-live"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 50%; background: currentColor"></span>Vigente</span>
+</div>
+<p class="n-mono" style="margin: 14px 0 6px; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #8E9CC0">Ficha del proceso</p>
+<h3 class="n-x" style="margin: 0; font-size: 19px; line-height: 1.22; font-weight: 680; font-stretch: 106%">Adquisición de computadoras y periféricos para oficinas</h3>
+<p style="margin: 6px 0 0; font-size: 13px; color: #8E9CC0">Cierre publicado: 18 nov. · 10:00 a. m.</p>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 16px 0 2px">
+<h4 style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #C3CDE4">Qué debes presentar</h4>
+<span class="n-ai">Ficha con IA</span>
+</div>
+<ol style="list-style: none; margin: 0; padding: 0">
+<li class="n-req"><span>RPE activo, con el rubro del proceso</span><a class="n-cite" href="#" aria-label="Ver en el pliego, página 6">p. 6</a></li>
+<li class="n-req"><span>Certificación de la DGII al día</span><a class="n-cite" href="#" aria-label="Ver en el pliego, página 7">p. 7</a></li>
+<li class="n-req"><span>Garantía de seriedad de la oferta</span><a class="n-cite" href="#" aria-label="Ver en el pliego, página 9">p. 9</a></li>
+</ol>
+<a class="n-btn n-primary n-sm n-full" href="#" style="margin-top: 12px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4h10v17l-5-4-5 4z"></path></svg>Seguir este proceso</a>
+</div>
+
+<ol class="n-panel" style="list-style: none; margin: 28px 0 0; padding: 0">
+<li style="padding: 18px 20px; border-bottom: 1px solid #1B2A52"><span class="n-mono" style="font-size: 11px; letter-spacing: .14em; color: #F4B740">01</span><span class="n-x" style="display: block; margin-top: 6px; font-size: 19px; font-weight: 680">Encuentra</span><span style="display: block; margin-top: 4px; font-size: 15px; line-height: 1.5; color: #AEBBD8">Procesos por rubro, institución o código.</span></li>
+<li style="padding: 18px 20px; border-bottom: 1px solid #1B2A52"><span class="n-mono" style="font-size: 11px; letter-spacing: .14em; color: #F4B740">02</span><span class="n-x" style="display: block; margin-top: 6px; font-size: 19px; font-weight: 680">Entiende</span><span style="display: block; margin-top: 4px; font-size: 15px; line-height: 1.5; color: #AEBBD8">Renglones, requisitos y fechas en una ficha.</span></li>
+<li style="padding: 18px 20px"><span class="n-mono" style="font-size: 11px; letter-spacing: .14em; color: #F4B740">03</span><span class="n-x" style="display: block; margin-top: 6px; font-size: 19px; font-weight: 680">Comprueba</span><span style="display: block; margin-top: 4px; font-size: 15px; line-height: 1.5; color: #AEBBD8">El documento y la página detrás del requisito.</span></li>
+</ol>
+<p style="display: flex; gap: 10px; margin: 20px 0 0; font-size: 14px; line-height: 1.55; color: #8E9CC0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8FB0FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="M12 3 4 6v6c0 4.4 3.4 7.9 8 9 4.6-1.1 8-4.6 8-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg><span>Trabajamos con información pública oficial de compras y contrataciones y conservamos su procedencia y enlace oficial. <a href="https://publicola.com.do/fuentes/" style="color: #8FB0FF; font-weight: 600">Fuentes y metodología</a></span></p>
+</section>
+</div>
+
+<section id="plataforma" style="padding: 64px 20px; background: #060E24; border-top: 1px solid #13204A">
+<p class="n-label"><span aria-hidden="true" style="width: 18px; height: 1px; margin-top: 8px; background: #F4B740; flex: none"></span>01 · Explorador</p>
+<h2 class="n-h2">Encuentra una oportunidad. Abre el expediente.</h2>
+<p class="n-lead">Busca por producto, institución o código. Revisa qué se compra, cuándo cierra y qué documentos exige el proceso.</p>
+<div style="display: flex; flex-direction: column; gap: 14px; margin-top: 32px">
+<article class="n-panel" style="display: flex; flex-direction: column; gap: 12px; padding: 22px">
+<div class="n-hl"></div>
+<span class="n-tile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></span>
+<h3 class="n-x" style="margin: 0; font-size: 21px; line-height: 1.18; font-weight: 680">Explorador de licitaciones</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #AEBBD8">Encuentra procesos por rubro, institución o código, con su fecha de cierre y los documentos que exige.</p>
+<a class="n-link" href="https://publicola.com.do/app/#/oportunidades">Abrir el Explorador<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</article>
+<article class="n-panel" style="display: flex; flex-direction: column; gap: 12px; padding: 22px">
+<div class="n-hl"></div>
+<span class="n-tile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"></path><path d="M14 3v5h5M10 13h6M10 17h4"></path></svg></span>
+<h3 class="n-x" style="margin: 0; font-size: 21px; line-height: 1.18; font-weight: 680">Ficha del proceso con IA</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #AEBBD8">Renglones, fechas y documentos oficiales en una ficha. La IA explica qué pide el pliego y qué debes presentar, con citas por página.</p>
+<div style="display: flex; align-items: center; gap: 16px; margin-top: 4px; padding: 14px; border-radius: 14px; background: #071330; border: 1px solid #1F315E">
+<div aria-hidden="true" style="flex: none; width: 84px; height: 110px; padding: 10px 8px; border-radius: 6px; background: #E9EEF8; display: flex; flex-direction: column; gap: 5px">
+<span style="height: 4px; width: 58%; border-radius: 2px; background: #9EADC9"></span>
+<span style="height: 3px; width: 100%; border-radius: 2px; background: #C9D3E6"></span>
+<span style="height: 3px; width: 92%; border-radius: 2px; background: #C9D3E6"></span>
+<span style="height: 11px; width: 100%; border-radius: 3px; background: #F7D58C; box-shadow: inset 0 0 0 1px #E1A93A"></span>
+<span style="height: 3px; width: 88%; border-radius: 2px; background: #C9D3E6"></span>
+<span style="height: 3px; width: 70%; border-radius: 2px; background: #C9D3E6"></span>
+</div>
+<div style="min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 8px">
+<p style="margin: 0; font-size: 15px; font-weight: 600; line-height: 1.35">Certificación de la TSS al día</p>
+<a class="n-cite" href="#" aria-label="Abrir el pliego en la página 7">Pliego · p. 7</a>
+</div>
+</div>
+<a class="n-link" href="https://publicola.com.do/expedientes/">Ver el expediente público<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</article>
+</div>
+<div style="margin-top: 28px">
+<div class="n-feat"><span style="display: inline-flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 650"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8FB0FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4h10v17l-5-4-5 4z"></path></svg>Seguimiento</span><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #AEBBD8">Guarda licitaciones y consulta sus fechas y cambios.</p></div>
+<div class="n-feat"><span style="display: inline-flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 650"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8FB0FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v12H4z"></path><path d="m4 7 8 6 8-6"></path></svg>Radar por correo</span><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #AEBBD8">Publicola encuentra licitaciones que coinciden con lo que vende tu empresa y te envía un resumen por correo.</p></div>
+<div class="n-feat"><span style="display: inline-flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 650"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8FB0FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 7h14M7 7l-3 7a3.5 3.5 0 0 0 6 0zM17 7l-3 7a3.5 3.5 0 0 0 6 0z"></path></svg>Inteligencia normativa</span><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #AEBBD8">Revisa el pliego y las enmiendas frente a las reglas de compras públicas. Señala dudas y prepara borradores de consulta.</p></div>
+</div>
+</section>
+
+<section style="padding: 64px 20px; background: #050B1E; border-top: 1px solid #13204A">
+<p class="n-label"><span aria-hidden="true" style="width: 18px; height: 1px; margin-top: 8px; background: #F4B740; flex: none"></span>02 · Inteligencia de mercado</p>
+<h2 class="n-h2">Conoce a quien compra. Cotiza con contexto.</h2>
+<p class="n-lead">Consulta qué han contratado las instituciones, sus planes de compras y referencias de precios de contrataciones anteriores.</p>
+<article class="n-panel" style="margin-top: 32px; padding: 22px">
+<div class="n-hl n-hl-gold"></div>
+<div style="display: flex; align-items: center; gap: 12px">
+<span class="n-tile n-tile-gold"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8Z"></path><circle cx="7.5" cy="7.5" r="1.5"></circle></svg></span>
+<h3 class="n-x" style="margin: 0; font-size: 21px; line-height: 1.18; font-weight: 680">Referencias de precios</h3>
+</div>
+<p style="margin: 14px 0 0; font-size: 15px; line-height: 1.6; color: #AEBBD8">Precios estimados y contratados de compras comparables, con sus fuentes cuando están disponibles. Exporta a Excel, PDF o CSV.</p>
+<div style="margin-top: 16px; padding: 18px 16px; border-radius: 14px; background: #071330; border: 1px solid #1F315E">
+<div style="display: flex; justify-content: space-between; gap: 10px"><span class="n-mono" style="font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: #8E9CC0">Mediana contratada</span><span class="n-mono" style="font-size: 11px; color: #AEBBD8">43211708</span></div>
+<p class="n-x" style="margin: 10px 0 0; font-size: 46px; line-height: 1; letter-spacing: -.03em; font-weight: 760"><span style="color: #F4B740">RD$</span> 371.94</p>
+<p style="margin: 8px 0 0; font-size: 14px; color: #C3CDE4">por unidad · Mouse de computadora</p>
+<p style="margin: 4px 0 0; font-size: 13px; color: #8E9CC0">480 compras verificadas · consulta del 31 oct. 2026</p>
+</div>
+<a class="n-link" href="https://publicola.com.do/app/#/inteligencia/precios/producto/43211708" style="margin-top: 12px">Ver la referencia<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</article>
+<div style="display: flex; flex-direction: column; gap: 12px; margin-top: 14px">
+<article class="n-panel" style="display: flex; gap: 14px; padding: 20px">
+<span class="n-tile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V10M9.5 21V10M14.5 21V10M19 21V10M2 10l10-6 10 6"></path></svg></span>
+<div style="min-width: 0"><h3 class="n-x" style="margin: 0; font-size: 18px; line-height: 1.25; font-weight: 680">Instituciones e InfoPago</h3><p style="margin: 6px 0 0; font-size: 14px; line-height: 1.55; color: #AEBBD8">Qué ha comprado cada institución, los proveedores que identifica la fuente y los tiempos de pago publicados.</p><a class="n-link" href="https://publicola.com.do/app/#/inteligencia/instituciones" style="font-size: 14px">Ver Instituciones</a></div>
+</article>
+<article class="n-panel" style="display: flex; gap: 14px; padding: 20px">
+<span class="n-tile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"></rect><path d="M4 10h16M9 3v4M15 3v4"></path></svg></span>
+<div style="min-width: 0"><h3 class="n-x" style="margin: 0; font-size: 18px; line-height: 1.25; font-weight: 680">Compras futuras</h3><p style="margin: 6px 0 0; font-size: 14px; line-height: 1.55; color: #AEBBD8">Consulta los planes anuales de compras publicados por las instituciones.</p></div>
+</article>
+<article class="n-panel" style="display: flex; gap: 14px; padding: 20px">
+<span class="n-tile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M3 20c.8-3.5 3.2-5.5 6-5.5s5.2 2 6 5.5M16 4.5a3.5 3.5 0 0 1 0 7M21 20c-.5-2.6-1.9-4.4-3.8-5.1"></path></svg></span>
+<div style="min-width: 0"><h3 class="n-x" style="margin: 0; font-size: 18px; line-height: 1.25; font-weight: 680">Conoce a tus competidores</h3><p style="margin: 6px 0 0; font-size: 14px; line-height: 1.55; color: #AEBBD8">Sigue empresas y mira dónde ofertaron y qué les adjudicaron.</p></div>
+</article>
+</div>
+</section>
+
+<section style="position: relative; overflow: hidden; padding: 64px 20px; background: #060E24; border-top: 1px solid #13204A">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(420px 420px at 10% 30%, rgba(42,98,240,.16), transparent 65%), radial-gradient(420px 420px at 90% 75%, rgba(244,183,64,.08), transparent 65%)"></div>
+<div style="position: relative">
+<p class="n-label"><span aria-hidden="true" style="width: 18px; height: 1px; margin-top: 8px; background: #F4B740; flex: none"></span>03 · Publi y Workflow</p>
+<h2 class="n-h2" style="font-size: 38px"><span style="color: #8FB0FF">Publi</span> investiga.<br><span style="color: #F4B740">Workflow</span> prepara.</h2>
+<p class="n-lead">Dos herramientas con trabajos distintos. Publi te ayuda a buscar e investigar; Workflow organiza la preparación de tu oferta.</p>
+
+<article class="n-panel" style="margin-top: 32px; padding: 24px 20px">
+<div class="n-hl"></div>
+<p class="n-mono" style="margin: 0; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #8FB0FF">Investigación</p>
+<div style="display: flex; align-items: center; gap: 12px; margin-top: 14px">
+<span class="n-tile" style="width: 48px; height: 48px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"></path><path d="M9.5 10.5h5"></path></svg></span>
+<div><h3 class="n-x" style="margin: 0; font-size: 32px; line-height: 1; font-weight: 760">Publi</h3><p style="margin: 5px 0 0; font-size: 13px; color: #AEBBD8">Agente de investigación</p></div>
+</div>
+<p style="margin: 18px 0 0; font-size: 16px; line-height: 1.6; color: #C3CDE4">Busca licitaciones vigentes y pasadas y encuentra suplidores. Pregúntale por pliegos, enmiendas y actas: responde con citas a la página y enlaces a la fuente.</p>
+<div style="margin-top: 20px; padding: 14px; border-radius: 16px; background: #071330; border: 1px solid #1F315E; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: flex-end"><span class="n-demo">Ejemplo ilustrativo</span></div>
+<p style="align-self: flex-end; max-width: 88%; margin: 0; padding: 10px 13px; border-radius: 14px 14px 4px 14px; background: #2A62F0; color: #FFFFFF; font-size: 14px; line-height: 1.45">¿Qué pedían los pliegos de compras pasadas de mouse de computadora?</p>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #E3E9F6">Revisé procesos pasados con ese renglón. Estos requisitos se repiten en sus pliegos:</p>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px">
+<li style="display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 10px; border-radius: 10px; background: rgba(255,255,255,.04); font-size: 13px">Ficha técnica del producto<a class="n-cite" href="#" aria-label="Abrir el pliego, página 12">p. 12</a></li>
+<li style="display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 10px; border-radius: 10px; background: rgba(255,255,255,.04); font-size: 13px">Garantía del fabricante<a class="n-cite" href="#" aria-label="Abrir el pliego, página 15">p. 15</a></li>
+</ul>
+<div class="n-search" style="height: 46px; padding-right: 5px">
+<label for="n-publi" class="n-sr">Pregúntale a Publi</label>
+<input id="n-publi" class="n-input" type="text" placeholder="Pregúntale a Publi…" style="font-size: 15px; font-weight: 400">
+<button type="button" class="n-btn n-primary" aria-label="Enviar pregunta" style="width: 38px; height: 38px; padding: 0; border-radius: 9px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+</div>
+</div>
+<p style="display: flex; align-items: flex-start; gap: 8px; margin: 16px 0 0; font-size: 14px; line-height: 1.5; color: #AEBBD8"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg>Publi investiga contigo; la oferta se prepara en Workflow.</p>
+</article>
+
+<article class="n-panel" style="margin-top: 16px; padding: 24px 20px">
+<div class="n-hl n-hl-gold"></div>
+<p class="n-mono" style="margin: 0; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #F4B740">Preparación</p>
+<div style="display: flex; align-items: center; gap: 12px; margin-top: 14px">
+<span class="n-tile n-tile-gold" style="width: 48px; height: 48px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M9 4v16M15 4v16"></path></svg></span>
+<div><h3 class="n-x" style="margin: 0; font-size: 32px; line-height: 1; font-weight: 760">Workflow</h3><p style="margin: 5px 0 0; font-size: 13px; color: #AEBBD8">Preparación y organización de ofertas</p></div>
+</div>
+<p style="margin: 18px 0 0; font-size: 16px; line-height: 1.6; color: #C3CDE4">Avanza desde la licitación hasta la oferta preparada. Reúne análisis, requisitos, documentos y formularios en un tablero.</p>
+<div style="margin-top: 20px; padding: 14px; border-radius: 16px; background: #071330; border: 1px solid #1F315E; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px"><p style="margin: 0; font-size: 14px; font-weight: 600; line-height: 1.35">Adquisición de computadoras y periféricos</p><span class="n-demo">Ejemplo</span></div>
+<ol aria-label="Etapas" style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px">
+<li style="display: inline-flex; align-items: center; height: 28px; padding: 0 10px; border-radius: 8px; background: rgba(76,214,154,.10); color: #4CD69A; font-size: 12px; font-weight: 600">Análisis</li>
+<li style="display: inline-flex; align-items: center; height: 28px; padding: 0 10px; border-radius: 8px; background: rgba(76,214,154,.10); color: #4CD69A; font-size: 12px; font-weight: 600">Requisitos</li>
+<li aria-current="step" style="display: inline-flex; align-items: center; height: 28px; padding: 0 10px; border-radius: 8px; background: #F4B740; color: #1A1203; font-size: 12px; font-weight: 700">Documentos</li>
+<li style="display: inline-flex; align-items: center; height: 28px; padding: 0 10px; border-radius: 8px; background: rgba(255,255,255,.05); color: #AEBBD8; font-size: 12px">Formularios</li>
+</ol>
+<p class="n-mono" style="margin: 4px 0 0; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: #8E9CC0">Sobre A · Credenciales y oferta técnica</p>
+<div class="n-wfitem">Formulario de presentación<span class="n-status n-ok">Listo</span></div>
+<div class="n-wfitem">Certificación de la TSS<span class="n-status n-wait">Pendiente</span></div>
+<div class="n-wfitem">Oferta técnica<span class="n-status n-doing">En preparación</span></div>
+<p class="n-mono" style="margin: 4px 0 0; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: #8E9CC0">Sobre B · Oferta económica</p>
+<div class="n-wfitem">Garantía de seriedad de la oferta<span class="n-status n-wait">Pendiente</span></div>
+<button type="button" class="n-btn n-secondary n-sm" style="margin-top: 4px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"></path></svg>Descargar expediente por sobres</button>
+</div>
+</article>
+<p style="display: flex; gap: 10px; margin: 24px 0 0; font-size: 15px; line-height: 1.55; color: #AEBBD8"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8FB0FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><circle cx="9" cy="8" r="3.5"></circle><path d="M3 20c.8-3.5 3.2-5.5 6-5.5s5.2 2 6 5.5M16 4.5a3.5 3.5 0 0 1 0 7M21 20c-.5-2.6-1.9-4.4-3.8-5.1"></path></svg><span><strong style="color: #F2F5FC; font-weight: 600">Trabajo en equipo.</strong> Comparte los resultados de Publi con los perfiles de tu empresa.</span></p>
+</div>
+</section>
+
+<section id="planes" style="padding: 64px 20px; background: #050B1E; border-top: 1px solid #13204A">
+<p class="n-label"><span aria-hidden="true" style="width: 18px; height: 1px; margin-top: 8px; background: #F4B740; flex: none"></span>04 · Planes</p>
+<h2 class="n-h2">Elige cómo trabajar tus licitaciones.</h2>
+<p class="n-lead">Encuentra oportunidades con Gratis, investiga expedientes y el mercado con Plus y prepara ofertas en equipo con Pro.</p>
+<div style="display: flex; flex-direction: column; gap: 14px; margin-top: 32px">
+<article class="n-plan">
+<p class="n-mono" style="margin: 0; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #8E9CC0">Para explorar</p>
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-top: 12px"><h3 class="n-x" style="margin: 0; font-size: 26px; font-weight: 740">Gratis</h3><p style="margin: 0; text-align: right"><span class="n-x" style="font-size: 34px; font-weight: 760">US$0</span><span style="display: block; font-size: 13px; color: #AEBBD8">Sin tarjeta</span></p></div>
+<ul>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4CD69A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="m5 12.5 4.2 4.2L19 7"></path></svg>Explorador y ficha del proceso</li>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4CD69A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="m5 12.5 4.2 4.2L19 7"></path></svg>Seguimiento de licitaciones, fechas y cambios</li>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4CD69A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="m5 12.5 4.2 4.2L19 7"></path></svg>Perfil de empresa con RPE y RNC</li>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4CD69A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="m5 12.5 4.2 4.2L19 7"></path></svg>Radar por correo hasta tres veces por semana</li>
+</ul>
+<a class="n-btn n-primary n-full" href="https://publicola.com.do/app/?acceso=crear">Crear mi cuenta gratis</a>
+</article>
+<article class="n-plan" style="border-color: #2A3F78">
+<div class="n-hl"></div>
+<p class="n-mono" style="margin: 0; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #8FB0FF">Para investigar y decidir</p>
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-top: 12px"><h3 class="n-x" style="margin: 0; font-size: 26px; font-weight: 740">Plus</h3><p style="margin: 0; text-align: right"><span class="n-x" style="font-size: 34px; font-weight: 760">US$75</span><span style="display: block; font-size: 13px; color: #AEBBD8">al mes por empresa</span></p></div>
+<ul>
+<li style="color: #AEBBD8">Incluye todo lo de Gratis.</li>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8FB0FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="m5 12.5 4.2 4.2L19 7"></path></svg>Publi Plus: licitaciones pasadas y preguntas a sus documentos, con citas</li>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8FB0FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="m5 12.5 4.2 4.2L19 7"></path></svg>Ficha con IA e Inteligencia normativa</li>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8FB0FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="m5 12.5 4.2 4.2L19 7"></path></svg>Referencias de precios, Instituciones, InfoPago y Compras futuras</li>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8FB0FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="m5 12.5 4.2 4.2L19 7"></path></svg>Radar instantáneo y hasta 5 perfiles</li>
+</ul>
+<a class="n-btn n-secondary n-full" href="https://publicola.com.do/planes/">Solicitar Plus</a>
+</article>
+<article class="n-plan" style="border-color: rgba(244,183,64,.35)">
+<div class="n-hl n-hl-gold"></div>
+<p class="n-mono" style="margin: 0; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #F4B740">Para preparar ofertas</p>
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-top: 12px"><h3 class="n-x" style="margin: 0; font-size: 26px; font-weight: 740">Pro</h3><p style="margin: 0; text-align: right"><span class="n-x" style="font-size: 34px; font-weight: 760">US$150</span><span style="display: block; font-size: 13px; color: #AEBBD8">al mes por empresa</span></p></div>
+<ul>
+<li style="color: #AEBBD8">Incluye todo lo de Plus.</li>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F4B740" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="m5 12.5 4.2 4.2L19 7"></path></svg>Workflow: de la licitación a la oferta preparada</li>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F4B740" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="m5 12.5 4.2 4.2L19 7"></path></svg>Publi Pro: licitaciones vigentes según tu catálogo, suplidores y cotizaciones</li>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F4B740" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="m5 12.5 4.2 4.2L19 7"></path></svg>Hasta 25 competidores y 10 perfiles</li>
+</ul>
+<a class="n-btn n-goldline n-full" href="https://publicola.com.do/planes/">Solicitar Pro</a>
+</article>
+</div>
+<p style="margin: 22px 0 0; font-size: 14px; line-height: 1.55; color: #AEBBD8">Los servicios profesionales, como la constitución de empresas, se cotizan aparte.</p>
+<a class="n-link" href="https://publicola.com.do/planes/" style="margin-top: 6px">Comparar funciones por plan<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</section>
+
+<section id="servicios" style="position: relative; overflow: hidden; padding: 64px 20px; background: #060E24; border-top: 1px solid #13204A">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(420px 380px at 0% 30%, rgba(244,183,64,.08), transparent 65%)"></div>
+<div style="position: relative">
+<p class="n-label"><span aria-hidden="true" style="width: 18px; height: 1px; margin-top: 8px; background: #F4B740; flex: none"></span>05 · Servicios profesionales</p>
+<h2 class="n-h2">Respaldo para tu empresa y tu oferta.</h2>
+<p class="n-lead">Nuestro equipo te acompaña con trámites, documentos y asesoría en compras públicas. Los servicios se cotizan por separado.</p>
+<div class="n-panel" style="margin-top: 32px; padding: 22px 18px">
+<div class="n-hl n-hl-gold"></div>
+<p class="n-mono" style="margin: 0; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #F4B740">De la idea a la licitación</p>
+<ul style="list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px">
+<li style="display: flex; align-items: center; gap: 12px; padding: 11px 12px; border-radius: 12px; background: rgba(255,255,255,.03); border: 1px solid #1B2A52"><span class="n-status n-ok">Listo</span><span style="min-width: 0"><span style="display: block; font-size: 15px; font-weight: 600">Estatutos sociales</span><span style="display: block; font-size: 13px; color: #8E9CC0">Redactados y registrados</span></span></li>
+<li style="display: flex; align-items: center; gap: 12px; padding: 11px 12px; border-radius: 12px; background: rgba(255,255,255,.03); border: 1px solid #1B2A52"><span class="n-status n-ok">Listo</span><span style="min-width: 0"><span style="display: block; font-size: 15px; font-weight: 600">RNC</span><span style="display: block; font-size: 13px; color: #8E9CC0">Tu empresa en la DGII</span></span></li>
+<li style="display: flex; align-items: center; gap: 12px; padding: 11px 12px; border-radius: 12px; background: rgba(255,255,255,.03); border: 1px solid #1B2A52"><span class="n-status n-ok">Listo</span><span style="min-width: 0"><span style="display: block; font-size: 15px; font-weight: 600">Proveedor del Estado</span><span style="display: block; font-size: 13px; color: #8E9CC0">Inscrita en el RPE</span></span></li>
+<li style="display: flex; align-items: center; gap: 12px; padding: 11px 12px; border-radius: 12px; background: rgba(255,255,255,.03); border: 1px solid #1B2A52"><span class="n-status n-ok">Listo</span><span style="min-width: 0"><span style="display: block; font-size: 15px; font-weight: 600">Seguridad Social</span><span style="display: block; font-size: 13px; color: #8E9CC0">Inscrita en la TSS</span></span></li>
+</ul>
+<p class="n-x" style="display: flex; align-items: center; gap: 10px; margin: 16px 0 0; font-size: 19px; font-weight: 700; color: #F4B740"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"></path></svg>Lista para licitar</p>
+</div>
+<dl style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 20px 0 0">
+<div style="padding-top: 14px; border-top: 1px solid #24386B"><dt class="n-x" style="font-size: 26px; font-weight: 760; line-height: 1">5 a 6</dt><dd style="margin: 6px 0 0; font-size: 13px; line-height: 1.5; color: #AEBBD8">días laborables para tener tu empresa semi-constituida</dd></div>
+<div style="padding-top: 14px; border-top: 1px solid #24386B"><dt class="n-x" style="font-size: 26px; font-weight: 760; line-height: 1">15</dt><dd style="margin: 6px 0 0; font-size: 13px; line-height: 1.5; color: #AEBBD8">días laborables aproximados para una empresa nueva con nombre propio</dd></div>
+</dl>
+<nav aria-label="Servicios profesionales" style="margin-top: 28px; border-top: 1px solid #1B2A52">
+<a class="n-svc" href="https://publicola.com.do/servicios/#servicios"><span style="min-width: 0; flex: 1"><span class="n-mono" style="display: block; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: #8E9CC0">Empresa</span><span class="n-x" style="display: block; margin-top: 6px; font-size: 18px; font-weight: 680">Creación de empresas</span><span style="display: block; margin-top: 4px; font-size: 14px; line-height: 1.5; color: #AEBBD8">Constituimos tu empresa y gestionamos las inscripciones para licitar.</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8FB0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="n-svc" href="https://publicola.com.do/servicios/#servicios"><span style="min-width: 0; flex: 1"><span class="n-mono" style="display: block; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: #8E9CC0">Empresa</span><span class="n-x" style="display: block; margin-top: 6px; font-size: 18px; font-weight: 680">Modificación de empresas</span><span style="display: block; margin-top: 4px; font-size: 14px; line-height: 1.5; color: #AEBBD8">Gestionamos los cambios que necesita tu empresa en un solo expediente.</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8FB0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="n-svc" href="https://publicola.com.do/servicios/solicitud-de-documentos/"><span style="min-width: 0; flex: 1"><span class="n-mono" style="display: block; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: #8E9CC0">Documentos</span><span class="n-x" style="display: block; margin-top: 6px; font-size: 18px; font-weight: 680">Solicitud de documentos</span><span style="display: block; margin-top: 4px; font-size: 14px; line-height: 1.5; color: #AEBBD8">Gestionamos los documentos que tu empresa necesita para licitar.</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8FB0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="n-svc" href="https://publicola.com.do/servicios/asesoria-legal-compras-publicas/"><span style="min-width: 0; flex: 1"><span class="n-mono" style="display: block; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: #8E9CC0">Licitaciones</span><span class="n-x" style="display: block; margin-top: 6px; font-size: 18px; font-weight: 680">Asesoría legal en compras y contrataciones públicas</span><span style="display: block; margin-top: 4px; font-size: 14px; line-height: 1.5; color: #AEBBD8">Te acompañamos en cada licitación, desde el pliego hasta el sometimiento.</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8FB0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="n-svc" href="https://publicola.com.do/servicios/otros-servicios-juridicos/"><span style="min-width: 0; flex: 1"><span class="n-mono" style="display: block; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: #8E9CC0">Respaldo legal</span><span class="n-x" style="display: block; margin-top: 6px; font-size: 18px; font-weight: 680">Otros servicios jurídicos</span><span style="display: block; margin-top: 4px; font-size: 14px; line-height: 1.5; color: #AEBBD8">Respaldo legal para tu empresa, también fuera de las licitaciones.</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8FB0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</nav>
+<div style="display: flex; flex-direction: column; gap: 10px; margin-top: 28px">
+<a class="n-btn n-goldline" href="https://publicola.com.do/contacto/">Pedir un servicio</a>
+<a class="n-btn n-secondary" href="https://publicola.com.do/servicios/">Conocer los servicios</a>
+</div>
+</div>
+</section>
+
+<section id="recursos" style="padding: 64px 20px; background: #050B1E; border-top: 1px solid #13204A">
+<p class="n-label"><span aria-hidden="true" style="width: 18px; height: 1px; margin-top: 8px; background: #F4B740; flex: none"></span>06 · Centro de Recursos</p>
+<h2 class="n-h2">Aprende a venderle al Estado.</h2>
+<p class="n-lead">Guías prácticas para entender el proceso y preparar tu próximo paso.</p>
+<div style="display: flex; flex-direction: column; gap: 14px; margin-top: 32px">
+<a class="n-art" href="https://publicola.com.do/recursos/alertas-de-licitaciones/"><span class="n-mono" style="font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: #8E9CC0">Guías para proveedores · 5 nov. 2026</span><span class="n-x" style="font-size: 20px; line-height: 1.22; font-weight: 680">Alertas de licitaciones para llegar antes</span><span style="font-size: 14px; line-height: 1.6; color: #AEBBD8">Encontrar una licitación cuando apenas faltan unas horas para presentar una oferta puede significar…</span><span style="display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: #8FB0FF">Leer la guía</span></a>
+<a class="n-art" href="https://publicola.com.do/recursos/requisitos-para-ofertar-al-estado-dominicano/"><span class="n-mono" style="font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: #8E9CC0">Guías para proveedores · 4 nov. 2026</span><span class="n-x" style="font-size: 20px; line-height: 1.22; font-weight: 680">Requisitos para ofertar al Estado dominicano</span><span style="font-size: 14px; line-height: 1.6; color: #AEBBD8">Venderle al Estado dominicano puede representar una oportunidad de crecimiento para una empresa o un profesional…</span><span style="display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: #8FB0FF">Leer la guía</span></a>
+<a class="n-art" href="https://publicola.com.do/recursos/como-buscar-licitaciones-relevantes/"><span class="n-mono" style="font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: #8E9CC0">Guías para proveedores · 3 nov. 2026</span><span class="n-x" style="font-size: 20px; line-height: 1.22; font-weight: 680">Cómo buscar licitaciones relevantes y rentables</span><span style="font-size: 14px; line-height: 1.6; color: #AEBBD8">Encontrar una licitación relacionada con lo que vendes no significa que sea una buena…</span><span style="display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: #8FB0FF">Leer la guía</span></a>
+</div>
+<a class="n-btn n-secondary n-full" href="https://publicola.com.do/recursos/" style="margin-top: 24px">Ir al Centro de Recursos</a>
+</section>
+
+<section style="position: relative; overflow: hidden; padding: 80px 20px 88px; background: #050B1E; border-top: 1px solid #13204A; text-align: center">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(420px 320px at 50% 100%, rgba(42,98,240,.34), transparent 70%)"></div>
+<div style="position: relative">
+<p class="n-label" style="justify-content: center"><span aria-hidden="true" style="width: 8px; height: 8px; margin-top: 4px; background: #F4B740; transform: rotate(45deg); flex: none"></span>Tu próximo paso</p>
+<h2 class="n-x" style="margin: 20px 0 0; font-size: 38px; line-height: 1.02; letter-spacing: -.025em; font-weight: 760">Primero entiende la licitación. <span style="color: #8FB0FF">Después decide.</span></h2>
+<div style="display: flex; flex-direction: column; gap: 10px; margin-top: 28px">
+<a class="n-btn n-primary" href="https://publicola.com.do/app/?acceso=crear">Crear mi cuenta gratis</a>
+<a class="n-btn n-secondary" href="https://publicola.com.do/app/?acceso=entrar">Entrar a Mi Publicola</a>
+</div>
+<p style="margin: 14px 0 0; font-size: 14px; color: #8E9CC0">Cuenta gratis, sin tarjeta.</p>
+</div>
+</section>
+
+<footer style="padding: 56px 20px 40px; background: #030816; border-top: 1px solid #13204A">
+<img src="publicola-logo-blanco.png" alt="Publicola" style="display: block; height: 44px; width: auto">
+<p style="margin: 16px 0 0; font-size: 16px; line-height: 1.6; color: #C3CDE4">Compras públicas. Análisis profundo, respuestas sencillas.</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 16px; margin-top: 32px">
+<div><p class="n-mono" style="margin: 0 0 8px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #8E9CC0">Plataforma</p><nav class="n-foot" aria-label="Plataforma"><a href="https://publicola.com.do/app/#/oportunidades">Explorador</a><a href="https://publicola.com.do/expedientes/">Expediente público</a><a href="https://publicola.com.do/app/#/inteligencia/instituciones">Instituciones</a><a href="https://publicola.com.do/app/#/inteligencia/precios/producto/43211708">Referencias de precios</a></nav></div>
+<div><p class="n-mono" style="margin: 0 0 8px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #8E9CC0">Publicola</p><nav class="n-foot" aria-label="Publicola"><a href="https://publicola.com.do/planes/">Planes</a><a href="https://publicola.com.do/servicios/">Servicios</a><a href="https://publicola.com.do/recursos/">Recursos</a><a href="https://publicola.com.do/contacto/">Contacto</a></nav></div>
+<div><p class="n-mono" style="margin: 0 0 8px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #8E9CC0">Legal</p><nav class="n-foot" aria-label="Legal"><a href="https://publicola.com.do/legal/">Términos de uso</a><a href="https://publicola.com.do/privacidad/">Privacidad</a><a href="https://publicola.com.do/fuentes/">Fuentes y metodología</a></nav></div>
+<div><p class="n-mono" style="margin: 0 0 8px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #8E9CC0">Contacto</p><nav class="n-foot" aria-label="Contacto"><a href="mailto:info@publicola.com.do">info@publicola.com.do</a><a href="https://linkedin.com/company/publicolasrl">LinkedIn</a><a href="https://instagram.com/publicolard">Instagram</a></nav></div>
+</div>
+<p style="margin: 36px 0 0; padding-top: 20px; border-top: 1px solid #13204A; font-size: 13px; line-height: 1.6; color: #8E9CC0">Publicola es una plataforma privada independiente. No está afiliada, patrocinada ni respaldada por la Dirección General de Contrataciones Públicas.</p>
+</footer>
+
+</div>
+</body>
+</html>
