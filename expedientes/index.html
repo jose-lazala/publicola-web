@@ -3,33 +3,89 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#fefefe">
   <title>Expediente público · Publicola</title>
-  <meta name="description" content="Consulta una licitación vigente con sus renglones, requisitos, fechas, condiciones y documentos oficiales.">
+  <meta name="description" content="Consulta una licitación vigente con sus renglones, fechas, condiciones y documentos oficiales.">
   <link rel="canonical" href="https://publicola.com.do/expedientes/">
   <link rel="icon" href="/favicon-v3.ico">
-  <link rel="stylesheet" href="/vitrina-v3.css?v=editorial-20261106">
-  <link rel="stylesheet" href="/app/ficha_editorial.css?v=1.0.5.0c0b7616f7">
-  <script defer src="/app/ficha_editorial.js?v=1.0.7.36574ab3b6"></script>
-  <script defer src="/expedientes/destacado.js?v=20261110.53e72edd43"></script>
+  <meta name="theme-color" content="#050B1E">
+  <link rel="preload" href="/tipografia/mona-sans-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/sitio-b.css?v=20261113a">
+  <link rel="stylesheet" href="/paginas-b.css?v=20261113a">
+  <link rel="stylesheet" href="/expedientes/expediente-b.css?v=20261113ax1">
 </head>
-<body>
-<a class="salto-v3" href="#contenido">Saltar al contenido</a>
-<header class="nav">
-  <div class="wrap nav-inner">
-    <a class="brand" href="/?publico" aria-label="Publicola, inicio"><img src="/marca/publicola-logo-v3.png" alt="Publicola" width="736" height="240"></a>
-    <a class="btn btn-secondary btn-small" href="/app/?acceso=entrar">Iniciar sesión</a>
+<body class="b-sitio">
+<a class="b-salto" href="#contenido">Saltar al contenido</a>
+<header class="b-cabecera b-cabecera-sitio">
+  <div class="b-wrap b-cabecera-interior">
+    <a class="b-logo" href="/" aria-label="Publicola, ir al inicio"><img src="/marca/publicola-logo-blanco-v1.png" alt="Publicola" width="523" height="168"></a>
+    <nav class="b-nav" aria-label="Principal">
+        <a href="/#plataforma">Plataforma</a>
+        <a href="/planes/">Planes</a>
+        <a href="/servicios/">Servicios</a>
+        <a href="/recursos/">Recursos</a>
+        <a href="/contacto/">Contacto</a>
+    </nav>
+    <div class="b-acciones">
+      <a class="b-btn b-fantasma" href="/app/?acceso=entrar"><span class="b-entrar-largo">Iniciar sesión</span><span class="b-entrar-corto">Entrar</span></a>
+      <a class="b-btn b-primario" href="/app/?acceso=crear">Crear mi cuenta gratis</a>
+      <button class="b-menu" type="button" aria-expanded="false" aria-controls="b-menu-movil">
+        <span class="b-sr">Menú</span>
+        <svg class="b-abrir-icono" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="b-cerrar-icono" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
   </div>
+  <nav class="b-nav-movil" id="b-menu-movil" aria-label="Principal en el celular">
+        <a href="/#plataforma">Plataforma</a>
+        <a href="/planes/">Planes</a>
+        <a href="/servicios/">Servicios</a>
+        <a href="/recursos/">Recursos</a>
+        <a href="/contacto/">Contacto</a>
+    <a class="b-btn b-primario" href="/app/?acceso=crear">Crear mi cuenta gratis</a>
+  </nav>
 </header>
-<main class="ficha-editorial" id="contenido" data-expediente-completo>
-  <div class="fe-wrap fe-top">
-    <a class="fe-enlace" href="/?publico">← Volver a la vitrina</a>
-    <p role="status">Buscando un expediente vigente…</p>
-    <noscript><p>Activa JavaScript para ver el expediente vigente.</p></noscript>
-  </div>
+<main id="contenido">
+<div data-expediente>
+<section class="s-hero x-hero"><div class="b-wrap">
+<p class="s-crumbs"><a href="/">Inicio</a><span aria-hidden="true">›</span><span>Expediente público</span></p>
+<h1 class="b-x s-h1 x-titulo">Expediente público</h1>
+<p class="x-estado" role="status" data-estado>Buscando un expediente vigente…</p>
+<noscript><p class="x-estado">Activa JavaScript para ver el expediente vigente, o búscalo en el <a href="/app/#/oportunidades">Explorador</a>.</p></noscript>
+</div></section>
+</div>
 </main>
-<footer class="site-footer">
-  <div class="wrap footer-bottom"><p>Datos de fuentes oficiales de la DGCP · <a href="/fuentes/">Fuentes y metodología</a></p></div>
+<footer class="b-pie">
+  <div class="b-wrap b-pie-interior">
+    <div class="b-pie-columnas">
+      <div class="b-pie-marca">
+        <img src="/marca/publicola-logo-blanco-v1.png" alt="Publicola" width="523" height="168" loading="lazy">
+        <p>Compras públicas. Análisis profundo, respuestas sencillas.</p>
+      </div>
+      <div class="b-pie-col">
+        <h2 id="pie-plataforma">Plataforma</h2>
+        <nav aria-labelledby="pie-plataforma"><a href="/app/#/oportunidades">Explorador</a><a href="/expedientes/" data-solo-con-expediente hidden>Expediente público</a><a href="/app/#/inteligencia/instituciones">Instituciones</a><a href="/planes/">Planes</a></nav>
+      </div>
+      <div class="b-pie-col">
+        <h2 id="pie-publicola">Publicola</h2>
+        <nav aria-labelledby="pie-publicola"><a href="/servicios/">Servicios</a><a href="/recursos/">Recursos</a><a href="/contacto/">Contacto</a><a href="/fuentes/">Fuentes y metodología</a></nav>
+      </div>
+      <div class="b-pie-col">
+        <h2 id="pie-legal">Legal</h2>
+        <nav aria-labelledby="pie-legal"><a href="/legal/">Términos de uso y condiciones</a><a href="/privacidad/">Privacidad</a></nav>
+      </div>
+      <div class="b-pie-col b-pie-col-ancha">
+        <h2 id="pie-contacto">Contacto</h2>
+        <nav aria-labelledby="pie-contacto"><a href="mailto:info@publicola.com.do">info@publicola.com.do</a><a href="https://linkedin.com/company/publicolasrl" rel="noopener">LinkedIn</a><a href="https://instagram.com/publicolard" rel="noopener">Instagram · @publicolard</a></nav>
+        <address class="b-pie-direccion">Av. Abraham Lincoln no. 1003, Torre Profesional Biltmore I, Suite 301, Piantini, Santo Domingo</address>
+      </div>
+    </div>
+    <div class="b-pie-legal">
+      <p>Publicola es una plataforma privada independiente. No está afiliada, patrocinada ni respaldada por la Dirección General de Contrataciones Públicas.</p>
+      <p>Datos de fuentes oficiales · <a href="/fuentes/">Fuentes y metodología</a></p>
+    </div>
+  </div>
 </footer>
+<script src="/sitio-b.js?v=20261113a" defer></script>
+<script src="/expedientes/expediente-b.js?v=20261113ax1" defer></script>
 </body>
 </html>
