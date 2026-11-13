@@ -326,8 +326,11 @@
 .s-empresas li { display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;border-radius:14px;border:1px solid var(--filete);background:var(--s-blanco-02);font-size:15.5px;font-weight:600;color:var(--texto) }
 .s-empresas li span { flex:none;font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--verde) }
 .s-empresas li span.s-prox { color:var(--apoyo-2) }
-.s-botones { display:flex;flex-direction:column;gap:12px }
-.s-botones .b-btn { justify-content:center;width:100%;height:60px;font-size:17px;gap:10px }
+.s-botones { display:flex;flex-direction:column;gap:14px }
+.s-botones .b-btn { justify-content:center;width:100%;height:auto;min-height:72px;font-size:19px;font-weight:650;gap:12px;border-radius:16px }
+.s-botones .b-btn svg { width:22px;height:22px }
+.s-redes .s-botones { flex:1;margin-top:4px }
+.s-redes .s-botones .b-btn { flex:1 1 0 }
 @media (max-width: 760px) {
   .s-ancha-in { grid-template-columns:minmax(0,1fr);gap:22px }
 }
