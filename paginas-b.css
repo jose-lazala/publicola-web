@@ -344,3 +344,4 @@
 .s-plan-elegir span { display:inline-flex;align-items:center;height:44px;padding:0 22px;border-radius:999px;border:1px solid var(--filete-2);background:var(--panel-hundido);font-weight:650;color:var(--texto-2) }
 .s-plan-elegir input:checked+span { border-color:var(--azul-foco);background:var(--azul-velo-2);color:var(--blanco) }
 .s-plan-elegir input:focus-visible+span { outline:2px solid var(--azul-luz);outline-offset:3px }
+.s-solicitud-hecha { display:flex;flex-direction:column;align-items:flex-start;gap:16px;padding:12px 0;outline:0 }
