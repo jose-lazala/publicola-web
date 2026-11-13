@@ -20,7 +20,7 @@
   <meta name="theme-color" content="#050B1E">
   <link rel="preload" href="/tipografia/mona-sans-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/sitio-b.css?v=20261113a">
-  <link rel="stylesheet" href="/paginas-b.css?v=20261113a">
+  <link rel="stylesheet" href="/paginas-b.css?v=20261113b">
 </head>
 <body class="b-sitio">
 <a class="b-salto" href="#contenido">Saltar al contenido</a>
@@ -28,6 +28,7 @@
   <div class="b-wrap b-cabecera-interior">
     <a class="b-logo" href="/" aria-label="Publicola, ir al inicio"><img src="/marca/publicola-logo-blanco-v1.png" alt="Publicola" width="523" height="168"></a>
     <nav class="b-nav" aria-label="Principal">
+        <a href="/">Inicio</a>
         <a href="/plataforma/">Plataforma</a>
         <a href="/planes/" aria-current="page">Planes</a>
         <a href="/servicios/">Servicios</a>
@@ -45,6 +46,7 @@
     </div>
   </div>
   <nav class="b-nav-movil" id="b-menu-movil" aria-label="Principal en el celular">
+        <a href="/">Inicio</a>
         <a href="/plataforma/">Plataforma</a>
         <a href="/planes/" aria-current="page">Planes</a>
         <a href="/servicios/">Servicios</a>
@@ -84,7 +86,7 @@
 <p class="s-cat" style="color: var(--azul-luz)">Para investigar y decidir</p>
 <p class="b-x" style="margin: 14px 0 0; font-size: 28px; font-weight: 720">Plus</p>
 <p style="margin: 14px 0 0; display: flex; align-items: baseline; gap: 10px"><span class="b-x" style="font-size: 48px; font-weight: 760; line-height: 1">US$75</span><span style="font-size: 14px; color: var(--apoyo-2)">al mes por empresa</span></p>
-<a class="b-btn b-primario s-full" href="/app/?plan=plus" style="margin-top: 24px">Solicitar Plus</a>
+<a class="b-btn b-primario s-full" href="/planes/solicitar/?plan=plus" style="margin-top: 24px">Solicitar Plus</a>
 <ul>
 <li style="color: var(--apoyo-2)">Incluye todo lo de Gratis.</li>
 <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--azul-luz)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span><strong style="color: var(--blanco)">Publi Plus.</strong> Busca licitaciones pasadas y pregunta por sus documentos oficiales, con citas por página.</span></li>
@@ -101,7 +103,7 @@
 <p class="s-cat">Para preparar ofertas</p>
 <p class="b-x" style="margin: 14px 0 0; font-size: 28px; font-weight: 720">Pro</p>
 <p style="margin: 14px 0 0; display: flex; align-items: baseline; gap: 10px"><span class="b-x" style="font-size: 48px; font-weight: 760; line-height: 1">US$150</span><span style="font-size: 14px; color: var(--apoyo-2)">al mes por empresa</span></p>
-<a class="b-btn b-oro s-full" href="mailto:info@publicola.com.do?subject=Solicitud%20de%20Publicola%20Pro&amp;body=Hola%2C%20quiero%20solicitar%20Publicola%20Pro.%0D%0A%0D%0AEmpresa%0D%0ANombre%20de%20contacto%0D%0AWhatsApp%0D%0A" style="margin-top: 24px">Solicitar Pro</a>
+<a class="b-btn b-oro s-full" href="/planes/solicitar/?plan=pro" style="margin-top: 24px">Solicitar Pro</a>
 <ul>
 <li style="color: var(--apoyo-2)">Incluye todo lo de Plus.</li>
 <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--oro)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span><strong style="color: var(--blanco)">Workflow.</strong> De la licitación a la oferta preparada, con análisis, documentos, formularios y pendientes en un tablero.</span></li>
@@ -164,14 +166,12 @@
 <p class="b-entrada" style="margin-top: 20px">Las condiciones completas están en los <a href="/legal/">Términos y Condiciones de Uso</a>.</p>
 </div>
 <div class="s-faq">
-<details><summary>¿Cómo solicito Publicola Plus o Pro?</summary><div class="s-a"><p>Para Plus, pulsa <strong>Solicitar Plus</strong> y entra a Mi Publicola con tu correo. Si estás creando la cuenta, registra tu empresa para continuar. El formulario muestra tu empresa y el correo de la cuenta. Añade tu WhatsApp y pulsa <strong>Enviar solicitud</strong>. El equipo de Publicola te contacta por ese número para coordinar el depósito y activa Plus cuando lo confirma.</p>
-        <p>Para Pro, pulsa <strong>Solicitar Pro</strong> y envía el correo de solicitud con el nombre de tu empresa y tus datos de contacto. El equipo de Publicola te confirma la disponibilidad y los pasos para activar el plan.</p></div></details>
-<details><summary>¿Qué puedo preguntarle a Publi Plus?</summary><div class="s-a"><p>Publi Plus busca licitaciones pasadas cuando le describes qué se compró, qué institución hizo la compra o de qué año era. Puedes preguntar «¿Hasta cuándo se recibían ofertas para el catering del MOPC de 2023?» y seguir con «¿Qué cambió en esa enmienda?» dentro de la misma conversación.</p>
-        <p>Publi consulta los pliegos, enmiendas, actas e informes oficiales disponibles. Puede explicar requisitos, fechas, condiciones de entrega y pago, o qué adjudicación figura en el expediente. Cada respuesta indica la página y enlaza el documento que respalda el dato. Si falta una fuente, Publi señala qué quedó por confirmar.</p></div></details>
-<details><summary>¿Qué entrega Publi Pro?</summary><div class="s-a"><p>Publi Pro entrega un borrador editable con las partes administrativa, técnica y económica de la oferta. Lee los requisitos del pliego, aprovecha los datos del catálogo y las fichas de la empresa y te indica qué información, documentos o comprobaciones siguen pendientes. Puedes volver al borrador y ajustar los renglones, los precios o los anexos antes de cerrarlo.</p>
-        <p>Con Workflow, el equipo puede revisar esos pendientes en un tablero, completar los formularios compatibles y descargar el expediente organizado en los sobres que pida el pliego. El equipo revisa, firma y presenta la versión definitiva por el canal oficial del proceso.</p></div></details>
-<details><summary>¿Cómo trabaja mi equipo con Publi en Plus y Pro?</summary><div class="s-a"><p>El administrador es quien utiliza Publi y delega el trabajo entre los demás perfiles. Puede encargarle a una persona la revisión de requisitos de una licitación y a otra la preparación de documentos para un proceso distinto. Así el equipo puede trabajar en varias licitaciones al mismo tiempo.</p>
-        <p>Plus admite hasta <strong>5 perfiles por empresa</strong> y Pro hasta <strong>10</strong>. En Pro, el administrador puede compartir los resultados de Publi y sus fuentes para que cada colaborador consulte el material que necesita.</p></div></details>
+<details><summary>¿Cómo solicito Publicola Plus o Pro?</summary><div class="s-a"><p>Pulsa <strong>Solicitar Plus</strong> o <strong>Solicitar Pro</strong> y llena el <a href="/planes/solicitar/">formulario</a> con tu nombre, tu correo, el nombre de tu empresa, a qué se dedica y tu teléfono. Si quieres, déjanos un mensaje. El equipo de Publicola te contacta para activar tu plan.</p></div></details>
+<details><summary>¿Qué es Publi?</summary><div class="s-a"><p>Publi es el agente de inteligencia artificial de Publicola. Investiga las compras públicas contigo: lee pliegos, enmiendas y actas oficiales y te responde con la página y el enlace de la fuente.</p><ul><li><strong>Publi Plus</strong> busca licitaciones pasadas por institución, objeto, año o código y responde sobre sus documentos.</li><li><strong>Publi Pro</strong> encuentra licitaciones vigentes según tu catálogo, busca suplidores y compara cotizaciones.</li></ul></div></details>
+<details><summary>¿Qué hace Publi Pro?</summary><div class="s-a"><ul><li>Cruza tu catálogo con los renglones de las licitaciones vigentes y te muestra las que coinciden. Puedes preguntarle por el pliego y las enmiendas de cada una.</li><li>Busca suplidores, prepara solicitudes de cotización y compara cotizaciones por producto, precio, impuestos, entrega y garantía.</li><li>Analiza los antecedentes de hasta 25 competidores.</li><li>Explica los resultados de tus ofertas según las actas, detecta problemas repetidos y propone mejoras.</li><li>Responde sobre referencias de precios en su chat.</li></ul><p>Publi Pro investiga; la oferta se prepara en Workflow. Publi Pro está en beta privada.</p></div></details>
+<details><summary>¿Cómo funciona Workflow?</summary><div class="s-a"><p>Workflow, incluido en Pro, lleva cada licitación hasta la oferta preparada en un tablero:</p><ul><li>Reúne el análisis, los requisitos, los documentos y los formularios del proceso.</li><li>Adapta tus fichas y propuestas anteriores al pliego y señala los documentos, campos y evidencias pendientes.</li><li>Retomas el pendiente exacto donde lo dejaste.</li><li>Descargas el expediente organizado por sobres cuando corresponda.</li><li>Si la institución pide una subsanación o aclaración, identifica el plazo y los documentos solicitados y prepara un borrador de respuesta.</li></ul><p>Workflow se valida en piloto.</p></div></details>
+<details><summary>¿Puedo trabajar en equipo?</summary><div class="s-a"><p>Sí. Plus admite hasta 5 perfiles por empresa y Pro hasta 10. Así varias personas de tu empresa trabajan en distintas licitaciones al mismo tiempo. En Pro, además, comparten los resultados de Publi y sus fuentes.</p></div></details>
+<details><summary>¿Gratis tiene algún costo?</summary><div class="s-a"><p>No. Publicola Gratis cuesta US$0 y no pide tarjeta. Con tu cuenta buscas licitaciones, las sigues y recibes el Radar por correo.</p></div></details>
 </div>
 </div>
 </div>

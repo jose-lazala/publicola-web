@@ -318,3 +318,26 @@
 .s-mapa { position: relative; min-height: 340px; background: var(--panel-hundido); border-left: 1px solid var(--filete); }
 .s-mapa iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 @media (max-width: 760px) { .s-mapa { min-height: 300px; border-left: 0; border-top: 1px solid var(--filete); } }
+
+/* 13-nov-2026: tarjeta a lo ancho (Empresa LLC), lista de empresas disponibles y botones de contacto */
+.s-svc>.s-ancha { grid-column:1/-1 }
+.s-ancha-in { display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:32px;align-items:center }
+.s-empresas { list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(250px,100%),1fr)) }
+.s-empresas li { display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;border-radius:14px;border:1px solid var(--filete);background:var(--s-blanco-02);font-size:15.5px;font-weight:600;color:var(--texto) }
+.s-empresas li span { flex:none;font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--verde) }
+.s-empresas li span.s-prox { color:var(--apoyo-2) }
+.s-botones { display:flex;flex-direction:column;gap:12px }
+.s-botones .b-btn { justify-content:center;width:100%;height:60px;font-size:17px;gap:10px }
+@media (max-width: 760px) {
+  .s-ancha-in { grid-template-columns:minmax(0,1fr);gap:22px }
+}
+.s-solicitud { display:flex;flex-direction:column;gap:18px }
+.s-field-area { height:auto;padding:12px 16px;align-items:stretch }
+.s-field textarea { flex:1;min-width:0;border:0;outline:0;background:transparent;resize:vertical;font:500 16px/1.5 'Mona Sans',sans-serif;color:var(--texto) }
+.s-plan-elegir { display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;border:0 }
+.s-plan-elegir legend { width:100%;padding:0 }
+.s-plan-elegir label { position:relative;cursor:pointer }
+.s-plan-elegir input { position:absolute;opacity:0;pointer-events:none }
+.s-plan-elegir span { display:inline-flex;align-items:center;height:44px;padding:0 22px;border-radius:999px;border:1px solid var(--filete-2);background:var(--panel-hundido);font-weight:650;color:var(--texto-2) }
+.s-plan-elegir input:checked+span { border-color:var(--azul-foco);background:var(--azul-velo-2);color:var(--blanco) }
+.s-plan-elegir input:focus-visible+span { outline:2px solid var(--azul-luz);outline-offset:3px }
