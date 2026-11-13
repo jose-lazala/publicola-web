@@ -15,26 +15,17 @@
     return String(texto || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
   }
 
+  /* Diseño B (12-nov-2026): la misma tarjeta de texto que genera el servidor (s-art). */
   function tarjeta(a) {
-    var art = document.createElement("article");
-    art.className = "rec-tarjeta";
-    var cont = document.createElement("div");
-    cont.className = "rec-tarjeta-img";
-    var img = document.createElement("img");
-    img.src = a.imagen; img.alt = ""; img.loading = "lazy"; img.decoding = "async";
-    cont.appendChild(img);
-    var cuerpo = document.createElement("div");
-    cuerpo.className = "rec-tarjeta-cuerpo";
-    var chip = document.createElement("span");
-    chip.className = "rec-chip"; chip.textContent = a.categoria;
-    var h3 = document.createElement("h3");
-    var enlace = document.createElement("a");
-    enlace.href = "/recursos/" + a.slug + "/"; enlace.textContent = a.titulo;
-    h3.appendChild(enlace);
+    var art = document.createElement("a");
+    art.className = "s-art";
+    art.href = "/recursos/" + a.slug + "/";
+    var chip = document.createElement("p");
+    chip.className = "s-cat"; chip.textContent = a.categoria;
+    var h3 = document.createElement("h3"); h3.textContent = a.titulo;
     var p = document.createElement("p"); p.textContent = a.extracto;
     var t = document.createElement("time"); t.setAttribute("datetime", a.fecha); t.textContent = a.fecha_larga;
-    cuerpo.appendChild(chip); cuerpo.appendChild(h3); cuerpo.appendChild(p); cuerpo.appendChild(t);
-    art.appendChild(cont); art.appendChild(cuerpo);
+    art.appendChild(chip); art.appendChild(h3); art.appendChild(p); art.appendChild(t);
     return art;
   }
 

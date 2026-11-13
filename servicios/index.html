@@ -13,183 +13,263 @@
   <meta property="og:url" content="https://publicola.com.do/servicios/">
   <meta property="og:image" content="https://publicola.com.do/marca/og-image-v3.jpg">
   <link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48 64x64" href="/favicon-v3.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/marca/icono-32-v3.png"><link rel="icon" type="image/png" sizes="64x64" href="/marca/icono-64-v3.png"><link rel="apple-touch-icon" sizes="180x180" href="/marca/icono-180-v3.png">
-  <link rel="stylesheet" href="/lanzamiento.css?v=20261010a">
-  <link rel="stylesheet" href="/servicios.css?v=20261103a">
-  <!-- El movimiento se prepara antes de pintar (sin parpadeo). Si servicios.js no llega, todo se muestra a los 2,5 s. -->
-  <script>document.documentElement.classList.add("sv-movimiento");setTimeout(function(){if(!window.svListo){document.documentElement.classList.remove("sv-movimiento");}},2500);</script>
-  <link rel="stylesheet" href="/identidad-v3.css?v=editorial-20261106">
+  <link rel="icon" type="image/png" sizes="32x32" href="/marca/icono-32-v3.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="/marca/icono-64-v3.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/marca/icono-180-v3.png">
+  <meta name="theme-color" content="#050B1E">
+  <link rel="preload" href="/tipografia/mona-sans-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/sitio-b.css?v=20261113a">
+  <link rel="stylesheet" href="/paginas-b.css?v=20261113a">
 </head>
-<body>
-  <a class="salto" href="#contenido">Saltar al contenido</a>
-  <header class="v3-cabecera">
-    <div class="v3-barra">
-      <a class="v3-marca" href="/" aria-label="Publicola, inicio"><img src="/marca/publicola-logo-v3.png" alt="Publicola" width="736" height="240"></a>
-      <nav class="v3-enlaces" id="v3-menu" aria-label="Principal">
-        <a href="/#producto">Plataforma</a>
-        <a href="/servicios/" aria-current="page">Servicios</a>
+<body class="b-sitio">
+<a class="b-salto" href="#contenido">Saltar al contenido</a>
+<header class="b-cabecera b-cabecera-sitio">
+  <div class="b-wrap b-cabecera-interior">
+    <a class="b-logo" href="/" aria-label="Publicola, ir al inicio"><img src="/marca/publicola-logo-blanco-v1.png" alt="Publicola" width="523" height="168"></a>
+    <nav class="b-nav" aria-label="Principal">
+        <a href="/#plataforma">Plataforma</a>
         <a href="/planes/">Planes</a>
+        <a href="/servicios/" aria-current="page">Servicios</a>
         <a href="/recursos/">Recursos</a>
         <a href="/contacto/">Contacto</a>
-        <a class="v3-solo-movil" href="/app/?acceso=entrar">Iniciar sesión</a>
-      </nav>
-      <div class="v3-acciones">
-        <a class="v3-entrar" href="/app/?acceso=entrar">Iniciar sesión ↗</a>
-        <button class="v3-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="v3-menu">☰</button>
+    </nav>
+    <div class="b-acciones">
+      <a class="b-btn b-fantasma" href="/app/?acceso=entrar"><span class="b-entrar-largo">Iniciar sesión</span><span class="b-entrar-corto">Entrar</span></a>
+      <a class="b-btn b-primario" href="/app/?acceso=crear">Crear mi cuenta gratis</a>
+      <button class="b-menu" type="button" aria-expanded="false" aria-controls="b-menu-movil">
+        <span class="b-sr">Menú</span>
+        <svg class="b-abrir-icono" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="b-cerrar-icono" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="b-nav-movil" id="b-menu-movil" aria-label="Principal en el celular">
+        <a href="/#plataforma">Plataforma</a>
+        <a href="/planes/">Planes</a>
+        <a href="/servicios/" aria-current="page">Servicios</a>
+        <a href="/recursos/">Recursos</a>
+        <a href="/contacto/">Contacto</a>
+    <a class="b-btn b-primario" href="/app/?acceso=crear">Crear mi cuenta gratis</a>
+  </nav>
+</header>
+<main id="contenido">
+<section class="s-hero">
+<div class="b-wrap" style="padding-top: 88px; padding-bottom: 96px">
+<div class="s-two">
+<div>
+<p class="b-antetitulo"><span aria-hidden="true" style="width: 18px; height: 1px; background: var(--oro)"></span>Servicios</p>
+<h1 class="s-h1">Tu empresa y tus licitaciones, en buenas manos.</h1>
+<p class="s-lead">Nuestro equipo te acompaña desde la constitución o modificación de tu empresa hasta la preparación y presentación de tus ofertas.</p>
+<div class="s-actions">
+<a class="b-btn b-primario b-lg" href="mailto:info@publicola.com.do?subject=Quiero%20pedir%20un%20servicio"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>Pedir un servicio</a>
+<a class="b-btn b-secundario b-lg" href="#servicios">Ver los servicios</a>
+</div>
+<ul class="s-list" style="margin-top: 34px">
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Cotización por correo, con el alcance, lo que recibes y lo que necesitamos.</li>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Cada servicio con su plazo, indicado en la cotización.</li>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Tus documentos, solo por correo, por tu seguridad.</li>
+</ul>
+</div>
+<div class="b-panel" style="padding: 30px; background: linear-gradient(180deg, var(--panel-elevado-1) 0%, var(--panel-elevado-2) 100%); border-color: var(--filete-elevado); box-shadow: inset 0 1px 0 var(--blanco-07), 0 40px 80px -30px var(--s-negro-85)">
+<div class="b-luz b-luz-oro"></div>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<p class="s-cat">Creación de empresas</p>
+<span class="b-mono" style="font-size: 11px; color: var(--apoyo)">Lo que recibes</span>
+</div>
+<p class="b-x" style="margin: 14px 0 0; font-size: 26px; line-height: 1.15; font-weight: 700">Tu empresa, lista para licitar</p>
+<div style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px">
+<div class="b-wfitem" style="padding: 14px 16px"><span style="display: flex; align-items: center; gap: 12px"><span class="s-ico s-ico-sm"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"></path><path d="M14 3v5h5M10 13h6M10 17h4"></path></svg></span><span><strong style="display: block; font-size: 15px">Estatutos sociales</strong><span style="font-size: 13px; color: var(--apoyo-2)">Redactados y registrados</span></span></span><span class="b-status b-ok">Listo</span></div>
+<div class="b-wfitem" style="padding: 14px 16px"><span style="display: flex; align-items: center; gap: 12px"><span class="s-ico s-ico-sm"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"></path><path d="M9 8h6M9 12h6"></path></svg></span><span><strong style="display: block; font-size: 15px">RNC</strong><span style="font-size: 13px; color: var(--apoyo-2)">Tu empresa en la DGII</span></span></span><span class="b-status b-ok">Listo</span></div>
+<div class="b-wfitem" style="padding: 14px 16px"><span style="display: flex; align-items: center; gap: 12px"><span class="s-ico s-ico-sm"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V10M9.5 21V10M14.5 21V10M19 21V10M2 10l10-6 10 6"></path></svg></span><span><strong style="display: block; font-size: 15px">Proveedor del Estado</strong><span style="font-size: 13px; color: var(--apoyo-2)">Inscrita en el RPE</span></span></span><span class="b-status b-ok">Listo</span></div>
+<div class="b-wfitem" style="padding: 14px 16px"><span style="display: flex; align-items: center; gap: 12px"><span class="s-ico s-ico-sm"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.4 3.4 7.9 8 9 4.6-1.1 8-4.6 8-9V6z"></path></svg></span><span><strong style="display: block; font-size: 15px">Seguridad Social</strong><span style="font-size: 13px; color: var(--apoyo-2)">Inscrita en la TSS</span></span></span><span class="b-status b-ok">Listo</span></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--filete-2)">
+<span class="s-seal"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Lista para licitar</span>
+<a class="b-enlace" href="/servicios/creacion-de-empresas/" style="font-size: 14px">Ver el servicio<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="b-wrap" style="padding-top: 40px; padding-bottom: 8px">
+<div class="b-panel" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); overflow: hidden">
+<div class="s-stat"><b>5 a 6</b><span>días laborables para tener tu empresa semi-constituida</span></div>
+<div class="s-stat"><b>15</b><span>días laborables aproximados para una empresa nueva con nombre propio</span></div>
+<div class="s-stat"><b>5</b><span>servicios para tu empresa y tus licitaciones</span></div>
+<div class="s-stat"><b>2</b><span>formas de solicitar la constitución de tu empresa, por correo o WhatsApp</span></div>
+</div>
+</div>
+
+<section id="servicios" style="padding: 96px 0 104px">
+<div class="b-wrap">
+<div class="s-head">
+<div><p class="b-antetitulo"><span aria-hidden="true" style="width: 18px; height: 1px; background: var(--oro)"></span>Nuestros servicios</p><h2 class="b-h2">Lo que hacemos por ti.</h2></div>
+<p class="b-entrada">Cinco grupos de servicios para tu empresa y tus licitaciones. Cada uno se cotiza según lo que necesitas.</p>
+</div>
+<div class="s-svc">
+<a class="s-card s-feat" href="/servicios/creacion-de-empresas/" style="padding: 36px; border-color: var(--s-oro-4); background: radial-gradient(520px 260px at 100% 0%, var(--s-oro-10), transparent 70%), linear-gradient(180deg, var(--panel-1) 0%, var(--panel-2) 100%)">
+<span class="s-ico s-ico-gold"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V5l8-3 8 3v16"></path><path d="M9 21v-5h6v5M8 9h2M14 9h2M8 13h2M14 13h2"></path></svg></span>
+<p class="s-cat" style="margin-top: 8px">Empresa</p>
+<h3 style="font-size: 30px">Creación de empresas</h3>
+<p style="font-size: 16.5px">Constituimos tu empresa y gestionamos las inscripciones para licitar: una empresa semi-constituida o una empresa nueva, lista para operar y licitar.</p>
+<dl class="s-kv" style="margin-top: 12px; border-radius: 16px; border: 1px solid var(--filete); background: var(--panel-hundido)">
+<div><dt>Empresa semi-constituida</dt><dd>5 a 6 días</dd><dd>laborables, con un nombre de nuestra lista</dd></div>
+<div><dt>Empresa nueva</dt><dd>Unos 15 días</dd><dd>laborables, con el nombre que propones</dd></div>
+</dl>
+<ul class="s-list" style="margin-top: 6px">
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Registro Mercantil, RNC, TSS y Registro de Proveedores del Estado.</li>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Certificación MIPYME, si tu empresa la requiere.</li>
+</ul>
+<span class="s-more">Conocer el servicio<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+</a>
+<a class="s-card" href="/servicios/modificacion-de-empresas/">
+<span class="s-ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"></path><path d="m13.5 6.5 4 4"></path></svg></span>
+<p class="s-cat">Empresa</p><h3>Modificación de empresas</h3>
+<p>Cambios de socios, gerente, nombre, domicilio, objeto, transformación o aumento de capital, en un solo expediente.</p>
+<span class="s-more">Conocer más<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+</a>
+<a class="s-card" href="/servicios/solicitud-de-documentos/">
+<span class="s-ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"></path><path d="M14 3v5h5M10 13h6M10 17h4"></path></svg></span>
+<p class="s-cat">Documentos</p><h3>Solicitud de documentos</h3>
+<p>El RPE, la certificación MIPYME, la TSS, certificaciones y lo que pida el pliego.</p>
+<span class="s-more">Conocer más<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+</a>
+<a class="s-card" href="/servicios/asesoria-legal-compras-publicas/">
+<span class="s-ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 7h14M7 7l-3 7a3.5 3.5 0 0 0 6 0zM17 7l-3 7a3.5 3.5 0 0 0 6 0z"></path></svg></span>
+<p class="s-cat">Licitaciones</p><h3>Asesoría legal en compras y contrataciones públicas</h3>
+<p>Desde la revisión del pliego hasta el sometimiento de tu oferta, completa o por partes.</p>
+<span class="s-more">Conocer más<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+</a>
+<a class="s-card" href="/servicios/otros-servicios-juridicos/">
+<span class="s-ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.4 3.4 7.9 8 9 4.6-1.1 8-4.6 8-9V6z"></path></svg></span>
+<p class="s-cat">Respaldo legal</p><h3>Otros servicios jurídicos</h3>
+<p>Marcas, contratos, cobro de deudas y otras gestiones de tu empresa, también fuera de las licitaciones.</p>
+<span class="s-more">Conocer más<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+</a>
+</div>
+<p class="s-note" style="margin-top: 20px">No llevamos asuntos penales, divorcios ni de familia.</p>
+</div>
+</section>
+
+<section class="s-sec s-alt">
+<div class="b-wrap">
+<div class="s-head">
+<div><p class="b-antetitulo"><span aria-hidden="true" style="width: 18px; height: 1px; background: var(--oro)"></span>De la idea a la licitación</p><h2 class="b-h2">Te acompañamos en todo el camino.</h2></div>
+</div>
+<div class="s-route">
+<a href="/servicios/creacion-de-empresas/"><span class="s-n">1</span><h3>Tu empresa</h3><p>La creamos o la modificamos, lista para licitar.</p></a>
+<a href="/servicios/solicitud-de-documentos/"><span class="s-n">2</span><h3>Tus documentos</h3><p>Gestionamos los documentos que requiere tu licitación.</p></a>
+<a href="/servicios/asesoria-legal-compras-publicas/"><span class="s-n">3</span><h3>Tu oferta</h3><p>Te acompañamos en la preparación y el sometimiento.</p></a>
+<a href="/servicios/otros-servicios-juridicos/"><span class="s-n">4</span><h3>Tu respaldo legal</h3><p>Cobros, marca y todo lo jurídico de tu empresa.</p></a>
+</div>
+</div>
+</section>
+
+<section class="s-sec">
+<div class="b-wrap">
+<div class="s-head">
+<div><p class="b-antetitulo"><span aria-hidden="true" style="width: 18px; height: 1px; background: var(--oro)"></span>Cómo trabajamos</p><h2 class="b-h2">Cómo pedir un servicio.</h2></div>
+<p class="b-entrada">Todo queda por escrito en el mismo hilo de correo, desde la primera consulta hasta la entrega.</p>
+</div>
+<ol class="s-steps">
+<li><span class="s-n">01</span><h3>Escríbenos</h3><p>Cuéntanos qué servicio necesitas, el nombre de tu empresa y, si es para una licitación, su código y su fecha de cierre.</p></li>
+<li><span class="s-n">02</span><h3>Recibe la cotización</h3><p>Con el alcance del trabajo, lo que recibes y la información o los documentos que necesitamos.</p></li>
+<li><span class="s-n">03</span><h3>Acepta y envía</h3><p>Aceptas la cotización, completas el pago y nos envías la información y los documentos por correo.</p></li>
+<li><span class="s-n">04</span><h3>Te mantenemos al tanto</h3><p>Si falta algo o una institución pide una corrección, te lo decimos. Al terminar, te indicamos lo que recibes.</p></li>
+</ol>
+<div class="s-two" style="margin-top: 64px; align-items: start">
+<div>
+<h3 class="b-x" style="margin: 0; font-size: 28px; line-height: 1.15; font-weight: 700">Condiciones claras</h3>
+<div style="margin-top: 18px">
+<div class="s-term"><span class="s-ico s-ico-sm"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"></path><path d="M9 8h6M9 12h6"></path></svg></span><div><h3>Precio</h3><p>Cada servicio se cotiza según lo que necesitas. Los impuestos y tasas del Estado, como el ITBIS cuando aplica, se indican por separado.</p></div></div>
+<div class="s-term"><span class="s-ico s-ico-sm"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"></rect><path d="M3 10h18"></path></svg></span><div><h3>Pago</h3><p>Completo y de una sola vez: no trabajamos con cuotas ni financiamiento.</p></div></div>
+<div class="s-term"><span class="s-ico s-ico-sm"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span><div><h3>Plazo</h3><p>Corre desde que aceptas la cotización, completas el pago y recibimos todo completo. Lo que depende de una institución pública sigue sus tiempos.</p></div></div>
+<div class="s-term"><span class="s-ico s-ico-sm"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg></span><div><h3>Seguridad</h3><p>Recibimos los documentos solo por correo, en info@publicola.com.do. Nunca te los pediremos por mensajería instantánea ni dentro de un chat.</p></div></div>
+<div class="s-term" style="border-bottom: 1px solid var(--filete)"><span class="s-ico s-ico-sm"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"></path><path d="m3 13 9 5 9-5"></path></svg></span><div><h3>Plataforma y servicios</h3><p>Publicola Gratis y Plus son la plataforma digital. Un servicio es trabajo de nuestro equipo y se cotiza aparte: no necesitas cuenta para pedirlo.</p></div></div>
+</div>
+</div>
+<div class="b-panel" style="padding: 34px">
+<div class="b-luz b-luz-oro"></div>
+<p class="s-cat">Pide tu cotización</p>
+<p class="b-x" style="margin: 14px 0 0; font-size: 26px; line-height: 1.2; font-weight: 700">Escríbenos y te respondemos por correo con la cotización.</p>
+<div style="display: flex; flex-direction: column; gap: 12px; margin-top: 24px">
+<a class="b-btn b-primario b-lg s-full" href="mailto:info@publicola.com.do?subject=Quiero%20pedir%20un%20servicio"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>info@publicola.com.do</a>
+<a class="b-btn b-secundario b-lg s-full" href="https://wa.me/18297856028"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.8 7L4 20l1.1-4A8 8 0 1 1 20 12z"></path></svg>WhatsApp · (829) 785-6028</a>
+</div>
+<p class="s-note" style="margin-top: 12px">Por WhatsApp puedes pedir la constitución de tu empresa. Los documentos se envían solo por correo.</p>
+<div class="s-addr" style="margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--filete-2)">
+<span class="s-ico s-ico-sm s-ico-gold"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span>
+<div><p class="s-note" style="margin: 0 0 4px; color: var(--apoyo-2)">Nuestra oficina</p><address>Av. Abraham Lincoln no. 1003, Torre Profesional Biltmore I, Suite 301, Piantini, Santo Domingo</address></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="s-sec s-alt">
+<div class="b-wrap">
+<div class="s-two" style="align-items: start">
+<div>
+<p class="b-antetitulo"><span aria-hidden="true" style="width: 18px; height: 1px; background: var(--oro)"></span>Preguntas frecuentes</p>
+<h2 class="b-h2">Lo que casi siempre nos preguntan.</h2>
+<p class="b-entrada" style="margin-top: 20px">¿Te queda otra duda? Escríbenos a info@publicola.com.do.</p>
+</div>
+<div class="s-faq">
+<details open><summary>¿Qué servicios ofrecen?</summary><div class="s-a"><p>Cinco grupos de servicios para tu empresa y tus licitaciones:</p><ul><li><strong>Creación de empresas:</strong> una empresa semi-constituida o una empresa nueva, lista para operar y licitar.</li><li><strong>Modificación de empresas:</strong> cambios de socios, gerente, nombre, domicilio, objeto, transformación o aumento de capital.</li><li><strong>Solicitud de documentos:</strong> gestionamos el RPE, la certificación MIPYME, la TSS, certificaciones y lo que pida el pliego.</li><li><strong>Asesoría legal en compras y contrataciones públicas:</strong> desde la revisión del pliego hasta el sometimiento de tu oferta, completa o por partes.</li><li><strong>Otros servicios jurídicos:</strong> marcas, contratos, cobro de deudas y otras gestiones de tu empresa.</li></ul><p>No llevamos asuntos penales, divorcios ni de familia.</p></div></details>
+<details><summary>¿Cómo pido un servicio y qué conviene decir en el primer correo?</summary><div class="s-a"><p>Escríbenos a <a href="mailto:info@publicola.com.do">info@publicola.com.do</a>. No hace falta un formato especial; lo que más ayuda a cotizar bien es:</p><ul><li>qué servicio necesitas o qué problema quieres resolver;</li><li>el nombre de tu empresa, si ya existe;</li><li>si es para una licitación, su código y su fecha de cierre;</li><li>cualquier fecha límite que tengas.</li></ul><p>Con eso te respondemos por correo con la cotización: el alcance del trabajo, lo que recibes y la información o los documentos que necesitamos. El trabajo empieza cuando aceptas la cotización, completas el pago convenido y nos envías la información y los documentos requeridos.</p></div></details>
+<details><summary>¿Necesito una cuenta de Publicola para pedir un servicio?</summary><div class="s-a"><p>No. Los servicios se piden por correo a <a href="mailto:info@publicola.com.do">info@publicola.com.do</a>, tengas o no cuenta, y no necesitas Publicola Plus. La plataforma (Gratis o Plus) y los servicios son cosas distintas: puedes usar una sin la otra.</p></div></details>
+<details><summary>¿Cuánto cuesta y cómo se paga?</summary><div class="s-a"><p>Cada servicio se cotiza según lo que necesitas. Escríbenos a <a href="mailto:info@publicola.com.do">info@publicola.com.do</a>: en la cotización te decimos qué incluye, qué no incluye y qué información y documentos necesitamos para empezar.</p><p>El pago es completo y de una sola vez: no trabajamos con cuotas ni financiamiento. Los impuestos y tasas del Estado que correspondan (por ejemplo, el ITBIS cuando aplica o las tasas de una institución) no forman parte de nuestros honorarios y se indican por separado.</p></div></details>
+<details><summary>¿De qué depende el plazo y desde cuándo corre?</summary><div class="s-a"><p>Cada servicio tiene su plazo y te lo indicamos en la cotización. Para la creación de empresas: de 5 a 6 días laborables con una empresa semi-constituida y unos 15 días laborables con una empresa nueva.</p><p>El plazo corre desde que aceptas la cotización, completas el pago y recibimos la información y los documentos completos. Lo que depende de una institución pública (por ejemplo, la emisión de un certificado o un registro) sigue los tiempos de esa institución y también puede depender de la situación de tu empresa ante ella.</p></div></details>
+<details><summary>¿Cómo me mantienen al tanto?</summary><div class="s-a"><p>Por correo, en el mismo hilo de la solicitud. Si nos falta algo o una institución pide una corrección, te lo decimos por ahí; cuando terminamos, te avisamos y te indicamos lo que recibes.</p></div></details>
+<details><summary>¿En qué se diferencia un servicio de Publicola Gratis o Plus?</summary><div class="s-a"><p>Publicola Gratis y Publicola Plus son la plataforma digital: buscas licitaciones, las sigues y lees lo que exige cada proceso. Un servicio es trabajo de nuestro equipo hecho para tu empresa (crearla, gestionar un documento, preparar y someter una oferta) y se cotiza aparte. Contratar un servicio no activa Plus, y tener Plus no incluye servicios.</p></div></details>
+<details><summary>¿Puedo enviar los documentos por WhatsApp?</summary><div class="s-a"><p>No. Por tu seguridad recibimos los documentos solo por correo, en <a href="mailto:info@publicola.com.do">info@publicola.com.do</a>. Nunca te los pediremos por mensajería instantánea ni dentro de un chat.</p></div></details>
+</div>
+</div>
+</div>
+</section>
+
+<section style="padding: 96px 0">
+<div class="b-wrap">
+<div class="s-band">
+<h2>Y puedes crear tu cuenta gratis.</h2>
+<p>Busca licitaciones y sigue tus oportunidades. Cuando quieras más detalle, conoce el plan Plus.</p>
+<div class="s-actions"><a class="b-btn b-primario b-lg" href="/app/?acceso=crear">Crear mi cuenta gratis</a><a class="b-btn b-fantasma b-lg" href="/planes/">Ver los planes</a></div>
+</div>
+</div>
+</section>
+</main>
+<footer class="b-pie">
+  <div class="b-wrap b-pie-interior">
+    <div class="b-pie-columnas">
+      <div class="b-pie-marca">
+        <img src="/marca/publicola-logo-blanco-v1.png" alt="Publicola" width="523" height="168" loading="lazy">
+        <p>Compras públicas. Análisis profundo, respuestas sencillas.</p>
+      </div>
+      <div class="b-pie-col">
+        <h2 id="pie-plataforma">Plataforma</h2>
+        <nav aria-labelledby="pie-plataforma"><a href="/app/#/oportunidades">Explorador</a><a href="/expedientes/" data-solo-con-expediente hidden>Expediente público</a><a href="/app/#/inteligencia/instituciones">Instituciones</a><a href="/planes/">Planes</a></nav>
+      </div>
+      <div class="b-pie-col">
+        <h2 id="pie-publicola">Publicola</h2>
+        <nav aria-labelledby="pie-publicola"><a href="/servicios/">Servicios</a><a href="/recursos/">Recursos</a><a href="/contacto/">Contacto</a><a href="/fuentes/">Fuentes y metodología</a></nav>
+      </div>
+      <div class="b-pie-col">
+        <h2 id="pie-legal">Legal</h2>
+        <nav aria-labelledby="pie-legal"><a href="/legal/">Términos de uso y condiciones</a><a href="/privacidad/">Privacidad</a></nav>
+      </div>
+      <div class="b-pie-col b-pie-col-ancha">
+        <h2 id="pie-contacto">Contacto</h2>
+        <nav aria-labelledby="pie-contacto"><a href="mailto:info@publicola.com.do">info@publicola.com.do</a><a href="https://linkedin.com/company/publicolasrl" rel="noopener">LinkedIn</a><a href="https://instagram.com/publicolard" rel="noopener">Instagram · @publicolard</a></nav>
+        <address class="b-pie-direccion">Av. Abraham Lincoln no. 1003, Torre Profesional Biltmore I, Suite 301, Piantini, Santo Domingo</address>
       </div>
     </div>
-  </header>
-
-  <main id="contenido">
-    <!-- ============ PORTADA: el expediente de tu empresa se abre en abanico ============ -->
-    <section class="sv-portada">
-      <svg class="sv-cinta" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="svg-cinta" x1="0" x2="1"><stop offset="0" stop-color="#d89926"/><stop offset=".55" stop-color="#f3c66f"/><stop offset="1" stop-color="#8ed0f5"/></linearGradient></defs><path d="M0 170 C 360 60, 760 220, 1440 40 L1440 220 L0 220 Z" fill="url(#svg-cinta)" opacity=".9"/></svg>
-      <div class="contenedor sv-portada-rejilla">
-        <div>
-          <p class="eyebrow" data-entra>Servicios</p>
-          <h1 data-entra>Tu empresa y tus licitaciones, en buenas manos.</h1>
-          <p class="sv-lead" data-entra>Nuestro equipo te acompaña desde la constitución o modificación de tu empresa hasta la preparación y presentación de tus ofertas.</p>
-          <div class="acciones" data-entra>
-            <a class="boton boton-claro" href="mailto:info@publicola.com.do?subject=Quiero%20pedir%20un%20servicio">Pedir un servicio</a>
-            <a class="boton sv-boton-borde" href="#servicios">Ver los servicios</a>
-          </div>
-        </div>
-        <div class="sv-expediente" aria-hidden="true">
-          <div class="sv-doc d1 oro"><div class="sv-doc-fila"><span class="sv-doc-icono"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M9 11h6M9 15h6"/></svg></span><em>✓ Listo</em></div><b>Estatutos sociales</b><small>Redactados y registrados</small></div>
-          <div class="sv-doc d2 azul"><div class="sv-doc-fila"><span class="sv-doc-icono"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 10h8M8 14h5"/></svg></span><em>✓ Listo</em></div><b>RNC</b><small>Tu empresa en la DGII</small></div>
-          <div class="sv-doc d3 verde"><div class="sv-doc-fila"><span class="sv-doc-icono"><svg viewBox="0 0 24 24"><path d="M4 10l8-5 8 5"/><path d="M6 10v8M10 10v8M14 10v8M18 10v8M4 20h16"/></svg></span><em>✓ Listo</em></div><b>Proveedor del Estado</b><small>Inscrita en el RPE</small></div>
-          <div class="sv-doc d4 coral"><div class="sv-doc-fila"><span class="sv-doc-icono"><svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5M13 19c0-3 2-5 4-5s4 2 4 5"/></svg></span><em>✓ Listo</em></div><b>Seguridad Social</b><small>Inscrita en la TSS</small></div>
-          <div class="sv-sello"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Lista para licitar</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ RECORRIDO: de la idea a la licitacion (sustituye la franja de instituciones, Owner 4-oct-2026) ============ -->
-    <section class="sv-ruta" aria-label="De la idea a la licitación">
-      <div class="contenedor">
-        <p class="eyebrow" data-entra>De la idea a la licitación</p>
-        <h2 data-entra>Te acompañamos en todo el camino.</h2>
-        <ol>
-          <li class="oro" data-entra><a href="/servicios/creacion-de-empresas/"><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 34h28"/><path d="M9 34V14l11-7 11 7v20"/><path d="M16 34v-9h8v9"/><path d="M15 17h2M23 17h2"/></svg></span><span class="sv-ruta-num">1</span><strong>Tu empresa</strong><em>La creamos o la modificamos, lista para licitar.</em></a></li>
-          <li class="coral" data-entra><a href="/servicios/solicitud-de-documentos/"><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h15l7 7v21H9z"/><path d="M24 6v7h7"/><path d="M14 21l4 4 8-8"/><path d="M14 30h12"/></svg></span><span class="sv-ruta-num">2</span><strong>Tus documentos</strong><em>Gestionamos los documentos que requiere tu licitación.</em></a></li>
-          <li class="morado" data-entra><a href="/servicios/asesoria-legal-compras-publicas/"><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 5v30"/><path d="M8 12h24"/><path d="M8 12l-5 11h10z"/><path d="M32 12l-5 11h10z"/><path d="M13 35h14"/></svg></span><span class="sv-ruta-num">3</span><strong>Tu oferta</strong><em>Te acompañamos en la preparación y el sometimiento.</em></a></li>
-          <li class="verde" data-entra><a href="/servicios/otros-servicios-juridicos/"><span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10h20a4 4 0 014 4v8a4 4 0 01-4 4H15l-7 6v-6H6"/><path d="M30 16h2a3 3 0 013 3v8a3 3 0 01-3 3h-1v5l-6-5"/></svg></span><span class="sv-ruta-num">4</span><strong>Tu respaldo legal</strong><em>Cobros, marca y todo lo jurídico de tu empresa.</em></a></li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- ============ CIFRAS ============ -->
-    <section class="sv-cifras" aria-label="En cifras">
-      <div class="contenedor">
-        <div data-entra><strong><span data-contar="5">5</span> a <span data-contar="6">6</span></strong><span>días laborables para tener tu empresa semi-constituida</span></div>
-        <div data-entra><strong><span data-contar="5">5</span></strong><span>servicios para tu empresa y tus licitaciones</span></div>
-        <div data-entra><strong><span data-contar="15">15</span></strong><span>días laborables aproximados para una empresa nueva con nombre propio</span></div>
-        <div data-entra><strong><span data-contar="2">2</span></strong><span>formas de solicitar la constitución de tu empresa, por correo o WhatsApp</span></div>
-      </div>
-    </section>
-
-    <!-- ============ CARRUSEL DE SERVICIOS ============ -->
-    <section class="seccion" id="servicios">
-      <div class="contenedor">
-        <div class="encabezado-seccion">
-          <p class="eyebrow" data-entra>Nuestros servicios</p>
-          <h2 data-entra>Lo que hacemos por ti.</h2>
-        </div>
-
-        <div class="sv-carrusel" data-sv-carrusel aria-roledescription="carrusel" aria-label="Servicios de Publicola">
-          <div class="sv-pista" tabindex="0">
-            <article class="sv-tarjeta oro" data-entra="derecha" data-nombre="Creación de empresas">
-              <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 34h28"/><path d="M9 34V14l11-7 11 7v20"/><path d="M16 34v-9h8v9"/><path d="M15 17h2M23 17h2"/></svg></span>
-              <span class="sv-familia">Empresa</span>
-              <h3>Creación de empresas</h3>
-              <p>Constituimos tu empresa y gestionamos las inscripciones para licitar.</p>
-              <a class="boton" href="/servicios/creacion-de-empresas/">Conocer más</a>
-            </article>
-
-            <article class="sv-tarjeta azul" data-entra="derecha" data-nombre="Modificación de empresas">
-              <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h16l7 7v8"/><path d="M8 6v28h10"/><path d="M33 22l3 3-10 10h-3v-3z"/></svg></span>
-              <span class="sv-familia">Empresa</span>
-              <h3>Modificación de empresas</h3>
-              <p>Gestionamos los cambios que necesita tu empresa en un solo expediente.</p>
-              <a class="boton" href="/servicios/modificacion-de-empresas/">Conocer más</a>
-            </article>
-
-            <article class="sv-tarjeta coral" data-entra="derecha" data-nombre="Solicitud de documentos">
-              <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h15l7 7v21H9z"/><path d="M24 6v7h7"/><path d="M14 21l4 4 8-8"/><path d="M14 30h12"/></svg></span>
-              <span class="sv-familia">Documentos</span>
-              <h3>Solicitud de documentos</h3>
-              <p>Gestionamos los documentos que tu empresa necesita para licitar.</p>
-              <a class="boton" href="/servicios/solicitud-de-documentos/">Conocer más</a>
-            </article>
-
-            <article class="sv-tarjeta morado" data-entra="derecha" data-nombre="Asesoría legal en compras y contrataciones públicas">
-              <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 5v30"/><path d="M8 12h24"/><path d="M8 12l-5 11h10z"/><path d="M32 12l-5 11h10z"/><path d="M13 35h14"/></svg></span>
-              <span class="sv-familia">Licitaciones</span>
-              <h3>Asesoría legal en compras y contrataciones públicas</h3>
-              <p>Te acompañamos en cada licitación, desde el pliego hasta el sometimiento.</p>
-              <a class="boton" href="/servicios/asesoria-legal-compras-publicas/">Conocer más</a>
-            </article>
-
-            <article class="sv-tarjeta verde" data-entra="derecha" data-nombre="Otros servicios jurídicos">
-              <span class="sv-icono" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10h20a4 4 0 014 4v8a4 4 0 01-4 4H15l-7 6v-6H6"/><path d="M30 16h2a3 3 0 013 3v8a3 3 0 01-3 3h-1v5l-6-5"/></svg></span>
-              <span class="sv-familia">Respaldo legal</span>
-              <h3>Otros servicios jurídicos</h3>
-              <p>Respaldo legal para tu empresa, también fuera de las licitaciones.</p>
-              <a class="boton" href="/servicios/otros-servicios-juridicos/">Conocer más</a>
-            </article>
-          </div>
-          <div class="sv-controles">
-            <div class="sv-puntos" aria-label="Elegir servicio"></div>
-            <div class="sv-flechas"><button type="button" data-anterior aria-label="Anterior">←</button><button type="button" data-siguiente aria-label="Siguiente">→</button></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ PREGUNTAS FRECUENTES ============ -->
-    <section class="seccion seccion-suave">
-      <div class="contenedor sv-preguntas">
-        <div class="encabezado-seccion">
-          <p class="eyebrow" data-entra>Preguntas frecuentes</p>
-          <h2 data-entra>Lo que casi siempre nos preguntan.</h2>
-        </div>
-        <div>
-          <details data-entra><summary>¿Qué servicios ofrecen?</summary><p>Cinco grupos de servicios para tu empresa y tus licitaciones:</p><ul><li><strong>Creación de empresas:</strong> una empresa semi-constituida o una empresa nueva, lista para operar y licitar.</li><li><strong>Modificación de empresas:</strong> cambios de socios, gerente, nombre, domicilio, objeto, transformación o aumento de capital.</li><li><strong>Solicitud de documentos:</strong> gestionamos el RPE, la certificación MIPYME, la TSS, certificaciones y lo que pida el pliego.</li><li><strong>Asesoría legal en compras y contrataciones públicas:</strong> desde la revisión del pliego hasta el sometimiento de tu oferta, completa o por partes.</li><li><strong>Otros servicios jurídicos:</strong> marcas, contratos, cobro de deudas y otras gestiones de tu empresa.</li></ul><p>No llevamos asuntos penales, divorcios ni de familia.</p></details>
-          <details data-entra><summary>¿Cómo pido un servicio y qué conviene decir en el primer correo?</summary><p>Escríbenos a <a href="mailto:info@publicola.com.do">info@publicola.com.do</a>. No hace falta un formato especial; lo que más ayuda a cotizar bien es:</p><ul><li>qué servicio necesitas o qué problema quieres resolver;</li><li>el nombre de tu empresa, si ya existe;</li><li>si es para una licitación, su código y su fecha de cierre;</li><li>cualquier fecha límite que tengas.</li></ul><p>Con eso te respondemos por correo con la cotización: el alcance del trabajo, lo que recibes y la información o los documentos que necesitamos. El trabajo empieza cuando aceptas la cotización, completas el pago convenido y nos envías la información y los documentos requeridos.</p></details>
-          <details data-entra><summary>¿Necesito una cuenta de Publicola para pedir un servicio?</summary><p>No. Los servicios se piden por correo a <a href="mailto:info@publicola.com.do">info@publicola.com.do</a>, tengas o no cuenta, y no necesitas Publicola Plus. La plataforma (Gratis o Plus) y los servicios son cosas distintas: puedes usar una sin la otra.</p></details>
-          <details data-entra><summary>¿Cuánto cuesta y cómo se paga?</summary><p>Cada servicio se cotiza según lo que necesitas. Escríbenos a <a href="mailto:info@publicola.com.do">info@publicola.com.do</a>: en la cotización te decimos qué incluye, qué no incluye y qué información y documentos necesitamos para empezar.</p><p>El pago es completo y de una sola vez: no trabajamos con cuotas ni financiamiento. Los impuestos y tasas del Estado que correspondan (por ejemplo, el ITBIS cuando aplica o las tasas de una institución) no forman parte de nuestros honorarios y se indican por separado.</p></details>
-          <details data-entra><summary>¿De qué depende el plazo y desde cuándo corre?</summary><p>Cada servicio tiene su plazo y te lo indicamos en la cotización. Para la creación de empresas: de 5 a 6 días laborables con una empresa semi-constituida y unos 15 días laborables con una empresa nueva.</p><p>El plazo corre desde que aceptas la cotización, completas el pago y recibimos la información y los documentos completos. Lo que depende de una institución pública (por ejemplo, la emisión de un certificado o un registro) sigue los tiempos de esa institución y también puede depender de la situación de tu empresa ante ella.</p></details>
-          <details data-entra><summary>¿Cómo me mantienen al tanto?</summary><p>Por correo, en el mismo hilo de la solicitud. Si nos falta algo o una institución pide una corrección, te lo decimos por ahí; cuando terminamos, te avisamos y te indicamos lo que recibes.</p></details>
-          <details data-entra><summary>¿En qué se diferencia un servicio de Publicola Gratis o Plus?</summary><p>Publicola Gratis y Publicola Plus son la plataforma digital: buscas licitaciones, las sigues y lees lo que exige cada proceso. Un servicio es trabajo de nuestro equipo hecho para tu empresa (crearla, gestionar un documento, preparar y someter una oferta) y se cotiza aparte. Contratar un servicio no activa Plus, y tener Plus no incluye servicios.</p></details>
-          <details data-entra><summary>¿Puedo enviar los documentos por WhatsApp?</summary><p>No. Por tu seguridad recibimos los documentos solo por correo, en <a href="mailto:info@publicola.com.do">info@publicola.com.do</a>. Nunca te los pediremos por mensajería instantánea ni dentro de un chat.</p></details>
-        </div>
-      </div>
-    </section>
-
-    <section class="seccion">
-      <div class="contenedor">
-        <div class="sv-cta" data-entra>
-          <div>
-            <h2>Y puedes crear tu cuenta gratis.</h2>
-            <p>Busca licitaciones y sigue tus oportunidades. Cuando quieras más detalle, conoce el <a href="/planes/">plan Plus</a>.</p>
-          </div>
-          <a class="boton boton-claro" href="/app/">Crear mi cuenta gratis</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="v3-pie">
-    <div class="v3-pie-contenido">
-      <div class="v3-pie-arriba">
-        <a class="v3-marca" href="/"><img src="/marca/publicola-logo-v3.png" alt="Publicola" width="736" height="240"></a>
-        <small>Compras públicas. Análisis profundo, respuestas sencillas.</small>
-      </div>
-      <nav class="v3-pie-enlaces" aria-label="Más de Publicola"><a href="/servicios/">Servicios</a><a href="/planes/">Planes</a><a href="/recursos/">Recursos</a><a href="/contacto/">Contacto</a></nav>
-      <nav class="v3-pie-legal" aria-label="Información legal"><a href="/legal/">Términos de uso y condiciones</a><a href="/privacidad/">Privacidad</a><a href="/fuentes/">Fuentes y metodología</a></nav>
+    <div class="b-pie-legal">
+      <p>Publicola es una plataforma privada independiente. No está afiliada, patrocinada ni respaldada por la Dirección General de Contrataciones Públicas.</p>
+      <p>Datos de fuentes oficiales · <a href="/fuentes/">Fuentes y metodología</a></p>
     </div>
-  </footer>
-  <script src="/servicios.js?v=20261004d" defer></script>
-  <script src="/sitio-v3.js?v=20261031a"></script>
+  </div>
+</footer>
+<script src="/sitio-b.js?v=20261113a" defer></script>
 </body>
 </html>
