@@ -404,3 +404,19 @@
   .b-portada-entrada { margin-left: auto; margin-right: auto; max-width: 640px; }
   .b-producto { flex-basis: auto; width: 100%; }
 }
+
+/* /plataforma/ (13-nov): portada propia de la plataforma, centrada. */
+.b-plat-heroe { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; text-align: center; padding-top: 56px; padding-bottom: 96px; }
+.b-plat-heroe .s-crumbs { align-self: flex-start; margin-bottom: 56px; }
+.b-plat-heroe .b-h1 { max-width: 900px; }
+.b-plat-heroe .b-portada-entrada { max-width: 680px; margin-left: auto; margin-right: auto; }
+.b-plat-heroe .b-portada-botones { justify-content: center; }
+.b-plat-indice { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 48px; }
+.b-plat-indice a { display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--filete-3); background: var(--blanco-03); color: var(--texto-claro); font-size: 14.5px; font-weight: 550; text-decoration: none; transition: border-color .15s, background-color .15s; }
+.b-plat-indice a:hover { border-color: var(--azul-luz); background: var(--azul-velo-2); }
+@media (max-width: 760px) {
+  .b-plat-heroe { padding-top: 28px; padding-bottom: 56px; }
+  .b-plat-heroe .s-crumbs { margin-bottom: 32px; }
+  .b-plat-heroe .b-portada-botones { width: 100%; }
+}
+.b-plat-heroe .b-rombo { background: var(--verde); }
