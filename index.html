@@ -21,7 +21,7 @@
   <link rel="preload" href="/tipografia/jetbrains-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <!-- Portada B «Azul profundo» (aprobada por José Lazala, 12-nov-2026). Referencia: docs/diseno/portada-b/. -->
   <link rel="stylesheet" href="/sitio-b.css?v=20261113a">
-  <link rel="stylesheet" href="/portada-b.css?v=20261113a">
+  <link rel="stylesheet" href="/portada-b.css?v=20261113b">
   <!-- Con la sesión abierta, esta portada lleva directo a Mi PUBLICOLA (ver acceso-directo.js). -->
   <style>html.comprobando-sesion body { visibility: hidden; }</style>
   <script src="acceso-directo.js?v=20261010b"></script>
@@ -38,9 +38,9 @@
       <a class="b-logo" href="/" aria-label="Publicola, ir al inicio"><img src="/marca/publicola-logo-blanco-v1.png" alt="Publicola" width="523" height="168"></a>
       <nav class="b-nav" aria-label="Principal">
         <a href="#plataforma">Plataforma</a>
-        <a href="#planes">Planes</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#recursos">Recursos</a>
+        <a href="/planes/">Planes</a>
+        <a href="/servicios/">Servicios</a>
+        <a href="/recursos/">Recursos</a>
         <a href="/contacto/">Contacto</a>
       </nav>
       <div class="b-acciones">
@@ -55,9 +55,9 @@
     </div>
     <nav class="b-nav-movil" id="b-menu-movil" aria-label="Principal en el celular">
       <a href="#plataforma">Plataforma</a>
-      <a href="#planes">Planes</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#recursos">Recursos</a>
+      <a href="/planes/">Planes</a>
+      <a href="/servicios/">Servicios</a>
+      <a href="/recursos/">Recursos</a>
       <a href="/contacto/">Contacto</a>
       <a class="b-btn b-primario" href="/app/?acceso=crear">Crear mi cuenta gratis</a>
     </nav>
@@ -134,13 +134,13 @@
           <span class="b-pastilla b-vigente"><span class="b-punto b-pulso" aria-hidden="true"></span>Vigente</span>
           <span class="b-pastilla b-solo-escritorio">Cierre: 18 nov. · 10:00 a. m.</span>
         </div>
-        <p class="b-ficha-antetitulo b-entre"><span class="b-mono">Ficha del proceso</span><span class="b-ejemplo">Ejemplo ilustrativo</span></p>
+        <p class="b-ficha-antetitulo b-entre"><span class="b-mono">Análisis de la licitación</span><span class="b-ejemplo">Ejemplo ilustrativo</span></p>
         <h3 class="b-x b-ficha-titulo" id="ficha-titulo">Adquisición de computadoras y periféricos para oficinas</h3>
         <p class="b-ficha-datos b-solo-escritorio">Ministerio · Sede central · Dirigido a: Todo público</p>
         <p class="b-ficha-datos b-ficha-cierre-movil">Cierre publicado: 18 nov. · 10:00 a. m.</p>
         <div class="b-ficha-requisitos-cabecera">
           <h4>Qué debes presentar</h4>
-          <span class="b-ia"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5c.6 4.6 2.3 7.2 7 8-4.7.8-6.4 3.4-7 8-.6-4.6-2.3-7.2-7-8 4.7-.8 6.4-3.4 7-8Z"/></svg>Ficha con IA</span>
+          <span class="b-ia"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5c.6 4.6 2.3 7.2 7 8-4.7.8-6.4 3.4-7 8-.6-4.6-2.3-7.2-7-8 4.7-.8 6.4-3.4 7-8Z"/></svg>Análisis con IA</span>
         </div>
         <ol>
           <li class="b-requisito"><span><span class="b-solo-escritorio">Registro de Proveedores del Estado (RPE) activo, con el rubro del proceso</span><span class="b-solo-movil">RPE activo, con el rubro del proceso</span></span><span class="b-cita" aria-label="Página 6 del pliego">p. 6</span></li>
@@ -157,7 +157,7 @@
   <div class="b-wrap b-pasos-zona">
     <ol class="b-panel b-pasos" id="como-funciona" aria-label="El recorrido en Publicola">
       <li><span class="b-mono b-paso-numero">01</span><span class="b-x b-paso-nombre">Encuentra</span><span class="b-paso-texto">Procesos por rubro, institución o código.</span></li>
-      <li><span class="b-mono b-paso-numero">02</span><span class="b-x b-paso-nombre">Entiende</span><span class="b-paso-texto">Renglones, requisitos y fechas en una ficha.</span></li>
+      <li><span class="b-mono b-paso-numero">02</span><span class="b-x b-paso-nombre">Entiende</span><span class="b-paso-texto">La IA analiza renglones, requisitos y fechas.</span></li>
       <li><span class="b-mono b-paso-numero">03</span><span class="b-x b-paso-nombre">Comprueba</span><span class="b-paso-texto">El documento y la página detrás del requisito.</span></li>
     </ol>
     <p class="b-fuentes"><svg class="b-icono" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--azul-luz)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.4 3.4 7.9 8 9 4.6-1.1 8-4.6 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg><span>Trabajamos con información pública oficial de compras y contrataciones y conservamos su procedencia y enlace oficial.</span><a class="b-enlace b-enlace-sm" href="/fuentes/">Fuentes y metodología<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
@@ -181,6 +181,11 @@
           <span class="b-mosaico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
           <h3 class="b-x b-h3">Explorador de licitaciones</h3>
           <p class="b-texto">Encuentra procesos por rubro, institución o código, con su fecha de cierre y los documentos que exige.</p>
+          <ul class="b-cotejos b-cotejos-tarjeta">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--azul-luz)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="b-icono"><path d="m5 12.5 4.2 4.2L19 7"/></svg>Filtros por rubro, institución y modalidad</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--azul-luz)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="b-icono"><path d="m5 12.5 4.2 4.2L19 7"/></svg>Procesos reservados a MIPYME</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--azul-luz)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="b-icono"><path d="m5 12.5 4.2 4.2L19 7"/></svg>Ordenados por fecha de cierre</li>
+          </ul>
           <a class="b-enlace" href="/app/#/oportunidades">Abrir el Explorador<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
         <div class="b-mini b-mini-columna b-solo-escritorio">
@@ -199,8 +204,14 @@
         <div class="b-luz" aria-hidden="true"></div>
         <div class="b-tarjeta-cabeza">
           <span class="b-mosaico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h4"/></svg></span>
-          <h3 class="b-x b-h3">Ficha del proceso con IA</h3>
-          <p class="b-texto">Renglones, fechas y documentos oficiales en una ficha. La IA explica qué pide el pliego y qué debes presentar, con citas por página.</p>
+          <h3 class="b-x b-h3">Análisis de la licitación con inteligencia artificial</h3>
+          <p class="b-texto">La IA lee el pliego, sus enmiendas y los demás documentos del proceso. Te explica qué pide la licitación y qué debes presentar, con citas por página.</p>
+          <ul class="b-cotejos b-cotejos-tarjeta">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--oro)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="b-icono"><path d="m5 12.5 4.2 4.2L19 7"/></svg>Qué se compra, renglón por renglón</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--oro)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="b-icono"><path d="m5 12.5 4.2 4.2L19 7"/></svg>Fechas, garantías y documentos que debes presentar</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--oro)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="b-icono"><path d="m5 12.5 4.2 4.2L19 7"/></svg>Cómo se evalúan las ofertas</li>
+          </ul>
+          <a class="b-enlace" href="#inteligencia-normativa">Y cómo lo revisa frente a la ley<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a class="b-enlace" href="/expedientes/" data-solo-con-expediente hidden>Ver el expediente público<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
         <div class="b-mini b-mini-pliego">
@@ -230,8 +241,96 @@
         <p class="b-texto-sm">Publicola encuentra licitaciones que coinciden con lo que vende tu empresa y te envía un resumen por correo.</p>
       </div>
       <div class="b-funcion">
-        <span class="b-funcion-nombre"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--azul-luz)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 7h14M7 7l-3 7a3.5 3.5 0 0 0 6 0zM17 7l-3 7a3.5 3.5 0 0 0 6 0z"/></svg>Inteligencia normativa</span>
-        <p class="b-texto-sm">Revisa el pliego y las enmiendas frente a las reglas de compras públicas. Señala dudas y prepara borradores de consulta.</p>
+        <span class="b-funcion-nombre"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--azul-luz)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>Calendario y avisos</span>
+        <p class="b-texto-sm">Las fechas de lo que sigues, en tu calendario, y avisos antes de que venzan los plazos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 · Inteligencia normativa: sección propia (pedido de José, 12-nov). Lo que dice sale de lo que hace el motor
+     (ia_agente_normativo.py): régimen por fecha de convocatoria, pasaje exacto + artículo con fuente oficial,
+     enmienda expresa frente a discrepancia, pregunta neutral como borrador, nunca «ilegal» ni «cumple». -->
+<section class="b-seccion b-seccion-normativa" id="inteligencia-normativa" aria-labelledby="titulo-normativa">
+  <div class="b-norma-halo" aria-hidden="true"></div>
+  <div class="b-wrap b-seccion-interior">
+    <div class="b-encabezado">
+      <div class="b-encabezado-titulo">
+        <p class="b-antetitulo"><span class="b-guion" aria-hidden="true"></span>02 · Inteligencia normativa</p>
+        <h2 class="b-h2 b-h2-grande" id="titulo-normativa">El pliego, <span class="b-dorado">frente a la ley.</span></h2>
+      </div>
+      <p class="b-entrada">La inteligencia artificial contrasta el pliego y sus enmiendas con la norma que aplica al proceso. Cada observación trae el pasaje del pliego, el artículo que la sostiene y un borrador de consulta para la institución.</p>
+    </div>
+
+    <div class="b-norma">
+      <figure class="b-panel b-norma-informe" aria-label="Informe de Inteligencia normativa, ejemplo ilustrativo">
+        <div class="b-luz b-luz-oro" aria-hidden="true"></div>
+        <div class="b-entre">
+          <span class="b-norma-sello"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 7h14M7 7l-3 7a3.5 3.5 0 0 0 6 0zM17 7l-3 7a3.5 3.5 0 0 0 6 0z"/></svg>Informe normativo</span>
+          <span class="b-ejemplo">Ejemplo ilustrativo</span>
+        </div>
+        <p class="b-norma-proceso">Adquisición de computadoras y periféricos para oficinas</p>
+        <dl class="b-norma-datos">
+          <div><dt>Norma aplicada</dt><dd>Ley 47-25 y su Reglamento</dd></div>
+          <div><dt>Por qué esta</dt><dd>Fecha de convocatoria</dd></div>
+          <div><dt>Revisado</dt><dd>Pliego y enmienda 1</dd></div>
+        </dl>
+        <p class="b-norma-conclusion"><span class="b-punto" aria-hidden="true"></span>Observaciones para revisar · 2</p>
+
+        <article class="b-norma-obs">
+          <p class="b-norma-tipo">Discrepancia sin resolver</p>
+          <h3 class="b-norma-obs-titulo">Porcentaje de la garantía de seriedad</h3>
+          <div class="b-norma-pasajes">
+            <blockquote><p>«… equivalente al uno por ciento (1 %) del monto total de la oferta …»</p><span class="b-cita">Pliego · p. 14</span></blockquote>
+            <blockquote><p>«… garantía de seriedad por el dos por ciento (2 %) …»</p><span class="b-cita">Formulario · p. 31</span></blockquote>
+            <blockquote class="b-norma-ley"><p>Reglamento de la Ley 47-25 · garantía de seriedad de la oferta</p><span class="b-cita b-cita-azul">Fuente oficial</span></blockquote>
+          </div>
+          <div class="b-norma-borrador">
+            <p class="b-mono-etiqueta">Borrador de consulta · editable</p>
+            <p>«¿Podrían confirmar qué porcentaje aplica a la garantía de seriedad de la oferta? El pliego (p. 14) indica 1 % y el formulario (p. 31) indica 2 %.»</p>
+          </div>
+        </article>
+
+        <article class="b-norma-obs b-norma-obs-cerrada">
+          <p class="b-norma-tipo b-norma-tipo-verde">Cambio expreso por enmienda</p>
+          <h3 class="b-norma-obs-titulo">Fecha de recepción de ofertas</h3>
+          <p class="b-norma-nota">La enmienda 1 sustituye la fecha del cronograma. Se toma la fecha nueva.</p>
+        </article>
+      </figure>
+
+      <div class="b-norma-lado">
+        <ol class="b-norma-pasos">
+          <li>
+            <span class="b-mono b-norma-n">01</span>
+            <div><h3>Elige la ley que le toca</h3><p>La fecha de convocatoria decide el régimen: la Ley 47-25 y su Reglamento, o la Ley 340-06 en los procesos anteriores. Si no tiene la norma de ese régimen, no opina.</p></div>
+          </li>
+          <li>
+            <span class="b-mono b-norma-n">02</span>
+            <div><h3>Cita los dos lados</h3><p>Cada observación muestra el pasaje exacto del pliego, con su página, y el artículo aplicable, con su fuente oficial.</p></div>
+          </li>
+          <li>
+            <span class="b-mono b-norma-n">03</span>
+            <div><h3>Lee las enmiendas</h3><p>Distingue lo que una enmienda cambió de forma expresa de una contradicción que sigue sin resolver.</p></div>
+          </li>
+          <li>
+            <span class="b-mono b-norma-n">04</span>
+            <div><h3>Te deja la consulta lista</h3><p>Propone un borrador editable de consulta, con preguntas neutrales, para que lo envíes a la institución.</p></div>
+          </li>
+        </ol>
+
+        <div class="b-norma-normas">
+          <p class="b-mono-etiqueta">Normas que consulta</p>
+          <ul>
+            <li>Ley 47-25</li><li>Reglamento · Decreto 52-26</li><li>Umbrales vigentes</li><li>Normativa del RPE</li><li>Ley 340-06 y su reglamento</li><li>Ley 488-08 · MIPYME</li>
+          </ul>
+        </div>
+
+        <p class="b-norma-limite"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="b-icono"><path d="M12 3 4 6v6c0 4.4 3.4 7.9 8 9 4.6-1.1 8-4.6 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg><span>No declara que un proceso es ilegal ni certifica que cumple. Te da observaciones con su fuente para que decidas.</span></p>
+
+        <div class="b-norma-acciones">
+          <a class="b-btn b-oro b-lg" href="/planes/">Incluida en Plus</a>
+          <a class="b-enlace" href="/app/?acceso=crear">Crear mi cuenta gratis<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
       </div>
     </div>
   </div>
@@ -241,7 +340,7 @@
   <div class="b-wrap b-seccion-interior">
     <div class="b-encabezado">
       <div class="b-encabezado-titulo">
-        <p class="b-antetitulo"><span class="b-guion" aria-hidden="true"></span>02 · Inteligencia de mercado</p>
+        <p class="b-antetitulo"><span class="b-guion" aria-hidden="true"></span>03 · Inteligencia de mercado</p>
         <h2 class="b-h2" id="titulo-mercado">Conoce a quien compra. Cotiza con contexto.</h2>
       </div>
       <p class="b-entrada">Consulta qué han contratado las instituciones, sus planes de compras y referencias de precios de contrataciones anteriores.</p>
@@ -312,7 +411,7 @@
   <div class="b-wrap b-seccion-interior">
     <div class="b-encabezado b-encabezado-ancho">
       <div class="b-encabezado-titulo">
-        <p class="b-antetitulo"><span class="b-guion" aria-hidden="true"></span>03 · Publi y Workflow</p>
+        <p class="b-antetitulo"><span class="b-guion" aria-hidden="true"></span>04 · Publi y Workflow</p>
         <h2 class="b-h2 b-h2-grande" id="titulo-pw"><span class="b-azul">Publi</span> investiga.<br><span class="b-dorado">Workflow</span> prepara.</h2>
       </div>
       <p class="b-entrada">Dos herramientas con trabajos distintos. Publi te ayuda a buscar e investigar; Workflow organiza la preparación de tu oferta.</p>
@@ -369,15 +468,14 @@
         </ul>
         <figure class="b-mini" style="margin-left:0;margin-right:0;margin-bottom:0" aria-label="Tablero de Workflow, ejemplo ilustrativo">
           <div class="b-wf-cabeza">
-            <div><p class="b-wf-titulo">Adquisición de computadoras y periféricos<span class="b-solo-escritorio"> para oficinas</span></p><p class="b-mono b-wf-cierre b-solo-escritorio">Cierre publicado · 18 nov. · 10:00 a. m.</p></div>
+            <div><p class="b-mono b-wf-antetitulo">Workflow · preparación de la oferta</p><p class="b-wf-titulo">Adquisición de computadoras y periféricos<span class="b-solo-escritorio"> para oficinas</span></p><p class="b-mono b-wf-cierre b-solo-escritorio">Cierre publicado · 18 nov. · 10:00 a. m.</p></div>
             <span class="b-ejemplo">Ejemplo ilustrativo</span>
           </div>
-          <ol class="b-etapas" aria-label="Etapas">
-            <li class="b-etapa-hecha"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg>Análisis</li>
-            <li class="b-etapa-hecha"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7"/></svg>Requisitos</li>
-            <li class="b-etapa-actual" aria-current="step">Documentos</li>
-            <li>Formularios</li>
-            <li class="b-solo-escritorio">Expediente</li>
+          <ol class="b-etapas b-etapas-wf" aria-label="Pasos de Workflow">
+            <li class="b-etapa-hecha"><span class="b-etapa-n">1</span>Qué te pide esta licitación</li>
+            <li class="b-etapa-actual" aria-current="step"><span class="b-etapa-n">2 y 3</span>Qué tienes y qué vas a ofrecer</li>
+            <li><span class="b-etapa-n">4</span>Tus precios</li>
+            <li><span class="b-etapa-n">5</span>Revisión y expediente</li>
           </ol>
           <div class="b-sobres">
             <div class="b-sobre">
@@ -412,7 +510,7 @@
   <div class="b-wrap b-seccion-interior">
     <div class="b-encabezado b-encabezado-ancho">
       <div class="b-encabezado-titulo">
-        <p class="b-antetitulo"><span class="b-guion" aria-hidden="true"></span>04 · Planes</p>
+        <p class="b-antetitulo"><span class="b-guion" aria-hidden="true"></span>05 · Planes</p>
         <h2 class="b-h2" id="titulo-planes">Elige cómo trabajar tus licitaciones.</h2>
       </div>
       <p class="b-entrada">Encuentra oportunidades con Gratis, investiga expedientes y el mercado con Plus y prepara ofertas en equipo con Pro.</p>
@@ -444,7 +542,7 @@
         <ul>
           <li class="b-plan-incluye">Incluye todo lo de Gratis.</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--azul-luz)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="b-icono"><path d="m5 12.5 4.2 4.2L19 7"/></svg>Publi Plus: licitaciones pasadas y preguntas a sus documentos, con citas</li>
-          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--azul-luz)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="b-icono"><path d="m5 12.5 4.2 4.2L19 7"/></svg>Ficha con IA e Inteligencia normativa</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--azul-luz)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="b-icono"><path d="m5 12.5 4.2 4.2L19 7"/></svg>Análisis de la licitación con IA e Inteligencia normativa</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--azul-luz)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="b-icono"><path d="m5 12.5 4.2 4.2L19 7"/></svg>Referencias de precios, Instituciones, InfoPago y Compras futuras</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--azul-luz)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="b-icono"><path d="m5 12.5 4.2 4.2L19 7"/></svg>Radar instantáneo y hasta 5 perfiles</li>
         </ul>
@@ -481,7 +579,7 @@
   <div class="b-wrap b-seccion-interior">
     <div class="b-encabezado b-encabezado-ancho">
       <div class="b-encabezado-titulo">
-        <p class="b-antetitulo"><span class="b-guion" aria-hidden="true"></span>05 · Servicios profesionales</p>
+        <p class="b-antetitulo"><span class="b-guion" aria-hidden="true"></span>06 · Servicios profesionales</p>
         <h2 class="b-h2" id="titulo-servicios">Respaldo para tu empresa y tu oferta.</h2>
       </div>
       <p class="b-entrada">Nuestro equipo te acompaña con trámites, documentos y asesoría en compras públicas. Los servicios se cotizan por separado.</p>
@@ -528,7 +626,7 @@
   <div class="b-wrap b-seccion-interior">
     <div class="b-encabezado b-encabezado-ancho">
       <div class="b-encabezado-titulo">
-        <p class="b-antetitulo"><span class="b-guion" aria-hidden="true"></span>06 · Centro de Recursos</p>
+        <p class="b-antetitulo"><span class="b-guion" aria-hidden="true"></span>07 · Centro de Recursos</p>
         <h2 class="b-h2" id="titulo-recursos">Aprende a venderle al Estado.</h2>
       </div>
       <p class="b-entrada">Guías prácticas para entender el proceso y preparar tu próximo paso.</p>

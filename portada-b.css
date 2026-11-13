@@ -325,3 +325,71 @@
   .b-btn, .b-enlace svg, .b-servicio, .b-guia, .b-flecha, .b-nav a, .b-cita { transition: none; }
   .b-guia:hover { transform: none; }
 }
+
+/* ── Ronda 13-nov: «Análisis de la licitación», pasos reales de Workflow e Inteligencia normativa con sección propia ── */
+.b-cotejos-tarjeta { margin-top: 2px; gap: 8px; }
+.b-cotejos-tarjeta li { font-size: 15px; }
+.b-wf-antetitulo { margin-bottom: 6px; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--oro); }
+.b-etapas-wf { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+.b-etapas-wf li { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; height: auto; padding: 9px 10px 10px; border-radius: 8px; border-top: 3px solid var(--filete-3); line-height: 1.3; }
+.b-etapas-wf .b-etapa-hecha { border-top-color: var(--verde); }
+.b-etapas-wf .b-etapa-actual { background: var(--oro-velo-2); color: var(--texto); border-top-color: var(--oro); font-weight: 600; }
+.b-etapa-n { font: 600 10.5px/1 var(--mono); letter-spacing: .04em; color: var(--apoyo); }
+.b-etapa-hecha .b-etapa-n { color: var(--verde); }
+.b-etapa-actual .b-etapa-n { color: var(--oro); }
+
+.b-seccion-normativa { overflow: hidden; background: var(--noche); }
+.b-norma-halo { position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(640px 420px at 18% 30%, var(--oro-07), transparent 70%), radial-gradient(560px 420px at 92% 80%, var(--azul-16), transparent 70%); }
+.b-norma { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: 56px; align-items: start; margin-top: 64px; }
+.b-norma-informe { margin: 0; padding: 28px; display: flex; flex-direction: column; gap: 16px; border-color: var(--oro-25); background: var(--panel-elevado); box-shadow: var(--sombra-profunda), inset 0 1px 0 var(--blanco-05); }
+.b-norma-sello { display: inline-flex; align-items: center; gap: 8px; color: var(--oro); font: 600 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+.b-norma-proceso { font-size: 18px; font-weight: 650; line-height: 1.35; }
+.b-norma-datos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; border-radius: 12px; overflow: hidden; border: 1px solid var(--filete-3); background: var(--filete-3); }
+.b-norma-datos div { padding: 10px 12px; background: var(--panel-hundido); }
+.b-norma-datos dt { font: 500 10.5px/1.4 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--apoyo); }
+.b-norma-datos dd { margin: 4px 0 0; font-size: 13.5px; font-weight: 600; line-height: 1.35; color: var(--texto-claro); }
+.b-norma-conclusion { display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; height: 30px; padding: 0 12px; border-radius: 999px; background: var(--oro-12); color: var(--oro); font-size: 13px; font-weight: 650; }
+.b-norma-obs { display: flex; flex-direction: column; gap: 12px; padding: 18px; border-radius: 14px; border: 1px solid var(--filete-3); border-left: 3px solid var(--oro); background: var(--panel-hundido); }
+.b-norma-obs-cerrada { border-left-color: var(--verde); gap: 8px; }
+.b-norma-tipo { font: 600 10.5px/1.3 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--oro); }
+.b-norma-tipo-verde { color: var(--verde); }
+.b-norma-obs-titulo { font-size: 16px; font-weight: 650; line-height: 1.35; }
+.b-norma-nota { font-size: 14px; line-height: 1.55; color: var(--apoyo-2); }
+.b-norma-pasajes { display: flex; flex-direction: column; gap: 8px; }
+.b-norma-pasajes blockquote { margin: 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 12px; border-radius: 10px; background: var(--papel); color: var(--noche); }
+.b-norma-pasajes blockquote p { font-size: 13.5px; line-height: 1.45; font-style: italic; }
+.b-norma-pasajes .b-norma-ley { background: var(--azul-velo-2); color: var(--texto-claro); }
+.b-norma-pasajes .b-norma-ley p { font-style: normal; font-weight: 600; }
+.b-norma-pasajes blockquote .b-cita { background: var(--oro-tinta); border-color: var(--oro-tinta); color: var(--oro); }
+.b-norma-pasajes .b-norma-ley .b-cita { background: transparent; }
+.b-cita-azul { border-color: var(--azul-borde); color: var(--azul-etiqueta); }
+.b-norma-pasajes .b-norma-ley .b-cita-azul { border-color: var(--azul-borde); color: var(--azul-etiqueta); }
+.b-norma-borrador { display: flex; flex-direction: column; gap: 6px; padding: 12px 14px; border-radius: 10px; border: 1px dashed var(--oro-45); background: var(--oro-06); }
+.b-norma-borrador .b-mono-etiqueta { color: var(--oro); }
+.b-norma-borrador p:last-child { font-size: 14px; line-height: 1.55; color: var(--texto-claro); }
+
+.b-norma-lado { display: flex; flex-direction: column; gap: 32px; }
+.b-norma-pasos { display: flex; flex-direction: column; }
+.b-norma-pasos li { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 8px; padding: 20px 0; border-top: 1px solid var(--filete-2); }
+.b-norma-pasos li:first-child { padding-top: 0; border-top: 0; }
+.b-norma-n { padding-top: 4px; font-size: 13px; color: var(--oro); }
+.b-norma-pasos h3 { font-size: 19px; font-weight: 650; line-height: 1.3; }
+.b-norma-pasos p { margin-top: 6px; font-size: 15.5px; line-height: 1.6; color: var(--apoyo-2); }
+.b-norma-normas ul { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.b-norma-normas li { display: inline-flex; align-items: center; height: 32px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--filete-3); background: var(--blanco-03); font-size: 13.5px; color: var(--texto-claro); }
+.b-norma-limite { display: flex; gap: 10px; align-items: flex-start; padding: 14px 16px; border-radius: 12px; background: var(--blanco-03); border: 1px solid var(--filete); font-size: 14.5px; line-height: 1.55; color: var(--apoyo-2); }
+.b-norma-limite svg { margin-top: 3px; color: var(--azul-luz); }
+.b-norma-acciones { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px; }
+
+@media (max-width: 1080px) {
+  .b-norma { grid-template-columns: minmax(0, 1fr); gap: 48px; }
+}
+@media (max-width: 760px) {
+  .b-etapas-wf { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .b-norma { margin-top: 40px; }
+  .b-norma-informe { padding: 18px; }
+  .b-norma-datos { grid-template-columns: minmax(0, 1fr); }
+  .b-norma-pasajes blockquote { flex-direction: column; align-items: flex-start; }
+  .b-norma-acciones .b-btn { width: 100%; }
+}
