@@ -164,6 +164,11 @@ body {
 img, svg { display: block; }
 a { color: var(--azul-luz); }
 a:hover { color: var(--azul-luz-hover); }
+/* Subrayados (15-nov-2026). Mona Sans declara en su archivo un subrayado de 0,32 em de grueso; Firefox lo respeta y,
+   al esquivar las letras que bajan del renglón, lo dibuja en trozos. Se fija el grosor para todo lo que se subraye.
+   Lleva !important porque cada `text-decoration: underline` devuelve el grosor a «el de la tipografía». */
+*, *::before, *::after { text-decoration-thickness: max(1px, .06em) !important; }
+:root { text-underline-offset: .18em; }
 h1, h2, h3, h4, p { margin: 0; }
 ul, ol { margin: 0; padding: 0; list-style: none; }
 :focus-visible { outline: 2px solid var(--azul-luz); outline-offset: 3px; border-radius: 6px; }
