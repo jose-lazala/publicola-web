@@ -70,7 +70,7 @@ Todos los textos salen de la web actual. No reescribir sin aprobación de José.
 4. **01 · Explorador**: "Encuentra una oportunidad. Abre el expediente." Explorador, Ficha con IA, Seguimiento, Radar por correo, Inteligencia normativa.
 5. **02 · Inteligencia de mercado**: "Conoce a quien compra. Cotiza con contexto." Referencias de precios (dato real), Instituciones e InfoPago, Compras futuras, Competidores.
 6. **03 · Publi y Workflow**: "Publi investiga. Workflow prepara." + Trabajo en equipo.
-7. **04 · Planes**: Gratis US$0 · Plus US$75 · Pro US$150 al mes por empresa (precios de /planes/ al 12 nov. 2026). Bloque independiente: si cambia el modelo de cobro, se reemplaza solo esta sección.
+7. **04 · Planes**: Gratis US$0. Plus y Pro se solicitan en el formulario de planes y el equipo contacta a la empresa para la contratación.
 8. **05 · Servicios profesionales**: lista "De la idea a la licitación", plazos publicados (5 a 6 y 15 días laborables) y los cinco servicios de /servicios/.
 9. **06 · Centro de Recursos**: las tres guías que hoy destaca la portada, con fecha y extracto.
 10. **Cierre**: "Primero entiende la licitación. Después decide." + "Crear mi cuenta gratis" y "Entrar a Mi Publicola".
