@@ -21,7 +21,7 @@
   <link rel="preload" href="/tipografia/jetbrains-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <!-- Portada B «Azul profundo» (aprobada por José Lazala, 12-nov-2026). Referencia: docs/diseno/portada-b/. -->
   <link rel="stylesheet" href="/sitio-b.css?v=20261115a">
-  <link rel="stylesheet" href="/portada-b.css?v=20261113d">
+  <link rel="stylesheet" href="/portada-b.css?v=20261117a">
   <!-- Con la sesión abierta, esta portada lleva directo a Mi PUBLICOLA (ver acceso-directo.js). -->
   <style>html.comprobando-sesion body { visibility: hidden; }</style>
   <script src="acceso-directo.js?v=20261010b"></script>
@@ -300,12 +300,92 @@
 <!-- 02 · Inteligencia normativa: sección propia (pedido de José, 12-nov). Lo que dice sale de lo que hace el motor
      (ia_agente_normativo.py): régimen por fecha de convocatoria, pasaje exacto + artículo con fuente oficial,
      enmienda expresa frente a discrepancia, pregunta neutral como borrador, nunca «ilegal» ni «cumple». -->
+<!-- Análisis de la licitación con IA (José, 17-nov-2026: «promociónalo… para que las personas vean cómo se vería»).
+     Extracto real del análisis de INDOMET-DAF-CM-2026-0058 (Reglas v1.1, 6-nov-2026); cada dato lleva su página. -->
+<section class="b-seccion" id="analisis-ia" aria-labelledby="titulo-analisis">
+  <div class="b-wrap b-seccion-interior">
+    <div class="b-encabezado">
+      <div class="b-encabezado-titulo">
+        <p class="b-antetitulo"><span class="b-guion" aria-hidden="true"></span>03 · Análisis de la licitación con IA</p>
+        <h2 class="b-h2 b-h2-grande" id="titulo-analisis">Toda la licitación, <span class="b-dorado">explicada con sus páginas.</span></h2>
+      </div>
+      <p class="b-entrada">La IA lee el pliego, sus enmiendas, las fichas técnicas y las aclaraciones de la institución. Te dice qué pide la licitación, qué tienes que presentar, las fechas que mandan y lo que conviene aclarar, con la página de donde sale cada dato.</p>
+    </div>
+
+    <div class="b-norma">
+      <figure class="b-panel b-norma-informe" aria-label="Análisis de la licitación con IA, extracto de un análisis real">
+        <div class="b-luz" aria-hidden="true"></div>
+        <div class="b-entre">
+          <span class="b-norma-sello"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h4"/></svg>Análisis con IA</span>
+          <span class="b-ejemplo">Ejemplo real</span>
+        </div>
+        <p class="b-norma-proceso">Adquisición de equipos informáticos y accesorios</p>
+        <dl class="b-norma-datos">
+          <div><dt>Institución</dt><dd>Instituto Dominicano de Meteorología</dd></div>
+          <div><dt>Presupuesto</dt><dd>RD$ 1,942,800.00</dd></div>
+          <div><dt>Cierre</dt><dd>16 nov 2026 · 9:00 a. m.</dd></div>
+        </dl>
+        <p class="b-norma-conclusion"><span class="b-punto" aria-hidden="true"></span>23 renglones leídos · 6 puntos por aclarar</p>
+
+        <article class="b-norma-obs b-norma-obs-cerrada">
+          <p class="b-norma-tipo b-norma-tipo-verde">Lo que debes saber</p>
+          <ul class="b-analisis-lista">
+            <li><span>Presenta el formulario económico SNCC.F.033 en pesos dominicanos: separa precio unitario, ITBIS y precio final.</span><span class="b-cita">Pliego · p. 11</span></li>
+            <li><span>Adjudican por lotes, al menor precio entre las ofertas que cumplen.</span><span class="b-cita">Pliego · p. 13</span></li>
+            <li><span>Entregas dentro de 10 días laborables desde que recibes la orden de compra.</span><span class="b-cita">Pliego · p. 7</span></li>
+          </ul>
+        </article>
+
+        <article class="b-norma-obs">
+          <p class="b-norma-tipo">Por aclarar</p>
+          <h3 class="b-norma-obs-titulo">Cómputo de la validez de la oferta</h3>
+          <div class="b-norma-pasajes">
+            <blockquote><p>«Plazo de validez de las ofertas 90 Días»</p><span class="b-cita">Pliego · p. 8</span></blockquote>
+          </div>
+          <div class="b-norma-borrador">
+            <p class="b-mono-etiqueta">Pregunta sugerida para la institución</p>
+            <p>«¿Desde cuándo se cuentan los 90 días de validez de la oferta y son hábiles o calendario?»</p>
+          </div>
+        </article>
+      </figure>
+
+      <div class="b-norma-lado">
+        <ol class="b-norma-pasos">
+          <li>
+            <span class="b-mono b-norma-n">01</span>
+            <div><h3>Lee todo el expediente</h3><p>El pliego, sus enmiendas, las fichas técnicas y las aclaraciones de la institución, no solo la portada.</p></div>
+          </li>
+          <li>
+            <span class="b-mono b-norma-n">02</span>
+            <div><h3>Te dice qué presentar</h3><p>Documentos, formularios y garantías, y lo que pide cada renglón, con la página de cada dato.</p></div>
+          </li>
+          <li>
+            <span class="b-mono b-norma-n">03</span>
+            <div><h3>Señala lo que no cuadra</h3><p>Fechas que no coinciden y datos que faltan o se contradicen, con la pregunta lista para la institución.</p></div>
+          </li>
+          <li>
+            <span class="b-mono b-norma-n">04</span>
+            <div><h3>Te adelanta el después</h3><p>Lo que pasa si te adjudican: pago, garantías, entrega y documentos para contratar.</p></div>
+          </li>
+        </ol>
+
+        <p class="b-norma-limite"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="b-icono"><path d="M12 3 4 6v6c0 4.4 3.4 7.9 8 9 4.6-1.1 8-4.6 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg><span>Cada dato trae su página para que lo compruebes en el documento original.</span></p>
+
+        <div class="b-norma-acciones">
+          <a class="b-btn b-oro b-lg" href="/planes/">Incluido en Plus</a>
+          <a class="b-enlace" href="/app/?acceso=crear">Crear mi cuenta gratis<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="b-seccion b-seccion-normativa" id="inteligencia-normativa" aria-labelledby="titulo-normativa">
   <div class="b-norma-halo" aria-hidden="true"></div>
   <div class="b-wrap b-seccion-interior">
     <div class="b-encabezado">
       <div class="b-encabezado-titulo">
-        <p class="b-antetitulo"><span class="b-guion" aria-hidden="true"></span>03 · Abogado IA</p>
+        <p class="b-antetitulo"><span class="b-guion" aria-hidden="true"></span>04 · Abogado IA</p>
         <h2 class="b-h2 b-h2-grande" id="titulo-normativa">El pliego, <span class="b-dorado">frente a la ley.</span></h2>
       </div>
       <p class="b-entrada">El Abogado IA contrasta el pliego y sus enmiendas con la norma que aplica al proceso. Cada observación trae el pasaje del pliego, el artículo que la sostiene y un borrador de consulta para la institución.</p>
@@ -389,7 +469,7 @@
   <div class="b-wrap b-seccion-interior">
     <div class="b-encabezado">
       <div class="b-encabezado-titulo">
-        <p class="b-antetitulo"><span class="b-guion" aria-hidden="true"></span>04 · Inteligencia de mercado</p>
+        <p class="b-antetitulo"><span class="b-guion" aria-hidden="true"></span>05 · Inteligencia de mercado</p>
         <h2 class="b-h2" id="titulo-mercado">Conoce a quien compra. Cotiza con contexto.</h2>
       </div>
       <p class="b-entrada">Consulta qué han contratado las instituciones, sus planes de compras y referencias de precios de contrataciones anteriores.</p>
@@ -460,7 +540,7 @@
   <div class="b-wrap b-seccion-interior">
     <div class="b-encabezado b-encabezado-ancho">
       <div class="b-encabezado-titulo">
-        <p class="b-antetitulo"><span class="b-guion" aria-hidden="true"></span>05 · Publi y Workflow</p>
+        <p class="b-antetitulo"><span class="b-guion" aria-hidden="true"></span>06 · Publi y Workflow</p>
         <h2 class="b-h2 b-h2-grande" id="titulo-pw"><span class="b-azul">Publi</span> investiga.<br><span class="b-dorado">Workflow</span> prepara.</h2>
       </div>
       <p class="b-entrada">Dos herramientas con trabajos distintos. Publi te ayuda a buscar e investigar; Workflow organiza la preparación de tu oferta.</p>
@@ -559,7 +639,7 @@
   <div class="b-wrap b-seccion-interior">
     <div class="b-encabezado b-encabezado-ancho">
       <div class="b-encabezado-titulo">
-        <p class="b-antetitulo"><span class="b-guion" aria-hidden="true"></span>06 · Planes</p>
+        <p class="b-antetitulo"><span class="b-guion" aria-hidden="true"></span>07 · Planes</p>
         <h2 class="b-h2" id="titulo-planes">Elige cómo trabajar tus licitaciones.</h2>
       </div>
       <p class="b-entrada">Encuentra oportunidades con Gratis, investiga expedientes y el mercado con Plus y prepara ofertas en equipo con Pro.</p>
@@ -628,7 +708,7 @@
   <div class="b-wrap b-seccion-interior">
     <div class="b-encabezado b-encabezado-ancho">
       <div class="b-encabezado-titulo">
-        <p class="b-antetitulo"><span class="b-guion" aria-hidden="true"></span>07 · Servicios profesionales</p>
+        <p class="b-antetitulo"><span class="b-guion" aria-hidden="true"></span>08 · Servicios profesionales</p>
         <h2 class="b-h2" id="titulo-servicios">Respaldo para tu empresa y tu oferta.</h2>
       </div>
       <p class="b-entrada">Nuestro equipo te acompaña con trámites, documentos y asesoría en compras públicas. Los servicios se cotizan por separado.</p>
@@ -675,7 +755,7 @@
   <div class="b-wrap b-seccion-interior">
     <div class="b-encabezado b-encabezado-ancho">
       <div class="b-encabezado-titulo">
-        <p class="b-antetitulo"><span class="b-guion" aria-hidden="true"></span>08 · Centro de Recursos</p>
+        <p class="b-antetitulo"><span class="b-guion" aria-hidden="true"></span>09 · Centro de Recursos</p>
         <h2 class="b-h2" id="titulo-recursos">Aprende a venderle al Estado.</h2>
       </div>
       <p class="b-entrada">Guías prácticas para entender el proceso y preparar tu próximo paso.</p>

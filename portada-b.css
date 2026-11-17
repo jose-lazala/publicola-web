@@ -420,3 +420,10 @@
   .b-plat-heroe .b-portada-botones { width: 100%; }
 }
 .b-plat-heroe .b-rombo { background: var(--verde); }
+
+/* ── Análisis de la licitación con IA (17-nov-2026): la lista «Lo que debes saber», con la página de cada dato. */
+.b-analisis-lista { list-style: none; margin: 10px 0 0; padding: 0; }
+.b-analisis-lista li { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; padding: 9px 0; border-top: 1px solid var(--filete); font-size: 14.5px; line-height: 1.5; color: var(--texto-2); }
+.b-analisis-lista li:first-child { border-top: 0; }
+.b-analisis-lista .b-cita { flex: none; }
+@media (max-width: 640px) { .b-analisis-lista li { flex-direction: column; gap: 4px; } }
