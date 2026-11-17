@@ -427,3 +427,110 @@
 .b-analisis-lista li:first-child { border-top: 0; }
 .b-analisis-lista .b-cita { flex: none; }
 @media (max-width: 640px) { .b-analisis-lista li { flex-direction: column; gap: 4px; } }
+
+/* ===== Portada ordenada (17-nov-2026): plan de cada sección, ejemplo real del análisis, Radar, Workflow, Publi y oferta ===== */
+.b-plan-tag { display: inline-flex; align-items: center; justify-content: center; height: 22px; padding: 0 9px; margin-left: 4px; border-radius: 999px; font: 600 11px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+.b-plan-tag-gratis { background: var(--verde-12); color: var(--verde); box-shadow: inset 0 0 0 1px rgba(76, 214, 154, .38); }
+.b-plan-tag-plus { background: var(--azul-velo-2); color: var(--azul-etiqueta); box-shadow: inset 0 0 0 1px var(--azul-borde); }
+.b-plan-tag-pro { background: var(--oro-velo-2); color: var(--oro); box-shadow: inset 0 0 0 1px var(--oro-45); }
+.b-marca-verde { background: var(--verde-12); color: var(--verde); }
+
+/* Ficha del proceso (Explorador) */
+.b-renglones-mini { display: flex; flex-direction: column; gap: 8px; }
+.b-renglones-mini li { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 10px; background: var(--blanco-velo); font-size: 14px; color: var(--texto-2); }
+.b-renglones-mini .b-mono { font-size: 12px; color: var(--apoyo-2); white-space: nowrap; }
+.b-docs-mini { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* Radar y seguimiento */
+.b-seguidas { margin: 0; padding: 26px; display: flex; flex-direction: column; gap: 16px; background: var(--panel-elevado); border-color: var(--filete-elevado); box-shadow: 0 40px 90px -40px var(--sombra-profunda); }
+.b-seguidas-titulo { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 650; }
+.b-seguidas-lista { display: flex; flex-direction: column; gap: 10px; }
+.b-seguidas-lista li { display: flex; flex-direction: column; gap: 10px; padding: 14px 16px; border-radius: 14px; border: 1px solid var(--filete-2); background: var(--panel-hundido); }
+.b-seguida-titulo { font-size: 15px; font-weight: 600; line-height: 1.35; }
+.b-seguida-datos { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
+.b-cierre-gris { color: var(--apoyo-2); }
+.b-radar-pie { padding-top: 14px; border-top: 1px solid var(--filete); }
+.b-radar-pie p:last-child { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; margin-top: 8px; font-size: 14px; color: var(--texto-2); }
+.b-radar-dato strong { margin-right: 4px; font-size: 20px; color: var(--texto); }
+.b-radar-dias { font: 500 12px/1.6 var(--mono); color: var(--azul-etiqueta); }
+
+/* La pantalla real del análisis, en una ventana */
+.b-ventana { margin: 56px 0 0; border-radius: 22px; border: 1px solid var(--filete-elevado); background: var(--panel-elevado); box-shadow: 0 50px 110px -50px var(--sombra-profunda); overflow: hidden; }
+.b-ventana-barra { display: flex; align-items: center; gap: 14px; height: 48px; padding: 0 16px; border-bottom: 1px solid var(--filete); background: var(--panel-hundido); }
+.b-ventana-puntos { display: inline-flex; gap: 6px; flex: none; }
+.b-ventana-puntos i { width: 10px; height: 10px; border-radius: 50%; background: var(--filete-2); }
+.b-ventana-titulo { flex: 1; min-width: 0; display: inline-flex; align-items: center; gap: 8px; overflow: hidden; font: 500 12px/1 var(--mono); color: var(--apoyo-2); white-space: nowrap; text-overflow: ellipsis; }
+.b-ventana-titulo svg { flex: none; color: var(--oro); }
+.b-ventana-real { flex: none; display: inline-flex; align-items: center; height: 24px; padding: 0 10px; border-radius: 999px; background: var(--verde-12); color: var(--verde); font: 600 11px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+.b-ventana-marco { display: block; width: 100%; height: 760px; border: 0; background: #121a2a; }
+.b-ventana-pie { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 24px; padding: 16px 20px; border-top: 1px solid var(--filete); font-size: 14px; line-height: 1.5; color: var(--apoyo-2); }
+
+/* Por qué es mejor */
+.b-valor-titulo { margin-top: 72px; font-size: clamp(24px, 2.4vw, 32px); line-height: 1.15; letter-spacing: -.015em; font-weight: 720; }
+.b-valor { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(330px, 100%), 1fr)); gap: 16px 20px; margin-top: 28px; }
+.b-valor li { display: flex; gap: 18px; align-items: flex-start; padding: 22px; border-radius: 18px; border: 1px solid var(--filete); background: var(--panel); }
+.b-valor-cifra { flex: none; min-width: 88px; display: flex; flex-direction: column; font-size: 40px; line-height: 1; font-weight: 760; letter-spacing: -.02em; color: var(--oro); }
+.b-valor-cifra small { margin-top: 6px; font: 500 11px/1.2 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--apoyo); }
+.b-valor-icono { padding-top: 2px; }
+.b-valor-texto { font-size: 15px; line-height: 1.55; color: var(--apoyo-2); }
+.b-valor-texto strong { display: block; margin-bottom: 4px; font-size: 16px; font-weight: 650; color: var(--texto); }
+.b-acciones-centro { justify-content: center; margin-top: 44px; }
+
+/* Workflow */
+.b-wf-avance { padding: 16px; border-radius: 14px; border: 1px solid var(--filete-3); background: var(--panel-hundido); }
+.b-wf-mensaje { margin-top: 8px; font-size: 15px; line-height: 1.5; font-weight: 600; color: var(--texto); }
+.b-wf-barra { display: block; height: 8px; margin-top: 12px; border-radius: 999px; background: var(--blanco-velo); overflow: hidden; }
+.b-wf-barra span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--azul), var(--oro)); }
+.b-wf-cuenta { margin-top: 8px; font-size: 13px; color: var(--apoyo-2); }
+.b-wf-cuenta strong { color: var(--texto); }
+.b-wf-etapas { display: flex; flex-direction: column; gap: 8px; }
+.b-wf-etapas li { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--filete-2); font-size: 13.5px; line-height: 1.45; color: var(--apoyo-2); }
+.b-wf-etapas strong { display: block; font-size: 14.5px; font-weight: 650; color: var(--texto); }
+.b-wf-n { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--filete-2); font: 600 12px/1 var(--mono); color: var(--apoyo-2); }
+.b-wf-etapas .b-wf-lista .b-wf-n { background: var(--verde-12); border-color: rgba(76, 214, 154, .45); color: var(--verde); }
+.b-wf-etapas .b-wf-actual { border-color: var(--oro-45); background: var(--oro-06); }
+.b-wf-etapas .b-wf-actual .b-wf-n { background: var(--oro); border-color: var(--oro); color: var(--noche); }
+.b-norma-limite .b-plan-tag { margin: 1px 0 0; flex: none; }
+
+/* Publi */
+.b-publi { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; align-items: start; margin-top: 56px; }
+.b-capacidades { padding: 36px; }
+.b-capacidades-titulo { font-size: 24px; font-weight: 720; letter-spacing: -.01em; }
+.b-capacidades-lista { display: flex; flex-direction: column; margin-top: 18px; }
+.b-capacidades-lista li { display: flex; gap: 14px; align-items: flex-start; padding: 12px 0; border-top: 1px solid var(--filete); font-size: 15px; line-height: 1.5; color: var(--texto-lista); }
+.b-capacidades-lista li:first-child { border-top: 0; }
+.b-capacidades-lista .b-plan-tag { flex: none; min-width: 54px; margin: 0; }
+.b-capacidades-pie { margin-top: 14px; font-size: 14px; color: var(--apoyo-2); }
+.b-publi-chat { padding: 36px; }
+.b-publi-nombre { margin-top: 0; }
+.b-publi-nombre h3 { font-size: 28px; }
+
+/* Planes con la oferta especial */
+.b-oferta-banda { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-top: 40px; padding: 14px 18px; border-radius: 14px; border: 1px solid var(--oro-45); background: var(--oro-06); font-size: 16px; color: var(--texto); }
+.b-oferta-banda strong { color: var(--oro); }
+.b-oferta-sello { display: inline-flex; align-items: center; height: 26px; padding: 0 11px; border-radius: 999px; background: var(--oro); color: var(--noche); font: 700 11px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+.b-oferta-banda + .b-planes { margin-top: 20px; }
+.b-plan-descuento { display: inline-flex; align-items: center; height: 24px; padding: 0 9px; border-radius: 999px; background: var(--oro); color: var(--noche); font: 700 12px/1 var(--mono); }
+.b-plan-antes { font-size: 20px; color: var(--apoyo); text-decoration-thickness: 2px; text-decoration-color: var(--oro); }
+.b-plan-oferta { margin-top: 10px; font: 600 12px/1.4 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--oro); }
+
+@media (max-width: 1080px) {
+  .b-publi { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 760px) {
+  .b-ventana { margin-top: 32px; border-radius: 16px; }
+  .b-ventana-marco { height: 560px; }
+  .b-ventana-pie { padding: 14px 16px; }
+  .b-valor-titulo { margin-top: 48px; }
+  .b-valor { gap: 12px; }
+  .b-valor li { padding: 18px; gap: 14px; }
+  .b-valor-cifra { min-width: 72px; font-size: 32px; }
+  .b-seguidas { padding: 20px; }
+  .b-publi { margin-top: 32px; gap: 14px; }
+  .b-capacidades, .b-publi-chat { padding: 24px 22px; }
+  .b-acciones-centro { margin-top: 32px; }
+  .b-acciones-centro .b-btn { width: 100%; }
+  .b-oferta-banda { margin-top: 28px; font-size: 15px; }
+  .b-plan-antes { font-size: 16px; }
+  .b-antetitulo { flex-wrap: wrap; row-gap: 8px; }
+}
