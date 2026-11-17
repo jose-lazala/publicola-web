@@ -21,7 +21,7 @@
   <link rel="preload" href="/tipografia/jetbrains-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <!-- Portada B «Azul profundo» (aprobada por José Lazala, 12-nov-2026). Referencia: docs/diseno/portada-b/. -->
   <link rel="stylesheet" href="/sitio-b.css?v=20261115a">
-  <link rel="stylesheet" href="/portada-b.css?v=20261117b">
+  <link rel="stylesheet" href="/portada-b.css?v=20261117c">
   <!-- Con la sesión abierta, esta portada lleva directo a Mi PUBLICOLA (ver acceso-directo.js). -->
   <style>html.comprobando-sesion body { visibility: hidden; }</style>
   <script src="acceso-directo.js?v=20261010b"></script>
@@ -338,7 +338,7 @@
     </ul>
 
     <div class="b-norma-acciones b-acciones-centro">
-      <a class="b-btn b-oro b-lg" href="/planes/solicitar/?plan=plus">Solicitar prueba gratuita de 14 días</a>
+      <a class="b-btn b-oro b-lg b-btn-largo" href="/planes/solicitar/?plan=plus">Solicitar prueba gratuita de 14 días</a>
       <a class="b-enlace" href="#planes">Ver los planes<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
@@ -421,7 +421,7 @@
         <p class="b-norma-limite"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="b-icono"><path d="M12 3 4 6v6c0 4.4 3.4 7.9 8 9 4.6-1.1 8-4.6 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg><span>No declara que un proceso es ilegal ni certifica que cumple. Te da observaciones con su fuente para que decidas.</span></p>
 
         <div class="b-norma-acciones">
-          <a class="b-btn b-oro b-lg" href="/planes/solicitar/?plan=plus">Solicitar prueba gratuita de 14 días</a>
+          <a class="b-btn b-oro b-lg b-btn-largo" href="/planes/solicitar/?plan=plus">Solicitar prueba gratuita de 14 días</a>
           <a class="b-enlace" href="/app/?acceso=crear">Crear mi cuenta gratis<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </div>
@@ -486,7 +486,7 @@
         <p class="b-norma-limite"><span class="b-plan-tag b-plan-tag-plus">Plus</span><span>Incluye <strong>Prepara tu oferta, paso a paso</strong>: trabaja la parte técnica y económica y retómala desde Mis borradores.</span></p>
 
         <div class="b-norma-acciones">
-          <a class="b-btn b-oro b-lg" href="/planes/solicitar/?plan=pro">Solicitar prueba gratuita de 14 días</a>
+          <a class="b-btn b-oro b-lg b-btn-largo" href="/planes/solicitar/?plan=pro">Solicitar prueba gratuita de 14 días</a>
         </div>
       </div>
     </div>
@@ -552,7 +552,7 @@
     </div>
 
     <div class="b-norma-acciones b-acciones-centro">
-      <a class="b-btn b-oro b-lg" href="/planes/solicitar/?plan=plus">Solicitar prueba gratuita de 14 días</a>
+      <a class="b-btn b-oro b-lg b-btn-largo" href="/planes/solicitar/?plan=plus">Solicitar prueba gratuita de 14 días</a>
       <a class="b-enlace" href="#planes">Ver los planes<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
@@ -646,10 +646,8 @@
     <div class="b-planes">
       <article class="b-plan" aria-labelledby="plan-gratis">
         <p class="b-mono b-plan-para">Para explorar</p>
-        <div class="b-plan-cabeza">
-          <h3 class="b-x b-plan-nombre" id="plan-gratis">Gratis</h3>
-          <p class="b-plan-precio"><span class="b-x b-plan-importe">US$0</span><span class="b-plan-periodo">Sin tarjeta</span></p>
-        </div>
+        <h3 class="b-x b-plan-nombre" id="plan-gratis">Gratis</h3>
+        <div class="b-precio-oferta"><p class="b-precio-oferta-cabeza b-precio-oferta-vacia" aria-hidden="true"><span class="b-precio-oferta-rotulo">&nbsp;</span></p><p class="b-precio-fila b-precio-oferta-vacia" aria-hidden="true"><span class="b-plan-antes">&nbsp;</span></p><p class="b-precio-fila"><span class="b-x b-plan-importe">US$0</span><span class="b-plan-periodo">Sin tarjeta</span></p></div>
         <ul>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--verde)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="b-icono"><path d="m5 12.5 4.2 4.2L19 7"/></svg>Explorador y ficha del proceso</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--verde)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="b-icono"><path d="m5 12.5 4.2 4.2L19 7"/></svg>Radar por correo, hasta tres veces por semana</li>
@@ -661,12 +659,9 @@
 
       <article class="b-plan b-plan-plus" aria-labelledby="plan-plus">
         <div class="b-luz" aria-hidden="true"></div>
-        <div class="b-entre"><p class="b-mono b-plan-para b-azul">Para investigar y decidir</p><span class="b-plan-descuento" aria-hidden="true">−33 %</span></div>
-        <div class="b-plan-cabeza">
-          <h3 class="b-x b-plan-nombre" id="plan-plus">Plus</h3>
-          <p class="b-plan-precio"><s class="b-plan-antes"><span class="b-sr">Precio regular: </span>US$75</s><span class="b-x b-plan-importe"><span class="b-sr">Precio de oferta: </span>US$50</span><span class="b-plan-periodo">al mes</span></p>
-        </div>
-        <p class="b-plan-oferta">Oferta especial · 33 % de descuento</p>
+        <p class="b-mono b-plan-para b-azul">Para investigar y decidir</p>
+        <h3 class="b-x b-plan-nombre" id="plan-plus">Plus</h3>
+        <div class="b-precio-oferta"><p class="b-precio-oferta-cabeza"><span class="b-precio-oferta-rotulo">Oferta especial</span><span class="b-plan-descuento"><span class="b-sr">Descuento de </span>−33 %</span></p><p class="b-precio-fila"><span class="b-precio-etiqueta" aria-hidden="true">Antes</span><s class="b-plan-antes"><span class="b-sr">Antes: </span>US$75</s></p><p class="b-precio-fila"><span class="b-precio-etiqueta" aria-hidden="true">Ahora</span><span class="b-precio-valor"><span class="b-x b-plan-importe"><span class="b-sr">Ahora: </span>US$50</span><span class="b-plan-periodo">al mes</span></span></p></div>
         <ul>
           <li class="b-plan-incluye">Incluye todo lo de Gratis.</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--azul-luz)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="b-icono"><path d="m5 12.5 4.2 4.2L19 7"/></svg>Análisis de la licitación con IA</li>
@@ -677,17 +672,14 @@
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--azul-luz)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="b-icono"><path d="m5 12.5 4.2 4.2L19 7"/></svg>Competidores: sigue hasta 10 empresas</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--azul-luz)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="b-icono"><path d="m5 12.5 4.2 4.2L19 7"/></svg>Radar instantáneo y hasta 5 perfiles</li>
         </ul>
-        <a class="b-btn b-secundario b-ancho" href="/planes/solicitar/?plan=plus">Solicitar prueba gratuita de 14 días</a>
+        <a class="b-btn b-secundario b-ancho b-btn-largo" href="/planes/solicitar/?plan=plus">Solicitar prueba gratuita de 14 días</a>
       </article>
 
       <article class="b-plan b-plan-pro" aria-labelledby="plan-pro">
         <div class="b-luz b-luz-oro" aria-hidden="true"></div>
-        <div class="b-entre"><p class="b-mono b-plan-para b-dorado">Para preparar ofertas</p><span class="b-plan-descuento" aria-hidden="true">−33 %</span></div>
-        <div class="b-plan-cabeza">
-          <h3 class="b-x b-plan-nombre" id="plan-pro">Pro</h3>
-          <p class="b-plan-precio"><s class="b-plan-antes"><span class="b-sr">Precio regular: </span>US$150</s><span class="b-x b-plan-importe"><span class="b-sr">Precio de oferta: </span>US$100</span><span class="b-plan-periodo">al mes</span></p>
-        </div>
-        <p class="b-plan-oferta">Oferta especial · 33 % de descuento</p>
+        <p class="b-mono b-plan-para b-dorado">Para preparar ofertas</p>
+        <h3 class="b-x b-plan-nombre" id="plan-pro">Pro</h3>
+        <div class="b-precio-oferta"><p class="b-precio-oferta-cabeza"><span class="b-precio-oferta-rotulo">Oferta especial</span><span class="b-plan-descuento"><span class="b-sr">Descuento de </span>−33 %</span></p><p class="b-precio-fila"><span class="b-precio-etiqueta" aria-hidden="true">Antes</span><s class="b-plan-antes"><span class="b-sr">Antes: </span>US$150</s></p><p class="b-precio-fila"><span class="b-precio-etiqueta" aria-hidden="true">Ahora</span><span class="b-precio-valor"><span class="b-x b-plan-importe"><span class="b-sr">Ahora: </span>US$100</span><span class="b-plan-periodo">al mes</span></span></p></div>
         <ul>
           <li class="b-plan-incluye">Incluye todo lo de Plus.</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--oro)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="b-icono"><path d="m5 12.5 4.2 4.2L19 7"/></svg>Workflow: de la licitación a la oferta preparada</li>
@@ -695,7 +687,7 @@
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--oro)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="b-icono"><path d="m5 12.5 4.2 4.2L19 7"/></svg>Hasta 25 competidores, con el análisis de sus antecedentes</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--oro)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="b-icono"><path d="m5 12.5 4.2 4.2L19 7"/></svg>Hasta 10 perfiles para trabajar en equipo</li>
         </ul>
-        <a class="b-btn b-oro b-ancho" href="/planes/solicitar/?plan=pro">Solicitar prueba gratuita de 14 días</a>
+        <a class="b-btn b-oro b-ancho b-btn-largo" href="/planes/solicitar/?plan=pro">Solicitar prueba gratuita de 14 días</a>
       </article>
     </div>
 
