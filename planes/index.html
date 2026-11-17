@@ -50,7 +50,21 @@
   .b-plan-antes { font-size: 24px; }
   .b-precio-fila .b-plan-importe { font-size: 38px; }
 }
-  </style>
+  /* Modelos de IA por plan (José, 17-nov-2026: «pon los modelos que utilizamos… que se vea profesional»). */
+.b-plan-ia { margin-top: auto; padding-top: 24px; }
+.b-plan-ia-caja { padding-top: 18px; border-top: 1px solid var(--filete); }
+.b-plan-ia-titulo { margin: 0 0 12px; font: 600 11px/1.3 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--apoyo); }
+.b-plan-ia dl { margin: 0; display: grid; gap: 8px; }
+.b-plan-ia dl > div { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 12px; align-items: start; }
+.b-plan-ia dt { font: 600 11.5px/28px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--apoyo-2); }
+.b-plan-ia dd { margin: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.b-plan-ia-modelo { display: inline-flex; align-items: center; height: 28px; padding: 0 10px; border-radius: 8px; border: 1px solid var(--filete-2); background: var(--blanco-05); font-size: 13.5px; font-weight: 560; color: var(--texto); white-space: nowrap; }
+.b-plan-ia-nota { margin: 12px 0 0; font-size: 12.5px; line-height: 1.5; color: var(--apoyo); }
+.b-plan-ia-enlace { display: inline-block; margin-top: 12px; font-size: 13.5px; color: var(--apoyo-2); text-decoration: underline; text-decoration-color: var(--filete-2); text-underline-offset: 3px; }
+.b-plan-ia-enlace:hover { color: var(--texto); }
+.s-modelo { white-space: nowrap; font-weight: 600; color: var(--texto); }
+.s-modelos-nota { margin-top: 14px; }
+</style>
 </head>
 <body class="b-sitio">
 <a class="b-salto" href="#contenido">Saltar al contenido</a>
@@ -128,6 +142,17 @@
 <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--azul-luz)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span><strong style="color: var(--blanco)">Preparar oferta.</strong> Trabaja la oferta y retómala desde Mis borradores.</span></li>
 <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--azul-luz)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span><strong style="color: var(--blanco)">Radar instantáneo</strong> y <strong style="color: var(--blanco)">hasta 5 perfiles</strong> por empresa.</span></li>
 </ul>
+<div class="b-plan-ia">
+  <div class="b-plan-ia-caja">
+    <p class="b-plan-ia-titulo">Modelos de inteligencia artificial</p>
+    <dl>
+      <div><dt>Anthropic</dt><dd><span class="b-plan-ia-modelo">Claude Sonnet 5.5</span><span class="b-plan-ia-modelo">Claude Haiku 5.5</span></dd></div>
+      <div><dt>OpenAI</dt><dd><span class="b-plan-ia-modelo">GPT-6.1 Terra</span><span class="b-plan-ia-modelo">GPT-6 Luna</span></dd></div>
+    </dl>
+    <p class="b-plan-ia-nota">OpenAI es la empresa de ChatGPT.</p>
+    <a class="b-plan-ia-enlace" href="#modelos-ia">Qué modelo usa cada función</a>
+  </div>
+</div>
 </div>
 <div class="b-plan" style="border-color: var(--oro-45); background: radial-gradient(420px 220px at 100% 0%, var(--oro-12), transparent 70%), linear-gradient(180deg, var(--panel-1) 0%, var(--panel-2) 100%)">
 <div class="b-luz b-luz-oro"></div>
@@ -142,6 +167,17 @@
 <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--oro)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span><strong style="color: var(--blanco)">Hasta 25 competidores,</strong> con el análisis de sus antecedentes.</span></li>
 <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--oro)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span><strong style="color: var(--blanco)">Hasta 10 perfiles.</strong> Trabaja en equipo y comparte resultados.</span></li>
 </ul>
+<div class="b-plan-ia">
+  <div class="b-plan-ia-caja">
+    <p class="b-plan-ia-titulo">Modelos de inteligencia artificial</p>
+    <dl>
+      <div><dt>Anthropic</dt><dd><span class="b-plan-ia-modelo">Claude Sonnet 5.5</span><span class="b-plan-ia-modelo">Claude Haiku 5.5</span></dd></div>
+      <div><dt>OpenAI</dt><dd><span class="b-plan-ia-modelo">GPT-6.1 Sol</span><span class="b-plan-ia-modelo">GPT-6.1 Terra</span><span class="b-plan-ia-modelo">GPT-6 Luna</span></dd></div>
+    </dl>
+    <p class="b-plan-ia-nota">OpenAI es la empresa de ChatGPT.</p>
+    <a class="b-plan-ia-enlace" href="#modelos-ia">Qué modelo usa cada función</a>
+  </div>
+</div>
 </div>
 </div>
 <p class="s-note" style="max-width: 860px; margin: 24px auto 0; text-align: center">Publi Plus, Preparar oferta y el seguimiento de competidores se prueban con cuentas seleccionadas. Publi Pro está en beta privada y Workflow se valida en piloto.</p>
@@ -183,8 +219,17 @@
             <tr><th scope="row">Resultados de ofertas</th><td class="s-no">—</td><td>Historial con motivos documentados. <span class="s-dev">En desarrollo</span></td><td>Publi explica los resultados según las actas, detecta problemas repetidos y propone mejoras.</td></tr>
             <tr><th scope="row">Trabajo en equipo</th><td>Cuenta individual.</td><td>Hasta 5 perfiles por empresa.</td><td>Hasta 10 perfiles por empresa para colaborar y compartir resultados y fuentes de Publi.</td></tr>
           </tbody>
+          <tbody id="modelos-ia">
+            <tr class="s-grp"><th colspan="4" scope="rowgroup">Modelos de inteligencia artificial</th></tr>
+            <tr><th scope="row">Empresas de IA</th><td class="s-no">—</td><td>Anthropic, la empresa de Claude, y OpenAI, la empresa de ChatGPT.</td><td>Las mismas.</td></tr>
+            <tr><th scope="row">Análisis de la licitación con IA</th><td class="s-no">—</td><td><span class="s-modelo">Claude Haiku 5.5</span> lee el pliego. <span class="s-modelo">GPT-6.1 Terra</span> revisa el expediente completo y, en los expedientes largos, lo apoya <span class="s-modelo">GPT-6 Luna</span>.</td><td>Los mismos modelos.</td></tr>
+            <tr><th scope="row">Abogado IA</th><td class="s-no">—</td><td><span class="s-modelo">Claude Sonnet 5.5</span> contrasta el pliego con la normativa y detecta anomalías. <span class="s-modelo">Claude Haiku 5.5</span> redacta la explicación y <span class="s-modelo">Claude Sonnet 5.5</span> la revisa.</td><td>Los mismos modelos.</td></tr>
+            <tr><th scope="row">Publi</th><td class="s-no">—</td><td><span class="s-modelo">GPT-6.1 Terra</span>.</td><td><span class="s-modelo">GPT-6.1 Sol</span>, también para suplidores, cotizaciones y coincidencias por catálogo.</td></tr>
+            <tr><th scope="row">Guía del Workflow</th><td class="s-no">—</td><td class="s-no">—</td><td><span class="s-modelo">Claude Haiku 5.5</span>.</td></tr>
+          </tbody>
         </table>
 </div>
+<p class="s-note s-modelos-nota">Modelos en uso en noviembre de 2026.</p>
 </div>
 </section>
 
