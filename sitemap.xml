@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://publicola.com.do/</loc>
+    <lastmod>2026-11-18</lastmod>
   </url>
   <url>
     <loc>https://publicola.com.do/plataforma/</loc>
@@ -23,5 +24,6 @@
   </url>
   <url>
     <loc>https://publicola.com.do/contacto/</loc>
+    <lastmod>2026-11-18</lastmod>
   </url>
 </urlset>
