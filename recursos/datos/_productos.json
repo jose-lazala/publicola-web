@@ -58,16 +58,16 @@
  {
   "clave": "publicola_plus",
   "nombre": "Publicola Plus",
-  "estado": "proximamente",
-  "url": "",
-  "texto_cta": "Publicola Plus, con lectura de pliegos asistida por inteligencia artificial, estará disponible próximamente."
+  "estado": "disponible",
+  "url": "/planes/",
+  "texto_cta": "Publicola Plus suma la lectura de pliegos con inteligencia artificial. Puedes probarlo 14 días sin costo."
  },
  {
   "clave": "publicola_pro",
   "nombre": "Publicola Pro",
-  "estado": "proximamente",
-  "url": "",
-  "texto_cta": "Publicola Pro, con nuestro agente Publi, estará disponible próximamente."
+  "estado": "disponible",
+  "url": "/planes/",
+  "texto_cta": "Publicola Pro suma a Publi y la preparación de ofertas en equipo. Puedes probarlo 14 días sin costo."
  },
  {
   "clave": "radar",
