@@ -9,6 +9,8 @@
   if (!raiz || typeof window.fetch !== "function") return;
 
   var API = "/api/v1/expedientes/destacado";
+  var ficha = new URLSearchParams(window.location.search).get("ficha");
+  var solicitud = ficha ? API + "?referencia=" + encodeURIComponent(ficha) : API;
   var CINCO_MINUTOS = 5 * 60 * 1000;
   var TRAMO = 30;
   var MESES = ["ene.", "feb.", "mar.", "abr.", "may.", "jun.", "jul.", "ago.", "sep.", "oct.", "nov.", "dic."];
@@ -329,10 +331,13 @@
 
   function sinExpediente(mensaje) {
     var estado = raiz.querySelector("[data-estado]");
-    if (estado) { estado.textContent = mensaje; return; }
+    if (estado && !ficha) { estado.textContent = mensaje; return; }
+    var boton = ficha
+      ? '<a class="b-btn b-primario" href="/licitaciones/equipos-informaticos/">Ver licitaciones abiertas' + FLECHA + "</a>"
+      : '<a class="b-btn b-primario" href="/app/#/oportunidades">Abrir el Explorador' + FLECHA + "</a>";
     raiz.innerHTML = '<section class="s-hero x-hero"><div class="b-wrap"><p class="s-crumbs"><a href="/">Inicio</a><span aria-hidden="true">›</span><span>Expediente público</span></p>' +
       '<h1 class="b-x s-h1 x-titulo">Expediente público</h1><p class="x-estado" role="status">' + texto(mensaje) + "</p>" +
-      '<div class="x-cierre-botones"><a class="b-btn b-primario" href="/app/#/oportunidades">Abrir el Explorador' + FLECHA + "</a></div></div></section>";
+      '<div class="x-cierre-botones">' + boton + "</div></div></section>";
   }
 
   var visible = "";
@@ -340,7 +345,7 @@
   function actualizar() {
     clearTimeout(temporizador);
     var siguiente = CINCO_MINUTOS;
-    fetch(API, { credentials: "omit", cache: "no-store", headers: { "Accept": "application/json" } })
+    fetch(solicitud, { credentials: "omit", cache: "no-store", headers: { "Accept": "application/json" } })
       .then(function (r) { if (!r.ok) throw new Error("sin_expediente"); return r.json(); })
       .then(function (datos) {
         var x = datos && datos.expediente;
@@ -352,7 +357,8 @@
           siguiente = Math.min(CINCO_MINUTOS, vigencia + 500);
         } else {
           visible = "";
-          sinExpediente("Ahora mismo no hay un expediente vigente destacado. Vuelve en unos minutos o busca en el Explorador.");
+          sinExpediente(ficha ? "Esta ficha ya no figura entre los procesos abiertos. Consulta las licitaciones vigentes."
+            : "Ahora mismo no hay un expediente vigente destacado. Vuelve en unos minutos o busca en el Explorador.");
           siguiente = 60000;
         }
       })
