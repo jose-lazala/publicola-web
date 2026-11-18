@@ -376,8 +376,23 @@
 .b-norma-n { padding-top: 4px; font-size: 13px; color: var(--oro); }
 .b-norma-pasos h3 { font-size: 19px; font-weight: 650; line-height: 1.3; }
 .b-norma-pasos p { margin-top: 6px; font-size: 15.5px; line-height: 1.6; color: var(--apoyo-2); }
-.b-norma-normas ul { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-.b-norma-normas li { display: inline-flex; align-items: center; height: 32px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--filete-3); background: var(--blanco-03); font-size: 13.5px; color: var(--texto-claro); }
+.b-norma-veredicto { display: flex; flex-direction: column; gap: 8px; padding: 16px 18px; border-radius: 14px; background: var(--oro-12); border: 1px solid var(--oro-25); }
+.b-norma-veredicto-titulo { font-size: 17px; font-weight: 700; line-height: 1.35; color: var(--texto-claro); }
+.b-norma-clases { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2px; }
+.b-norma-clases li { display: inline-flex; align-items: center; height: 26px; padding: 0 10px; border-radius: 999px; background: var(--blanco-03); border: 1px solid var(--filete-3); font-size: 12.5px; font-weight: 600; color: var(--texto-claro); }
+.b-norma-cabeza { display: flex; align-items: center; gap: 10px; }
+.b-norma-num { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--oro); color: var(--noche); font: 700 12.5px/1 var(--mono); }
+.b-norma-obs-pliego { border-left-color: var(--azul-luz); }
+.b-norma-obs-pliego .b-norma-num { background: var(--azul-luz); }
+.b-norma-obs-pliego .b-norma-tipo { color: var(--azul-luz); }
+.b-norma-efecto { padding: 10px 12px; border-radius: 10px; background: var(--blanco-03); font-size: 14px; line-height: 1.55; color: var(--texto-claro); }
+.b-norma-efecto strong { color: var(--oro); }
+.b-norma-fuentes { font: 500 12px/1.5 var(--mono); color: var(--apoyo); }
+.b-norma-limpio { display: flex; flex-direction: column; gap: 10px; padding: 18px 20px; border-radius: 14px; border: 1px solid var(--filete-3); border-left: 3px solid var(--verde); background: var(--blanco-03); }
+.b-norma-limpio .b-mono-etiqueta { color: var(--verde); }
+.b-norma-limpio-titulo { display: flex; gap: 10px; align-items: flex-start; font-size: 16.5px; font-weight: 650; line-height: 1.4; color: var(--texto-claro); }
+.b-norma-limpio-titulo svg { flex: none; margin-top: 3px; color: var(--verde); }
+.b-norma-limpio-nota { font-size: 14px; line-height: 1.55; color: var(--apoyo-2); }
 .b-norma-limite { display: flex; gap: 10px; align-items: flex-start; padding: 14px 16px; border-radius: 12px; background: var(--blanco-03); border: 1px solid var(--filete); font-size: 14.5px; line-height: 1.55; color: var(--apoyo-2); }
 .b-norma-limite svg { margin-top: 3px; color: var(--azul-luz); }
 .b-norma-acciones { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px; }
