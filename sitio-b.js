@@ -2,6 +2,10 @@
    Sin librerías ni recursos de internet. (La portada usa portada-b.js, que ya hace esto mismo.) */
 (function () {
   "use strict";
+  var captacion = document.createElement("script");
+  captacion.src = "/captacion-facebook.js?v=20261117a";
+  document.head.appendChild(captacion);
+
   /* 1. Menú del celular */
   var boton = document.querySelector(".b-menu");
   var menu = document.getElementById("b-menu-movil");
