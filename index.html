@@ -21,7 +21,7 @@
   <link rel="preload" href="/tipografia/jetbrains-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <!-- Portada B «Azul profundo» (aprobada por José Lazala, 12-nov-2026). Referencia: docs/diseno/portada-b/. -->
   <link rel="stylesheet" href="/sitio-b.css?v=20261115a">
-  <link rel="stylesheet" href="/portada-b.css?v=15f91eeda9c4r2">
+  <link rel="stylesheet" href="/portada-b.css?v=686bbb285da6">
   <noscript><style>.b-ventana-marco[data-analisis-pendiente] { visibility: visible; }</style></noscript>
   <script src="/analisis-marco.js?v=45463c265a42r2" defer></script>
   <style>/* Modelos de IA por plan (José, 17-nov-2026); la tabla completa está en /planes/#modelos-ia */
@@ -306,7 +306,16 @@
           </li>
         </ol>
 
-        <p class="b-norma-limite"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="b-icono"><path d="M12 8v4l2.5 2.5"/><circle cx="12" cy="12" r="9"/></svg><span><strong>Gratis:</strong> hasta tres veces por semana (lunes, miércoles y viernes). <strong>Plus y Pro:</strong> Radar instantáneo y avisos en cuanto detectamos el cambio.</span></p>
+        <dl class="b-radar-planes" aria-label="Frecuencia del Radar y los avisos por plan">
+          <div class="b-radar-plan">
+            <dt>Gratis</dt>
+            <dd>Radar y avisos hasta tres veces por semana, los lunes, miércoles y viernes.</dd>
+          </div>
+          <div class="b-radar-plan b-radar-plan-pago">
+            <dt>Plus y Pro</dt>
+            <dd>Radar instantáneo y avisos en cuanto detectamos un cambio.</dd>
+          </div>
+        </dl>
 
         <div class="b-norma-acciones">
           <a class="b-btn b-primario b-lg" href="/app/?acceso=crear">Crear mi cuenta gratis</a>

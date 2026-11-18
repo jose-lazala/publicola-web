@@ -453,6 +453,13 @@
 .b-radar-pie p:last-child { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; margin-top: 8px; font-size: 14px; color: var(--texto-2); }
 .b-radar-dato strong { margin-right: 4px; font-size: 20px; color: var(--texto); }
 .b-radar-dias { font: 500 12px/1.6 var(--mono); color: var(--azul-etiqueta); }
+.b-radar-planes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 0; }
+.b-radar-plan { padding: 14px 16px; border: 1px solid var(--filete); border-radius: 12px; background: var(--blanco-03); }
+.b-radar-plan dt { color: var(--verde); font-size: 16px; font-weight: 700; }
+.b-radar-plan dd { margin: 5px 0 0; color: var(--texto-2); font-size: 14.5px; line-height: 1.55; }
+.b-radar-plan-pago { border-color: var(--azul-borde); background: var(--azul-velo); }
+.b-radar-plan-pago dt { color: var(--azul-etiqueta); }
+@media (max-width: 760px) { .b-radar-planes { grid-template-columns: minmax(0, 1fr); } }
 
 /* La pantalla real del análisis, en una ventana */
 .b-ventana { margin: 56px 0 0; border-radius: 22px; border: 1px solid var(--filete-elevado); background: var(--panel-elevado); box-shadow: 0 50px 110px -50px var(--sombra-profunda); overflow: hidden; }
