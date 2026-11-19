@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /analizador/datos/
 Sitemap: https://publicola.com.do/sitemap.xml
 Sitemap: https://publicola.com.do/sitemap-recursos.xml

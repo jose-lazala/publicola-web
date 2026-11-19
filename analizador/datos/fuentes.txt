@@ -1,0 +1,13 @@
+El analizador presenta información oficial a partir de una consulta individual por RNC.
+Los índices contienen estados registrales y datos de vigencia para identificadores de nueve dígitos.
+
+DGII · Registro Nacional de Contribuyentes
+https://dgii.gov.do/herramientas/consultas/Paginas/RNC.aspx
+
+MICM · Micro, pequeñas y medianas empresas certificadas
+https://datos.gob.do/dataset/micro-pequenas-y-medianas-empresas-certificadas
+La colección «micm» es un extracto transformado que conserva el RNC, la categoría
+y el período de cada certificación seleccionada. Está disponible bajo ODbL 1.0.
+https://opendatacommons.org/licenses/odbl/1-0/
+
+El archivo cortes.json indica las fechas de las publicaciones empleadas.
