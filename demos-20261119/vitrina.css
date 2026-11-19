@@ -1,0 +1,59 @@
+.b-vitrina-demos {
+  display: grid;
+  gap: clamp(22px, 3vw, 38px);
+  margin-top: clamp(30px, 4vw, 54px);
+}
+
+.b-vitrina-demo {
+  margin: 0;
+  overflow: hidden;
+  border-color: var(--filete-elevado);
+}
+
+.b-vitrina-demo-texto {
+  padding: clamp(18px, 2.6vw, 32px);
+}
+
+.b-vitrina-demo-texto h3 {
+  font-size: clamp(20px, 2.1vw, 29px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--texto);
+  text-wrap: balance;
+}
+
+.b-vitrina-demo-texto p {
+  max-width: 70ch;
+  margin-top: 8px;
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.55;
+  color: var(--texto-2);
+}
+
+.b-vitrina-demo video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  border-top: 1px solid var(--filete);
+  background: var(--noche);
+}
+
+.b-vitrina-demo video:focus-visible {
+  outline: 2px solid var(--oro);
+  outline-offset: -3px;
+}
+
+@media (min-width: 840px) {
+  .b-vitrina-pasos,
+  .b-vitrina-demos .b-capacidades-lista {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 26px;
+  }
+
+  .b-vitrina-demos .b-capacidades-lista li:nth-child(2) {
+    border-top: 0;
+  }
+}

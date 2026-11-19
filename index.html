@@ -59,6 +59,7 @@
   <!-- Portada B «Azul profundo» (aprobada por José Lazala, 12-nov-2026). Referencia: docs/diseno/portada-b/. -->
   <link rel="stylesheet" href="/sitio-b.css?v=20261115a">
   <link rel="stylesheet" href="/portada-b.css?v=8fd04b1de032">
+  <link rel="stylesheet" href="/demos-20261119/vitrina.css">
   <noscript><style>.b-ventana-marco[data-analisis-pendiente] { visibility: visible; }</style></noscript>
   <script src="/analisis-marco.js?v=45463c265a42r2" defer></script>
   <style>/* Modelos de IA por plan (José, 17-nov-2026); la tabla completa está en /planes/#modelos-ia */
@@ -496,31 +497,21 @@
       <p class="b-entrada">Workflow lleva cada licitación en un tablero, paso a paso, hasta el paquete de tu oferta. Siempre sabes qué falta.</p>
     </div>
 
-    <div class="b-norma">
-      <figure class="b-panel b-norma-informe b-wf" aria-label="Workflow de una oferta, ejemplo ilustrativo">
-        <div class="b-luz b-luz-oro" aria-hidden="true"></div>
-        <div class="b-entre">
-          <span class="b-norma-sello"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16M15 4v16"/></svg>Workflow</span>
-          <span class="b-ejemplo">Ejemplo ilustrativo</span>
-        </div>
-        <p class="b-norma-proceso">Adquisición de computadoras y periféricos para oficinas</p>
-        <div class="b-wf-avance">
-          <p class="b-mono-etiqueta">Tu avance en esta oferta</p>
-          <p class="b-wf-mensaje">Te quedan 2 tareas: la certificación de la TSS y la garantía de seriedad de la oferta.</p>
-          <span class="b-wf-barra" aria-hidden="true"><span style="width:83%"></span></span>
-          <p class="b-wf-cuenta"><strong>10 de 12</strong> tareas de preparación completadas</p>
-        </div>
-        <ol class="b-wf-etapas">
-          <li class="b-wf-lista"><span class="b-wf-n">1</span><span><strong>Seguimiento</strong>Si cambian las fechas, sale una enmienda o se adjudica, te avisamos.</span></li>
-          <li class="b-wf-lista"><span class="b-wf-n">2</span><span><strong>Abogado IA</strong>Revisa la licitación frente a la ley antes de invertir tiempo en la oferta.</span></li>
-          <li class="b-wf-lista"><span class="b-wf-n">3</span><span><strong>Encaje con tu empresa</strong>Tu catálogo y los rubros de tu RPE frente a lo que pide la licitación.</span></li>
-          <li class="b-wf-actual" aria-current="step"><span class="b-wf-n">4</span><span><strong>Precios de referencia</strong>Lo que el Estado ha pagado antes por esos renglones.</span></li>
-          <li><span class="b-wf-n">5</span><span><strong>Prepara tu oferta</strong>Documentos, formularios y el expediente por sobres.</span></li>
-        </ol>
+    <div class="b-vitrina-demos">
+      <figure class="b-panel b-vitrina-demo" aria-labelledby="demo-workflow-titulo">
+        <figcaption class="b-vitrina-demo-texto">
+          <h3 class="b-x" id="demo-workflow-titulo">Mira qué fácil es preparar una oferta con Workflow</h3>
+          <p>En esta vista previa de Workflow Pro, Aurora revisa el análisis, cruza su catálogo y reúne los documentos y formularios para descargar el expediente.</p>
+        </figcaption>
+        <video width="1920" height="1080" controls muted playsinline preload="none"
+          poster="/demos-20261119/workflow.webp" data-demo-vitrina aria-label="Demostración de Workflow Pro">
+          <source src="/demos-20261119/workflow.mp4" type="video/mp4">
+          <a href="/demos-20261119/workflow.mp4">Ver la demostración de Workflow Pro</a>
+        </video>
       </figure>
 
       <div class="b-norma-lado">
-        <ol class="b-norma-pasos">
+        <ol class="b-norma-pasos b-vitrina-pasos">
           <li>
             <span class="b-mono b-norma-n">01</span>
             <div><h3>Todo en un tablero</h3><p>El análisis, los requisitos, tus documentos y los formularios de cada licitación, en un solo lugar.</p></div>
@@ -560,7 +551,18 @@
       <p class="b-entrada">Publi es el agente de inteligencia artificial de Publicola. Investiga las compras públicas contigo: lee pliegos, enmiendas y actas oficiales y te responde con la página y el enlace de la fuente.</p>
     </div>
 
-    <div class="b-publi">
+    <div class="b-vitrina-demos">
+      <figure class="b-panel b-vitrina-demo" aria-labelledby="demo-publi-titulo">
+        <figcaption class="b-vitrina-demo-texto">
+          <h3 class="b-x" id="demo-publi-titulo">Pregúntale a Publi y comprueba la respuesta</h3>
+          <p>Este ejemplo parte de una enmienda real. Publi te explica desde cuándo corre el plazo, si debes ofertar todo el lote y en qué página puedes comprobarlo.</p>
+        </figcaption>
+        <video width="1920" height="1080" controls muted playsinline preload="none"
+          poster="/demos-20261119/publi.webp" data-demo-vitrina aria-label="Demostración de Publi">
+          <source src="/demos-20261119/publi.mp4" type="video/mp4">
+          <a href="/demos-20261119/publi.mp4">Ver la demostración de Publi</a>
+        </video>
+      </figure>
       <article class="b-panel b-capacidades" aria-labelledby="titulo-capacidades">
         <div class="b-luz" aria-hidden="true"></div>
         <h3 class="b-x b-capacidades-titulo" id="titulo-capacidades">Lo que hace Publi</h3>
@@ -578,33 +580,7 @@
         <p class="b-capacidades-pie">Con Pro tienes todo lo de Plus y lo marcado Pro.</p>
       </article>
 
-      <div class="b-panel b-herramienta b-publi-chat">
-        <div class="b-luz b-luz-oro" aria-hidden="true"></div>
-        <div class="b-herramienta-nombre b-publi-nombre">
-          <span class="b-mosaico b-mosaico-oro b-mosaico-grande"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M9.5 10.5h5"/></svg></span>
-          <div><h3 class="b-x">Pregúntale a Publi</h3><p>Responde con la página y el enlace de la fuente</p></div>
-        </div>
-        <figure class="b-mini" style="margin-left:0;margin-right:0;margin-bottom:0" aria-label="Conversación con Publi, ejemplo ilustrativo">
-          <div class="b-entre"><span class="b-conversacion-titulo b-solo-escritorio">Conversación con Publi</span><span class="b-ejemplo">Ejemplo ilustrativo</span></div>
-          <p class="b-pregunta">¿Qué pedían los pliegos de compras pasadas de mouse de computadora?</p>
-          <div class="b-respuesta">
-            <span class="b-respuesta-icono" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5c.6 4.6 2.3 7.2 7 8-4.7.8-6.4 3.4-7 8-.6-4.6-2.3-7.2-7-8 4.7-.8 6.4-3.4 7-8Z"/></svg></span>
-            <div class="b-respuesta-cuerpo">
-              <p>Revisé procesos pasados con ese renglón. Estos requisitos se repiten en sus pliegos:</p>
-              <ul>
-                <li><span>Ficha técnica del producto<span class="b-solo-escritorio"> ofertado</span></span><span class="b-cita"><span class="b-solo-escritorio">Pliego ·&nbsp;</span>p. 12</span></li>
-                <li>Garantía del fabricante<span class="b-cita"><span class="b-solo-escritorio">Pliego ·&nbsp;</span>p. 15</span></li>
-                <li class="b-solo-escritorio">Plazo y lugar de entrega<span class="b-cita">Pliego · p. 9</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="b-buscador b-preguntale" aria-hidden="true">
-            <span class="b-preguntale-texto">Pregúntale a Publi…</span>
-            <span class="b-preguntale-enviar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </div>
-        </figure>
-        <p class="b-aclaracion"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="b-icono"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>Publi investiga contigo; la oferta se prepara en Workflow. Publi Plus se prueba con cuentas seleccionadas y Publi Pro está en beta privada.</p>
-      </div>
+      <p class="b-aclaracion"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="b-icono"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>Publi investiga contigo; la oferta se prepara en Workflow. Publi Plus se prueba con cuentas seleccionadas y Publi Pro está en beta privada.</p>
     </div>
 
     <div class="b-norma-acciones b-acciones-centro">
@@ -912,5 +888,6 @@
 </footer>
 
 <script src="/portada-b.js?v=20261117facebook" defer></script>
+<script src="/demos-20261119/vitrina.js" defer></script>
 </body>
 </html>
