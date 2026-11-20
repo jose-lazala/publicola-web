@@ -216,8 +216,53 @@ function resumenEstado(datos, rpe, mipymeVigente) {
   return {inicio, registro, mipyme};
 }
 
-function guardarEnlaceEnvio(lineas) {
-  obtener("enviar-diagnostico").href = WHATSAPP + "?text=" + encodeURIComponent(lineas.join("\n"));
+function textoWhatsApp(formato, actividad, datos, rpe, mipymeVigente) {
+  let inicio = "Hola, equipo de Publicola. El RNC de mi empresa es " + formato;
+  if (actividad) inicio += " y trabajamos en el área de " + actividad.replace(/\.$/, "");
+
+  const estadoRnc = datos?.dgii?.toLowerCase();
+  const estadoRpe = rpe?.estado?.toLowerCase();
+  const sinRegistro = rpe?.tipo === "ausente";
+  const sinMipyme = Boolean(datos && !datos.micm);
+  let rnc = "Quisiera confirmar el estado de mi RNC.";
+  if (estadoRnc === "activo") {
+    rnc = "Mi RNC está activo.";
+  } else if (estadoRnc && estadoRnc !== "por confirmar") {
+    rnc = "Mi RNC figura " + (estadoRnc === "cese temporal" ? "en " : "") + estadoRnc + ".";
+  } else if (datos && !estadoRnc) {
+    rnc = "No encontré mi RNC en la consulta de la DGII.";
+  }
+
+  let registro = "Quisiera verificar el registro de mi empresa como proveedora del Estado.";
+  if (sinRegistro) {
+    registro = (estadoRnc === "activo" ? "Sin embargo, mi" : "Mi")
+      + " empresa no está registrada como proveedora del Estado"
+      + (sinMipyme ? " y tampoco tiene certificación MIPYME." : ".");
+  } else if (estadoRpe === "activo" && estadoRnc === "activo") {
+    rnc = "";
+    registro = "Mi RNC y el registro de mi empresa como proveedora del Estado están activos.";
+  } else if (estadoRpe) {
+    registro = "El registro de mi empresa como proveedora del Estado figura " + estadoRpe + ".";
+  }
+
+  let mipyme = "";
+  if (mipymeVigente) mipyme = "Mi certificación MIPYME está vigente.";
+  else if (datos?.micm) mipyme = "Mi última certificación MIPYME venció.";
+  else if (sinMipyme && !sinRegistro) mipyme = "Mi empresa no tiene certificación MIPYME.";
+  return [inicio + ".", [rnc, registro, mipyme].filter(Boolean).join(" ")];
+}
+
+function textoConteo(cantidad, completo) {
+  return (completo ? "" : "al menos ")
+    + (cantidad === 1 ? "una licitación abierta" : cantidad + " licitaciones abiertas");
+}
+
+function guardarEnlaceEnvio(parrafos, oportunidades) {
+  const cantidad = oportunidades?.procesos.length ?? 0;
+  const licitaciones = cantidad ? "Vi " + textoConteo(cantidad, oportunidades.completo) + " en mi rubro." : "";
+  const consulta = "¿Cómo pueden ayudarme a preparar mi empresa para licitar?";
+  const texto = [...parrafos, licitaciones, consulta].filter(Boolean).join("\n\n");
+  obtener("enviar-diagnostico").href = WHATSAPP + "?text=" + encodeURIComponent(texto);
 }
 
 function mostrarLicitaciones({procesos, completo}, sector) {
@@ -226,9 +271,7 @@ function mostrarLicitaciones({procesos, completo}, sector) {
 
   const texto = obtener("oportunidades");
   if (cantidad) {
-    const conteo = (completo ? "" : "al menos ")
-      + (cantidad === 1 ? "una licitación abierta" : cantidad + " licitaciones abiertas");
-    texto.replaceChildren("Encontramos ", elemento("strong", conteo), " en " + sector + ".");
+    texto.replaceChildren("Encontramos ", elemento("strong", textoConteo(cantidad, completo)), " en " + sector + ".");
   } else {
     texto.textContent = "En esta consulta no encontramos licitaciones abiertas en " + sector + ".";
   }
@@ -264,11 +307,10 @@ function mostrarResultado(rnc, datos, rpe) {
   if (datos) hallazgos.push(filaRnc(datos));
   if (rpe) hallazgos.push(filaRpe(rpe));
   if (datos) hallazgos.push(filaMipyme(datos, mipymeVigente));
-  let actividad = "";
-  if (datos?.actividad) {
-    const texto = datos.actividad.toLocaleLowerCase("es-DO");
-    actividad = texto[0].toLocaleUpperCase("es-DO") + texto.slice(1);
-    hallazgos.push(fila("Actividad económica principal", actividad, "DGII"));
+  const actividad = datos?.actividad?.toLocaleLowerCase("es-DO") ?? "";
+  if (actividad) {
+    const titulo = actividad[0].toLocaleUpperCase("es-DO") + actividad.slice(1);
+    hallazgos.push(fila("Actividad económica principal", titulo, "DGII"));
   }
   obtener("comprobaciones").replaceChildren(...hallazgos);
   obtener("datos-consulta").open = false;
@@ -278,20 +320,12 @@ function mostrarResultado(rnc, datos, rpe) {
   licitaciones.hidden = true;
   licitaciones.replaceChildren();
   avisoLicitaciones("");
-  const lineas = [
-    "Hola, equipo de Publicola. Necesito ayuda para preparar mi empresa para licitar.",
-    "",
-    "Diagnóstico del " + fechaPublicada(hoy),
-    empresa,
-    ...(actividad ? ["Actividad registrada · " + actividad] : []),
-    "",
-    resumen.textContent,
-  ];
-  guardarEnlaceEnvio(lineas);
+  const parrafos = textoWhatsApp(formato, actividad, datos, rpe, mipymeVigente);
+  guardarEnlaceEnvio(parrafos);
   resultados.hidden = false;
   obtener("titulo-resultado").focus({preventScroll: true});
   resultados.scrollIntoView({block: "start"});
-  return lineas;
+  return parrafos;
 }
 
 function avisoLicitaciones(texto) {
@@ -331,7 +365,7 @@ form.addEventListener("submit", async (evento) => {
       return;
     }
     mensaje("");
-    const lineas = mostrarResultado(rnc, datos, rpe);
+    const parrafos = mostrarResultado(rnc, datos, rpe);
     let rubros = rubrosDeActividad(datos?.actividad);
     let sector = FORMATO_RUBROS.format(rubros.map(([, nombre]) => nombre));
     if (!rubros.length && rpe?.tipo === "encontrado") {
@@ -342,7 +376,7 @@ form.addEventListener("submit", async (evento) => {
       avisoLicitaciones("Buscando licitaciones para tu actividad…");
       const oportunidades = await buscarLicitaciones(rubros, leerJson).catch(() => null);
       const hallazgo = oportunidades ? mostrarLicitaciones(oportunidades, sector) : "";
-      if (hallazgo) guardarEnlaceEnvio([...lineas, "", hallazgo]);
+      if (oportunidades?.procesos.length) guardarEnlaceEnvio(parrafos, oportunidades);
       avisoLicitaciones(hallazgo ? "" : "Esta vez no pudimos comprobar cuántas licitaciones hay abiertas.");
     }
   } finally {
