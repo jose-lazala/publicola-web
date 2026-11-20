@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#050B1E">
-  <meta name="color-scheme" content="dark">
+  <meta name="color-scheme" content="light">
   <meta name="description" content="Consulta gratis el estado de tu RNC, RPE y certificación MIPYME. Descubre tu actividad registrada y las licitaciones abiertas relacionadas.">
   <title>Analizador gratuito para licitar | Publicola</title>
   <link rel="canonical" href="https://publicola.com.do/analizador/">
@@ -15,54 +15,63 @@
   <meta property="og:url" content="https://publicola.com.do/analizador/">
   <meta property="og:image" content="https://publicola.com.do/marca/og-image-v3.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/favicon-v3.ico">
-  <link rel="apple-touch-icon" href="/marca/icono-180-v3.png">
-  <link rel="preload" href="/tipografia/mona-sans-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/sitio-b.css?v=20261115a">
-  <link rel="stylesheet" href="/analizador/analizador.css?v=2">
-  <script src="/analizador/analizador.js?v=2" type="module"></script>
+  <link rel="icon" href="../favicon-v3.ico">
+  <link rel="apple-touch-icon" href="../marca/icono-180-v3.png">
+  <link rel="stylesheet" href="./analizador.css?v=3">
+  <script type="module">
+    // La vista de archivo usa los datos publicados y conserva el diseño local.
+    const base = location.protocol === "file:" ? "https://publicola.com.do/analizador/" : import.meta.url;
+    import(new URL("./analizador.js?v=3", base)).catch(() => {
+      const aviso = document.getElementById("aviso");
+      aviso.textContent = "El analizador no cargó. Recarga la página para intentarlo de nuevo.";
+      aviso.hidden = false;
+    });
+  </script>
 </head>
 <body class="a-pagina">
-  <a class="b-salto" href="#contenido">Saltar al contenido</a>
+  <a class="a-salto" href="#contenido">Saltar al contenido</a>
   <header class="a-cabecera">
     <div class="a-ancho a-barra">
-      <a class="a-logo" href="/" aria-label="Publicola, ir al inicio">
-        <img src="/marca/publicola-logo-blanco-v1.png" alt="Publicola" width="523" height="168">
+      <a class="a-logo" href="https://publicola.com.do/" aria-label="Publicola, ir al inicio">
+        <img src="../marca/publicola-logo-blanco-v1.png" alt="Publicola" width="523" height="168">
       </a>
-      <a href="/app/#/oportunidades" class="a-cabecera-enlace">Explorar licitaciones</a>
+      <a href="https://publicola.com.do/app/#/oportunidades" class="a-cabecera-enlace">Explorar licitaciones</a>
     </div>
   </header>
-  <main id="contenido" class="a-ancho">
+  <main id="contenido">
     <section class="a-portada" aria-labelledby="titulo">
-      <div class="a-presentacion">
-        <p class="a-ceja">Analizador gratuito</p>
-        <h1 id="titulo">¿Qué le falta a tu empresa <em>para licitar?</em></h1>
-        <p class="a-intro">Consulta qué tiene en orden tu empresa y encuentra licitaciones abiertas relacionadas con su actividad.</p>
+      <div class="a-ancho a-portada-interior">
+        <div class="a-presentacion">
+          <p class="a-ceja">Analizador gratuito</p>
+          <h1 id="titulo"><span>¿Qué le falta a tu empresa</span> <em>para licitar?</em></h1>
+          <p class="a-intro">Revisa tu RNC, tu RPE y tu certificación MIPYME. Descubre cuántas licitaciones abiertas se relacionan con tu actividad.</p>
+        </div>
+        <form id="consulta" class="a-formulario" novalidate>
+          <label for="rnc">RNC de la empresa</label>
+          <p id="rnc-ayuda" class="a-ayuda">Escribe los 9 dígitos de tu RNC.</p>
+          <input id="rnc" inputmode="numeric" autocomplete="off" spellcheck="false"
+            maxlength="24" placeholder="000-00000-0" required aria-describedby="rnc-ayuda aviso">
+          <button id="consultar" class="a-boton" type="submit" disabled>Ver mi diagnóstico</button>
+          <p id="aviso" class="a-aviso" role="status" hidden></p>
+          <p class="a-gratis">Sin crear una cuenta.</p>
+          <noscript><p class="a-aviso">Activa JavaScript para consultar tu RNC.</p></noscript>
+        </form>
       </div>
-      <form id="consulta" class="a-formulario" novalidate>
-        <h2>Consulta tu empresa</h2>
-        <label for="rnc">RNC</label>
-        <input id="rnc" inputmode="numeric" autocomplete="off" spellcheck="false"
-          maxlength="24" placeholder="000-00000-0" required aria-describedby="rnc-ayuda aviso">
-        <p id="rnc-ayuda" class="a-ayuda">Ingresa los 9 dígitos del RNC de tu empresa.</p>
-        <button id="consultar" type="submit" disabled>Ver mi diagnóstico</button>
-        <p id="aviso" class="a-aviso" role="status" hidden></p>
-        <p class="a-gratis">Consulta gratis y sin crear una cuenta.</p>
-        <noscript><p class="a-aviso">Activa JavaScript para consultar tu RNC.</p></noscript>
-      </form>
     </section>
 
     <section id="diagnostico" class="a-resultados" aria-labelledby="titulo-resultado" hidden>
-      <header class="a-resultado-cabecera">
-        <h2 id="titulo-resultado" tabindex="-1">Tu diagnóstico</h2>
-        <p id="empresa"></p>
-        <p id="consultado" class="a-meta"></p>
-      </header>
-      <dl class="a-informe" id="comprobaciones"></dl>
-      <p class="a-meta a-fuentes-aviso" id="aviso-fuentes" role="status" hidden></p>
-      <div class="a-continuar">
-        <a href="/app/#/oportunidades" class="a-boton">Explorar licitaciones en Publicola</a>
-        <p class="a-meta">Cada licitación tiene sus propios requisitos.</p>
+      <div class="a-ancho a-documento">
+        <header class="a-resultado-cabecera">
+          <h2 id="titulo-resultado" tabindex="-1">Tu diagnóstico</h2>
+          <p id="empresa"></p>
+          <p id="consultado" class="a-meta"></p>
+        </header>
+        <dl class="a-informe" id="comprobaciones"></dl>
+        <p class="a-meta a-fuentes-aviso" id="aviso-fuentes" role="status" hidden></p>
+        <div class="a-continuar">
+          <a href="https://publicola.com.do/app/#/oportunidades" class="a-boton">Explorar licitaciones en Publicola</a>
+          <p class="a-meta">Cada licitación tiene sus propios requisitos.</p>
+        </div>
       </div>
     </section>
   </main>
@@ -70,8 +79,8 @@
     <div class="a-ancho a-pie-interior">
       <p>Publicola · Compras públicas en República Dominicana</p>
       <nav aria-label="Información">
-        <a href="/fuentes/">Fuentes y metodología</a>
-        <a href="/privacidad/">Privacidad</a>
+        <a href="https://publicola.com.do/fuentes/">Fuentes y metodología</a>
+        <a href="https://publicola.com.do/privacidad/">Privacidad</a>
       </nav>
     </div>
   </footer>

@@ -48,7 +48,7 @@ async function leerJson(url, opciones = {}) {
   const control = new AbortController();
   const cancelar = setTimeout(() => control.abort(), 7500);
   try {
-    const respuesta = await fetch(url, {
+    const respuesta = await fetch(new URL(url, import.meta.url), {
       ...opciones, credentials: "omit", referrerPolicy: "no-referrer", signal: control.signal,
     });
     if (!respuesta.ok) throw new Error("Fuente temporalmente indisponible");
@@ -186,6 +186,7 @@ function filaLicitaciones({procesos, completo}, fuente) {
     : "No encontramos licitaciones abiertas en los rubros consultados.";
   const resultado = fila("Licitaciones abiertas", titulo, fuente,
     cantidad ? [] : [["Explorar en la DGCP", COMPRAS]]);
+  resultado.classList.add("a-fila-licitaciones");
   if (cantidad) {
     const detalles = elemento("details", "", "a-oportunidades");
     detalles.append(elemento("summary", cantidad > 12 ? "Ver los 12 próximos cierres" : "Ver " + (cantidad === 1 ? "la licitación" : "las licitaciones")));
