@@ -21,7 +21,7 @@
   <script type="module">
     // La vista de archivo usa los datos publicados y conserva el diseño local.
     const base = location.protocol === "file:" ? "https://publicola.com.do/analizador/" : import.meta.url;
-    import(new URL("./analizador.js?v=6", base)).catch(() => {
+    import(new URL("./analizador.js?v=7", base)).catch(() => {
       const aviso = document.getElementById("aviso");
       aviso.textContent = "El analizador no cargó. Recarga la página para intentarlo de nuevo.";
       aviso.hidden = false;

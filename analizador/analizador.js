@@ -8,7 +8,6 @@ const MICM = "https://datos.gob.do/dataset/micro-pequenas-y-medianas-empresas-ce
 const VENTANILLA_MICM = "https://ventanillavirtual.micm.gob.do/";
 const WHATSAPP = "https://wa.me/18297856028";
 const FORMATO_FECHA = new Intl.DateTimeFormat("es-DO", {dateStyle: "long", timeZone: "UTC"});
-const FORMATO_RUBROS = new Intl.ListFormat("es-DO", {style: "long", type: "conjunction"});
 const FECHA_DOMINICANA = new Intl.DateTimeFormat("en-CA", {
   timeZone: "America/Santo_Domingo", day: "2-digit", month: "2-digit", year: "numeric",
 });
@@ -265,15 +264,26 @@ function guardarEnlaceEnvio(parrafos, oportunidades) {
   obtener("enviar-diagnostico").href = WHATSAPP + "?text=" + encodeURIComponent(texto);
 }
 
-function mostrarLicitaciones({procesos, completo}, sector) {
+function describirActividad(actividad) {
+  const nombre = actividad?.trim().toLocaleLowerCase("es-DO").replace(/\.$/, "");
+  if (!nombre) return "";
+  const descripcion = nombre === "servicios jurídicos"
+    ? "se dedica a servicios legales"
+    : "trabaja en el área de " + nombre;
+  return "Verificamos que tu empresa " + descripcion + ". ";
+}
+
+function mostrarLicitaciones({procesos, completo}, actividad, sector) {
   const cantidad = procesos.length;
   if (!cantidad && !completo) return "";
 
   const texto = obtener("oportunidades");
+  const introduccion = describirActividad(actividad);
   if (cantidad) {
-    texto.replaceChildren("Encontramos ", elemento("strong", textoConteo(cantidad, completo)), " en " + sector + ".");
+    texto.replaceChildren(introduccion + "En Publicola encontramos ",
+      elemento("strong", textoConteo(cantidad, completo)), " para " + sector + ".");
   } else {
-    texto.textContent = "En esta consulta no encontramos licitaciones abiertas en " + sector + ".";
+    texto.textContent = introduccion + "Por ahora no encontramos licitaciones abiertas para " + sector + " en Publicola.";
   }
   if (cantidad) {
     const items = procesos.slice(0, 12).map((proceso) => {
@@ -366,8 +376,9 @@ form.addEventListener("submit", async (evento) => {
     }
     mensaje("");
     const parrafos = mostrarResultado(rnc, datos, rpe);
-    let rubros = rubrosDeActividad(datos?.actividad);
-    let sector = FORMATO_RUBROS.format(rubros.map(([, nombre]) => nombre));
+    const actividad = datos?.actividad;
+    let rubros = rubrosDeActividad(actividad);
+    let sector = "tu rubro";
     if (!rubros.length && rpe?.tipo === "encontrado") {
       rubros = await rubrosInscritos(rpe.numero, leerJson).catch(() => []);
       sector = "los rubros de tu registro como proveedor";
@@ -375,7 +386,7 @@ form.addEventListener("submit", async (evento) => {
     if (rubros.length) {
       avisoLicitaciones("Buscando licitaciones para tu actividad…");
       const oportunidades = await buscarLicitaciones(rubros, leerJson).catch(() => null);
-      const hallazgo = oportunidades ? mostrarLicitaciones(oportunidades, sector) : "";
+      const hallazgo = oportunidades ? mostrarLicitaciones(oportunidades, actividad, sector) : "";
       if (oportunidades?.procesos.length) guardarEnlaceEnvio(parrafos, oportunidades);
       avisoLicitaciones(hallazgo ? "" : "Esta vez no pudimos comprobar cuántas licitaciones hay abiertas.");
     }
