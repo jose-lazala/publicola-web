@@ -58,7 +58,7 @@
   <link rel="preload" href="/tipografia/jetbrains-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <!-- Portada B «Azul profundo» (aprobada por José Lazala, 12-nov-2026). Referencia: docs/diseno/portada-b/. -->
   <link rel="stylesheet" href="/sitio-b.css?v=20261115a">
-  <link rel="stylesheet" href="/portada-b.css?v=8fd04b1de032">
+  <link rel="stylesheet" href="/portada-b.css?v=20261119analizador">
   <link rel="stylesheet" href="/demos-20261119/vitrina.css">
   <noscript><style>.b-ventana-marco[data-analisis-pendiente] { visibility: visible; }</style></noscript>
   <script src="/analisis-marco.js?v=45463c265a42r2" defer></script>
@@ -108,6 +108,7 @@
       </div>
     </div>
     <nav class="b-nav-movil" id="b-menu-movil" aria-label="Principal en el celular">
+      <a href="/analizador/">Analizador gratis</a>
       <a href="/" aria-current="page">Inicio</a>
       <a href="/plataforma/">Plataforma</a>
       <a href="/planes/">Planes</a>
@@ -119,12 +120,13 @@
   </header>
 
   <main id="contenido">
-  <section class="b-wrap b-portada" aria-labelledby="titulo-portada">
+  <section class="b-wrap b-portada b-portada-inicio" aria-labelledby="titulo-portada">
     <div class="b-portada-texto">
       <p class="b-antetitulo"><span class="b-rombo" aria-hidden="true"></span>Compras y contrataciones públicas · República Dominicana</p>
       <h1 class="b-x b-h1" id="titulo-portada">Compite mejor por <span class="b-azul">contratos del Estado</span></h1>
       <p class="b-portada-entrada">Encuentra licitaciones que encajen con tu empresa, revisa los requisitos y decide en cuáles presentar oferta.</p>
       <div class="b-portada-botones">
+        <a class="b-btn b-lg b-analizador" href="/analizador/">Analizador gratis</a>
         <a class="b-btn b-primario b-lg" href="/app/?acceso=crear">Crear mi cuenta gratis<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <!-- Mientras el expediente público no carga (aviso al carril A), este botón lleva al Explorador.
              portada-b.js lo vuelve «Ver un expediente» → /expedientes/ cuando hay un expediente destacado vigente. -->
