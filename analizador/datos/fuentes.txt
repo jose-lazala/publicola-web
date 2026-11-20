@@ -1,5 +1,5 @@
 El analizador presenta información oficial a partir de una consulta individual por RNC.
-Los índices contienen estados registrales y datos de vigencia para identificadores de nueve dígitos.
+Los índices contienen estados registrales, actividad económica principal y datos de vigencia para identificadores de nueve dígitos.
 
 DGII · Registro Nacional de Contribuyentes
 https://dgii.gov.do/herramientas/consultas/Paginas/RNC.aspx
@@ -11,3 +11,6 @@ y el período de cada certificación seleccionada. Está disponible bajo ODbL 1.
 https://opendatacommons.org/licenses/odbl/1-0/
 
 El archivo cortes.json indica las fechas de las publicaciones empleadas.
+
+DGCP · Procesos publicados y renglones del Sistema Electrónico de Contrataciones Públicas
+https://datosabiertos.dgcp.gob.do/api-dgcp/docs/index.html

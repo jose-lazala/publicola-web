@@ -101,51 +101,30 @@
 .a-formulario button:hover, .a-pagina .a-boton:hover { color: #1a1203; background: #ffd27a; }
 .a-formulario button:disabled { cursor: default; background: #e9bd67; opacity: .75; }
 
-.a-alcance {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-block: 1px solid #263960;
-  margin-bottom: 3.5rem;
-}
-.a-alcance > div { padding: 1.18rem 1.4rem; }
-.a-alcance > div:first-child { padding-left: 0; }
-.a-alcance > div + div { border-left: 1px solid #263960; }
-.a-alcance span, .a-meta { color: #aebfe3; font-size: .88rem; }
-.a-alcance span { font-family: "JetBrains Mono", monospace; font-weight: 600; }
-.a-alcance h2 { margin-top: .24rem; color: #e7edfc; font-size: 1.05rem; font-weight: 650; }
-
-.a-resultados { padding: .3rem 0 4.3rem; scroll-margin-top: 1rem; }
+.a-meta { color: #aebfe3; font-size: .9rem; }
+.a-resultados { padding: 1.4rem 0 4.3rem; border-top: 1px solid #345082; scroll-margin-top: 1rem; }
 .a-resultado-cabecera h2 { font-size: clamp(2.1rem, 5vw, 3.2rem); letter-spacing: -.05em; }
 .a-resultado-cabecera h2:focus { outline: none; }
 .a-resultado-cabecera p { overflow-wrap: anywhere; }
 .a-resultado-cabecera .a-meta { margin-top: .3rem; }
-.a-paso {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem 1.5rem;
-  padding: 1.3rem 1.45rem;
-  border: 1px solid #5273ba;
-  border-radius: 1rem;
-  background: #18294d;
-  margin-block: 1.3rem 1rem;
+.a-informe { margin: 1.3rem 0 0; border-top: 1px solid #263960; }
+.a-fila {
+  display: grid;
+  grid-template-columns: minmax(13rem, .8fr) minmax(0, 2fr);
+  gap: .4rem 1.6rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #263960;
 }
-.a-paso h3 { margin-top: .25rem; font-size: clamp(1.2rem, 3vw, 1.55rem); letter-spacing: -.02em; }
-.a-paso h3 + p { margin-top: .26rem; color: #d4dff5; }
-.a-pagina .a-boton-claro { background: #dce7ff; flex-shrink: 0; color: #0c1938; }
-.a-pagina .a-boton-claro:hover { background: white; color: #0c1938; }
-.a-tarjetas { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: .85rem; }
-.a-tarjeta { padding: 1.15rem 1.25rem; border: 1px solid #293c66; border-radius: .85rem; background: #0b1732; }
-.a-tarjeta-cabecera { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .45rem .65rem; }
-.a-tarjeta h3 { color: #f2f5fc; font-size: 1.05rem; }
-.a-etiqueta { display: inline-block; padding: .18rem .58rem; border-radius: .36rem; background: #293952; color: #e4ebfa; font-size: .875rem; font-weight: 675; }
-.a-etiqueta[data-tono="ok"] { background: #123c34; color: #a4efca; }
-.a-etiqueta[data-tono="atencion"] { background: #47341d; color: #ffdd9a; }
-.a-tarjeta .a-detalle { margin-top: .65rem; color: #c3cde4; }
-.a-tarjeta .a-enlaces { display: flex; flex-wrap: wrap; gap: .45rem 1rem; margin-top: .75rem; font-size: .925rem; }
-.a-tarjeta .a-meta { margin-top: .48rem; }
-.a-resultados .a-alcance-nota { margin-top: 1.05rem; color: #aebfe3; font-size: .94rem; }
-.a-continuar { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem 1.2rem; margin-top: 1.15rem; }
+.a-fila dt { color: #f2f5fc; font-weight: 700; }
+.a-fila dd { margin: 0; color: #dce6fa; overflow-wrap: anywhere; }
+.a-fila .a-meta, .a-fila .a-enlaces { margin-top: .32rem; }
+.a-fila .a-enlaces { display: flex; flex-wrap: wrap; gap: .35rem 1.1rem; font-size: .94rem; }
+.a-oportunidades { margin-top: .6rem; }
+.a-oportunidades summary { width: fit-content; cursor: pointer; color: #adc6ff; text-underline-offset: .2em; text-decoration: underline; }
+.a-oportunidades ul { margin: .55rem 0 0; padding-left: 1.25rem; }
+.a-oportunidades li + li { margin-top: .65rem; }
+.a-resultados .a-fuentes-aviso { margin-top: .7rem; }
+.a-continuar { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem 1.2rem; margin-top: 1.25rem; }
 
 .a-pie { margin-top: auto; border-top: 1px solid #263960; color: #abbbdb; background: #04091a; }
 .a-pie-interior { min-height: 4.6rem; padding-block: .9rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1rem; font-size: .9rem; }
@@ -158,11 +137,7 @@
   .a-presentacion .a-intro { margin-top: .8rem; }
   .a-barra { min-height: 3.8rem; }
   .a-logo img { width: 7rem; }
-  .a-tarjetas { grid-template-columns: 1fr; }
-  .a-paso { align-items: stretch; flex-direction: column; padding: 1.08rem; }
-  .a-alcance { margin-bottom: 2.1rem; }
-  .a-alcance > div { padding: .7rem .5rem; }
-  .a-alcance h2 { font-size: .9rem; }
+  .a-fila { grid-template-columns: 1fr; gap: .25rem; padding-block: .9rem; }
   .a-resultados { padding-bottom: 2.65rem; }
 }
 

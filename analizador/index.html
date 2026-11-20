@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#050B1E">
   <meta name="color-scheme" content="dark">
-  <meta name="description" content="Consulta gratis con tu RNC qué le falta a tu empresa para empezar a venderle al Estado dominicano. Revisa RNC, RPE y certificación MIPYME.">
+  <meta name="description" content="Consulta gratis el estado de tu RNC, RPE y certificación MIPYME. Descubre tu actividad registrada y las licitaciones abiertas relacionadas.">
   <title>Analizador gratuito para licitar | Publicola</title>
   <link rel="canonical" href="https://publicola.com.do/analizador/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Publicola">
   <meta property="og:title" content="¿Qué le falta a tu empresa para licitar?">
-  <meta property="og:description" content="Revisa gratis el RNC, el RPE y la certificación MIPYME de tu empresa. Solo necesitas tu RNC.">
+  <meta property="og:description" content="Consulta el RNC, el RPE y la certificación MIPYME de tu empresa. Encuentra licitaciones abiertas relacionadas con su actividad.">
   <meta property="og:url" content="https://publicola.com.do/analizador/">
   <meta property="og:image" content="https://publicola.com.do/marca/og-image-v3.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -19,8 +19,8 @@
   <link rel="apple-touch-icon" href="/marca/icono-180-v3.png">
   <link rel="preload" href="/tipografia/mona-sans-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/sitio-b.css?v=20261115a">
-  <link rel="stylesheet" href="/analizador/analizador.css?v=1">
-  <script src="/analizador/analizador.js?v=1" type="module"></script>
+  <link rel="stylesheet" href="/analizador/analizador.css?v=2">
+  <script src="/analizador/analizador.js?v=2" type="module"></script>
 </head>
 <body class="a-pagina">
   <a class="b-salto" href="#contenido">Saltar al contenido</a>
@@ -37,7 +37,7 @@
       <div class="a-presentacion">
         <p class="a-ceja">Analizador gratuito</p>
         <h1 id="titulo">¿Qué le falta a tu empresa <em>para licitar?</em></h1>
-        <p class="a-intro">Descubre qué tienes en orden y qué debes resolver para empezar a venderle al Estado dominicano.</p>
+        <p class="a-intro">Consulta qué tiene en orden tu empresa y encuentra licitaciones abiertas relacionadas con su actividad.</p>
       </div>
       <form id="consulta" class="a-formulario" novalidate>
         <h2>Consulta tu empresa</h2>
@@ -52,32 +52,17 @@
       </form>
     </section>
 
-    <section class="a-alcance" id="alcance" aria-label="Qué revisa el analizador">
-      <div><span>DGII</span><h2>Estado de tu RNC</h2></div>
-      <div><span>DGCP</span><h2>Registro de Proveedores</h2></div>
-      <div><span>MICM</span><h2>Certificación MIPYME</h2></div>
-    </section>
-
     <section id="diagnostico" class="a-resultados" aria-labelledby="titulo-resultado" hidden>
       <header class="a-resultado-cabecera">
         <h2 id="titulo-resultado" tabindex="-1">Tu diagnóstico</h2>
         <p id="empresa"></p>
         <p id="consultado" class="a-meta"></p>
       </header>
-      <section class="a-paso" aria-labelledby="siguiente-titulo">
-        <div>
-          <p class="a-ceja">Tu próximo paso</p>
-          <h3 id="siguiente-titulo"></h3>
-          <p id="siguiente-detalle"></p>
-        </div>
-        <a id="siguiente-enlace" class="a-boton a-boton-claro" target="_blank" rel="noopener noreferrer"></a>
-      </section>
-      <div class="a-tarjetas" id="comprobaciones"></div>
-      <p class="a-alcance-nota">El diagnóstico orienta tu preparación. Revisa los requisitos de la licitación en la que quieras participar.</p>
+      <dl class="a-informe" id="comprobaciones"></dl>
+      <p class="a-meta a-fuentes-aviso" id="aviso-fuentes" role="status" hidden></p>
       <div class="a-continuar">
         <a href="/app/#/oportunidades" class="a-boton">Explorar licitaciones en Publicola</a>
-        <a href="https://infopago.dgcp.gob.do/trazabilidad-ciclos-pago"
-          target="_blank" rel="noopener noreferrer">Consultar pagos en Info Pago</a>
+        <p class="a-meta">Cada licitación tiene sus propios requisitos.</p>
       </div>
     </section>
   </main>

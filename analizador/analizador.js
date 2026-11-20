@@ -1,13 +1,12 @@
+import {buscarLicitaciones, rubrosDeActividad, rubrosInscritos} from "./oportunidades.js?v=2";
+
 const DGII = "https://dgii.gov.do/herramientas/consultas/Paginas/RNC.aspx";
 const RPE = "https://www.dgcp.gob.do/servicios/registro-de-proveedores/";
 const ACTUALIZAR_RPE = "https://www.dgcp.gob.do/servicios/actualizacion-registro-de-proveedores/";
 const API_DGCP = "https://datosabiertos.dgcp.gob.do/api-dgcp/v1/proveedores";
 const MICM = "https://datos.gob.do/dataset/micro-pequenas-y-medianas-empresas-certificadas";
 const VENTANILLA_MICM = "https://ventanillavirtual.micm.gob.do/";
-const CAMARAS = "https://app.registromercantil.do/consultas";
-const TSS = "https://www.tss.gob.do/servicio/balance-al-dia/";
-const VALIDAR_TSS = "https://tss.gob.do/consultas/validar-certificacion/";
-const CONSTANCIA_DGII = "https://dgii.gov.do/servicios/Documents/Certificaciones/TRA-CER-Cumplimiento-Obligaciones-Fiscales-Al-Dia-en-la-Declaracion-Pago-de-Impuestos.pdf";
+const COMPRAS = "https://datosabiertos.dgcp.gob.do/";
 const FORMATO_FECHA = new Intl.DateTimeFormat("es-DO", {dateStyle: "long", timeZone: "UTC"});
 const FECHA_DOMINICANA = new Intl.DateTimeFormat("en-CA", {
   timeZone: "America/Santo_Domingo", day: "2-digit", month: "2-digit", year: "numeric",
@@ -67,9 +66,19 @@ async function buscarPadrones(rnc) {
     throw new Error("Cortes inválidos");
   }
   const numero = String(Number(rnc) % cortes.partes).padStart(2, "0");
-  const datos = await leerJson("datos/" + numero + ".json?v=" + cortes.version);
+  const version = "?v=" + cortes.version;
+  const [datos, actividades] = await Promise.all([
+    leerJson("datos/" + numero + ".json" + version),
+    leerJson("datos/actividades.json" + version).catch(() => []),
+  ]);
   if (!datos.dgii || !datos.micm) throw new Error("Padrón inválido");
-  return {cortes, dgii: datos.dgii[rnc] ?? null, micm: datos.micm[rnc] ?? null};
+  const posicion = datos.actividad?.[rnc];
+  return {
+    cortes,
+    dgii: datos.dgii[rnc] ?? null,
+    micm: datos.micm[rnc] ?? null,
+    actividad: Number.isInteger(posicion) && typeof actividades[posicion] === "string" ? actividades[posicion] : "",
+  };
 }
 
 async function buscarProveedor(rnc) {
@@ -94,14 +103,11 @@ async function buscarProveedor(rnc) {
   }
   const ficha = proveedores[0];
   const documento = String(ficha.url_certificacion ?? "");
-  const rm = String(ficha.numero_registro_mercantil ?? "").trim();
   return {
     tipo: "encontrado",
     numero: String(ficha.rpe),
     estado: ficha.estado.trim(),
     empresa: typeof ficha.razon_social === "string" ? ficha.razon_social.trim() : "",
-    registroMercantil: /^[a-z0-9][a-z0-9 -]{0,29}$/i.test(rm) ? rm : "",
-    fechaMercantil: fechaPublicada(ficha.fecha_registro_mercantil),
     constancia: /^https:\/\/(?:www\.)?dgcp\.gob\.do\/constancia\/descargar\/[0-9]+$/.test(documento) ? documento : "",
   };
 }
@@ -113,102 +119,88 @@ function elemento(tipo, contenido, clase = "") {
   return resultado;
 }
 
-function tarjeta(titulo, estado, tono, detalle, enlaces, fuente = "") {
-  const cuerpo = document.createElement("article");
-  cuerpo.className = "a-tarjeta";
-  const cabecera = elemento("div", "", "a-tarjeta-cabecera");
-  const etiqueta = elemento("span", estado, "a-etiqueta");
-  etiqueta.dataset.tono = tono;
-  cabecera.append(elemento("h3", titulo), etiqueta);
-  cuerpo.append(cabecera, elemento("p", detalle, "a-detalle"));
+function enlaceExterno(texto, url) {
+  const enlace = elemento("a", texto);
+  enlace.href = url;
+  enlace.target = "_blank";
+  enlace.rel = "noopener noreferrer";
+  return enlace;
+}
+
+function fila(titulo, texto, fuente = "", enlaces = []) {
+  const fila = elemento("div", "", "a-fila");
+  const cuerpo = elemento("dd", "");
+  cuerpo.append(elemento("p", texto));
   if (fuente) cuerpo.append(elemento("p", fuente, "a-meta"));
-  const lista = elemento("div", "", "a-enlaces");
-  for (const [texto, url] of enlaces) {
-    const enlace = elemento("a", texto);
-    enlace.href = url;
-    enlace.target = "_blank";
-    enlace.rel = "noopener noreferrer";
-    lista.append(enlace);
+  if (enlaces.length) {
+    const lista = elemento("div", "", "a-enlaces");
+    lista.append(...enlaces.map(([texto, url]) => enlaceExterno(texto, url)));
+    cuerpo.append(lista);
   }
-  cuerpo.append(lista);
-  return cuerpo;
+  fila.append(elemento("dt", titulo), cuerpo);
+  return fila;
 }
 
-function tarjetaRnc(datos) {
-  const estado = datos?.dgii;
-  const activo = estado === "Activo";
-  const marca = estado ?? (datos ? "Sin coincidencia" : "Por verificar");
-  const detalle = estado
-    ? (activo ? "Tu RNC figura activo en el padrón de la DGII." : "Verifica con la DGII el estado de tu registro antes de avanzar.")
-    : (datos ? "Revisa los dígitos y confirma el RNC en la consulta oficial." : "Consulta el estado directamente en la DGII.");
-  return tarjeta("Estado del RNC", marca, activo ? "ok" : "atencion", detalle,
-    [["Consultar en la DGII", DGII]], datos ? "Padrón DGII del " + fechaPublicada(datos.cortes.dgii) : "");
+function filaRnc(datos) {
+  const estado = datos.dgii?.toLowerCase();
+  let texto = "Este RNC no figura en el padrón consultado.";
+  if (estado === "por confirmar") texto = "El padrón de la DGII publica estados distintos para este RNC.";
+  else if (estado) texto = "Figura " + (estado === "cese temporal" ? "en " : "") + estado + ".";
+  return fila("Estado del RNC", texto, "DGII · " + fechaPublicada(datos.cortes.dgii), [["Consultar en la DGII", DGII]]);
 }
 
-function tarjetaRpe(rpe) {
-  if (!rpe) {
-    return tarjeta("Registro de Proveedores", "Por verificar", "atencion",
-      "La consulta automática de la DGCP está temporalmente indisponible.", [["Verificar el RPE", RPE]]);
-  }
+function filaRpe(rpe) {
   if (rpe.tipo === "ausente") {
-    return tarjeta("Registro de Proveedores", "RPE no encontrado", "atencion",
-      "La consulta de la DGCP no devolvió un RPE para este RNC.", [["Ver cómo inscribirte", RPE]]);
+    return fila("Registro de Proveedores del Estado", "No tiene RPE registrado en la consulta de la DGCP.",
+      "", [["Ver cómo inscribirte", RPE]]);
   }
-  const activo = rpe.estado.toLowerCase() === "activo";
-  const detalle = rpe.estado.toLowerCase() === "desactualizado"
-    ? " · Actualiza la documentación antes de la apertura de la oferta económica y de la adjudicación."
-    : "";
-  const enlaces = [[activo ? "Consultar en la DGCP" : "Ver opciones en la DGCP", activo ? RPE : ACTUALIZAR_RPE]];
+  const estado = rpe.estado.toLowerCase();
+  const enlaces = [];
+  if (estado === "desactualizado") enlaces.push(["Ver cómo actualizar el RPE", ACTUALIZAR_RPE]);
+  else if (estado !== "activo") enlaces.push(["Consultar en la DGCP", RPE]);
   if (rpe.constancia) enlaces.push(["Ver constancia", rpe.constancia]);
-  return tarjeta("Registro de Proveedores", rpe.estado, activo ? "ok" : "atencion",
-    "RPE n.º " + rpe.numero + detalle, enlaces, "Consulta directa a la DGCP");
+  return fila("Registro de Proveedores del Estado",
+    "Figura " + estado + ". RPE n.º " + rpe.numero + ".", "Consulta directa a la DGCP", enlaces);
 }
 
-function tarjetaMipyme(datos, hoy) {
+function filaMipyme(datos, hoy) {
   const enlaces = [["Trámite en el MICM", VENTANILLA_MICM], ["Ver padrón", MICM]];
-  if (!datos) {
-    return tarjeta("Certificación MIPYME", "Por verificar", "",
-      "Consulta tu certificación en el Ministerio de Industria, Comercio y Mipymes.", enlaces);
-  }
-  const fuente = "Emisiones publicadas hasta el " + fechaPublicada(datos.cortes.micm);
+  const fuente = "MICM · Emisiones publicadas hasta el " + fechaPublicada(datos.cortes.micm);
   if (!datos.micm) {
-    return tarjeta("Certificación MIPYME", "Sin dato publicado", "",
-      "El padrón disponible no muestra una certificación para este RNC. Una certificación vigente te permite participar en compras reservadas a MIPYMES.", enlaces, fuente);
+    return fila("Certificación MIPYME", "No cuenta con certificación MIPYME en el padrón consultado.", fuente, enlaces);
   }
   const [vencimiento, , categoria] = datos.micm;
   const vigente = vencimiento >= hoy;
-  return tarjeta("Certificación MIPYME", vigente ? "Vigente según el padrón" : "Última publicada vencida", vigente ? "ok" : "atencion",
-    (categoria ? categoria + " · " : "") + (vigente ? "Vence el " : "Venció el ") + fechaPublicada(vencimiento) + ".", enlaces, fuente);
+  const texto = vigente
+    ? "Cuenta con certificación vigente hasta el " + fechaPublicada(vencimiento) + (categoria ? " · " + categoria : "") + "."
+    : "La última certificación publicada venció el " + fechaPublicada(vencimiento) + ".";
+  return fila("Certificación MIPYME", texto, fuente, enlaces);
 }
 
-function tarjetaMercantil(rpe) {
-  const enlaces = [["Validar certificado", CAMARAS]];
-  if (rpe?.fechaMercantil) {
-    const detalle = (rpe.registroMercantil ? "Registro n.º " + rpe.registroMercantil + " · " : "")
-      + "Fecha que figura en el RPE: " + rpe.fechaMercantil + ". Confirma la vigencia con tu cámara de comercio.";
-    return tarjeta("Registro Mercantil", "Dato del RPE", "", detalle, enlaces);
+function filaLicitaciones({procesos, completo}, fuente) {
+  if (!procesos.length && !completo) return null;
+  const cantidad = procesos.length;
+  const licitaciones = cantidad === 1 ? " licitación abierta relacionada" : " licitaciones abiertas relacionadas";
+  const titulo = cantidad
+    ? "Encontramos " + (completo ? "" : "al menos ") + cantidad + licitaciones + "."
+    : "No encontramos licitaciones abiertas en los rubros consultados.";
+  const resultado = fila("Licitaciones abiertas", titulo, fuente,
+    cantidad ? [] : [["Explorar en la DGCP", COMPRAS]]);
+  if (cantidad) {
+    const detalles = elemento("details", "", "a-oportunidades");
+    detalles.append(elemento("summary", cantidad > 12 ? "Ver los 12 próximos cierres" : "Ver " + (cantidad === 1 ? "la licitación" : "las licitaciones")));
+    const lista = elemento("ul", "");
+    for (const proceso of procesos.slice(0, 12)) {
+      const item = elemento("li", "");
+      item.append(proceso.url ? enlaceExterno(proceso.titulo, proceso.url) : elemento("span", proceso.titulo));
+      item.append(elemento("p", proceso.codigo + " · Cierre " + proceso.cierre, "a-meta"));
+      item.append(elemento("p", "Renglón relacionado con " + proceso.coincidencia, "a-meta"));
+      lista.append(item);
+    }
+    detalles.append(lista);
+    resultado.querySelector("dd").append(detalles);
   }
-  return tarjeta("Registro Mercantil", "Por verificar", "",
-    "Verifica la vigencia con tu certificado y su código de validación.", enlaces);
-}
-
-function proximoPaso(datos, rpe) {
-  if (!datos?.dgii || datos.dgii !== "Activo") {
-    return ["Confirma el estado de tu RNC", "Usa la consulta de la DGII para comprobar el registro de tu empresa.", "Consultar RNC", DGII];
-  }
-  if (!rpe) {
-    return ["Confirma tu RPE con la DGCP", "La consulta automática no respondió. Puedes revisar tu registro en la fuente oficial.", "Ir a la DGCP", RPE];
-  }
-  if (rpe.tipo === "ausente") {
-    return ["Solicita tu RPE", "La inscripción como proveedor del Estado es gratuita. Revisa los documentos que te corresponde presentar.", "Ver requisitos de inscripción", RPE];
-  }
-  if (rpe.estado.toLowerCase() === "desactualizado") {
-    return ["Actualiza tu RPE", "Revisa qué documentación debes renovar, incluido el Registro Mercantil cuando corresponda.", "Ver cómo actualizarlo", ACTUALIZAR_RPE];
-  }
-  if (rpe.estado.toLowerCase() !== "activo") {
-    return ["Revisa el estado de tu RPE", "Consulta tu constancia y la vía de regularización con la DGCP.", "Ir a la DGCP", ACTUALIZAR_RPE];
-  }
-  return ["Confirma tus constancias antes de ofertar", "Tu RNC y tu RPE figuran activos. Revisa tus constancias y los requisitos del proceso que te interesa.", "Ver guía para ofertar", "/recursos/requisitos-para-ofertar-al-estado-dominicano/"];
+  return resultado;
 }
 
 function mostrarResultado(rnc, datos, rpe) {
@@ -216,30 +208,35 @@ function mostrarResultado(rnc, datos, rpe) {
   const formato = [rnc.slice(0, 3), rnc.slice(3, 8), rnc.slice(8)].join("-");
   obtener("empresa").textContent = [rpe?.empresa, "RNC " + formato].filter(Boolean).join(" · ");
   obtener("consultado").textContent = "Consulta del " + fechaPublicada(hoy);
-  const [titulo, detalle, texto, url] = proximoPaso(datos, rpe);
-  obtener("siguiente-titulo").textContent = titulo;
-  obtener("siguiente-detalle").textContent = detalle;
-  obtener("siguiente-enlace").href = url;
-  obtener("siguiente-enlace").textContent = texto;
-  obtener("comprobaciones").replaceChildren(
-    tarjetaRnc(datos), tarjetaRpe(rpe), tarjetaMipyme(datos, hoy), tarjetaMercantil(rpe),
-    tarjeta("Cumplimiento tributario", "Pendiente de verificar", "",
-      "Confirma tus obligaciones fiscales con la certificación oficial de la DGII.", [["Ver cómo obtenerla", CONSTANCIA_DGII]]),
-    tarjeta("Seguridad Social (TSS)", "Pendiente de verificar", "",
-      "Si tienes nómina, revisa tu certificación de Balance al Día en la TSS.",
-      [["Ver el trámite", TSS], ["Validar una certificación", VALIDAR_TSS]]),
-  );
+  const hallazgos = [];
+  if (datos) hallazgos.push(filaRnc(datos));
+  if (rpe) hallazgos.push(filaRpe(rpe));
+  if (datos) hallazgos.push(filaMipyme(datos, hoy));
+  if (datos?.actividad) {
+    const actividad = datos.actividad.toLocaleLowerCase("es-DO");
+    hallazgos.push(fila("Actividad económica principal", actividad[0].toLocaleUpperCase("es-DO") + actividad.slice(1), "Registrada en la DGII"));
+  }
+  obtener("comprobaciones").replaceChildren(...hallazgos);
+  estadoFuentes(datos, rpe);
   resultados.hidden = false;
-  obtener("alcance").hidden = true;
   obtener("titulo-resultado").focus({preventScroll: true});
   resultados.scrollIntoView({block: "start"});
+}
+
+function estadoFuentes(datos, rpe, mensajeExtra = "") {
+  const estado = obtener("aviso-fuentes");
+  estado.textContent = [
+    datos ? "" : "Los padrones de la DGII y del MICM están temporalmente indisponibles.",
+    rpe ? "" : "La DGCP no respondió a la consulta del RPE.",
+    mensajeExtra,
+  ].filter(Boolean).join(" ");
+  estado.hidden = !estado.textContent;
 }
 
 campo.addEventListener("input", () => {
   campo.removeAttribute("aria-invalid");
   mensaje("");
   resultados.hidden = true;
-  obtener("alcance").hidden = false;
 });
 
 form.addEventListener("submit", async (evento) => {
@@ -268,6 +265,22 @@ form.addEventListener("submit", async (evento) => {
     }
     mensaje("");
     mostrarResultado(rnc, datos, rpe);
+    let rubros = rubrosDeActividad(datos?.actividad);
+    let fuente = "";
+    if (rubros.length) {
+      const lista = new Intl.ListFormat("es-DO", {style: "long", type: "conjunction"});
+      fuente = "DGCP · " + lista.format(rubros.map(([, nombre]) => nombre));
+    } else if (rpe?.tipo === "encontrado") {
+      rubros = await rubrosInscritos(rpe.numero, leerJson).catch(() => []);
+      fuente = "DGCP · Rubros inscritos en el RPE";
+    }
+    if (rubros.length) {
+      estadoFuentes(datos, rpe, "Buscando licitaciones abiertas relacionadas…");
+      const oportunidades = await buscarLicitaciones(rubros, leerJson).catch(() => null);
+      const hallazgo = oportunidades ? filaLicitaciones(oportunidades, fuente) : null;
+      if (hallazgo) obtener("comprobaciones").append(hallazgo);
+      estadoFuentes(datos, rpe, hallazgo ? "" : "El conteo de licitaciones no se pudo comprobar en esta consulta.");
+    }
   } finally {
     boton.disabled = false;
     campo.readOnly = false;
