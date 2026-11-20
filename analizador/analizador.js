@@ -6,8 +6,9 @@ const ACTUALIZAR_RPE = "https://www.dgcp.gob.do/servicios/actualizacion-registro
 const API_DGCP = "https://datosabiertos.dgcp.gob.do/api-dgcp/v1/proveedores";
 const MICM = "https://datos.gob.do/dataset/micro-pequenas-y-medianas-empresas-certificadas";
 const VENTANILLA_MICM = "https://ventanillavirtual.micm.gob.do/";
-const COMPRAS = "https://datosabiertos.dgcp.gob.do/";
+const WHATSAPP = "https://wa.me/18297856028";
 const FORMATO_FECHA = new Intl.DateTimeFormat("es-DO", {dateStyle: "long", timeZone: "UTC"});
+const FORMATO_RUBROS = new Intl.ListFormat("es-DO", {style: "long", type: "conjunction"});
 const FECHA_DOMINICANA = new Intl.DateTimeFormat("en-CA", {
   timeZone: "America/Santo_Domingo", day: "2-digit", month: "2-digit", year: "numeric",
 });
@@ -98,7 +99,8 @@ async function buscarProveedor(rnc) {
   const proveedores = filas.filter((fila) => fila.tipo_documento === "RNC"
     && String(fila.numero_documento).replace(/[\s-]/g, "") === rnc
     && /^persona jur[ií]dica$/i.test(String(fila.tipo_persona).trim()));
-  if (proveedores.length !== 1 || !proveedores[0].rpe || typeof proveedores[0].estado !== "string") {
+  if (proveedores.length !== 1 || !proveedores[0].rpe
+      || typeof proveedores[0].estado !== "string" || !proveedores[0].estado.trim()) {
     throw new Error("La DGCP no devolvió una ficha empresarial única");
   }
   const ficha = proveedores[0];
@@ -145,93 +147,165 @@ function filaRnc(datos) {
   const estado = datos.dgii?.toLowerCase();
   let texto = "Este RNC no figura en el padrón consultado.";
   if (estado === "por confirmar") texto = "El padrón de la DGII publica estados distintos para este RNC.";
-  else if (estado) texto = "Figura " + (estado === "cese temporal" ? "en " : "") + estado + ".";
+  else if (estado) texto = datos.dgii + ".";
   return fila("Estado del RNC", texto, "DGII · " + fechaPublicada(datos.cortes.dgii), [["Consultar en la DGII", DGII]]);
 }
 
 function filaRpe(rpe) {
   if (rpe.tipo === "ausente") {
-    return fila("Registro de Proveedores del Estado", "No tiene RPE registrado en la consulta de la DGCP.",
-      "", [["Ver cómo inscribirte", RPE]]);
+    return fila("Registro de Proveedores del Estado (RPE)", "No encontramos una inscripción.",
+      "DGCP", [["Ver cómo inscribirte", RPE]]);
   }
   const estado = rpe.estado.toLowerCase();
   const enlaces = [];
   if (estado === "desactualizado") enlaces.push(["Ver cómo actualizar el RPE", ACTUALIZAR_RPE]);
   else if (estado !== "activo") enlaces.push(["Consultar en la DGCP", RPE]);
   if (rpe.constancia) enlaces.push(["Ver constancia", rpe.constancia]);
-  return fila("Registro de Proveedores del Estado",
-    "Figura " + estado + ". RPE n.º " + rpe.numero + ".", "Consulta directa a la DGCP", enlaces);
+  return fila("Registro de Proveedores del Estado (RPE)",
+    rpe.estado + " · RPE n.º " + rpe.numero, "DGCP", enlaces);
 }
 
-function filaMipyme(datos, hoy) {
+function filaMipyme(datos, vigente) {
   const enlaces = [["Trámite en el MICM", VENTANILLA_MICM], ["Ver padrón", MICM]];
-  const fuente = "MICM · Emisiones publicadas hasta el " + fechaPublicada(datos.cortes.micm);
+  const fuente = "MICM · Padrón al " + fechaPublicada(datos.cortes.micm);
   if (!datos.micm) {
-    return fila("Certificación MIPYME", "No cuenta con certificación MIPYME en el padrón consultado.", fuente, enlaces);
+    return fila("Certificación MIPYME", "No figura en el padrón publicado.", fuente, enlaces);
   }
   const [vencimiento, , categoria] = datos.micm;
-  const vigente = vencimiento >= hoy;
   const texto = vigente
-    ? "Cuenta con certificación vigente hasta el " + fechaPublicada(vencimiento) + (categoria ? " · " + categoria : "") + "."
-    : "La última certificación publicada venció el " + fechaPublicada(vencimiento) + ".";
+    ? "Vigente hasta el " + fechaPublicada(vencimiento) + (categoria ? " · " + categoria : "") + "."
+    : "Venció el " + fechaPublicada(vencimiento) + ".";
   return fila("Certificación MIPYME", texto, fuente, enlaces);
 }
 
-function filaLicitaciones({procesos, completo}, fuente) {
-  if (!procesos.length && !completo) return null;
+function resumenEstado(datos, rpe, mipymeVigente) {
+  const estadoRnc = datos?.dgii?.toLowerCase();
+  const estadoRpe = rpe?.estado?.toLowerCase();
+  let inicio = "No pudimos confirmar el estado de tu RNC.";
+  if (estadoRnc && estadoRnc !== "por confirmar") {
+    inicio = "Tu RNC figura " + (estadoRnc === "cese temporal" ? "en " : "") + estadoRnc + ".";
+  } else if (datos && !estadoRnc) {
+    inicio = "No encontramos tu RNC en el registro consultado.";
+  }
+
+  let paso = "Confirma tu RNC con la DGII.";
+  let registro = "";
+  if (rpe?.tipo === "ausente") registro = "Tampoco encontramos tu inscripción como proveedor del Estado.";
+  else if (estadoRpe) registro = "Tu registro como proveedor del Estado figura " + estadoRpe + ".";
+
+  if (estadoRnc === "activo") {
+    inicio = "Tu RNC está activo.";
+    if (estadoRpe === "activo") {
+      inicio = "";
+      paso = "Tu RNC y tu registro como proveedor del Estado están activos.";
+      registro = "Revisa qué pide cada licitación antes de enviar tu oferta.";
+    } else if (rpe?.tipo === "ausente") {
+      paso = "Inscríbete como proveedor del Estado para empezar a licitar.";
+      registro = "";
+    } else if (estadoRpe === "desactualizado") {
+      paso = "Tu registro como proveedor del Estado necesita actualizarse.";
+      registro = "";
+    } else if (estadoRpe === "cancelado") {
+      paso = "Tu registro como proveedor está cancelado. Debes inscribirte de nuevo para contratar con el Estado.";
+      registro = "";
+    } else {
+      paso = "Confirma con Contrataciones Públicas el estado de tu registro como proveedor.";
+      if (!rpe) registro = "Esta vez no pudimos verificarlo.";
+    }
+  }
+
+  let mipyme = "";
+  if (datos) {
+    if (mipymeVigente) mipyme = "Tu certificación MIPYME está vigente.";
+    else if (datos.micm) mipyme = "Tu última certificación MIPYME venció. Renuévala si quieres participar en compras reservadas a MIPYMES.";
+    else mipyme = "No encontramos certificación MIPYME. Puedes solicitarla para compras reservadas a micro, pequeñas y medianas empresas.";
+  }
+  return {inicio, paso, cierre: [registro, mipyme].filter(Boolean).join(" ")};
+}
+
+function guardarEnlaceEnvio(lineas) {
+  obtener("enviar-diagnostico").href = WHATSAPP + "?text=" + encodeURIComponent(lineas.join("\n"));
+}
+
+function mostrarLicitaciones({procesos, completo}, sector) {
   const cantidad = procesos.length;
-  const licitaciones = cantidad === 1 ? " licitación abierta relacionada" : " licitaciones abiertas relacionadas";
-  const titulo = cantidad
-    ? "Encontramos " + (completo ? "" : "al menos ") + cantidad + licitaciones + "."
-    : "No encontramos licitaciones abiertas en los rubros consultados.";
-  const resultado = fila("Licitaciones abiertas", titulo, fuente,
-    cantidad ? [] : [["Explorar en la DGCP", COMPRAS]]);
-  resultado.classList.add("a-fila-licitaciones");
+  if (!cantidad && !completo) return "";
+
+  const bloque = obtener("oportunidades");
+  const texto = elemento("p", "", "a-licitaciones-resumen");
   if (cantidad) {
-    const detalles = elemento("details", "", "a-oportunidades");
-    detalles.append(elemento("summary", cantidad > 12 ? "Ver los 12 próximos cierres" : "Ver " + (cantidad === 1 ? "la licitación" : "las licitaciones")));
-    const lista = elemento("ul", "");
+    const conteo = (completo ? "" : "al menos ")
+      + (cantidad === 1 ? "una licitación abierta" : cantidad + " licitaciones abiertas");
+    texto.append("Encontramos ", elemento("strong", conteo), " en " + sector + ".");
+  } else {
+    texto.textContent = "En esta consulta no encontramos licitaciones abiertas en " + sector + ".";
+  }
+  bloque.replaceChildren(texto);
+
+  if (cantidad) {
+    const lista = elemento("ul", "", "a-procesos");
     for (const proceso of procesos.slice(0, 12)) {
       const item = elemento("li", "");
       item.append(proceso.url ? enlaceExterno(proceso.titulo, proceso.url) : elemento("span", proceso.titulo));
-      item.append(elemento("p", proceso.codigo + " · Cierre " + proceso.cierre, "a-meta"));
-      item.append(elemento("p", "Renglón relacionado con " + proceso.coincidencia, "a-meta"));
+      item.append(elemento("p", "Cierra el " + proceso.cierre + " · " + proceso.codigo, "a-meta"));
+      if (cantidad > 1) item.append(elemento("p", "Renglón de " + proceso.coincidencia, "a-meta"));
       lista.append(item);
     }
-    detalles.append(lista);
-    resultado.querySelector("dd").append(detalles);
+    const enlace = cantidad > 12 ? "Ver los 12 próximos cierres" : cantidad === 1 ? "Ver la licitación" : "Ver las licitaciones";
+    const detalles = elemento("details", "");
+    detalles.append(elemento("summary", enlace), lista);
+    bloque.append(detalles);
   }
-  return resultado;
+  bloque.hidden = false;
+  return texto.textContent;
 }
 
 function mostrarResultado(rnc, datos, rpe) {
   const hoy = isoDominicana();
   const formato = [rnc.slice(0, 3), rnc.slice(3, 8), rnc.slice(8)].join("-");
-  obtener("empresa").textContent = [rpe?.empresa, "RNC " + formato].filter(Boolean).join(" · ");
+  const empresa = [rpe?.empresa, "RNC " + formato].filter(Boolean).join(" · ");
+  obtener("empresa").textContent = empresa;
   obtener("consultado").textContent = "Consulta del " + fechaPublicada(hoy);
+  const mipymeVigente = Boolean(datos?.micm && datos.micm[0] >= hoy);
+  const {inicio, paso, cierre} = resumenEstado(datos, rpe, mipymeVigente);
+  const resumen = obtener("resumen-estado");
+  resumen.replaceChildren(inicio ? inicio + " " : "", elemento("strong", paso), cierre ? " " + cierre : "");
+
   const hallazgos = [];
   if (datos) hallazgos.push(filaRnc(datos));
   if (rpe) hallazgos.push(filaRpe(rpe));
-  if (datos) hallazgos.push(filaMipyme(datos, hoy));
+  if (datos) hallazgos.push(filaMipyme(datos, mipymeVigente));
+  let actividad = "";
   if (datos?.actividad) {
-    const actividad = datos.actividad.toLocaleLowerCase("es-DO");
-    hallazgos.push(fila("Actividad económica principal", actividad[0].toLocaleUpperCase("es-DO") + actividad.slice(1), "Registrada en la DGII"));
+    const texto = datos.actividad.toLocaleLowerCase("es-DO");
+    actividad = texto[0].toLocaleUpperCase("es-DO") + texto.slice(1);
+    hallazgos.push(fila("Actividad económica principal", actividad, "DGII"));
   }
   obtener("comprobaciones").replaceChildren(...hallazgos);
-  estadoFuentes(datos, rpe);
+  const licitaciones = obtener("oportunidades");
+  licitaciones.hidden = true;
+  licitaciones.replaceChildren();
+  avisoLicitaciones("");
+  const lineas = [
+    "Hola, equipo de Publicola. Necesito ayuda para preparar mi empresa para licitar.",
+    "",
+    "Diagnóstico del " + fechaPublicada(hoy),
+    empresa,
+    ...(actividad ? ["Actividad registrada · " + actividad] : []),
+    "",
+    resumen.textContent,
+  ];
+  guardarEnlaceEnvio(lineas);
   resultados.hidden = false;
   obtener("titulo-resultado").focus({preventScroll: true});
   resultados.scrollIntoView({block: "start"});
+  return lineas;
 }
 
-function estadoFuentes(datos, rpe, mensajeExtra = "") {
-  const estado = obtener("aviso-fuentes");
-  estado.textContent = [
-    datos ? "" : "Los padrones de la DGII y del MICM están temporalmente indisponibles.",
-    rpe ? "" : "La DGCP no respondió a la consulta del RPE.",
-    mensajeExtra,
-  ].filter(Boolean).join(" ");
-  estado.hidden = !estado.textContent;
+function avisoLicitaciones(texto) {
+  const estado = obtener("aviso-licitaciones");
+  estado.textContent = texto;
+  estado.hidden = !texto;
 }
 
 campo.addEventListener("input", () => {
@@ -265,22 +339,19 @@ form.addEventListener("submit", async (evento) => {
       return;
     }
     mensaje("");
-    mostrarResultado(rnc, datos, rpe);
+    const lineas = mostrarResultado(rnc, datos, rpe);
     let rubros = rubrosDeActividad(datos?.actividad);
-    let fuente = "";
-    if (rubros.length) {
-      const lista = new Intl.ListFormat("es-DO", {style: "long", type: "conjunction"});
-      fuente = "DGCP · " + lista.format(rubros.map(([, nombre]) => nombre));
-    } else if (rpe?.tipo === "encontrado") {
+    let sector = FORMATO_RUBROS.format(rubros.map(([, nombre]) => nombre));
+    if (!rubros.length && rpe?.tipo === "encontrado") {
       rubros = await rubrosInscritos(rpe.numero, leerJson).catch(() => []);
-      fuente = "DGCP · Rubros inscritos en el RPE";
+      sector = "los rubros de tu registro como proveedor";
     }
     if (rubros.length) {
-      estadoFuentes(datos, rpe, "Buscando licitaciones abiertas relacionadas…");
+      avisoLicitaciones("Buscando licitaciones para tu actividad…");
       const oportunidades = await buscarLicitaciones(rubros, leerJson).catch(() => null);
-      const hallazgo = oportunidades ? filaLicitaciones(oportunidades, fuente) : null;
-      if (hallazgo) obtener("comprobaciones").append(hallazgo);
-      estadoFuentes(datos, rpe, hallazgo ? "" : "El conteo de licitaciones no se pudo comprobar en esta consulta.");
+      const hallazgo = oportunidades ? mostrarLicitaciones(oportunidades, sector) : "";
+      if (hallazgo) guardarEnlaceEnvio([...lineas, "", hallazgo]);
+      avisoLicitaciones(hallazgo ? "" : "Esta vez no pudimos comprobar cuántas licitaciones hay abiertas.");
     }
   } finally {
     boton.disabled = false;

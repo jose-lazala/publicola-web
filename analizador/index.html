@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#050B1E">
-  <meta name="color-scheme" content="light">
+  <meta name="color-scheme" content="dark">
   <meta name="description" content="Consulta gratis el estado de tu RNC, RPE y certificación MIPYME. Descubre tu actividad registrada y las licitaciones abiertas relacionadas.">
   <title>Analizador gratuito para licitar | Publicola</title>
   <link rel="canonical" href="https://publicola.com.do/analizador/">
@@ -17,11 +17,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../favicon-v3.ico">
   <link rel="apple-touch-icon" href="../marca/icono-180-v3.png">
-  <link rel="stylesheet" href="./analizador.css?v=3">
+  <link rel="stylesheet" href="./analizador.css?v=4">
   <script type="module">
     // La vista de archivo usa los datos publicados y conserva el diseño local.
     const base = location.protocol === "file:" ? "https://publicola.com.do/analizador/" : import.meta.url;
-    import(new URL("./analizador.js?v=3", base)).catch(() => {
+    import(new URL("./analizador.js?v=4", base)).catch(() => {
       const aviso = document.getElementById("aviso");
       aviso.textContent = "El analizador no cargó. Recarga la página para intentarlo de nuevo.";
       aviso.hidden = false;
@@ -62,16 +62,30 @@
     <section id="diagnostico" class="a-resultados" aria-labelledby="titulo-resultado" hidden>
       <div class="a-ancho a-documento">
         <header class="a-resultado-cabecera">
-          <h2 id="titulo-resultado" tabindex="-1">Tu diagnóstico</h2>
-          <p id="empresa"></p>
-          <p id="consultado" class="a-meta"></p>
+          <div class="a-identidad">
+            <h2 id="titulo-resultado" class="a-ceja" tabindex="-1">Estado de tu empresa</h2>
+            <p id="empresa" class="a-meta"></p>
+          </div>
+          <p id="resumen-estado" class="a-resumen"></p>
         </header>
-        <dl class="a-informe" id="comprobaciones"></dl>
-        <p class="a-meta a-fuentes-aviso" id="aviso-fuentes" role="status" hidden></p>
-        <div class="a-continuar">
-          <a href="https://publicola.com.do/app/#/oportunidades" class="a-boton">Explorar licitaciones en Publicola</a>
-          <p class="a-meta">Cada licitación tiene sus propios requisitos.</p>
+        <div id="oportunidades" class="a-licitaciones" hidden></div>
+        <p class="a-meta a-fuentes-aviso" id="aviso-licitaciones" role="status" hidden></p>
+
+        <div class="a-acompanamiento">
+          <p>Nuestro equipo te ayuda a preparar tu empresa para licitar.</p>
+          <div class="a-acciones">
+            <a id="enviar-diagnostico" class="a-boton" target="_blank" rel="noopener noreferrer">Envíanos tu diagnóstico por WhatsApp</a>
+            <a class="a-explorar" href="https://publicola.com.do/app/#/oportunidades">Explorar licitaciones en Publicola</a>
+          </div>
         </div>
+
+        <section class="a-detalle" aria-labelledby="titulo-detalle">
+          <header class="a-detalle-cabecera">
+            <h3 id="titulo-detalle">Datos de la consulta</h3>
+            <p id="consultado" class="a-meta"></p>
+          </header>
+          <dl class="a-informe" id="comprobaciones"></dl>
+        </section>
       </div>
     </section>
   </main>
