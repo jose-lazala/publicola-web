@@ -188,39 +188,32 @@ function resumenEstado(datos, rpe, mipymeVigente) {
     inicio = "No encontramos tu RNC en el registro consultado.";
   }
 
-  let paso = "Confirma tu RNC con la DGII.";
-  let registro = "";
-  if (rpe?.tipo === "ausente") registro = "Tampoco encontramos tu inscripción como proveedor del Estado.";
+  const sinRegistro = rpe?.tipo === "ausente";
+  let registro = "No pudimos confirmar tu registro como proveedor del Estado.";
+  if (sinRegistro) registro = "No estás registrado como proveedor del Estado.";
+  else if (estadoRpe === "desactualizado") registro = "Tu registro como proveedor del Estado necesita actualizarse.";
   else if (estadoRpe) registro = "Tu registro como proveedor del Estado figura " + estadoRpe + ".";
 
   if (estadoRnc === "activo") {
     inicio = "Tu RNC está activo.";
     if (estadoRpe === "activo") {
       inicio = "";
-      paso = "Tu RNC y tu registro como proveedor del Estado están activos.";
-      registro = "Revisa qué pide cada licitación antes de enviar tu oferta.";
-    } else if (rpe?.tipo === "ausente") {
-      paso = "Inscríbete como proveedor del Estado para empezar a licitar.";
-      registro = "";
-    } else if (estadoRpe === "desactualizado") {
-      paso = "Tu registro como proveedor del Estado necesita actualizarse.";
-      registro = "";
-    } else if (estadoRpe === "cancelado") {
-      paso = "Tu registro como proveedor está cancelado. Debes inscribirte de nuevo para contratar con el Estado.";
-      registro = "";
-    } else {
-      paso = "Confirma con Contrataciones Públicas el estado de tu registro como proveedor.";
-      if (!rpe) registro = "Esta vez no pudimos verificarlo.";
+      registro = "Tu RNC y tu registro como proveedor del Estado están activos.";
+    } else if (sinRegistro) {
+      inicio = "Tu RNC está activo. Sin embargo,";
+      registro = "no estás registrado como proveedor del Estado.";
     }
   }
 
   let mipyme = "";
   if (datos) {
     if (mipymeVigente) mipyme = "Tu certificación MIPYME está vigente.";
-    else if (datos.micm) mipyme = "Tu última certificación MIPYME venció. Renuévala si quieres participar en compras reservadas a MIPYMES.";
-    else mipyme = "No encontramos certificación MIPYME. Puedes solicitarla para compras reservadas a micro, pequeñas y medianas empresas.";
+    else if (datos.micm) mipyme = "Tu última certificación MIPYME venció.";
+    else mipyme = sinRegistro
+      ? "Tampoco encontramos una certificación MIPYME."
+      : "No encontramos una certificación MIPYME.";
   }
-  return {inicio, paso, cierre: [registro, mipyme].filter(Boolean).join(" ")};
+  return {inicio, registro, mipyme};
 }
 
 function guardarEnlaceEnvio(lineas) {
@@ -231,32 +224,28 @@ function mostrarLicitaciones({procesos, completo}, sector) {
   const cantidad = procesos.length;
   if (!cantidad && !completo) return "";
 
-  const bloque = obtener("oportunidades");
-  const texto = elemento("p", "", "a-licitaciones-resumen");
+  const texto = obtener("oportunidades");
   if (cantidad) {
     const conteo = (completo ? "" : "al menos ")
       + (cantidad === 1 ? "una licitación abierta" : cantidad + " licitaciones abiertas");
-    texto.append("Encontramos ", elemento("strong", conteo), " en " + sector + ".");
+    texto.replaceChildren("Encontramos ", elemento("strong", conteo), " en " + sector + ".");
   } else {
     texto.textContent = "En esta consulta no encontramos licitaciones abiertas en " + sector + ".";
   }
-  bloque.replaceChildren(texto);
-
   if (cantidad) {
-    const lista = elemento("ul", "", "a-procesos");
-    for (const proceso of procesos.slice(0, 12)) {
+    const items = procesos.slice(0, 12).map((proceso) => {
       const item = elemento("li", "");
       item.append(proceso.url ? enlaceExterno(proceso.titulo, proceso.url) : elemento("span", proceso.titulo));
       item.append(elemento("p", "Cierra el " + proceso.cierre + " · " + proceso.codigo, "a-meta"));
       if (cantidad > 1) item.append(elemento("p", "Renglón de " + proceso.coincidencia, "a-meta"));
-      lista.append(item);
-    }
-    const enlace = cantidad > 12 ? "Ver los 12 próximos cierres" : cantidad === 1 ? "Ver la licitación" : "Ver las licitaciones";
-    const detalles = elemento("details", "");
-    detalles.append(elemento("summary", enlace), lista);
-    bloque.append(detalles);
+      return item;
+    });
+    obtener("lista-licitaciones").replaceChildren(...items);
+    obtener("titulo-expedientes").textContent = cantidad > 12 ? "Los 12 próximos cierres"
+      : cantidad === 1 ? "Licitación encontrada" : "Licitaciones encontradas";
+    obtener("expedientes-consulta").hidden = false;
   }
-  bloque.hidden = false;
+  texto.hidden = false;
   return texto.textContent;
 }
 
@@ -267,9 +256,9 @@ function mostrarResultado(rnc, datos, rpe) {
   obtener("empresa").textContent = empresa;
   obtener("consultado").textContent = "Consulta del " + fechaPublicada(hoy);
   const mipymeVigente = Boolean(datos?.micm && datos.micm[0] >= hoy);
-  const {inicio, paso, cierre} = resumenEstado(datos, rpe, mipymeVigente);
+  const {inicio, registro, mipyme} = resumenEstado(datos, rpe, mipymeVigente);
   const resumen = obtener("resumen-estado");
-  resumen.replaceChildren(inicio ? inicio + " " : "", elemento("strong", paso), cierre ? " " + cierre : "");
+  resumen.replaceChildren(inicio ? inicio + " " : "", elemento("strong", registro), mipyme ? " " + mipyme : "");
 
   const hallazgos = [];
   if (datos) hallazgos.push(filaRnc(datos));
@@ -282,6 +271,9 @@ function mostrarResultado(rnc, datos, rpe) {
     hallazgos.push(fila("Actividad económica principal", actividad, "DGII"));
   }
   obtener("comprobaciones").replaceChildren(...hallazgos);
+  obtener("datos-consulta").open = false;
+  obtener("expedientes-consulta").hidden = true;
+  obtener("lista-licitaciones").replaceChildren();
   const licitaciones = obtener("oportunidades");
   licitaciones.hidden = true;
   licitaciones.replaceChildren();
