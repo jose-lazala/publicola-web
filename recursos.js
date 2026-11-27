@@ -12,7 +12,8 @@
   var ocultables = document.querySelectorAll(".rec-destacados, .rec-subtitulo, .rec-paginacion, .rec-categorias");
 
   function normalizar(texto) {
-    return String(texto || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+    return String(texto || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "")
+      .replace(/[^\p{L}\p{N}]+/gu, " ").trim();
   }
 
   /* Diseño B (12-nov-2026): la misma tarjeta de texto que genera el servidor (s-art). */
@@ -49,7 +50,7 @@
     if (!indice) return;
     var terminos = normalizar(consulta).split(/\s+/).filter(Boolean);
     var resultados = indice.filter(function (a) {
-      var pajar = normalizar([a.titulo, a.extracto, a.categoria, a.palabra_clave].join(" "));
+      var pajar = normalizar([a.titulo, a.slug, a.extracto, a.categoria, a.palabra_clave].join(" "));
       return terminos.every(function (t) { return pajar.indexOf(t) !== -1; });
     });
     mostrar(resultados, consulta);
