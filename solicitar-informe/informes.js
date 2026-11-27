@@ -6,6 +6,7 @@
   const mensajes = {
     consentimiento_requerido: "Actualiza la página y acepta el texto vigente para solicitar el informe.",
     correo_invalido: "Revisa la dirección de correo.",
+    correo_no_disponible: "El servicio de correo no pudo entregar el informe. Puedes volver a intentarlo más tarde.",
     licitacion_no_encontrada: "Esta licitación ya no está disponible. Vuelve al buscador.",
     limite_temporal: "Se alcanzó el límite de solicitudes. Vuelve a intentarlo dentro de una hora.",
     envio_en_proceso: "Tu solicitud sigue en proceso. Revisa tu correo dentro de unos minutos.",
@@ -139,6 +140,11 @@
       entrega.dataset.error = "";
       entrega.textContent = Object.values(mensajes).includes(error.message) ? error.message :
         "No pudimos confirmar el envío. Revisa tu correo antes de intentarlo de nuevo.";
+      if (error.message === mensajes.correo_no_disponible) {
+        const cuenta = elemento("a", "privacidad", "Descargar desde mi cuenta Gratis");
+        cuenta.href = "/app/#/licitacion/" + encodeURIComponent(seleccion.codigo);
+        entrega.append(document.createElement("br"), cuenta);
+      }
     } finally {
       enviando = false;
       id("enviar").disabled = false;
