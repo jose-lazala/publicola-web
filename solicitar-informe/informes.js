@@ -130,7 +130,7 @@
         headers:{"Content-Type":"application/json"}, body:JSON.stringify({codigo:seleccion.codigo, correo,
           acepta_publicidad:id("acepta").checked, version_consentimiento:consentimiento.version})});
       const datos = await res.json();
-      if (!res.ok || datos.estado !== "enviado") throw new Error(mensajes[datos.detail] || "No pudimos confirmar el envío. Revisa tu correo antes de intentarlo de nuevo.");
+      if (!res.ok || datos.estado !== "enviado") throw new Error(mensajes[datos.error || datos.detail] || "");
       envio.hidden = true;
       id("titulo-solicitud").textContent = "Informe enviado";
       entrega.textContent = "Enviamos el PDF a " + correo + ". Si no lo ves en tu bandeja de entrada, revisa la carpeta de correo no deseado.";
