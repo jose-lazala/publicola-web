@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es-DO">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Solicitar informe de licitación | Publicola</title>
+  <meta name="description" content="Busca una licitación pública dominicana por objeto, institución o código y recibe su informe en PDF por correo.">
+  <link rel="canonical" href="https://publicola.com.do/solicitar-informe/">
+  <link rel="icon" href="/favicon-v3.ico">
+  <link rel="stylesheet" href="/sitio-b.css">
+  <link rel="stylesheet" href="./informes.css?v=1">
+  <script defer src="./informes.js?v=1"></script>
+</head>
+<body>
+<a class="b-salto" href="#buscador">Saltar al buscador</a>
+<header class="cab"><div class="ancho barra">
+  <a href="/" class="marca"><img src="/marca/publicola-logo-blanco-v1.png" width="523" height="168" alt="Publicola, inicio"></a>
+  <nav aria-label="Navegación"><a href="/analizador/">Analizador gratis</a><a href="/app/?acceso=entrar">Iniciar sesión</a></nav>
+</div></header>
+<main>
+  <section class="intro"><div class="ancho">
+    <nav class="miga" aria-label="Ruta"><a href="/">Inicio</a><span aria-hidden="true"> / </span>Solicitar informe</nav>
+    <h1>Solicitar informe de licitación</h1>
+    <p>Busca una compra pública, revisa su resumen y recibe el informe en PDF por correo. Sin crear cuenta.</p>
+    <form id="buscador" role="search" aria-label="Buscar licitaciones">
+      <div class="campo amplio"><label for="consulta">Código, institución o palabra clave</label>
+        <input type="search" id="consulta" name="q" maxlength="160" placeholder="Ej. INAPA, computadoras o código de proceso"></div>
+      <div class="campo"><label for="fase">Fase del proceso</label>
+        <select id="fase" name="fase"><option value="todas">Todas las fases</option><option value="abierta">Abierta</option><option value="en_curso">En curso</option><option value="cerrada">Cerrada</option><option value="adjudicada">Adjudicada</option><option value="contratada">Contratada</option></select></div>
+      <button type="submit" class="accion">Buscar</button>
+    </form>
+  </div></section>
+  <section class="resultados ancho" aria-labelledby="titulo-resultados">
+    <h2 id="titulo-resultados" tabindex="-1">Licitaciones</h2>
+    <p id="estado" role="status" aria-live="polite"></p>
+    <button id="reintentar" class="secundario" type="button" hidden>Volver a cargar</button>
+    <ul id="lista"></ul>
+    <nav id="paginacion" aria-label="Páginas de resultados" hidden>
+      <button type="button" id="anterior" class="secundario">Anterior</button>
+      <span id="pagina"></span><button type="button" id="siguiente" class="secundario">Siguiente</button>
+    </nav>
+    <noscript>Activa JavaScript para consultar el catálogo y solicitar tu informe.</noscript>
+  </section>
+</main>
+<footer><div class="ancho barra"><a href="/" class="marca"><img src="/marca/publicola-logo-blanco-v1.png" width="523" height="168" alt="Publicola"></a><nav aria-label="Información"><a href="/privacidad/">Privacidad</a><a href="/contacto/">Contacto</a></nav></div></footer>
+<dialog id="solicitud" aria-labelledby="titulo-solicitud">
+  <div class="dialogo">
+    <button class="cerrar" type="button" aria-label="Cerrar" id="cerrar">×</button>
+    <h2 id="titulo-solicitud">Recibir informe por correo</h2>
+    <p id="ref" class="referencia"></p><p id="objeto"></p>
+    <form id="envio">
+      <label for="correo">Tu correo electrónico</label>
+      <input type="email" id="correo" autocomplete="email" maxlength="254" required placeholder="nombre@empresa.com">
+      <label class="acepto"><input type="checkbox" id="acepta" required><span id="consentimiento"></span></label>
+      <a class="privacidad" href="/privacidad/#12-correos-que-te-enviamos" target="_blank" rel="noopener">Cómo usamos tu correo</a>
+      <button type="submit" class="accion" id="enviar">Enviarme el PDF</button>
+    </form>
+    <p id="entrega" role="status" aria-live="polite"></p>
+  </div>
+</dialog>
+</body></html>

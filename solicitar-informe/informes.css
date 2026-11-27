@@ -1,0 +1,30 @@
+body{--marino:#102d48;--carbon:#18364b;--verdeoscuro:#00665f;--linea:#d3dfe1;--seda:#f4f7f6;background:var(--seda);color:var(--carbon);margin:0}
+.ancho{width:min(1112px,calc(100% - 56px));margin-inline:auto}.cab,.intro,footer{color:#fff;background:var(--marino)}
+.barra,.barra nav{display:flex;align-items:center;justify-content:space-between;gap:26px}.cab{border-bottom:1px solid #38546b}
+.barra{min-height:76px}.barra a,.miga a{color:inherit;text-underline-offset:4px}.barra nav a{text-decoration:none}.barra nav a:hover,.miga a:hover{text-decoration:underline}
+.marca img{display:block;width:126px;height:auto}.barra nav{font-size:.94rem;font-weight:650}
+.intro{padding:28px 0 38px}.miga{font-size:.85rem;color:#c5d5df}.miga span{padding:0 .45em}
+h1,h2,h3{color:inherit;letter-spacing:-.035em;line-height:1.12}h1{font-size:clamp(2.35rem,5vw,3.65rem);margin:23px 0 12px;max-width:850px}
+.intro p{font-size:1.08rem;line-height:1.55;color:#d5e2e8;margin:0}
+#buscador{display:flex;align-items:end;gap:14px;margin-top:26px}.campo{min-width:0}.amplio{flex:1}
+label{display:block;font-size:.88rem;font-weight:670;margin-bottom:6px}
+input,select,button{font:inherit;box-sizing:border-box}input:not([type=checkbox]),select{width:100%;height:47px;padding:0 12px;border:1px solid #91a7ad;border-radius:6px;color:#15364a;background:#fff;font-size:1rem}
+button{cursor:pointer}.accion,.secundario{border:1px solid transparent;border-radius:6px;font-weight:700;min-height:44px;padding:8px 18px}
+.accion{color:#fff;background:var(--verdeoscuro)}#buscador .accion{height:47px;background:#b4ded0;color:#103544}.accion:hover{filter:brightness(.92)}
+.secundario{color:var(--verdeoscuro);border-color:#9cbbb5;background:#fff}.secundario:hover:enabled{background:#e6f2ee}button:disabled{opacity:.55;cursor:default}
+:focus-visible{outline:3px solid #df9c38;outline-offset:3px}
+.resultados{padding:34px 0 54px;min-height:340px}.resultados h2,dialog h2{font-size:clamp(1.55rem,3vw,2rem);margin:0}
+#estado,#pagina{color:#49616e;font-size:.95rem}#estado{margin:8px 0 22px}#lista{padding:0;margin:0;list-style:none;display:grid;gap:12px}
+.fila{padding:20px 23px;background:white;border:1px solid var(--linea);border-radius:9px;display:grid;grid-template-columns:1fr auto;column-gap:24px;align-items:center}
+.fila>div{min-width:0}.referencia{color:var(--verdeoscuro);font:600 .82rem/1.5 var(--mono,monospace);overflow-wrap:anywhere}
+.fila h3{font-size:1.19rem;margin:7px 0;overflow-wrap:anywhere}.entidad{font-size:.96rem;color:#314e60;margin:0}
+.detalles{display:flex;flex-wrap:wrap;gap:6px 19px;margin:12px 0 0;font-size:.84rem;color:#4d616d}.detalles span{overflow-wrap:anywhere}
+#paginacion{display:flex;align-items:center;justify-content:center;gap:15px;margin-top:24px}[hidden]{display:none!important}
+dialog{padding:0;border:0;border-radius:12px;background:#fff;color:var(--carbon);width:min(470px,calc(100% - 28px));max-height:90dvh;box-shadow:0 16px 50px #0b233b40}
+dialog::backdrop{background:#081b2dc7}.dialogo{padding:36px 28px 24px;position:relative}dialog h2{padding-right:25px}
+.cerrar{position:absolute;right:10px;top:8px;border:0;background:transparent;color:var(--carbon);font-size:1.6rem;width:38px;height:38px}
+#ref{margin:17px 0 4px}#objeto{margin:0 0 21px;overflow-wrap:anywhere}.acepto{display:grid;grid-template-columns:20px 1fr;gap:9px;align-items:start;margin:17px 0 5px;font-size:.93rem;line-height:1.5;font-weight:450}
+.acepto input{width:18px;height:18px;margin:2px 0;accent-color:var(--verdeoscuro)}.privacidad{color:var(--verdeoscuro);font-size:.87rem;text-underline-offset:3px}#enviar{display:block;margin-top:20px;width:100%}
+#entrega{color:var(--verdeoscuro);margin-bottom:0}#entrega:empty{margin:0}#entrega[data-error]{color:#8a341c}
+@media(max-width:680px){.ancho{width:calc(100% - 32px)}.barra,.barra nav{gap:14px}.barra{min-height:64px}.barra nav{font-size:.83rem}.marca img{width:94px}#buscador{display:grid;grid-template-columns:minmax(0,1fr) auto}.amplio{grid-column:1/-1}
+.fila{grid-template-columns:1fr;padding:17px;gap:12px}.fila button{justify-self:start}.intro{padding-bottom:24px}.resultados{padding-top:24px}h1{margin-top:17px}.dialogo{padding:33px 20px 22px}}
