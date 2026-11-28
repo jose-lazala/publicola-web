@@ -93,6 +93,10 @@
     return unidad + " " + monto.toLocaleString("es-DO", {minimumFractionDigits:2, maximumFractionDigits:2});
   }
 
+  function importe(monto) {
+    return elemento("span", monto ? "ir-importe" : "", monto || "Sin dato publicado");
+  }
+
   function abrirSolicitud(item) {
     if (!solicitud || !consentimiento || !item) return;
     seleccion = item;
@@ -108,7 +112,9 @@
     id("ref").textContent = [item.tipo, item.codigo].filter(Boolean).join(" · ");
     id("objeto").textContent = item.titulo || "Licitación pública";
     const monto = montoDe(item);
-    id("entidad-elegida").textContent = [item.institucion, monto && "Monto estimado " + monto].filter(Boolean).join(" · ");
+    const entidad = id("entidad-elegida");
+    entidad.textContent = item.institucion || "";
+    if (monto) entidad.append(item.institucion ? " · Monto estimado " : "Monto estimado ", importe(monto));
     id("consentimiento").textContent = consentimiento.texto;
     entrega.textContent = "";
     delete entrega.dataset.error;
@@ -127,7 +133,9 @@
     datos.append(meta,titulo);
     if (item.institucion) datos.append(elemento("p","ir-entidad",item.institucion));
     const detalle = elemento("p","ir-detalles");
-    detalle.append(elemento("strong","","Monto estimado · " + (montoDe(item) || "Sin dato publicado")));
+    const presupuesto = elemento("strong","","Monto estimado · ");
+    presupuesto.append(importe(montoDe(item)));
+    detalle.append(presupuesto);
     if (item.modalidad) detalle.append(elemento("span","",item.modalidad));
     if (item.cierre) detalle.append(elemento("span","","Cierre · " + item.cierre));
     datos.append(detalle);
@@ -149,7 +157,7 @@
     id("tipo-resumen").textContent = item.tipo || "Licitación";
     id("titulo-resumen").textContent = item.titulo || "Licitación pública";
     id("institucion-resumen").textContent = item.institucion || "";
-    id("monto-resumen").textContent = montoDe(item) || "Sin dato publicado";
+    id("monto-resumen").replaceChildren(importe(montoDe(item)));
     id("modalidad-resumen").textContent = item.modalidad || "Sin dato publicado";
     const ejemplos = item.ejemplos || [];
     const descripcion = item.descripcion || item.titulo || "Sin descripción publicada";

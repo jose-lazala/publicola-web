@@ -29,6 +29,11 @@
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
     });
   };
+  function importePublicado(valor, ausente) {
+    if (valor == null || valor === "") return ausente;
+    var contenido = texto(valor);
+    return /\d/.test(contenido) ? '<span class="x-importe">' + contenido + '</span>' : contenido;
+  }
   var urlSegura = function (url) {
     try { var u = new URL(url, location.href); return u.protocol === "https:" ? u.href : ""; }
     catch (e) { return ""; }
@@ -137,8 +142,8 @@
         '<td class="x-num">' + texto(r.numero != null ? r.numero : "—") + "</td>" +
         '<td class="x-desc">' + texto(r.descripcion) + (r.categoria ? "<small>" + texto(r.categoria) + (r.unspsc ? " · UNSPSC " + texto(r.unspsc) : "") + "</small>" : "") + "</td>" +
         '<td class="x-cifra" data-etiqueta="Cantidad">' + texto([r.cantidad, r.unidad].filter(Boolean).join(" ") || "—") + "</td>" +
-        '<td class="x-cifra" data-etiqueta="Precio unitario">' + texto(r.precio_unitario || "—") + "</td>" +
-        '<td class="x-cifra" data-etiqueta="Total estimado">' + texto(r.total_estimado || (f.importe != null ? "RD$ " + monto.format(f.importe) : "—")) + "</td></tr>";
+        '<td class="x-cifra" data-etiqueta="Precio unitario">' + importePublicado(r.precio_unitario, "—") + "</td>" +
+        '<td class="x-cifra" data-etiqueta="Total estimado">' + importePublicado(r.total_estimado || (f.importe != null ? "RD$ " + monto.format(f.importe) : null), "—") + "</td></tr>";
     }).join("");
     return '<div class="x-renglones" data-renglones>' + resumenDeRenglones(x, filas) + controles +
       '<div class="x-renglones-meta"><span role="status" data-cuenta-renglones></span><span>Montos de referencia de la institución</span></div>' +
@@ -290,7 +295,7 @@
           '<dl class="s-kv">' +
             "<div><dt>Cierre de ofertas</dt><dd>" + (cierre ? '<time datetime="' + texto(x.vence_en) + '">' + texto(cierre) + "</time>" : "No publicado") +
               "<small>" + (restante ? '<span class="x-faltan">' + texto(restante) + "</span> · " : "") + (x.cierre_tiene_hora ? "Hora de República Dominicana" : "Fecha publicada") + "</small></dd></div>" +
-            "<div><dt>Monto de referencia</dt><dd>" + texto(x.monto || "No publicado") + "<small>Publicado por la institución</small></dd></div>" +
+            "<div><dt>Monto de referencia</dt><dd>" + importePublicado(x.monto, "No publicado") + "<small>Publicado por la institución</small></dd></div>" +
             "<div><dt>Qué debes presentar</dt><dd>" + (cuantos ? texto(cuantos) + " documentos" : "Ver el pliego") +
               '<small><a href="#bloque-requisitos">Ver la lista con su página</a></small></dd></div>' +
           "</dl>" +

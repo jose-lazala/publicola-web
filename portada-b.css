@@ -85,7 +85,7 @@
 .b-precio-tarjeta { flex: 1.15 1 540px; display: flex; flex-direction: column; padding: 36px; }
 .b-fila-icono { display: flex; align-items: center; gap: 14px; }
 .b-precio-mini { margin-top: 28px; padding: 28px; }
-.b-precio { margin-top: 14px; font-size: clamp(56px, 6vw, 88px); line-height: .95; letter-spacing: -.03em; font-weight: 760; color: var(--blanco); }
+.b-precio { margin-top: 14px; font-size: clamp(56px, 6vw, 88px); line-height: .95; letter-spacing: -.03em; font-weight: 760; color: var(--verde); }
 .b-precio-producto { margin-top: 16px; font-size: 17px; font-weight: 600; }
 .b-precio-fuente { margin-top: 4px; font-size: 14px; color: var(--apoyo); }
 .b-exportar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--filete); }

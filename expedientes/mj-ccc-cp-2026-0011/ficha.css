@@ -13,6 +13,7 @@
 .expediente-publico .editorial-expediente-datos { grid-template-columns: .85fr 1.15fr 1fr; gap: 12px 24px; }
 .expediente-publico .editorial-expediente-datos dt { font-size: 13px; }
 .expediente-publico .editorial-expediente-datos dd { font-size: 16px; }
+.expediente-publico .expediente-importe { color: var(--green); }
 .expediente-publico .expediente-nota,
 .expediente-publico .editorial-expediente-datos .expediente-nota { color: var(--muted); font-size: 12px; font-weight: 400; }
 .expediente-cita { background: var(--ice); border-inline-start: 3px solid var(--amber); padding: 12px 16px; }

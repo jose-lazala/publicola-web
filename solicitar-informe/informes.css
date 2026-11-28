@@ -90,15 +90,16 @@
 .ir-ver:focus-visible::after { outline: 2px solid var(--azul-luz); outline-offset: 2px; }
 .ir-pedir { position: relative; z-index: 1; }
 .ir-detalles strong { color: var(--texto-claro); font-weight: 610; }
+.ir-panel .ir-importe { color: var(--verde); font-variant-numeric: tabular-nums; }
 .ir-resumen { max-width: 810px; margin: auto; padding: 21px 28px 30px; }
 .ir-volver { display: inline-flex; align-items: center; min-height: 38px; margin-bottom: 13px; color: var(--azul-luz); font-size: 14px; }
 .ir-resumen h2 { font: 610 20px/1.35 var(--fuente); letter-spacing: -.01em; color: var(--blanco); overflow-wrap: anywhere; }
 .ir-resumen h2:focus { outline: none; }
 .ir-cifras, .ir-plazos dl { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px 20px; }
 .ir-cifras { margin: 20px 0; padding: 16px 18px; border: 1px solid var(--filete-2); border-left: 3px solid var(--oro); border-radius: 9px; background: var(--panel-hundido); }
-.ir-cifras span, .ir-plazos dt { display: block; color: var(--apoyo-2); font-size: 13px; }
+.ir-cifras > div > span, .ir-plazos dt { display: block; color: var(--apoyo-2); font-size: 13px; }
 .ir-cifras strong { display: block; margin-top: 4px; font-size: 16px; color: var(--texto); overflow-wrap: anywhere; }
-.ir-cifras .ir-monto strong { color: var(--oro); font-size: clamp(19px, 2.3vw, 25px); line-height: 1.25; font-variant-numeric: tabular-nums; }
+.ir-cifras .ir-monto strong { font-size: clamp(19px, 2.3vw, 25px); line-height: 1.25; }
 .ir-resumen h3 { margin: 0 0 5px; color: var(--texto); font-size: 17px; }
 .ir-objeto p, .ir-objeto li, .ir-plazos dd { color: var(--texto-2); font-size: 15px; line-height: 1.45; overflow-wrap: anywhere; }
 .ir-objeto ul { list-style: disc; padding-left: 21px; }
