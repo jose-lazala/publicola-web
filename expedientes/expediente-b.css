@@ -117,8 +117,17 @@
 .x-sobres h3 { font-size: 17px; font-weight: 650; color: var(--blanco); }
 .x-sobres p { margin-top: 6px; font-size: 15.5px; line-height: 1.6; color: var(--texto-2); }
 .x-sobres .x-sobres-canales { font-size: 13.5px; color: var(--apoyo); }
-.x-citas { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; margin-top: 10px; }
-.x-citas > span { font-size: 13px; color: var(--apoyo); }
+.x-fuentes { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; margin-top: 8px; }
+.x-fuentes .x-cita { height: auto; min-height: 26px; white-space: normal; line-height: 1.35; overflow-wrap: anywhere; }
+.x-fuentes .x-otras-fuentes { margin: 0; min-width: 0; }
+.x-fuentes .x-otras-fuentes summary { display: list-item; font-size: 13px; line-height: 28px; color: var(--azul-luz); cursor: pointer; }
+.x-otras-fuentes[open] { flex-basis: 100%; }
+.x-lista-fuentes { padding: 4px 0 4px 12px; border-left: 2px solid var(--filete); }
+.x-fuente-paginas { display: grid; gap: 4px; margin: 4px 0; }
+.x-fuente-paginas > span { font-size: 13px; font-weight: 600; color: var(--apoyo-2); }
+.x-fuente-paginas > div { display: flex; gap: 4px; flex-wrap: wrap; }
+.x-pagina { min-width: 30px; padding: 4px; text-align: center; color: var(--azul-luz); font: 500 13px/20px var(--mono); }
+.x-fuentes :is(a, summary):focus-visible { outline: 2px solid var(--azul-luz); outline-offset: 2px; }
 .x-cita { display: inline-flex; align-items: center; gap: 5px; height: 26px; padding: 0 9px; border-radius: 7px; border: 1px solid var(--azul-borde); background: var(--azul-velo); color: var(--azul-chip); font: 500 12px/1 var(--mono); text-decoration: none; white-space: nowrap; }
 .x-cita:hover { background: var(--azul-velo-3); color: var(--blanco); }
 .x-momento + .x-momento { margin-top: 36px; }
@@ -140,7 +149,6 @@
 .x-requisito details { margin-top: 6px; }
 .x-requisito summary { display: inline-block; font-size: 13.5px; color: var(--azul-luz); cursor: pointer; }
 .x-requisito details p { margin-top: 8px; font-size: 14.5px; line-height: 1.6; color: var(--texto-2); }
-.x-requisito .x-citas { margin-top: 8px; }
 .x-condiciones dd + p { margin-top: 6px; font-size: 13px; line-height: 1.5; color: var(--apoyo); }
 
 @media (max-width: 1080px) {

@@ -35,6 +35,7 @@
     return /\d/.test(contenido) ? '<span class="x-importe">' + contenido + '</span>' : contenido;
   }
   var urlSegura = function (url) {
+    if (!url) return "";
     try { var u = new URL(url, location.href); return u.protocol === "https:" ? u.href : ""; }
     catch (e) { return ""; }
   };
@@ -73,13 +74,45 @@
     var url = urlSegura(x.url_oficial);
     return url ? '<a class="' + clase + '" href="' + texto(url) + '" target="_blank" rel="noopener noreferrer">' + texto(etiqueta || "Abrir en el SECP") + SALIR + "</a>" : "";
   };
-  var cita = function (c) {
-    var etiqueta = (c.documento || "Pliego") + (c.pagina ? " · pág. " + c.pagina : "");
+  function enlaceDeFuente(c, etiqueta, corto) {
     var url = urlSegura(c.url);
+    var clase = corto ? "x-pagina" : "x-cita";
+    var nombre = (c.documento || "Documento oficial") + (c.pagina ? ", página " + c.pagina : "");
     return url
-      ? '<a class="x-cita" href="' + texto(url) + '" target="_blank" rel="noopener noreferrer" aria-label="' + texto("Ver en " + etiqueta) + '">' + texto(etiqueta) + SALIR + "</a>"
-      : '<span class="x-cita">' + texto(etiqueta) + "</span>";
-  };
+      ? '<a class="' + clase + '" href="' + texto(url) + '" target="_blank" rel="noopener noreferrer" aria-label="' + texto("Ver " + nombre) + '">' + texto(etiqueta) + (corto ? "" : SALIR) + "</a>"
+      : '<span class="' + clase + '">' + texto(etiqueta) + "</span>";
+  }
+  function referencias(citas) {
+    var documentos = new Map();
+    (citas || []).forEach(function (c) {
+      var nombre = c.documento || "Documento oficial";
+      var base = urlSegura(c.url).replace(/#page=\d+$/i, "");
+      var clave = base || JSON.stringify([normalizar(nombre), c.version || ""]);
+      if (!documentos.has(clave)) documentos.set(clave, new Map());
+      var paginas = documentos.get(clave);
+      var pagina = String(c.pagina || "");
+      if (!paginas.has(pagina)) paginas.set(pagina, c);
+    });
+    var primera, cantidad = 0, grupos = [];
+    documentos.forEach(function (paginas) {
+      var ordenadas = Array.from(paginas.values()).sort(function (a, b) {
+        return String(a.pagina || "").localeCompare(String(b.pagina || ""), "es", { numeric: true });
+      });
+      cantidad += ordenadas.length;
+      if (!primera) primera = ordenadas.shift();
+      if (!ordenadas.length) return;
+      var nombre = ordenadas[0].documento || "Documento oficial";
+      grupos.push('<div class="x-fuente-paginas"><span>' + texto(nombre) + '</span><div>' +
+        ordenadas.map(function (c) { return enlaceDeFuente(c, c.pagina || "Documento", true); }).join("") + "</div></div>");
+    });
+    if (!primera) return "";
+    var nombre = primera.documento || "Documento oficial";
+    var principal = enlaceDeFuente(primera, nombre + (primera.pagina ? " · pág. " + primera.pagina : ""), false);
+    var otras = cantidad - 1;
+    return '<div class="x-fuentes">' + principal + (otras ?
+      '<details class="x-otras-fuentes"><summary>Ver ' + (otras === 1 ? "otra referencia" : "otras " + otras + " referencias") +
+      '</summary><div class="x-lista-fuentes">' + grupos.join("") + "</div></details>" : "") + "</div>";
+  }
   var cabeza = function (id, antetitulo, titulo, nota) {
     return '<div class="x-bloque-cabeza"><div><p class="b-antetitulo"><span class="b-rombo" aria-hidden="true"></span>' + texto(antetitulo) +
       '</p><h2 class="b-h2 b-x" id="' + id + '-titulo">' + texto(titulo) + "</h2></div>" + (nota ? '<p class="s-note">' + nota + "</p>" : "") + "</div>";
@@ -211,7 +244,7 @@
       ? '<div class="b-panel x-sobres"><span class="x-sobres-icono">' + SOBRES + "</span><div>" +
         "<h3>Cómo se entrega la oferta</h3><p>" + texto(q.presentacion.texto) + "</p>" +
         ((q.presentacion.canales || []).length ? '<p class="x-sobres-canales">' + q.presentacion.canales.map(texto).join(" · ") + "</p>" : "") +
-        ((q.presentacion.citas || []).length ? '<p class="x-citas"><span>Lo dice el pliego en</span>' + q.presentacion.citas.map(cita).join("") + "</p>" : "") +
+        referencias(q.presentacion.citas) +
         "</div></div>"
       : "";
     var momentos = q.momentos.map(function (m) {
@@ -228,7 +261,7 @@
               return '<li class="x-requisito"><div class="x-requisito-cabeza"><strong>' + texto(r.titulo) + "</strong>" + marcas + "</div>" +
                 (detalle ? '<p class="x-requisito-detalle">' + texto(detalle) + "</p>" : "") +
                 (r.texto && r.texto !== r.titulo ? '<details><summary>Lo que dice el pliego</summary><p>' + texto(r.texto) + "</p></details>" : "") +
-                ((r.citas || []).length ? '<p class="x-citas">' + r.citas.map(cita).join("") + "</p>" : "") + "</li>";
+                referencias(r.citas) + "</li>";
             }).join("") + "</ol></section>";
         }).join("") + "</div>";
     }).join("");
@@ -296,7 +329,7 @@
             "<div><dt>Cierre de ofertas</dt><dd>" + (cierre ? '<time datetime="' + texto(x.vence_en) + '">' + texto(cierre) + "</time>" : "No publicado") +
               "<small>" + (restante ? '<span class="x-faltan">' + texto(restante) + "</span> · " : "") + (x.cierre_tiene_hora ? "Hora de República Dominicana" : "Fecha publicada") + "</small></dd></div>" +
             "<div><dt>Monto de referencia</dt><dd>" + importePublicado(x.monto, "No publicado") + "<small>Publicado por la institución</small></dd></div>" +
-            "<div><dt>Qué debes presentar</dt><dd>" + (cuantos ? texto(cuantos) + " documentos" : "Ver el pliego") +
+            "<div><dt>Qué debes presentar</dt><dd>" + (cuantos ? texto(cuantos) + (cuantos === 1 ? " requisito identificado" : " requisitos identificados") : "Ver el pliego") +
               '<small><a href="#bloque-requisitos">Ver la lista con su página</a></small></dd></div>' +
           "</dl>" +
           '<div class="x-acciones">' +
