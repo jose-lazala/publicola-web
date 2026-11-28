@@ -15,9 +15,9 @@
   const lista = id("lista"), estado = id("estado"), mas = id("mas-resultados");
   const solicitud = id("solicitud"), envio = id("envio"), entrega = id("entrega");
   const mensajes = {
-    consentimiento_requerido: "Actualiza la página y acepta el texto vigente para solicitar el informe.",
+    consentimiento_requerido: "Actualiza la página y acepta el texto vigente para solicitar el informe técnico.",
     correo_invalido: "Revisa la dirección de correo.",
-    correo_no_disponible: "El servicio de correo no pudo entregar el informe. Puedes volver a intentarlo más tarde.",
+    correo_no_disponible: "El servicio de correo no pudo entregar el informe técnico. Puedes volver a intentarlo más tarde.",
     licitacion_no_encontrada: "Esta licitación ya no está disponible. Vuelve al buscador.",
     limite_temporal: "Se alcanzó el límite de solicitudes. Vuelve a intentarlo dentro de una hora.",
     envio_en_proceso: "Tu solicitud sigue en proceso. Revisa tu correo dentro de unos minutos.",
@@ -108,7 +108,7 @@
     envio.hidden = false;
     id("cerrar").disabled = false;
     id("enviar").disabled = false;
-    id("titulo-solicitud").textContent = "Recibir el informe por correo";
+    id("titulo-solicitud").textContent = "Recibir el informe técnico por correo";
     id("ref").textContent = [item.tipo, item.codigo].filter(Boolean).join(" · ");
     id("objeto").textContent = item.titulo || "Licitación pública";
     const monto = montoDe(item);
@@ -139,10 +139,10 @@
     if (item.modalidad) detalle.append(elemento("span","",item.modalidad));
     if (item.cierre) detalle.append(elemento("span","","Cierre · " + item.cierre));
     datos.append(detalle);
-    const enlace = elemento("a","ir-pedir","Solicitar informe");
+    const enlace = elemento("a","ir-pedir","Solicitar informe técnico");
     enlace.href = urlCompleta(pagina,item.codigo);
     enlace.dataset.codigo = item.codigo;
-    enlace.setAttribute("aria-label","Solicitar informe de " + item.codigo);
+    enlace.setAttribute("aria-label","Solicitar informe técnico de " + item.codigo);
     tarjeta.append(datos, enlace);
     return tarjeta;
   }
@@ -349,7 +349,7 @@
         if (seleccion !== item) return;
         envio.reset();
         envio.hidden = true;
-        id("titulo-solicitud").textContent = "Informe enviado";
+        id("titulo-solicitud").textContent = "Informe técnico enviado";
         entrega.textContent = "Enviamos el PDF a " + correo + ". Si no aparece en tu bandeja de entrada, revisa el correo no deseado.";
         id("titulo-solicitud").focus();
       } catch (error) {
