@@ -108,7 +108,7 @@
     envio.hidden = false;
     id("cerrar").disabled = false;
     id("enviar").disabled = false;
-    id("titulo-solicitud").textContent = "Recibir el informe técnico por correo";
+    id("titulo-solicitud").textContent = "Recibir gratis el informe técnico por correo";
     id("ref").textContent = [item.tipo, item.codigo].filter(Boolean).join(" · ");
     id("objeto").textContent = item.titulo || "Licitación pública";
     const monto = montoDe(item);
@@ -139,10 +139,10 @@
     if (item.modalidad) detalle.append(elemento("span","",item.modalidad));
     if (item.cierre) detalle.append(elemento("span","","Cierre · " + item.cierre));
     datos.append(detalle);
-    const enlace = elemento("a","ir-pedir","Solicitar informe técnico");
+    const enlace = elemento("a","ir-pedir","Solicitar informe técnico gratis");
     enlace.href = urlCompleta(pagina,item.codigo);
     enlace.dataset.codigo = item.codigo;
-    enlace.setAttribute("aria-label","Solicitar informe técnico de " + item.codigo);
+    enlace.setAttribute("aria-label","Solicitar informe técnico gratis de la licitación " + item.codigo);
     tarjeta.append(datos, enlace);
     return tarjeta;
   }

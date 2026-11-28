@@ -142,3 +142,18 @@
   .ir-busqueda > svg { display: none; }
   .ir-opciones button { flex-wrap: wrap; column-gap: 3px; row-gap: 0; align-content: center; }
 }
+
+/* El nombre completo de cada herramienta cabe también en pantallas estrechas. */
+.b-portada-inicio .b-portada-botones a[href="/solicitar-informe/"],
+.ir-accion-resumen .b-btn, .b-nav-movil a[href="/solicitar-informe/"] {
+  white-space: normal;
+  line-height: 1.3;
+}
+.b-portada-inicio .b-portada-botones a[href="/solicitar-informe/"],
+.ir-accion-resumen .b-btn { max-width: 100%; text-align: center; }
+@media (max-width: 760px) {
+  .b-portada-inicio .b-portada-botones a[href="/solicitar-informe/"] {
+    padding-inline: 14px;
+    text-wrap: balance;
+  }
+}

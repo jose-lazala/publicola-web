@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#050B1E">
   <meta name="color-scheme" content="dark">
   <meta name="description" content="Consulta gratis el estado de tu RNC, RPE y certificación MIPYME. Descubre tu actividad registrada y las licitaciones abiertas relacionadas.">
-  <title>Analizador gratuito para licitar | Publicola</title>
+  <title>Diagnóstico de empresa gratis | Publicola</title>
   <link rel="canonical" href="https://publicola.com.do/analizador/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Publicola">
@@ -23,7 +23,7 @@
     const base = location.protocol === "file:" ? "https://publicola.com.do/analizador/" : import.meta.url;
     import(new URL("./analizador.js?v=7", base)).catch(() => {
       const aviso = document.getElementById("aviso");
-      aviso.textContent = "El analizador no cargó. Recarga la página para intentarlo de nuevo.";
+      aviso.textContent = "El diagnóstico no cargó. Recarga la página para intentarlo de nuevo.";
       aviso.hidden = false;
     });
   </script>
@@ -42,7 +42,7 @@
     <section class="a-portada" aria-labelledby="titulo">
       <div class="a-ancho a-portada-interior">
         <div class="a-presentacion">
-          <p class="a-ceja">Analizador gratuito</p>
+          <p class="a-ceja">Diagnóstico de empresa gratis</p>
           <h1 id="titulo"><span>¿Qué le falta a tu empresa</span> <em>para licitar?</em></h1>
           <p class="a-intro">Revisa tu RNC, tu RPE y tu certificación MIPYME. Descubre cuántas licitaciones abiertas se relacionan con tu actividad.</p>
         </div>
