@@ -63,6 +63,8 @@
   <link rel="stylesheet" href="/sitio-b.css?v=20261115a">
   <link rel="stylesheet" href="/portada-b.css?v=20261119analizador">
   <link rel="stylesheet" href="/demos-20261119/vitrina.css">
+  <link rel="stylesheet" href="/solicitar-informe/informes.css?v=20261127resumen3">
+  <script defer src="/solicitar-informe/informes.js?v=20261127resumen3"></script>
   <noscript><style>.b-ventana-marco[data-analisis-pendiente] { visibility: visible; }.b-portada-inicio .b-sin-tarjeta {flex-wrap:wrap}.b-sin-tarjeta .b-muestra-informe {min-height:0;margin-left:.45rem;font-size:inherit;text-decoration:underline;text-underline-offset:.2em}
 </style></noscript>
   <script src="/analisis-marco.js?v=45463c265a42r2" defer></script>
@@ -140,77 +142,49 @@
 
     <div class="b-producto">
       <div class="b-producto-halo" aria-hidden="true"></div>
-      <figure class="b-panel b-explorador" aria-label="Explorador de licitaciones, ejemplo ilustrativo" style="margin:0">
-        <div class="b-luz" aria-hidden="true"></div>
-        <div class="b-explorador-barra">
-          <span class="b-explorador-nombre"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--azul-luz)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Explorador<span class="b-solo-escritorio"> de licitaciones</span></span></span>
-          <span class="b-ejemplo">Ejemplo ilustrativo</span>
+      <section class="b-panel ir-panel" data-explorador-informes="portada" aria-labelledby="titulo-buscador">
+  <div class="b-luz" aria-hidden="true"></div>
+  <header class="ir-cabecera">
+    <div class="ir-identidad">
+      <span class="b-mosaico ir-icono"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></span>
+      <div><h2 id="titulo-buscador">Explorador de licitaciones</h2><p>Consulta el monto y los plazos de una licitación y recibe el informe en PDF por correo.</p></div>
+    </div>
+    <span class="ir-gratis">Gratis · Sin cuenta</span>
+  </header>
+  <div id="explorar-informes">
+    <form id="buscador" action="/solicitar-informe/" method="get" role="search" aria-label="Buscar licitaciones">
+      <label for="consulta">Busca por nombre, palabra clave, institución o código</label>
+      <div class="ir-busqueda">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        <input type="search" id="consulta" name="q" maxlength="160" autocomplete="off" enterkeyhint="search" placeholder="Ej. construcción">
+        <button type="button" id="borrar-consulta" aria-label="Borrar búsqueda" hidden>×</button>
+        <button type="submit" class="b-btn b-primario ir-buscar">Buscar</button>
+      </div>
+      <div class="ir-filtros">
+        <span id="que-se-compra">Tipo de compra</span>
+        <div class="ir-opciones" role="group" aria-labelledby="que-se-compra">
+          <button type="submit" name="tipo_compra" value="Bienes" aria-pressed="false"><span>Bienes</span><small></small></button>
+          <button type="submit" name="tipo_compra" value="Servicios" aria-pressed="false"><span>Servicios</span><small></small></button>
+          <button type="submit" name="tipo_compra" value="Obras" aria-pressed="false"><span>Obras</span><small></small></button>
         </div>
-        <div class="b-explorador-cuerpo">
-          <div class="b-buscador">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-            <span class="b-buscador-texto">equipos informáticos</span>
-            <span class="b-buscador-boton b-solo-escritorio" aria-hidden="true">Buscar</span>
-          </div>
-          <div class="b-chips">
-            <span class="b-chip b-chip-activo">Vigentes</span>
-            <span class="b-chip b-chip-activo">Rubro: equipos informáticos</span>
-            <span class="b-chip b-solo-escritorio">Cierre en 15 días o menos</span>
-            <span class="b-chip">Reservado a MIPYME</span>
-          </div>
-          <p class="b-mono b-resultados-titulo">3 procesos vigentes · por fecha de cierre</p>
-          <ul class="b-resultados">
-            <li class="b-fila b-fila-activa" data-fila-ejemplo>
-              <span class="b-fila-rejilla">
-                <span class="b-fila-titulo">Adquisición de computadoras y periféricos para oficinas</span>
-                <span class="b-cierre">Cierra en 6 días</span>
-                <span class="b-fila-datos"><span class="b-solo-escritorio">Ministerio · Sede central</span><span class="b-solo-escritorio" aria-hidden="true">·</span>Licitación pública<span class="b-marca b-marca-azul b-solo-escritorio">Requisitos cotejados</span><span class="b-cierre b-cierre-movil">Cierra en 6 días</span></span>
-              </span>
-            </li>
-            <li class="b-fila">
-              <span class="b-fila-rejilla">
-                <span class="b-fila-titulo">Suministro de mouse y teclados para centros educativos</span>
-                <span class="b-cierre b-cierre-pronto">Cierra en 4 días</span>
-                <span class="b-fila-datos"><span class="b-solo-escritorio">Institución educativa</span><span class="b-solo-escritorio" aria-hidden="true">·</span>Contratación simplificada<span class="b-marca b-marca-oro b-solo-escritorio">Reservado a MIPYME</span><span class="b-cierre b-cierre-pronto b-cierre-movil">Cierra en 4 días</span></span>
-              </span>
-            </li>
-            <li class="b-fila b-solo-escritorio">
-              <span class="b-fila-rejilla">
-                <span class="b-fila-titulo">Compra de impresoras multifuncionales y tóner</span>
-                <span class="b-cierre">Cierra en 13 días</span>
-                <span class="b-fila-datos">Hospital regional<span aria-hidden="true">·</span>Contratación menor</span>
-              </span>
-            </li>
-          </ul>
-        </div>
-      </figure>
 
-      <!-- Ficha superpuesta: muestra el expediente destacado real cuando la API responde con uno vigente
-           (portada-b.js). Si no, se queda este ejemplo ilustrativo de la referencia. -->
-      <article class="b-panel b-ficha" aria-labelledby="ficha-titulo" data-ficha-portada>
-        <div class="b-luz b-luz-oro" aria-hidden="true"></div>
-        <div class="b-ficha-pastillas">
-          <span class="b-pastilla">Licitación pública</span>
-          <span class="b-pastilla b-vigente"><span class="b-punto b-pulso" aria-hidden="true"></span>Vigente</span>
-          <span class="b-pastilla b-solo-escritorio">Cierre: 18 nov. · 10:00 a. m.</span>
-        </div>
-        <p class="b-ficha-antetitulo b-entre"><span class="b-mono">Análisis de la licitación</span><span class="b-ejemplo">Ejemplo ilustrativo</span></p>
-        <h3 class="b-x b-ficha-titulo" id="ficha-titulo">Adquisición de computadoras y periféricos para oficinas</h3>
-        <p class="b-ficha-datos b-solo-escritorio">Ministerio · Sede central · Dirigido a: Todo público</p>
-        <p class="b-ficha-datos b-ficha-cierre-movil">Cierre publicado: 18 nov. · 10:00 a. m.</p>
-        <div class="b-ficha-requisitos-cabecera">
-          <h4>Qué debes presentar</h4>
-          <span class="b-ia"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5c.6 4.6 2.3 7.2 7 8-4.7.8-6.4 3.4-7 8-.6-4.6-2.3-7.2-7-8 4.7-.8 6.4-3.4 7-8Z"/></svg>Análisis con IA</span>
-        </div>
-        <ol>
-          <li class="b-requisito"><span><span class="b-solo-escritorio">Registro de Proveedores del Estado (RPE) activo, con el rubro del proceso</span><span class="b-solo-movil">RPE activo, con el rubro del proceso</span></span><span class="b-cita" aria-label="Página 6 del pliego">p. 6</span></li>
-          <li class="b-requisito"><span>Certificación de la DGII al día</span><span class="b-cita" aria-label="Página 7 del pliego">p. 7</span></li>
-          <li class="b-requisito"><span>Garantía de seriedad de la oferta</span><span class="b-cita" aria-label="Página 9 del pliego">p. 9</span></li>
-        </ol>
-        <div class="b-ficha-botones">
-          <a class="b-btn b-primario b-sm" href="/app/?acceso=crear#/oportunidades"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4h10v17l-5-4-5 4z"/></svg>Seguir este proceso</a>
-        </div>
-      </article>
+      </div>
+      <label class="ir-historico"><input id="historico" name="etapa" type="checkbox" value="todas"> Incluir las que ya cerraron</label>
+    </form>
+    <div class="ir-resultados" aria-labelledby="estado">
+      <p id="estado" role="status" aria-live="polite" tabindex="-1">Consultando licitaciones…</p>
+      <ul id="lista"></ul>
+      <button type="button" class="b-btn b-secundario b-sm" id="reintentar" hidden>Volver a cargar</button>
+      <button type="button" class="ir-enlace" id="limpiar-filtros" hidden>Restablecer búsqueda</button>
+      <div class="ir-pie-portada" id="mas-resultados" hidden><a class="b-enlace" href="/solicitar-informe/">Ver todos los resultados</a></div>
+      <nav id="paginacion" aria-label="Páginas de resultados" hidden>
+        <button type="button" class="ir-enlace" id="anterior">‹ Anterior</button><span id="pagina"></span><button type="button" class="ir-enlace" id="siguiente">Siguiente ›</button>
+      </nav>
+    </div>
+    <noscript><p>Activa JavaScript para ver los resultados y solicitar un informe.</p></noscript>
+  </div>
+
+</section>
     </div>
   </section>
 
@@ -277,15 +251,30 @@
           </ul>
           <a class="b-enlace" href="/app/?acceso=crear">Crear mi cuenta gratis<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
-        <div class="b-mini b-mini-columna b-solo-escritorio">
-          <div class="b-entre"><span class="b-mono-etiqueta">Ficha del proceso</span><span class="b-ejemplo">Ejemplo ilustrativo</span></div>
-          <ul class="b-renglones-mini">
-            <li><span>Computadora de escritorio</span><span class="b-mono">25 unidades</span></li>
-            <li><span>Monitor de 24 pulgadas</span><span class="b-mono">25 unidades</span></li>
-            <li><span>Mouse inalámbrico</span><span class="b-mono">50 unidades</span></li>
-          </ul>
-          <div class="b-docs-mini"><span class="b-marca b-marca-azul">Pliego de condiciones</span><span class="b-marca b-marca-azul">Fichas técnicas</span><span class="b-marca b-marca-oro">Enmienda 1</span></div>
+        <div class="b-panel b-ficha ir-ficha-reubicada" aria-labelledby="ficha-titulo" data-ficha-portada>
+        <div class="b-luz b-luz-oro" aria-hidden="true"></div>
+        <div class="b-ficha-pastillas">
+          <span class="b-pastilla">Licitación pública</span>
+          <span class="b-pastilla b-vigente"><span class="b-punto b-pulso" aria-hidden="true"></span>Vigente</span>
+          <span class="b-pastilla b-solo-escritorio">Cierre: 18 nov. · 10:00 a. m.</span>
         </div>
+        <p class="b-ficha-antetitulo b-entre"><span class="b-mono">Análisis de la licitación</span><span class="b-ejemplo">Ejemplo ilustrativo</span></p>
+        <h3 class="b-x b-ficha-titulo" id="ficha-titulo">Adquisición de computadoras y periféricos para oficinas</h3>
+        <p class="b-ficha-datos b-solo-escritorio">Ministerio · Sede central · Dirigido a: Todo público</p>
+        <p class="b-ficha-datos b-ficha-cierre-movil">Cierre publicado: 18 nov. · 10:00 a. m.</p>
+        <div class="b-ficha-requisitos-cabecera">
+          <h4>Qué debes presentar</h4>
+          <span class="b-ia"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5c.6 4.6 2.3 7.2 7 8-4.7.8-6.4 3.4-7 8-.6-4.6-2.3-7.2-7-8 4.7-.8 6.4-3.4 7-8Z"/></svg>Análisis con IA</span>
+        </div>
+        <ol>
+          <li class="b-requisito"><span><span class="b-solo-escritorio">Registro de Proveedores del Estado (RPE) activo, con el rubro del proceso</span><span class="b-solo-movil">RPE activo, con el rubro del proceso</span></span><span class="b-cita" aria-label="Página 6 del pliego">p. 6</span></li>
+          <li class="b-requisito"><span>Certificación de la DGII al día</span><span class="b-cita" aria-label="Página 7 del pliego">p. 7</span></li>
+          <li class="b-requisito"><span>Garantía de seriedad de la oferta</span><span class="b-cita" aria-label="Página 9 del pliego">p. 9</span></li>
+        </ol>
+        <div class="b-ficha-botones">
+          <a class="b-btn b-primario b-sm" href="/app/?acceso=crear#/oportunidades"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4h10v17l-5-4-5 4z"/></svg>Seguir este proceso</a>
+        </div>
+      </div>
       </article>
     </div>
   </div>

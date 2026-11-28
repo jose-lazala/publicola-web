@@ -3,59 +3,129 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#050B1E">
+  <meta name="color-scheme" content="dark">
   <title>Solicitar informe de licitación | Publicola</title>
   <meta name="description" content="Busca una licitación pública dominicana por objeto, institución o código y recibe su informe en PDF por correo.">
   <link rel="canonical" href="https://publicola.com.do/solicitar-informe/">
   <link rel="icon" href="/favicon-v3.ico">
   <link rel="stylesheet" href="/sitio-b.css">
-  <link rel="stylesheet" href="./informes.css?v=2">
-  <script defer src="./informes.js?v=3"></script>
+  <link rel="stylesheet" href="/solicitar-informe/informes.css?v=20261127resumen3">
+  <script defer src="/solicitar-informe/informes.js?v=20261127resumen3"></script>
+  <script defer src="/sitio-b.js"></script>
 </head>
-<body>
-<a class="b-salto" href="#buscador">Saltar al buscador</a>
-<header class="cab"><div class="ancho barra">
-  <a href="/" class="marca"><img src="/marca/publicola-logo-blanco-v1.png" width="523" height="168" alt="Publicola, inicio"></a>
-  <nav aria-label="Navegación"><a href="/analizador/">Analizador gratis</a><a href="/app/?acceso=entrar">Iniciar sesión</a></nav>
-</div></header>
-<main>
-  <section class="intro"><div class="ancho">
-    <nav class="miga" aria-label="Ruta"><a href="/">Inicio</a><span aria-hidden="true"> / </span>Solicitar informe</nav>
-    <h1>Solicitar informe de licitación</h1>
-    <p>Busca una compra pública, revisa su resumen y recibe el informe en PDF por correo. Sin crear cuenta.</p>
-    <form id="buscador" role="search" aria-label="Buscar licitaciones">
-      <div class="campo amplio"><label for="consulta">Código, institución o palabra clave</label>
-        <input type="search" id="consulta" name="q" maxlength="160" placeholder="Ej. INAPA, computadoras o código de proceso"></div>
-      <div class="campo"><label for="fase">Fase del proceso</label>
-        <select id="fase" name="fase"><option value="todas">Todas las fases</option><option value="abierta">Abierta</option><option value="en_curso">En curso</option><option value="cerrada">Cerrada</option><option value="adjudicada">Adjudicada</option><option value="contratada">Contratada</option></select></div>
-      <button type="submit" class="accion">Buscar</button>
-    </form>
-  </div></section>
-  <section class="resultados ancho" aria-labelledby="titulo-resultados">
-    <h2 id="titulo-resultados" tabindex="-1">Licitaciones</h2>
-    <p id="estado" role="status" aria-live="polite"></p>
-    <button id="reintentar" class="secundario" type="button" hidden>Volver a cargar</button>
-    <ul id="lista"></ul>
-    <nav id="paginacion" aria-label="Páginas de resultados" hidden>
-      <button type="button" id="anterior" class="secundario">Anterior</button>
-      <span id="pagina"></span><button type="button" id="siguiente" class="secundario">Siguiente</button>
+<body class="ir-pagina">
+<a class="b-salto" href="#consulta">Saltar al buscador</a>
+  <header class="b-cabecera">
+    <div class="b-wrap b-cabecera-interior">
+      <a class="b-logo" href="/" aria-label="Publicola, ir al inicio"><img src="/marca/publicola-logo-blanco-v1.png" alt="Publicola" width="523" height="168"></a>
+      <nav class="b-nav" aria-label="Principal">
+        <a href="/">Inicio</a>
+        <a href="/plataforma/">Plataforma</a>
+        <a href="/planes/">Planes</a>
+        <a href="/servicios/">Servicios</a>
+        <a href="/recursos/">Recursos</a>
+        <a href="/contacto/">Contacto</a>
+      </nav>
+      <div class="b-acciones">
+        <a class="b-btn b-fantasma" href="/app/?acceso=entrar"><span class="b-entrar-largo">Iniciar sesión</span><span class="b-entrar-corto">Entrar</span></a>
+        <a class="b-btn b-primario" href="/app/?acceso=crear">Crear mi cuenta gratis</a>
+        <button class="b-menu" type="button" aria-expanded="false" aria-controls="b-menu-movil">
+          <span class="b-sr">Menú</span>
+          <svg class="b-abrir-icono" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="b-cerrar-icono" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+    </div>
+    <nav class="b-nav-movil" id="b-menu-movil" aria-label="Principal en el celular">
+      <a href="/analizador/">Analizador gratis</a>
+      <a href="/solicitar-informe/" aria-current="page">Solicitar informe</a>
+      <a href="/">Inicio</a>
+      <a href="/plataforma/">Plataforma</a>
+      <a href="/planes/">Planes</a>
+      <a href="/servicios/">Servicios</a>
+      <a href="/recursos/">Recursos</a>
+      <a href="/contacto/">Contacto</a>
+      <a class="b-btn b-primario" href="/app/?acceso=crear">Crear mi cuenta gratis</a>
     </nav>
-    <noscript>Activa JavaScript para consultar el catálogo y solicitar tu informe.</noscript>
-  </section>
-</main>
-<footer><div class="ancho barra"><a href="/" class="marca"><img src="/marca/publicola-logo-blanco-v1.png" width="523" height="168" alt="Publicola"></a><nav aria-label="Información"><a href="/privacidad/">Privacidad</a><a href="/contacto/">Contacto</a></nav></div></footer>
-<dialog id="solicitud" aria-labelledby="titulo-solicitud">
-  <div class="dialogo">
-    <button class="cerrar" type="button" aria-label="Cerrar" id="cerrar">×</button>
-    <h2 id="titulo-solicitud">Recibir informe por correo</h2>
-    <p id="ref" class="referencia"></p><p id="objeto"></p>
-    <form id="envio">
-      <label for="correo">Tu correo electrónico</label>
-      <input type="email" id="correo" autocomplete="email" maxlength="254" required placeholder="nombre@empresa.com">
-      <label class="acepto"><input type="checkbox" id="acepta" required><span id="consentimiento"></span></label>
-      <a class="privacidad" href="/privacidad/#12-correos-que-te-enviamos" target="_blank" rel="noopener">Cómo usamos tu correo</a>
-      <button type="submit" class="accion" id="enviar">Enviarme el PDF</button>
+  </header>
+  <main class="b-wrap ir-contenedor"><nav class="ir-ruta" aria-label="Ruta"><a href="/">Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Solicitar informe</span></nav>
+<section class="b-panel ir-panel" data-explorador-informes="pagina" aria-labelledby="titulo-buscador">
+  <div class="b-luz" aria-hidden="true"></div>
+  <header class="ir-cabecera">
+    <div class="ir-identidad">
+      <span class="b-mosaico ir-icono"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></span>
+      <div><h1 id="titulo-buscador">Explorador de licitaciones</h1><p>Consulta el monto y los plazos de una licitación y recibe el informe en PDF por correo.</p></div>
+    </div>
+    <span class="ir-gratis">Gratis · Sin cuenta</span>
+  </header>
+  <div id="explorar-informes">
+    <form id="buscador" action="/solicitar-informe/" method="get" role="search" aria-label="Buscar licitaciones">
+      <label for="consulta">Busca por nombre, palabra clave, institución o código</label>
+      <div class="ir-busqueda">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        <input type="search" id="consulta" name="q" maxlength="160" autocomplete="off" enterkeyhint="search" placeholder="Ej. construcción">
+        <button type="button" id="borrar-consulta" aria-label="Borrar búsqueda" hidden>×</button>
+        <button type="submit" class="b-btn b-primario ir-buscar">Buscar</button>
+      </div>
+      <div class="ir-filtros">
+        <span id="que-se-compra">Tipo de compra</span>
+        <div class="ir-opciones" role="group" aria-labelledby="que-se-compra">
+          <button type="submit" name="tipo_compra" value="Bienes" aria-pressed="false"><span>Bienes</span><small></small></button>
+          <button type="submit" name="tipo_compra" value="Servicios" aria-pressed="false"><span>Servicios</span><small></small></button>
+          <button type="submit" name="tipo_compra" value="Obras" aria-pressed="false"><span>Obras</span><small></small></button>
+        </div>
+        <details class="ir-mas-filtros"><summary>Más filtros</summary><label for="fase">Fase del proceso</label>
+          <select id="fase" name="fase"><option value="todas">Todas las fases</option><option value="abierta">Abierta</option><option value="en_curso">En curso</option><option value="cerrada">Cerrada</option><option value="adjudicada">Adjudicada</option><option value="contratada">Contratada</option></select></details>
+      </div>
+      <label class="ir-historico"><input id="historico" name="etapa" type="checkbox" value="todas"> Incluir las que ya cerraron</label>
     </form>
-    <p id="entrega" role="status" aria-live="polite"></p>
+    <div class="ir-resultados" aria-labelledby="estado">
+      <p id="estado" role="status" aria-live="polite" tabindex="-1">Consultando licitaciones…</p>
+      <ul id="lista"></ul>
+      <button type="button" class="b-btn b-secundario b-sm" id="reintentar" hidden>Volver a cargar</button>
+      <button type="button" class="ir-enlace" id="limpiar-filtros" hidden>Restablecer búsqueda</button>
+      <div class="ir-pie-portada" id="mas-resultados" hidden><a class="b-enlace" href="/solicitar-informe/">Ver todos los resultados</a></div>
+      <nav id="paginacion" aria-label="Páginas de resultados" hidden>
+        <button type="button" class="ir-enlace" id="anterior">‹ Anterior</button><span id="pagina"></span><button type="button" class="ir-enlace" id="siguiente">Siguiente ›</button>
+      </nav>
+    </div>
+    <noscript><p>Activa JavaScript para ver los resultados y solicitar un informe.</p></noscript>
   </div>
-</dialog>
-</body></html>
+  <section id="resumen-publico" class="ir-resumen" aria-labelledby="titulo-resumen" hidden>
+  <a class="ir-volver" id="volver-resumen" href="/solicitar-informe/">← Volver a los resultados</a>
+  <div class="ir-metadatos"><span id="tipo-resumen" class="ir-categoria"></span><span id="codigo-resumen" class="ir-codigo"></span></div>
+  <h2 id="titulo-resumen" tabindex="-1">Resumen de la licitación</h2>
+  <p id="institucion-resumen" class="ir-entidad"></p>
+  <div id="contenido-resumen" hidden>
+    <div class="ir-cifras">
+      <div class="ir-monto"><span>Monto estimado</span><strong id="monto-resumen"></strong></div>
+      <div><span>Modalidad de contratación</span><strong id="modalidad-resumen"></strong></div>
+    </div>
+    <section class="ir-objeto"><h3>Qué se compra</h3><p id="descripcion-resumen"></p><ul id="ejemplos-resumen" aria-label="Ejemplos de renglones"></ul></section>
+    <section class="ir-plazos"><h3>Recepción de ofertas</h3><p>Hora de República Dominicana</p>
+      <dl><div><dt>Inicio de recepción</dt><dd id="inicio-resumen"></dd></div><div><dt>Cierre de recepción</dt><dd id="cierre-resumen"></dd></div></dl>
+    </section>
+    <div class="ir-accion-resumen"><a id="pedir-desde-resumen" class="b-btn b-primario" href="/solicitar-informe/">Solicitar informe</a><span>PDF gratuito por correo</span></div>
+  </div>
+  <button id="reintentar-resumen" class="ir-enlace" type="button" hidden>Volver a intentar</button>
+</section>
+<section id="solicitud" aria-labelledby="titulo-solicitud" hidden>
+  <button type="button" id="cerrar" class="ir-enlace">← Volver a los resultados</button>
+  <h2 id="titulo-solicitud" tabindex="-1">Recibir el informe por correo</h2>
+  <div class="ir-elegida"><p id="ref" class="ir-codigo"></p><strong id="objeto"></strong><p id="entidad-elegida"></p></div>
+  <form id="envio">
+    <p class="ir-instruccion">Recibirás el mismo PDF que puedes descargar desde la cuenta gratuita de Publicola.</p>
+    <label for="correo">Tu correo electrónico</label>
+    <input type="email" id="correo" autocomplete="email" maxlength="254" required placeholder="nombre@empresa.com">
+    <label class="ir-acepto"><input type="checkbox" id="acepta" required><span id="consentimiento"></span></label>
+    <a class="ir-privacidad" href="/privacidad/#12-correos-que-te-enviamos" target="_blank" rel="noopener">Cómo usamos tu correo</a>
+    <button type="submit" class="b-btn b-primario" id="enviar">Enviarme el PDF</button>
+  </form>
+  <p id="entrega" role="status" aria-live="polite"></p>
+</section>
+</section>
+  </main>
+  <footer class="ir-pie"><div class="b-wrap"><a href="/">Publicola</a><nav aria-label="Información"><a href="/privacidad/">Privacidad</a><a href="/contacto/">Contacto</a></nav></div></footer>
+</body>
+</html>
