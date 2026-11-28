@@ -57,7 +57,7 @@
 .ir-metadatos { margin-bottom: 5px; }
 .ir-categoria { color: #f5c568; font: 600 11px/1.4 var(--mono); text-transform: uppercase; letter-spacing: .09em; }
 .ir-codigo { color: var(--apoyo-2); font: 450 12px/1.4 var(--mono); overflow-wrap: anywhere; }
-.ir-lista-fila h3 { color: var(--texto); font: 650 clamp(16px, 1.8vw, 19px)/1.33 var(--fuente); letter-spacing: -.012em; overflow-wrap: anywhere; }
+.ir-lista-fila h3 { color: var(--texto); font: 600 16px/1.38 var(--fuente); letter-spacing: 0; overflow-wrap: anywhere; }
 .ir-lista-fila h3 { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
 .ir-entidad { color: var(--texto-2); margin-top: 4px; font-size: 14px; line-height: 1.45; }
 .ir-detalles { margin-top: 6px; color: var(--apoyo-2); font-size: 13px; line-height: 1.45; }
@@ -70,7 +70,7 @@
 .ir-panel #solicitud { max-width: 730px; margin: 0 auto; padding: 18px 24px 30px; }
 .ir-panel #titulo-solicitud { font: 670 clamp(23px, 2.8vw, 30px)/1.18 var(--fuente); color: var(--blanco); margin: 10px 0 16px; }
 .ir-elegida { display: grid; gap: 4px; border-left: 2px solid var(--oro); padding-left: 13px; }
-.ir-elegida strong { font-size: 17px; overflow-wrap: anywhere; }
+.ir-elegida strong { font-size: 16px; overflow-wrap: anywhere; }
 .ir-elegida #entidad-elegida, .ir-instruccion { color: var(--texto-2); font-size: 14px; line-height: 1.5; }
 .ir-instruccion { margin: 16px 0; }
 .ir-panel #correo { width: 100%; height: 46px; }
@@ -92,7 +92,7 @@
 .ir-detalles strong { color: var(--texto-claro); font-weight: 610; }
 .ir-resumen { max-width: 810px; margin: auto; padding: 21px 28px 30px; }
 .ir-volver { display: inline-flex; align-items: center; min-height: 38px; margin-bottom: 13px; color: var(--azul-luz); font-size: 14px; }
-.ir-resumen h2 { font: 660 clamp(22px, 2.7vw, 32px)/1.2 var(--fuente); letter-spacing: -.025em; color: var(--blanco); overflow-wrap: anywhere; }
+.ir-resumen h2 { font: 610 20px/1.35 var(--fuente); letter-spacing: -.01em; color: var(--blanco); overflow-wrap: anywhere; }
 .ir-resumen h2:focus { outline: none; }
 .ir-cifras, .ir-plazos dl { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px 20px; }
 .ir-cifras { margin: 20px 0; padding: 16px 18px; border: 1px solid var(--filete-2); border-left: 3px solid var(--oro); border-radius: 9px; background: var(--panel-hundido); }
@@ -130,6 +130,9 @@
   .ir-panel #solicitud { padding: 16px 14px 23px; }
   .ir-panel #enviar { width: 100%; }
   .ir-resumen { padding: 12px 16px 22px; }
+  .ir-lista-fila h3 { font-size: 15px; }
+  .ir-elegida strong { font-size: 15px; }
+  .ir-resumen h2 { font-size: 16px; line-height: 1.4; }
   .ir-cifras { padding: 12px; }
   .ir-cifras, .ir-plazos dl { grid-template-columns: minmax(0,1fr); }
   .ir-panel #buscador > .ir-historico { min-height: 40px; }
